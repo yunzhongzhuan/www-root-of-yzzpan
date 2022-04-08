@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="//yunzhongzhuan.com/js/laji_referer_filter.js"></script>
+		<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="./img/logo.png" type="image/png" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./plug-in/font-awesome-4.7.0/css/font-awesome.min.css" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="height=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />
+		<meta name="keywords" content="云中转,云盘,文件,分享,存储,不限,空间,容量,在线,网盘,离线,下载" />
+		<meta name="description" content="离线下载免费云盘不限容量不限速度不限流量全球网络传输文件" />
+		<title>云中转-离线下载免费云盘不限容量不限速度不限流量全球网络传输文件</title>
+	</head>
+	<body>
+		<div class="nav" id="nav">
+			<div class="nav-scroll">
+				<div class="nav-items">
+					<div class="nav-item" id="hide-nav-button">
+						<i class="fa fa-chevron-circle-left"></i>
+						<span>收起</span>
+					</div>
+					<div class="nav-item" id="nav-home-button">
+						<i class="fa fa-home"></i>
+						<span>首页</span>
+					</div>
+					<div class="nav-item" id="nav-files-button">
+						<i class="fa fa-download"></i>
+						<span>文件</span>
+					</div>
+					<!--
+					<div class="nav-item">
+						<i class="fa fa-comments"></i>
+						<span>消息</span>
+					</div>
+					<div class="nav-item" id="language-setting-button">
+						<i class="fa fa-globe"></i>
+						<span>语言</span>
+					</div>
+					-->
+					<!--<div class="element-hide-display-none">-->
+					<div class="nav-item" id="nav-setting-button">
+						<i class="fa fa-cog"></i>
+						<span>设置</span>
+					</div>
+					<!--</div>-->
+					<div class="nav-item" id="nav-reset-password-button">
+						<i class="fa fa-lock"></i>
+						<span>重置</span>
+					</div>
+					<div class="nav-item" id="nav-exit-button">
+						<i class="fa fa-sign-out"></i>
+						<span>退出</span>
+					</div>
+					<div class="nav-item" id="nav-top-button">
+						<i class="fa fa-arrow-circle-up"></i>
+						<span>顶部</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="top">
+			<div class="show-nav-button" id="show-nav-button">
+				<i class="fa fa-bars"></i>
+			</div>
+			<div class="top-applications-items" id="top-applications-items">
+				<!--<div class="top-applications-item" style="background-image: url('./img/logo.png');"></div>-->
+			</div>
+		</div>
+		<div class="files files-hide" id="files">
+			<div class="block-height-20px"></div>
+			<div class="block-height-10px"></div>
+			<a href="https://docs.qq.com/doc/DYnJQWVlVR254b1BQ" target="_blank" style="display:block;float:left;width:100%;float:left;background-color:#002fe1;">
+				<div style="position:absolute;color: #ffffff50;font-size:12px;text-decoration:none;padding:5px;">广告</div>
+				<div class="sharefile-ad-only-one" style="display:none;">
+					<!--广告h2-->
+				</div>
+			</a>
+			<div class="block-height-20px"></div>
+			<div class="files-buttons-items">
+				<div class="files-buttons-item" id="files-options">
+					添加任务
+					<div class="files-options-items files-options-items-hide" id="files-options-items">
+						<div class="files-options-item" id="files-options-item-upload-files-button">
+							<i class="fa fa-file-o"></i>添加文件
+						</div>
+						<div class="element-hide-display-none">
+							<input type="file" multiple="multiple" id="files-options-item-upload-files-input" name="files-options-item-upload-files-input" />
+						</div>
+						<div class="files-options-item" id="files-options-item-create-folder-button">
+							<i class="fa fa-folder-o"></i>新建目录
+						</div>
+						<div class="files-options-item" id="files-options-item-client-download-button">
+							<i class="fa fa-windows"></i>桌面程序
+						</div>
+						<div class="files-options-item" id="files-options-items-item-offline-button">
+							<i class="fa fa-bolt"></i>离线下载
+						</div>
+						<div class="files-options-item">
+							<i class="fa fa-angle-up"></i>收起菜单
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="element-hide-display-none">
+				<input type="text" autocomplete="off" />
+			</div>
+			<div class="files-inputs-items">
+				<div class="files-inputs-item">
+					<input type="text" id="files-search-input" name="files-search-input" autocomplete="off" />
+				</div>
+			</div>
+			<div class="block-height-20px"></div>
+			<div class="files-item files-item-hide" id="back-parent-folder-button">
+				<div class="files-item-icon">
+					<i class="fa fa-arrow-left"></i>
+				</div>
+				<div class="files-item-name">
+					<span>返回上一级</span>
+				</div>
+				<div class="files-item-date">
+					<span>-</span>
+				</div>
+				<div class="files-item-size">
+					<span>-</span>
+				</div>
+			</div>
+			<div class="files-main" id="files-main">
+				<div class="files-items-folders">
+					<div class="files-items" id="files-items-folders-items">
+						<!--
+						<div class="files-item">
+							<div class="files-item-icon">
+								<i class="fa fa-folder"></i>
+							</div>
+							<div class="files-item-name">
+								<span>变形金刚系列电影</span>
+							</div>
+							<div class="files-item-date">
+								<span>2021-10-22 13:29:07</span>
+							</div>
+							<div class="files-item-size">
+								<span>文件夹</span>
+							</div>
+							<div class="files-item-menu">
+								<i class="fa fa-bars"></i>
+								<div class="files-item-menu-items files-item-menu-items-hide">
+									<div class="files-item-menu-item"><i class="fa fa-pencil"></i>命名</div>
+									<div class="files-item-menu-item"><i class="fa fa-trash"></i>删除</div>
+								</div>
+							</div>
+						</div>
+						<div class="files-item">
+							<div class="files-item-icon">
+								<i class="fa fa-folder"></i>
+							</div>
+							<div class="files-item-name">
+								<span>漫威宇宙电影全系列</span>
+							</div>
+							<div class="files-item-date">
+								<span>2021-11-06 22:13:56</span>
+							</div>
+							<div class="files-item-size">
+								<span>文件夹</span>
+							</div>
+							<div class="files-item-menu">
+								<i class="fa fa-bars"></i>
+							</div>
+						</div>
+						-->
+					</div>
+				</div>
+				<div class="files-items-files">
+					<div class="files-items" id="files-items-files-items">
+						<!--
+						<div class="files-item">
+							<div class="files-item-icon">
+								<i class="fa fa-film"></i>
+							</div>
+							<div class="files-item-name">
+								<span>小贱《多喜欢你》MV视频1080P.mp4</span>
+							</div>
+							<div class="files-item-date">
+								<span>2021-10-29 07:31:22</span>
+							</div>
+							<div class="files-item-size">
+								<span>623.71MB</span>
+							</div>
+							<div class="files-item-menu">
+								<i class="fa fa-bars"></i>
+							</div>
+						</div>
+						<div class="files-item">
+							<div class="files-item-icon">
+								<i class="fa fa-film"></i>
+							</div>
+							<div class="files-item-name">
+								<span>刘德华《17岁》香港红磡体育馆演唱会Live.mp4</span>
+							</div>
+							<div class="files-item-date">
+								<span>2021-11-02 20:01:36</span>
+							</div>
+							<div class="files-item-size">
+								<span>236.29MB</span>
+							</div>
+							<div class="files-item-menu">
+								<i class="fa fa-bars"></i>
+							</div>
+						</div>
+						-->
+					</div>
+				</div>
+			</div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+		</div>
+		<div class="login login-hide" id="login">
+			<div class="block-height-20px"></div>
+			<div class="block-height-10px"></div>
+			<a href="https://docs.qq.com/doc/DYnJQWVlVR254b1BQ" target="_blank" style="display:block;float:left;width:100%;float:left;background-color:#002fe1;">
+				<div style="position:absolute;color: #ffffff50;font-size:12px;text-decoration:none;padding:5px;">广告</div>
+				<div class="sharefile-ad-only-one" style="display:none;">
+					<!--广告h2-->
+				</div>
+			</a>
+			<div class="block-height-20px"></div>
+			<div class="login-content">
+				<div class="login-content-input">
+					<div class="block-height-20px"></div>
+					<div class="block-height-20px"></div>
+					<div class="block-height-20px"></div>
+					<div class="block-height-20px"></div>
+					<div class="login-content-input-title">
+						登录
+					</div>
+					<div class="block-height-10px"></div>
+					<div class="login-content-input-element">
+						<div class="login-content-input-element-icon">
+							<i class="fa fa-user"></i>
+						</div>
+						<div class="login-content-input-element-input">
+							<input type="text" placeholder="账号" id="login-input-username" name="login-input-username" autocomplete="off" />
+						</div>
+					</div>
+					<div class="block-height-20px"></div>
+					<div class="login-content-input-element">
+						<div class="login-content-input-element-icon">
+							<i class="fa fa-unlock-alt"></i>
+						</div>
+						<div class="login-content-input-element-input">
+							<input type="password" id="login-input-password" placeholder="密码" name="login-input-password" autocomplete="off" />
+						</div>
+						<div class="login-content-input-element-icon">
+							<i class="fa fa-eye-slash" id="login-input-show-password-button"></i>
+						</div>
+						<div class="login-content-input-element-link" id="login-input-forget-password-page-button-2">
+							忘记密码？
+						</div>
+					</div>
+					<div class="block-height-10px"></div>
+					<div class="block-height-20px"></div>
+					<div class="login-content-input-button-element" id="login-input-button-login">
+						<!--<i class="fa fa-cloud"></i>直接登录-->
+						登录
+					</div>
+					<div class="block-height-20px"></div>
+					<div class="login-content-input-qq-button-element" id="login-input-button-qq-login">
+						<i class="fa fa-qq"></i>扫码登录
+					</div>
+					<div class="element-hide-display-none">
+						<div class="block-height-20px"></div>
+						<div class="login-content-input-wechat-button-element" id="login-input-button-wechat-login">
+							<i class="fa fa-wechat"></i>指令登录
+						</div>
+					</div>
+					<div class="block-height-10px"></div>
+					<div class="login-content-input-link">
+						<span id="login-input-register-page-button">注册账号</span>
+						<span id="login-input-forget-password-page-button">找回密码</span>
+					</div>
+					<div class="login-content-input-link">
+						<div class="login-content-input-terms-message">
+							登录即表示同意本平台《<span id="login-input-span-user-terms">用户协议</span>》。
+						</div>
+					</div>
+				</div>
+				<div class="login-content-logo">
+					
+				</div>
+			</div>
+		</div>
+		<div class="register register-hide" id="register">
+			<div class="register-content">
+				<div class="login-content-header-buton">
+					<span id="register-page-show-login-button"><i class="fa fa-chevron-left"></i>返回<span>
+				</div>
+				<div class="login-content-input">
+					<div class="login-content-input-title">
+						注册
+					</div>
+					<div class="block-height-10px"></div>
+					<div class="login-content-input-element">
+						<div class="login-content-input-element-icon">
+							<i class="fa fa-user"></i>
+						</div>
+						<div class="login-content-input-element-input">
+							<input type="text" placeholder="账号" id="register-input-username" name="register-input-username" autocomplete="off" />
+						</div>
+					</div>
+					<div class="block-height-20px"></div>
+					<div class="login-content-input-element">
+						<div class="login-content-input-element-icon">
+							<i class="fa fa-unlock-alt"></i>
+						</div>
+						<div class="login-content-input-element-input">
+							<input type="password" placeholder="密码" id="register-input-password" name="register-input-password" autocomplete="off" />
+						</div>
+					</div>
+					<div class="block-height-20px"></div>
+					<div class="login-content-input-element">
+						<div class="login-content-input-element-icon">
+							<i class="fa fa-lock"></i>
+						</div>
+						<div class="login-content-input-element-input">
+							<input type="password" placeholder="确认密码" id="register-input-password-2" name="register-input-password-2" autocomplete="off" />
+						</div>
+					</div>
+					<div class="block-height-20px"></div>
+					<div class="login-content-input-element">
+						<div class="login-content-input-element-icon">
+							<i class="fa fa-qq"></i>
+						</div>
+						<div class="login-content-input-element-input">
+							<input type="text" placeholder="QQ" id="register-input-qq" autocomplete="off" name="register-input-qq" />
+						</div>
+					</div>
+					<div class="block-height-10px"></div>
+					<div class="block-height-20px"></div>
+					<div class="login-content-input-button-element" id="register-input-button-register">
+						注册
+					</div>
+					<div class="login-content-input-link">
+						<div class="login-content-input-terms-message">
+							注册即表示同意本平台《<span id="register-input-span-user-terms">用户协议</span>》。
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="forget-password forget-password-hide" id="forget-password">
+			<div class="forget-password-content">
+				<div class="login-content-header-buton">
+					<span id="forget-password-page-show-login-button"><i class="fa fa-chevron-left"></i>返回<span>
+				</div>
+				<div class="login-content-input">
+					<div class="login-content-input-title">
+						找回密码
+					</div>
+					<div class="block-height-10px"></div>
+					<div class="login-content-input-element">
+						<div class="login-content-input-element-icon">
+							<i class="fa fa-user"></i>
+						</div>
+						<div class="login-content-input-element-input">
+							<input type="text" placeholder="账号" autocomplete="off" id="forget-password-input-username" name="forget-password-input-username" />
+						</div>
+					</div>
+					<div class="block-height-20px"></div>
+					<div class="login-content-input-element">
+						<div class="login-content-input-element-icon">
+							<i class="fa fa-unlock-alt"></i>
+						</div>
+						<div class="login-content-input-element-input">
+							<input type="password" placeholder="新密码" autocomplete="off" id="forget-password-input-password" name="forget-password-input-password" />
+						</div>
+					</div>
+					<div class="block-height-20px"></div>
+					<div class="login-content-input-element">
+						<div class="login-content-input-element-icon">
+							<i class="fa fa-lock"></i>
+						</div>
+						<div class="login-content-input-element-input">
+							<input type="password" placeholder="确认密码" autocomplete="off" id="forget-password-input-password-2" name="forget-password-input-password-2" />
+						</div>
+					</div>
+					<div class="block-height-20px"></div>
+					<div class="login-content-input-element">
+						<div class="login-content-input-element-icon">
+							<i class="fa fa-qq"></i>
+						</div>
+						<div class="login-content-input-element-input">
+							<input type="text" placeholder="QQ" autocomplete="off" id="forget-password-input-qq" name="forget-password-input-qq" />
+						</div>
+					</div>
+					<div class="block-height-10px"></div>
+					<div class="block-height-20px"></div>
+					<div class="login-content-input-button-element" id="forget-password-input-button-forget-password">
+						重置
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sharefile sharefile-hide" id="sharefile">
+			<div class="sharefile-content">
+				<div class="login-content-header-buton">
+					<span id="sharefile-page-show-files-button"><i class="fa fa-chevron-left"></i>返回<span>
+				</div>
+				<a href="https://docs.qq.com/doc/DYnJQWVlVR254b1BQ" target="_blank" style="display:block;float:left;width:100%;float:left;background-color:#002fe1;">
+					<div style="position:absolute;color: #ffffff50;font-size:12px;text-decoration:none;padding:5px;">广告</div>
+					<div class="sharefile-ad-only-one" style="display:none;">
+						<!--广告h2-->
+					</div>
+				</a>	
+				<div class="block-height-20px"></div>
+				<div class="sharefile-content-userinfo">
+					<div class="sharefile-content-userinfo-profile-picture" id="sharefile-content-userinfo-profile-picture">
+					</div>
+					<div class="sharefile-content-userinfo-username" id="sharefile-content-userinfo-username">
+						<!--小明-->
+					</div>
+					<div class="sharefile-content-userinfo-datetime" id="sharefile-content-userinfo-datetime">
+						<!--2020-12-10 12:00:00-->
+					</div>
+				</div>
+				<div class="block-height-20px"></div>
+				<div class="block-height-20px"></div>
+				<div class="sharefile-content-fileinfo-filename">
+					<i class="fa fa-windows" id="sharefile-content-fileinfo-filename-i"></i><span id="sharefile-content-fileinfo-filename-span"><!--node-v12.13.0-x64.msi--></span>
+				</div>
+				<div class="sharefile-content-fileinfo-filesize" id="sharefile-content-fileinfo-filesize">
+					<!--72.86MB-->
+				</div>
+				<div class="block-height-20px"></div>
+				<div class="sharefile-content-link-items">
+					<div class="sharefile-content-link-item">
+						<span id="sharefile-content-link-item-download-button">点击下载</span>
+					</div>
+					<div class="sharefile-content-link-item">
+						<span id="sharefile-content-link-item-download-button-8">点击下载</span>
+					</div>
+					<div class="sharefile-content-link-item">
+						<span id="sharefile-content-link-item-download-button-7">点击下载</span>
+					</div>
+					<div class="sharefile-content-link-item">
+						<span id="sharefile-content-link-item-copy-link-button">复制链接</span>
+					</div>
+					<div class="sharefile-content-link-item">
+						<span id="sharefile-content-link-item-sharefile-copy-button">点击转存文件，存到我的云盘！</span>
+					</div>
+					<div class="sharefile-content-link-item">
+						<span id="sharefile-content-link-item-client-download-button">下载速度不佳，云中转客户端！</span>
+					</div>
+					<div class="sharefile-content-link-item">
+						<span>注意网络防范，防止上当受骗！</span>
+					</div>
+					<div class="sharefile-content-link-item">
+						<span>拒绝不良信息，发现立即举报！</span>
+					</div>
+					<div class="sharefile-content-link-item">
+						<span>安装火绒安全，保护系统安全！</span>
+					</div>
+					<div class="sharefile-content-link-item">
+						<span id="sharefile-content-link-item-show-terms-button">内容侵犯权利，点击联系我们！</span>
+					</div>
+					<!--
+					<div class="block-height-20px"></div>
+					<div class="sharefile-content-link-item">
+						<a href="tencent://message/?uin=1070892573&Site=Sambow&Menu=yes" target="_blank">
+							<img src="https://tva1.sinaimg.cn/mw2000/005CbWF8gy1h01shw5tu9j30m805kdie.jpg">
+						</a>
+					</div>
+					-->
+				</div>
+				<div class="block-height-20px"></div>
+				<div class="block-height-20px"></div>
+				<div class="block-height-20px"></div>
+			</div>
+		</div>
+		<div class="setting setting-hide" id="setting">
+			<div class="setting-content">
+
+
+				<div class="block-height-20px"></div>
+				<div class="block-height-20px"></div>
+				<div class="element-hide-display-none">
+					<div class="setting-header-title-parent">
+						<div class="setting-header-title" style="background-color: #0ccf67;">
+							<i class="fa fa-weixin"></i>
+							<span>微信</span>
+						</div>
+					</div>
+
+					<div class="block-height-20px"></div>
+
+					<div class="setting-user-profile-picture-parent">
+						<div class="setting-user-profile-picture" id="setting-user-div-wechat-profile-picture" style="background-image: url('/img/wechat-profile-picture-default.png');">
+
+						</div>
+					</div>
+
+					<div class="block-height-20px"></div>
+
+					<div class="setting-header-title-parent">
+						<div class="setting-header-title" style="background-color: #f9ad08;">
+							<i class="fa fa-qq"></i>
+							<span>QQ</span>
+						</div>
+					</div>
+
+					<div class="block-height-20px"></div>
+
+					<div class="setting-user-profile-picture-parent">
+						<div class="setting-user-profile-picture" id="setting-user-div-qq-profile-picture" style="background-image: url('/img/qq-profile-picture-default.png');">
+
+						</div>
+					</div>
+
+					<div class="block-height-20px"></div>
+
+					<div class="setting-header-title-parent">
+						<div class="setting-header-title" style="background-color: #4c4c4c;">
+							<i class="fa fa-user-o"></i>
+							<span>用户信息</span>
+						</div>
+					</div>
+					<div class="block-height-20px"></div>
+
+					<div class="setting-user-text-parent">
+						<!--
+						<div class="setting-user-text">
+							<i class="fa fa-id-card"></i>
+							<span>2</span>
+						</div>
+						-->
+
+						<div class="setting-user-text">
+							<i class="fa fa-user-circle"></i>
+							<span  id="setting-user-span-username">1070892255</span>
+						</div>
+						<div class="block-height-10px"></div>
+						<div class="setting-user-text">
+							<i class="fa fa-qq"></i>
+							<span  id="setting-user-span-qq">1070892255</span>
+						</div>
+						<div class="block-height-10px"></div>
+						<div class="setting-user-text">
+							<i class="fa fa-weixin"></i>
+							<span id="setting-user-span-wechat-name">微信名</span>
+						</div>
+						<div class="block-height-10px"></div>
+						<div class="setting-user-text">
+							<i class="fa fa-jpy"></i>
+							<span id="setting-user-span-money">0.00</span>
+							<span>元</span>
+						</div>
+
+						<div class="block-height-10px"></div>
+
+						<div class="setting-user-text">
+							<i class="fa fa-info-circle"></i>
+							<span onclick="show_qqpay()">点击这里充值余额！</span>
+						</div>
+
+						<div class="block-height-20px"></div>
+
+
+					</div>
+
+
+
+
+					<div class="setting-header-title-parent">
+						<div class="setting-header-title" style="background-color: #0078d7;">
+							<i class="fa fa-user-circle"></i>
+							<span>会员信息</span>
+						</div>
+					</div>
+
+					<div class="block-height-20px"></div>
+
+
+					<div class="setting-user-text-parent">
+						<!--
+						<div class="setting-user-text">
+							<i class="fa fa-id-card"></i>
+							<span>2</span>
+						</div>
+						-->
+
+						<div class="setting-user-text">
+							<i class="fa fa-vimeo-square"></i>
+							<span id="setting-user-span-vipdatetime">0000-00-00 00:00:00</span>
+						</div>
+
+						<div id="setting-user-div-vipdatetime-warning-01" style="display: none;">
+
+							<div class="block-height-10px"></div>
+
+							<div class="setting-user-text">
+								<i class="fa fa-info-circle"></i>
+								<span>您的会员身份已经到期！</span>
+							</div>
+
+							<!--
+
+							<div class="block-height-10px"></div>
+
+							<div class="setting-user-text">
+								<i class="fa fa-info-circle"></i>
+								<span>会员到期不会影响您的文件请放心！</span>
+							</div>
+
+							-->
+
+
+						</div>
+
+						<div class="element-hide-display-none">
+
+							<div class="block-height-10px"></div>
+
+							<div class="setting-user-text">
+								<i class="fa fa-info-circle"></i>
+								<span id="setting-user-div-vipdatetime-warning-02">点击开通1天会员，仅需0.5元！</span>
+							</div>
+
+							<div class="block-height-10px"></div>
+
+							<div class="setting-user-text">
+								<i class="fa fa-info-circle"></i>
+								<span id="setting-user-div-vipdatetime-warning-03">点击开通1周会员，仅需3元！</span>
+							</div>
+
+							<div class="block-height-10px"></div>
+
+							<div class="setting-user-text">
+								<i class="fa fa-info-circle"></i>
+								<span id="setting-user-div-vipdatetime-warning-04">点击开通1月会员，仅需10元！</span>
+							</div>
+
+
+
+							<div class="block-height-10px"></div>
+
+							<div class="setting-user-text">
+								<i class="fa fa-info-circle"></i>
+								<span id="setting-user-div-vipdatetime-warning-05">点击开通1季会员，仅需28元！</span>
+							</div>
+
+						</div>
+
+						<div class="block-height-10px"></div>
+
+						<div class="setting-user-text">
+							<i class="fa fa-info-circle"></i>
+							<span id="setting-user-div-vipdatetime-warning-06">点击开通1年会员，仅需88元！</span>
+						</div>
+
+						<div class="element-hide-display-none">
+
+							<div class="block-height-10px"></div>
+
+							<div class="setting-user-text">
+								<i class="fa fa-info-circle"></i>
+								<span id="setting-user-div-vipdatetime-warning-07">点击开通5年会员，仅需388元！</span>
+							</div>
+
+							<div class="block-height-10px"></div>
+
+							<div class="setting-user-text">
+								<i class="fa fa-info-circle"></i>
+								<span id="setting-user-div-vipdatetime-warning-08">点击开通10年会员，仅需688元！</span>
+							</div>
+						</div>
+
+						<div class="block-height-20px"></div>
+
+					</div>
+
+
+
+
+
+
+					<!--
+
+					<div class="block-height-20px"></div>
+
+
+					<div class="setting-header-title-parent">
+						<div class="setting-header-title" style="background-color: #202124;">
+							<i class="fa fa-user-secret"></i>
+							<span>隐私设置</span>
+						</div>
+					</div>
+
+					<div class="block-height-20px"></div>
+
+					<div class="setting-user-text-parent">
+
+
+						<div class="block-height-10px"></div>
+
+						<div class="setting-user-text">
+							<i class="fa fa-share-alt"></i>
+							<span>点击开启匿名方式分享文件</span>
+						</div>
+
+
+
+					</div>
+
+					<div class="block-height-20px"></div>
+
+					-->
+
+				</div>
+
+
+				<div class="setting-header-title-parent">
+					<div class="setting-header-title" style="background-color: #fd5454;">
+						<i class="fa fa-cog"></i>
+						<span>系统功能</span>
+					</div>
+				</div>
+
+				<div class="block-height-20px"></div>
+
+				<div class="setting-user-text-parent">
+
+
+
+					<div class="block-height-10px"></div>
+
+					<div class="setting-user-text">
+						<i class="fa fa-cloud-upload"></i>
+						<span>大型文件</span>
+					</div>
+
+					<div class="block-height-10px"></div>
+
+					<div class="setting-user-text">
+						<i class="fa fa-download"></i>
+						<span>不限速度</span>
+					</div>
+
+					<div class="block-height-10px"></div>
+
+					<div class="setting-user-text">
+						<i class="fa fa-rocket"></i>
+						<span>极速秒传</span>
+					</div>
+
+					<div class="block-height-10px"></div>
+
+					<div class="setting-user-text">
+						<i class="fa fa-share-alt"></i>
+						<span>文件分享</span>
+					</div>
+
+					<div class="block-height-10px"></div>
+
+					<div class="setting-user-text">
+						<i class="fa fa-bolt"></i>
+						<span>离线下载</span>
+					</div>
+
+					<div class="block-height-10px"></div>
+
+
+					<div class="setting-user-text">
+						<i class="fa fa-cloud"></i>
+						<span>不限容量</span>
+					</div>
+
+					<div class="block-height-10px"></div>
+
+
+					<div class="setting-user-text">
+						<i class="fa fa-database"></i>
+						<span>全球备份</span>
+					</div>
+
+					<div class="block-height-10px"></div>
+
+					<div class="setting-user-text">
+						<i class="fa fa-podcast"></i>
+						<span>无限流量</span>
+					</div>
+
+					<div class="block-height-10px"></div>
+
+
+					<div class="setting-user-text">
+						<i class="fa fa-link"></i>
+						<span>文件外链</span>
+					</div>
+
+					<div class="block-height-10px"></div>
+
+
+					<div class="setting-user-text">
+						<i class="fa fa-server"></i>
+						<span>宽带联盟</span>
+					</div>
+
+					<div class="block-height-10px"></div>
+
+					<div class="setting-user-text">
+						<i class="fa fa-check-circle"></i>
+						<span>安全稳定</span>
+					</div>
+
+
+					<div class="block-height-10px"></div>
+
+					<div class="setting-user-text">
+						<i class="fa fa-info-circle"></i>
+						<span id="setting-user-div-vipdatetime-warning-03">敬请期待</span>
+					</div>
+
+					<div class="block-height-20px"></div>
+
+
+
+
+				</div>
+
+
+
+
+
+
+				<div class="block-height-20px"></div>
+				<div class="block-height-20px"></div>
+				<div class="block-height-20px"></div>
+
+
+			</div>
+
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+
+		</div>
+		<div class="terms-of-services terms-of-services-hide" id="terms-of-services">
+			<div class="terms-of-services-content">
+				<div class="login-content-header-buton">
+					<span id="terms-page-show-files-button"><i class="fa fa-chevron-left"></i>返回<span>
+				</div>
+				<h1>用户协议</h1>
+				<p>您注册、登录、使用云中转即证明您已同意以下协议内容。</p>
+				<p>严禁上传、存储、分享盗版侵权影视、侵权软件、盗版侵权影音图文、艺术文化作品、私人文件、重要文件、公司文件、有损国家形象、政治、机密、游戏外挂、暴力、淫秽、赌博、毒品、破坏社会道德等可能有关的文件内容！</p>
+				<p>所有用户必须在合法、符合中华人民共和国（中国大陆、中国香港、中国澳门和中国台湾）法律、法规的框架下合法使用云中转云盘的文件存储服务。严禁用户上传任何的违法、违规文件，否则将永久封号。本站将积极配合监察机关、管理部门进行、处理相关工作安排。</p>
+				<h1>安全责任</h1>
+				<p>我们将系统的安全性以及用户信息数据视为重中之重。无论我们在系统的安全方面付出了多少努力，它仍然可能会存在安全漏洞。如果您发现了一个漏洞，请您通过电子邮件的方式发送详情信息告知我们，我们都希望尽快修复它。本页表达了我们对系统安全和用户数据的重视。不要利用您所发现的漏洞或问题大量请求、爬虫收集或分布式服务拒绝攻击系统，也不要删除、修改或查看其他人的数据。在问题得到解决之前，不要分享、发布或透露任何有关问题的信息。</p>
+				<h1>侵权投诉</h1>
+				<p>云中转平台上所有的文件均由用户上传，任何文件不代表本站立场。如果您发现我们平台存储的文件存在违规或侵犯了您的权益，请您联系我们，将下载地址告知我们。一经发现违规用户，立即永久封号，零容忍。我们不会就您的举报对您采取法律行动。我们将严格保密处理您的举报，未经您的许可，不会将您的个人信息透露给第三方。</p>
+				<h1>联系我们</h1>
+				<p>联系方式：</p>
+				<p>电子邮件：admin@yunzhongzhuan.com</p>
+				<p>QQ：1070892255</p>
+				<p>办公地址：</p>
+				<p>山东白熊云网络科技有限公司</p>
+				<p>山东省临沂市兰山区北京路与算圣路交汇环球中心B座1708</p>
+				<p>上海括彩科技有限公司</p>
+				<p>上海市闵行区沪青平公路277号5楼</p>
+				<div class="block-height-20px"></div>
+				<div class="block-height-20px"></div>
+			</div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+		</div>
+		<div class="links">
+			<div class="block-height-10px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="links-items" id="links-items">
+				<div class="links-item">
+					<div class="links-item-title">
+						网站统计
+					</div>
+					<div class="links-item-links-items">
+						<div class="links-item-links-item">
+							<span>
+								<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+								<script>LA.init({id: "Je8SIflHlFR156BS",ck: "Je8SIflHlFR156BS"})</script>
+								<a href="https://v6.51.la/s/oGW3bX4ONIUTssc" target="_blank">网站统计</a>
+							</span>
+						</div>
+					</div>
+					<div class="block-height-20px"></div>
+				</div>
+				<!--
+				<div class="links-item"><div class="links-item-title">边缘加速</div><div class="links-item-links-items"><div class="links-item-links-item"><a href="tencent://message/?uin=1070892573&amp;Site=Sambow&amp;Menu=yes" target="_blank"><img src="https://tva1.sinaimg.cn/mw2000/005CbWF8gy1h029gm93cpj30dw0a0whq.jpg"></a></div><div class="block-height-20px"></div></div></div>
+				
+				<div class="links-item">
+					<div class="links-item-title">
+						服务提供
+					</div>
+					<div class="links-item-links-items">
+						<div class="links-item-links-item">
+							<span>华为云</span>
+						</div>
+						<div class="links-item-links-item">
+							<span>Cloudflare</span>
+						</div>
+					</div>
+					<div class="block-height-20px"></div>
+				</div>
+				<div class="links-item">
+					<div class="links-item-title">
+						搜索引擎
+					</div>
+					<div class="links-item-links-items">
+						<div class="links-item-links-item">
+							<span>搜狗搜索引擎</span>
+						</div>
+					</div>
+					<div class="block-height-20px"></div>
+				</div>
+				<div class="links-item">
+					<div class="links-item-title">
+						系统安全
+					</div>
+					<div class="links-item-links-items">
+						<div class="links-item-links-item">
+							<span>火绒安全</span>
+						</div>
+					</div>
+					<div class="block-height-20px"></div>
+				</div>
+				<div class="links-item">
+					<div class="links-item-title">
+						更多链接
+					</div>
+					<div class="links-item-links-items">
+						<div class="links-item-links-item">
+							<span>客户端</span>
+						</div>
+						<div class="links-item-links-item">
+							<span>官方群</span>
+						</div>
+						<div class="links-item-links-item">
+							<span>白熊站</span>
+						</div>
+						<div class="links-item-links-item">
+							<span>白熊图床</span>
+						</div>
+						<div class="links-item-links-item">
+							<span>极兔云</span>
+						</div>
+						<div class="links-item-links-item">
+							<span>全部文件</span>
+						</div>
+						<div class="links-item-links-item">
+							<span>用户协议</span>
+						</div>
+						<div class="links-item-links-item">
+							<span>侵权投诉</span>
+						</div>
+						<div class="links-item-links-item">
+							<span>联系我们</span>
+						</div>
+						<div class="links-item-links-item">
+							<span>退出登录</span>
+						</div>
+					</div>
+					<div class="block-height-20px"></div>
+				</div>
+				-->
+			</div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>
+			<div class="block-height-20px"></div>			
+		</div>
+		<div class="files-main-menu" id="files-main-menu">
+			<div class="files-main-menu-items">
+				<div class="files-main-menu-item" id="files-download-button">
+					<i class="fa fa-download"></i>下载
+				</div>
+				<div class="files-main-menu-item" id="files-share-button">
+					<i class="fa fa-share-alt"></i>分享
+				</div>
+				<div class="files-main-menu-item" id="files-link-button">
+					<i class="fa fa-link"></i>链接
+				</div>
+				<div class="files-main-menu-item" id="files-preview-button">
+					<i class="fa fa-play-circle"></i>预览
+				</div>
+				<div class="files-main-menu-item" id="files-cat-button">
+					<i class="fa fa-clipboard"></i>剪切
+				</div>
+				<div class="files-main-menu-item" id="files-paste-button">
+					<i class="fa fa-copy"></i>粘贴
+				</div>
+				<div class="files-main-menu-item" id="files-unpaste-button">
+					<i class="fa fa-copy"></i>不粘
+				</div>
+				<div class="files-main-menu-item" id="files-rename-button">
+					<i class="fa fa-pencil"></i>命名
+				</div>
+				<div class="files-main-menu-item" id="files-back-parent-folder-button">
+					<i class="fa fa-chevron-circle-left"></i>返回
+				</div>
+				<div class="files-main-menu-item" id="files-go-folder-button">
+					<i class="fa fa-chevron-circle-right"></i>前进
+				</div>
+				<div class="files-main-menu-item" id="files-upload-button">
+					<i class="fa fa-file-o"></i>添加
+				</div>
+				<div class="files-main-menu-item" id="files-create-button">
+					<i class="fa fa-folder-o"></i>目录
+				</div>
+				<div class="files-main-menu-item" id="files-client-download-button">
+					<i class="fa fa-windows"></i>桌面
+				</div>
+				<div class="files-main-menu-item" id="files-offline-button">
+					<i class="fa fa-bolt"></i>离线
+				</div>
+				<div class="files-main-menu-item" id="files-selection-all-button">
+					<i class="fa fa-square"></i>全选
+				</div>
+				<div class="files-main-menu-item" id="files-unselection-all-button">
+					<i class="fa fa-square-o"></i>不选
+				</div>
+				<div class="files-main-menu-item" id="files-delete-button">
+					<i class="fa fa-trash"></i>删除
+				</div>
+				<div class="files-main-menu-item" id="files-top-button">
+					<i class="fa fa-arrow-circle-up"></i>顶部
+				</div>
+				<div class="files-main-menu-item" id="files-bottom-button">
+					<i class="fa fa-arrow-circle-down"></i>加载
+				</div>
+				<div class="files-main-menu-item" id="files-reload-button">
+					<i class="fa fa-refresh"></i>刷新
+				</div>
+				<div class="files-main-menu-item" id="files-hide-menu-button">
+					<i class="fa fa-power-off"></i>取消
+				</div>
+			</div>
+		</div>
+		<div class="uploads-window" id="uploads-window">
+			<div class="uploads-items-top-button" id="uploads-items-top-button">
+				<i class="fa fa-arrow-circle-up"></i>
+			</div>
+			<div class="uploads-window-title" id="uploads-window-title">
+				上传列表
+			</div>
+			<div class="uploads-window-buttons">
+				<div class="uploads-window-button">
+					<i class="fa fa-trash"></i>
+				</div>
+				<div class="uploads-window-button" id="uploads-window-show-or-hide-button">
+					<i class="fa fa-minus"></i>
+				</div>
+				<div class="uploads-window-button" id="uploads-window-close-button">
+					<i class="fa fa-times"></i>
+				</div>
+			</div>
+			<div class="uploads-window-message">
+				登录即表示同意本平台《用户协议》，禁止上传违规文件，否则永久封号。
+			</div>
+			<div class="uploads-items-parent">
+				<div class="uploads-items" id="uploads-items">
+					<div class="uploads-items-scroll">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="upload-file-full-screen" id="upload-file-full-screen"></div>
+		<div class="element-hide-display-none">
+			<iframe id="upload-window-iframe-element"></iframe>
+			<div class="element-hide-display-none swal-button--cancel"></div>
+		</div>
+		<script type="text/javascript" src="./plug-in/sweetalert/sweetalert.min.js"></script>
+		<iframe id="yunzhongzhuan-cnzz-ip-iframe" style="width:0;height:0;overflow:hidden;opacity:0;"></iframe>
+		<script type="text/javascript" src="./js/script.js"></script>
+	</body>
+</html>
