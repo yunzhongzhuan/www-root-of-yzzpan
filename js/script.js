@@ -921,10 +921,12 @@ files_upload_button.onclick = function(){
 	files_options_items.className="files-options-items files-options-items-hide";
 	files_options_item_upload_files_input.click();
 };
+/*
 let files_options_items_item_offline_button = document.getElementById('files-options-items-item-offline-button');
 files_options_items_item_offline_button.onclick = function(){
 	new_offline_https();
 }
+*/
 let files_create_button = document.getElementById('files-create-button');
 files_create_button.onclick = function(){
 	swal("创建目录", {
@@ -947,6 +949,7 @@ files_create_button.onclick = function(){
 }
 // 离线下载
 function new_offline_https(){
+	return false;
 	let html_element = document.createElement('div');
 	html_element.innerHTML = '<input placeholder="URL" class="swal-content__input new-offline-url"><input placeholder="Referer" class="swal-content__input new-offline-referer"><input placeholder="User-Agent" class="swal-content__input new-offline-ua"><input placeholder="Cookie" class="swal-content__input new-offline-cookie"><input disabled placeholder="Get" class="swal-content__input">';
 	swal("离线下载", {
@@ -1051,7 +1054,7 @@ let files_options_item_create_folder_button = document.getElementById('files-opt
 files_options_item_create_folder_button.onclick = files_create_button.onclick;
 let files_offline_button = document.getElementById('files-offline-button');
 files_offline_button.onclick = function(){
-	new_offline_https()
+	new_offline_https();
 }
 let files_selection_all_button = document.getElementById('files-selection-all-button');
 //文件和文件夹全选
@@ -1107,7 +1110,8 @@ files_main.oncontextmenu=function(e){
 	menu_buttons_hide();
 	files_upload_button.style.display = "block";
 	files_create_button.style.display = "block";
-	files_offline_button.style.display = "block";
+	files_offline_button.style.display = "none";
+	// files_offline_button.style.display = "block";
 	files_selection_all_button.style.display = "block";
 	files_unselection_all_button.style.display = "block";
 	files_top_button.style.display = "block";
