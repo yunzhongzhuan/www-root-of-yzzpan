@@ -754,7 +754,8 @@ body{
 	opacity: 1;
 	overflow: hidden;
 	transition: width .3s ease,opacity .3s ease,padding-left .3s ease,border .3s ease;
-	background-image: url('/img/logo.png');
+	/*background-image: url('/img/logo.png');*/
+	background-image: url('//tva1.sinaimg.cn/mw2000/005CbWF8gy1h16lkvt5ubj30go0goq4h.jpg');
 	background-size: 200px;
 	background-position: calc(50% + 10px) center;
 	background-repeat: no-repeat;
