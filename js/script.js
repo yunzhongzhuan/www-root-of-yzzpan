@@ -31,7 +31,7 @@ let top_apps = [
 		"name":"云中转",
 		"link":"https://yzzpan.com/#files",
 		"description":"云中转-免费云盘不限容量不限速度不限流量全球网络传输文件",
-		"icon":"./img/logo.png",
+		"icon":"/img/logo.png",
 		"new_open":false
 	}
 ];
@@ -1947,7 +1947,7 @@ login_input_button_login.onclick = function(){
 				// 如果是账号密码不正确
 				if(ResultJSON["status_code"]==403){
 					let content_element = document.createElement('div');
-					content_element.innerHTML = '<img src="./img/wechat_bind_1.png" />';
+					content_element.innerHTML = '<img src="/img/wechat_bind_1.png" />';
 					// 要求绑定微信
 					swal({
 						title: "微信验证",
@@ -2812,7 +2812,7 @@ function show_qqpay(){
 	let text = '<p>打开手机QQ，登陆QQ号码<span class="qqpay-qq">' + userinfo["qq"] + '</span>，扫描二维码充值。</p><p>微信转入余额，最低充值1元。</p>';
 
 	let content_element = document.createElement('div');
-	content_element.innerHTML = text + '<img src="./img/QQShouKuanMa.png" />';
+	content_element.innerHTML = text + '<img src="/img/QQShouKuanMa.png" />';
 
 	// 微信登录
 	swal({
@@ -4693,7 +4693,7 @@ login_input_button_wechat_login.onclick = async function(){
 	}else{
 
 		let content_element = document.createElement('div');
-		content_element.innerHTML = '<img src="./img/wechat_qrcode_1.png" />';
+		content_element.innerHTML = '<img src="/img/wechat_qrcode_1.png" />';
 
 		// 微信登录
 		swal({
