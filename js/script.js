@@ -1,6 +1,6 @@
 // 纯原生 JavaScript 开发，见笑了。
 // 网站开发欢迎联系 qq 1070892573 用心出品
-// if(window.location.href.split("#").length==1&&document.referrer!='')window.location.href="/welcome/";
+// if(window.location.href.split("#").length==1&&document.referrer!='')window.location.href="/welcome/index.html";
 // try{document.domain="yzzpan.com";}catch(e){};
 /*if(document.domain!=="yzzpan.com"){
 	window.location.href=window.location.href.replace(/www./,'');
@@ -1896,7 +1896,7 @@ function logout(){
 let nav_files_button = document.getElementById('nav-files-button');
 let nav_home_button = document.getElementById('nav-home-button');
 nav_home_button.onclick = function(){
-	window.open('/welcome/');
+	window.open('/welcome/index.html');
 }
 // 如果正在验证微信，窗口还没关闭
 let wechat_bind_auto_click_login_button_timeout;
@@ -2004,7 +2004,7 @@ for(let i=0;i<nav_items_item_items.length;i++){
 
 		// 如果是主页按钮
 		if(this.id == "nav-home-button"){
-			window.open('/welcome/');
+			window.open('/welcome/index.html');
 			return false;
 		}
 		// 如果是切换语言
@@ -3394,7 +3394,7 @@ let links_data = [
 			{
 				"name":"v4.0.2",
 				"new_open":true,
-				"link":"https://yzzpan.com/welcome/"
+				"link":"https://yzzpan.com/welcome/index.html"
 			}
 		]
 	},
@@ -4241,7 +4241,7 @@ let workers;
 						dangerMode: true,
 					}).then((willDelete) => {
 					  if (willDelete) {
-						window.open('/welcome/#mail-talk-position');
+						window.open('/welcome/index.html#mail-talk-position');
 					  }
 					});
 
@@ -4477,7 +4477,7 @@ let workers;
 		if (willDelete) {
 			// window.location.href = "#terms";
 			// window.location.href = "#terms";
-			window.open('/welcome/#mail-talk-position');
+			window.open('/welcome/index.html#mail-talk-position');
 			}
 		});
       }
@@ -4998,7 +4998,7 @@ function query_all_files_sum_size(){
 				upload_lock_title = "配额用完";
 				upload_lock_buttons = ["取消","查看"];
 				upload_lock_functions = function(){
-					window.open('https://yzzpan.com/welcome/#nav-pricing-position');
+					window.open('https://yzzpan.com/welcome/index.html#nav-pricing-position');
 				}
 			}else{
 				upload_lock = false;
