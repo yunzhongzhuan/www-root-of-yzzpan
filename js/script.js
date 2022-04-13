@@ -3119,7 +3119,7 @@ window.onload = function(){
 	reload_sharefile();
 	
 	setTimeout(function(){
-		yunzhongzhuan_cnzz_ip_iframe.src = "https://yunzhongzhuan.com/51la_ip";
+		yunzhongzhuan_cnzz_ip_iframe.src = "https://yunzhongzhuan.com/51la_ip.html";
 	},1000);
 
 }
