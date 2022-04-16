@@ -247,7 +247,7 @@ back_parent_folder_button.ondblclick = function(){
 		get_folders_loadover = false;
 		get_files_loadover = false;
 		page_scroll_height_function_locked = false;
-		// get_files();
+		get_files();
 	},( ( files_num + 3) * 10 / 2 ) + 30 );
 }
 back_parent_folder_button.getElementsByClassName('files-item-name')[0].getElementsByTagName('span')[0].onclick = back_parent_folder_button.ondblclick;
@@ -377,7 +377,7 @@ function push_folders_to_files_page(folders_items,isPrepend){
 				get_files_loadover = false;
 				page_scroll_height_function_locked = false;
 				files_search_input.value="";
-				// get_files();
+				get_files();
 			},( ( files_num + 3) * 10 / 2 ) + 30 );
 		}
 		div.name_span_element = div.name_element.getElementsByTagName('span')[0];
