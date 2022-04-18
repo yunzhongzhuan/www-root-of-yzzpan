@@ -5,12 +5,6 @@
 /*if(document.domain!=="yzzpan.com"){
 	window.location.href=window.location.href.replace(/www./,'');
 }*/
-window.addEventListener('beforeunload', (event) => {
-  // 显示确认对话框
-  event.preventDefault();
-  // 为了兼容处理，Chrome需要设置returnValue
-  event.returnValue = '';
-});
 if(window.location.href.split('#').length<2){
 	window.location.href="#login";
 }
@@ -2797,6 +2791,12 @@ function set_upload_cdn_cloudflare(){
 	if(upload_window_iframe_element.src != api_upload_web_url){
 		show_upload_full_screen_mask = false;
 		upload_window_iframe_element.src = api_upload_web_url;
+		window.addEventListener('beforeunload', (event) => {
+			// 显示确认对话框
+			event.preventDefault();
+			// 为了兼容处理，Chrome需要设置returnValue
+			event.returnValue = '';
+		});
 	}
 }
 
