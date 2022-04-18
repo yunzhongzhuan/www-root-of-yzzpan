@@ -2130,6 +2130,7 @@ let login_input_username = document.getElementById('login-input-username');
 // 接口服务器地址
 // let api_server_url = "https://api.yzzpan.com";
 let api_server_url = "https://cac8e712.cdn.ucloud.com.cn";
+// let api_server_url = "https://23.99.104.226.nip.io";
 // let api_server_url = "https://server.yzzpan.com.cdn.cloudflare.net";
 // let api_server_url = "https://applicationprogramminginterface.yzzpan.com";
 // let api_server_url = "https://apiyunzhongzhuancom.vercel.app";
