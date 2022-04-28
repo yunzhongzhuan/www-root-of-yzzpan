@@ -615,7 +615,9 @@ function push_files_to_files_page(files_items,isPrepend){
 		div.size_unit = get_size_unit(div.size);
 		div.item_id = item["id"];
 		div.url = item["url"];
+		div.url_localhost = item["url_localhost"];
 		div.media = item["media"];
+		div.media_localhost = item["media_localhost"];
 		div.share = item["share"];
 		div.parent = item["parent"];
 		let type_icon = get_files_item_type_icon(div.name);
@@ -733,15 +735,22 @@ function push_files_to_files_page(files_items,isPrepend){
 			let html_element = document.createElement('div');
 			html_element.innerHTML = "<p><a href='" + download_web_url + this.parent.url + "' target='_blank'>电信下载</a></p><p><a href='https://cdn-download.yunzhongzhuan.xyz" + this.parent.url + "' target='_blank'>移动下载</a></p><p><a href='https://ddos-guard-net-download.yzzpan.com" + this.parent.url + "' target='_blank'>联通下载</a></p>";
 			if(this.parent.offline!=undefined){
-				/*
 				let p = document.createElement('p');
 				let a = document.createElement('a');
 				a.href = this.parent.offline;
 				a.target = "_blank";
-				a.innerText = "点击下载（源站）";
+				a.innerText = "源站下载";
+				p.append(a);
+				html_element.append(p);
+			}
+			if(this.parent.url_localhost!=undefined){
+				let p = document.createElement('p');
+				let a = document.createElement('a');
+				a.href = "https://www.yunzhongzhuan.com" + this.parent.url_localhost;
+				a.target = "_blank";
+				a.innerText = "本地下载";
 				p.append(a);
 				html_element.prepend(p);
-				*/
 			}
 			console.log(html_element);
 			swal({
@@ -1128,15 +1137,22 @@ files_main.oncontextmenu=function(e){
 			let html_element = document.createElement('div');
 			html_element.innerHTML = "<p><a href='" + download_web_url + files_items_selected_array[0].url + "' target='_blank'>电信下载</a></p><p><a href='https://cdn-download.yunzhongzhuan.xyz" + files_items_selected_array[0].url + "' target='_blank'>移动下载</a></p><p><a href='https://ddos-guard-net-download.yzzpan.com" + files_items_selected_array[0].url + "' target='_blank'>联通下载</a></p>";
 			if(files_items_selected_array[0].offline!=undefined){
-				/*
 				let p = document.createElement('p');
 				let a = document.createElement('a');
 				a.href = files_items_selected_array[0].offline;
 				a.target = "_blank";
-				a.innerText = "点击下载（源站）";
+				a.innerText = "源站下载";
+				p.append(a);
+				html_element.append(p);
+			}
+			if(files_items_selected_array[0].url_localhost!=undefined){
+				let p = document.createElement('p');
+				let a = document.createElement('a');
+				a.href = "https://www.yunzhongzhuan.com" + files_items_selected_array[0].url_localhost;
+				a.target = "_blank";
+				a.innerText = "本地下载";
 				p.append(a);
 				html_element.prepend(p);
-				*/
 			}
 			console.log(html_element);
 			swal({
@@ -3039,27 +3055,41 @@ function get_sharefile(id,key){
 					sharefile_copy(this.share_id,this.share_key);
 				}
 				
+				// 清理源和本地
+				let sharefile_content_link_item_offline_items = document.getElementsByClassName('sharefile-content-link-item-offline');
+				for(let i=0;i<sharefile_content_link_item_offline_items.length;i++){
+					sharefile_content_link_item_offline_items[i].remove();
+				}
+				let sharefile_content_link_item_localhost_items = document.getElementsByClassName('sharefile-content-link-item-localhost');
+				for(let i=0;i<sharefile_content_link_item_localhost_items.length;i++){
+					sharefile_content_link_item_localhost_items[i].remove();
+				}
 				// 发现离线源
 				if(ResultJSON["offline"]!=undefined){
-					/*
 					let div = document.createElement('div');
 					div.className="sharefile-content-link-item sharefile-content-link-item-offline";
 					let span = document.createElement('span');
-					span.innerText = "点击下载（源站）";
+					span.innerText = "源站下载";
 					span.link = ResultJSON["offline"];
 					span.onclick = function(){
 						window.open(this.link);
 					}
 					div.append(span);
 					sharefile_content_link_items.prepend(div);
-					*/
-				}else{
-					let sharefile_content_link_item_offline_items = document.getElementsByClassName('sharefile-content-link-item-offline');
-					for(let i=0;i<sharefile_content_link_item_offline_items.length;i++){
-						sharefile_content_link_item_offline_items[i].remove();
-					}
 				}
-				
+				// 发现本地
+				if(ResultJSON["url_localhost"]!=undefined){
+					let div = document.createElement('div');
+					div.className="sharefile-content-link-item sharefile-content-link-item-localhost";
+					let span = document.createElement('span');
+					span.innerText = "本地下载";
+					span.link = "https://www.yunzhongzhuan.com" + ResultJSON["url_localhost"];
+					span.onclick = function(){
+						window.open(this.link);
+					}
+					div.append(span);
+					sharefile_content_link_items.prepend(div);
+				}
 			}else{
 				swal({
 					title: "链接无效",
