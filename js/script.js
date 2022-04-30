@@ -426,14 +426,14 @@ function push_folders_to_files_page(folders_items,isPrepend){
 }
 // 网站首页添加文件等任务操作
 let files_options_items = document.getElementById('files-options-items');
-let files_options_item_client_download_button = document.getElementById('files-options-item-client-download-button');
+/*let files_options_item_client_download_button = document.getElementById('files-options-item-client-download-button');
 files_options_item_client_download_button.onclick = function(){
 	setTimeout(function(){
 		files_options_items.show=false;
 		files_options_items.className="files-options-items files-options-items-hide";
 	},10);
 	window.open('//client.yzzpan.com/');
-}
+}*/
 let files_client_download_button = document.getElementById('files-client-download-button');
 files_client_download_button.onclick = function(){
 	window.open('//client.yzzpan.com/');
