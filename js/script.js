@@ -3493,9 +3493,9 @@ let links_data = [
 				"link":"https://yzzpan.com/#files"
 			},
 			{
-				"name":"www.kuocaitm.net",
+				"name":"kuocaitm.net",
 				"new_open":true,
-				"link":"https://www.kuocaitm.net/"
+				"link":"https://kuocaitm.net/"
 			}
 			/*,
 			{
