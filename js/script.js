@@ -1912,6 +1912,9 @@ function logout(){
 let nav_files_button = document.getElementById('nav-files-button');
 let nav_home_button = document.getElementById('nav-home-button');
 nav_home_button.onclick = function(){
+	if(navigator.language.toLowerCase().indexOf('cn')==-1){
+		return false;
+	}
 	window.open('/welcome/index.html');
 }
 // 如果正在验证微信，窗口还没关闭
@@ -3416,7 +3419,7 @@ let uploads_items_top_button = document.getElementById('uploads-items-top-button
 uploads_items_top_button.onclick = scroll_top;
 // 右侧连接数据
 let links_data = [
-	{
+	/*{
 		"title":"系统通知",
 		"data":[
 			{
@@ -3445,7 +3448,7 @@ let links_data = [
 				"link":"https://space.bilibili.com/326368481"
 			}
 		]
-	},
+	},*/
 	{
 		"title":"安全管理",
 		"data":[
@@ -3480,9 +3483,9 @@ let links_data = [
 		"title":"官方网站",
 		"data":[
 			{
-				"name":"www.kuocaitm.net",
+				"name":"yunzhongzhuan.com",
 				"new_open":true,
-				"link":"https://www.kuocaitm.net/"
+				"link":"https://yunzhongzhuan.com/#files"
 			},
 			{
 				"name":"yzzpan.com",
@@ -3490,25 +3493,21 @@ let links_data = [
 				"link":"https://yzzpan.com/#files"
 			},
 			{
-				"name":"yunzhongzhuan.com",
+				"name":"www.kuocaitm.net",
 				"new_open":true,
-				"link":"https://yunzhongzhuan.com/#files"
-			},
+				"link":"https://www.kuocaitm.net/"
+			}
+			/*,
 			{
 				"name":"pc.yunzhongzhuan.com",
 				"new_open":true,
 				"link":"https://pc.yunzhongzhuan.com/"
-			}
+			}*/
 		]
 	},
 	{
 		"title":"服务提供",
 		"data":[
-			{
-				"name":"极兔云CDN",
-				"new_open":true,
-				"link":"https://www.jitucdn.com/"
-			},
 			{
 				"name":"华为云",
 				"new_open":true,
@@ -3518,6 +3517,11 @@ let links_data = [
 				"name":"Cloudflare",
 				"new_open":true,
 				"link":"https://www.cloudflare.com"
+			},
+			{
+				"name":"极兔云CDN",
+				"new_open":true,
+				"link":"https://www.jitucdn.com/"
 			}
 		]
 	},
@@ -3560,7 +3564,7 @@ let links_data = [
 				"link":"https://www.wepe.com.cn"
 			}
 		]
-	},
+	}/*,
 	{
 		"title":"更多链接",
 		"data":[
@@ -3569,13 +3573,13 @@ let links_data = [
 				"new_open":true,
 				"link":"https://client.yzzpan.com/"
 			},
-			/*{
+			{
 				"name":"纸飞机",
 				"new_open":true,
 				"link":"https://t.me/yunzhongzhuan"
-			}*/
+			}
 		]
-	}
+	}*/
 ];
 setTimeout(document_write_links,1,links_data);
 let links_items = document.getElementById('links-items');
