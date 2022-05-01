@@ -3161,7 +3161,7 @@ window.onload = function(){
 	reload_sharefile();
 	
 	setTimeout(function(){
-		yunzhongzhuan_cnzz_ip_iframe.src = "/51la_ip.html";
+		// yunzhongzhuan_cnzz_ip_iframe.src = "/51la_ip.html";
 	},1000);
 
 }
