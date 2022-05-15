@@ -2494,6 +2494,59 @@ setting_user_div_vipdatetime_warning_08.onclick = function(){
 	});
 }
 
+
+let use_qq_qr_code_login = false;
+
+function show_verify_code(){
+
+	let html_element = document.createElement('div');
+	html_element.innerHTML = '<img class="verify-pass-img" src="'+api_server_url+'/php/v4/verify_code.php?session_id=' + userinfo["session_id"] + '&t=' + new Date().getTime() + '"/><br/><br/><input placeholder="请输入图片中12位验证文字！" autocomplete="off" class="swal-content__input verify-pass-input">';
+	swal({
+		title: "请先验证！",
+		icon: "warning",
+		text: "请输入图片中12位验证文字！",
+		content: html_element,
+		closeOnClickOutside: false,
+		buttons:["放弃","提交"],
+		dangerMode: true,
+	}).then((willDelete) => {
+		if(willDelete){
+			let verify_pass_input_items = document.getElementsByClassName('verify-pass-input');
+			if(verify_pass_input_items.length>0){
+				let verify_pass_input = verify_pass_input_items[0];
+				if(verify_pass_input.value.length>0&&verify_pass_input.value.length==12){
+					let xmlhttp = new XMLHttpRequest();
+					xmlhttp.onreadystatechange=function(){
+						if(xmlhttp.readyState==4 && xmlhttp.status==200){
+							let ResultJSON = JSON.parse(xmlhttp.responseText);
+							if(ResultJSON["status"]){
+								get_userinfo();
+							}else{
+								swal({
+									title: "输入错误！",
+									text: "请重新输入！",
+									icon: "error",
+									dangerMode: true,
+									closeOnClickOutside: false,
+								}).then((willDelete) => {
+									show_verify_code();
+								});
+							}
+						}
+					}
+					xmlhttp.open("GET",api_server_url+"/php/v4/verify_code.php?session_id="+userinfo["session_id"]+"&submit_verify_code="+verify_pass_input.value+"&t="+new Date().getTime(),true);
+					xmlhttp.withCredentials = true;
+					xmlhttp.send();
+				}else{
+					show_verify_code();
+				}
+			}
+		}
+	});
+
+}
+
+
 let nav_setting_button = document.getElementById('nav-setting-button');
 let setting_user_span_wechat_name = document.getElementById('setting-user-span-wechat-name');
 let setting_user_span_username = document.getElementById('setting-user-span-username');
@@ -2631,17 +2684,41 @@ function get_userinfo(){
 					return false;
 				}
 			}else{
-				// 跳转至登录页面
-				// nav_buttons_unset_selected();
-				// forget_password_page_show_login_button.click();
-				userinfo["wechat_login_id"] = ResultJSON["wechat_login_id"];
-				userinfo["qq_login_id"] = ResultJSON["qq_login_id"];
-				if(userinfo["qq_login_id"]==undefined||userinfo["qq_login_id"]=="0"||userinfo["qq_login_id"]==0||userinfo["qq_login_id"].length<5){
-					
-						setTimeout(get_userinfo,1000);
-					
+				
+				if(
+					ResultJSON["verify_pass"]!=undefined
+					&&
+					ResultJSON["verify_pass"] == false
+				){
+					// show_verify_code();
+				}else{
+					// 跳转至登录页面
+					// nav_buttons_unset_selected();
+					// forget_password_page_show_login_button.click();
+					userinfo["wechat_login_id"] = ResultJSON["wechat_login_id"];
+					userinfo["qq_login_id"] = ResultJSON["qq_login_id"];
+					if(userinfo["qq_login_id"]==undefined||userinfo["qq_login_id"]=="0"||userinfo["qq_login_id"]==0||userinfo["qq_login_id"].length<5){
+
+							setTimeout(get_userinfo,1000);
+
+					}
 				}
 			}
+			
+			if(
+				ResultJSON["verify_pass"]!=undefined
+				&&
+				ResultJSON["verify_pass"] == false
+			){
+				if(window.location.href.indexOf("#login")!=-1){
+					if(
+						use_qq_qr_code_login
+					){
+						show_verify_code();
+					}
+				}
+			}
+			
 			// 判断是否在设置页面
 			if(window.location.href.indexOf("#setting")!=-1&& ( 1 || setting.className.indexOf("setting-hide")!=-1 ) ){
 				// pages_hide();
@@ -4805,6 +4882,8 @@ function qq_login_id_set_timeout_function(){
 let login_input_button_qq_login = document.getElementById('login-input-button-qq-login');
 login_input_button_qq_login.onclick = async function(){
 
+	use_qq_qr_code_login = true;
+	
 	if(userinfo["qq_login_id"]==undefined||userinfo["qq_login_id"]=="0"||userinfo["qq_login_id"].length<5){
 		get_userinfo();
 		return false;
