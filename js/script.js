@@ -2503,7 +2503,7 @@ function show_verify_code(){
 	swal({
 		title: "请先验证！",
 		icon: "warning",
-		text: "请输入图片中12位验证文字！",
+		text: "请输入图片中12位验证文字！/r/n直接点击图片即可刷新。",
 		content: html_element,
 		closeOnClickOutside: false,
 		buttons:["放弃","提交"],
@@ -2542,6 +2542,14 @@ function show_verify_code(){
 			}
 		}
 	});
+	
+	let verify_pass_img_items = document.getElementsByClassName('verify-pass-img');
+	if(verify_pass_img_items.length>0){
+		let verify_pass_img = verify_pass_img_items[0];
+		verify_pass_img.onclick = function(){
+			this.src = api_server_url+'/php/v4/verify_code.php?session_id=' + userinfo["session_id"] + '&t=' + new Date().getTime();
+		}
+	}
 
 }
 
