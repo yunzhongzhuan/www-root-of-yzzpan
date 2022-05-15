@@ -5,6 +5,9 @@
 /*if(document.domain!=="yzzpan.com"){
 	window.location.href=window.location.href.replace(/www./,'');
 }*/
+if(navigator.language.toLowerCase().indexOf('cn')!=-1){
+	alert('服务接口受到分布式网络攻击，云中转平台短暂维护中。网络绝非法外之地，我司已记录攻击信息。给您带来不便，我们深感抱歉！加入qq群706655028及时了解最新通知。');
+}
 if(window.location.href.split('#').length<2){
 	window.location.href="#login";
 }
