@@ -2498,9 +2498,6 @@ setting_user_div_vipdatetime_warning_08.onclick = function(){
 let use_qq_qr_code_login = false;
 
 function show_verify_code(){
-	
-	use_qq_qr_code_login = false;
-
 	let html_element = document.createElement('div');
 	html_element.innerHTML = '<img class="verify-pass-img" src="'+api_server_url+'/php/v4/verify_code.php?session_id=' + userinfo["session_id"] + '&t=' + new Date().getTime() + '"/><br/><br/><input placeholder="请输入图片中12位验证文字！" autocomplete="off" class="swal-content__input verify-pass-input">';
 	swal({
@@ -2599,6 +2596,7 @@ function get_userinfo(){
 				document.cookie = "PHPSESSID=" + userinfo["session_id"] + ";path=/;expires="+cookie_date.toUTCString();
 			}
 			if(ResultJSON["status"]){
+				use_qq_qr_code_login = false;
 				setTimeout(query_all_files_sum_size,100);
 				// 关闭提示框
 				let swal_element = document.getElementsByClassName('swal-overlay--show-modal');
