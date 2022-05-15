@@ -2501,7 +2501,7 @@ function show_verify_code(){
 	swal({
 		title: "请先验证！",
 		icon: "warning",
-		text: "请输入图片中12位验证文字！/r/n直接点击图片即可刷新。",
+		text: "请输入图片中12位验证文字！\r\n直接点击图片即可刷新。",
 		content: html_element,
 		closeOnClickOutside: false,
 		buttons:["放弃","提交"],
