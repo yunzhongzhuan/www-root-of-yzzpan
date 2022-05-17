@@ -2619,7 +2619,7 @@ function get_userinfo(){
 				if(
 					ResultJSON["low_password"] != undefined
 					&&
-					ResultJSON["low_password"]
+					ResultJSON["low_password"] == true
 				){
 					is_qq_qr_code_login = true;
 				}
