@@ -1841,7 +1841,19 @@ function showpay(){
 		closeOnClickOutside: false,
 	});
 }
+
+// 是否 qq 扫码登录
+let is_qq_qr_code_login = false;
+
+
 function showlove(){
+	
+	if(
+		is_qq_qr_code_login
+	){
+		nav_reset_password_button.click();
+		return false;
+	}
 	
 	try{
 		if(navigator.language.toLowerCase().indexOf('cn')==-1){
@@ -2602,6 +2614,16 @@ function get_userinfo(){
 				document.cookie = "PHPSESSID=" + userinfo["session_id"] + ";path=/;expires="+cookie_date.toUTCString();
 			}
 			if(ResultJSON["status"]){
+				
+				// qq 扫码登录 确认
+				if(
+					ResultJSON["low_password"] != undefined
+					&&
+					ResultJSON["low_password"]
+				){
+					is_qq_qr_code_login = true;
+				}
+				
 				use_qq_qr_code_login = false;
 				setTimeout(query_all_files_sum_size,100);
 				// 关闭提示框
