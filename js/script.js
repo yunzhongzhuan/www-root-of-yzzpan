@@ -2713,6 +2713,8 @@ function get_userinfo(){
 				}
 			}else{
 				
+				is_qq_qr_code_login = false;
+				
 				if(
 					ResultJSON["verify_pass"]!=undefined
 					&&
