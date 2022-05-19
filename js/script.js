@@ -734,7 +734,7 @@ function push_files_to_files_page(files_items,isPrepend){
 		div.menu_download_element.parent = div;
 		div.menu_download_element.onclick = function(){
 			let html_element = document.createElement('div');
-			html_element.innerHTML = "<p><a href='" + download_web_url + this.parent.url + "' target='_blank'>电信下载</a></p><p><a href='https://cdn-download.yunzhongzhuan.xyz" + this.parent.url + "' target='_blank'>移动下载</a></p><p><a href='https://ddos-guard-net-download.yzzpan.com" + this.parent.url + "' target='_blank'>联通下载</a></p>";
+			html_element.innerHTML = "<p><a href='" + download_web_url + this.parent.url + "' target='_blank'>电信下载</a></p><p><a href='https://cdn-download.yunzhongzhuan.xyz" + this.parent.url + "' target='_blank'>移动下载</a></p><p><a href='https://ddos-guard-net-download.yzzpan.com" + this.parent.url + "' target='_blank'>联通下载</a></p><p><a href='https://download.yunzhongzhuan.eu.org" + this.parent.url + "' target='_blank'>备用下载</a></p><p><a href='https://download.yantudefengjing.eu.org" + this.parent.url + "' target='_blank'>备用下载</a></p>";
 			if(this.parent.offline!=undefined){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
@@ -1136,7 +1136,7 @@ files_main.oncontextmenu=function(e){
 		files_link_button.style.display = "block";
 		files_download_button.onclick = function(){
 			let html_element = document.createElement('div');
-			html_element.innerHTML = "<p><a href='" + download_web_url + files_items_selected_array[0].url + "' target='_blank'>电信下载</a></p><p><a href='https://cdn-download.yunzhongzhuan.xyz" + files_items_selected_array[0].url + "' target='_blank'>移动下载</a></p><p><a href='https://ddos-guard-net-download.yzzpan.com" + files_items_selected_array[0].url + "' target='_blank'>联通下载</a></p>";
+			html_element.innerHTML = "<p><a href='" + download_web_url + files_items_selected_array[0].url + "' target='_blank'>电信下载</a></p><p><a href='https://cdn-download.yunzhongzhuan.xyz" + files_items_selected_array[0].url + "' target='_blank'>移动下载</a></p><p><a href='https://ddos-guard-net-download.yzzpan.com" + files_items_selected_array[0].url + "' target='_blank'>联通下载</a></p><p><a href='https://download.yunzhongzhuan.eu.org" + files_items_selected_array[0].url + "' target='_blank'>备用下载</a></p><p><a href='https://download.yantudefengjing.eu.org" + files_items_selected_array[0].url + "' target='_blank'>备用下载</a></p>";
 			if(files_items_selected_array[0].offline!=undefined){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
@@ -3125,6 +3125,8 @@ let sharefile_content_fileinfo_filesize = document.getElementById('sharefile-con
 let sharefile_content_link_item_download_button = document.getElementById('sharefile-content-link-item-download-button');
 let sharefile_content_link_item_download_button_7 = document.getElementById('sharefile-content-link-item-download-button-7');
 let sharefile_content_link_item_download_button_8 = document.getElementById('sharefile-content-link-item-download-button-8');
+let sharefile_content_link_item_download_button_9 = document.getElementById('sharefile-content-link-item-download-button-9');
+let sharefile_content_link_item_download_button_10 = document.getElementById('sharefile-content-link-item-download-button-10');
 let sharefile_content_link_item_copy_link_button = document.getElementById('sharefile-content-link-item-copy-link-button');
 // sharefile_content_link_item_copy_link_button.style.display = "none";
 let sharefile_content_link_item_sharefile_copy_button = document.getElementById('sharefile-content-link-item-sharefile-copy-button');
@@ -3149,6 +3151,8 @@ function get_sharefile(id,key){
 				sharefile_content_link_item_download_button.link = ResultJSON["url"];
 				sharefile_content_link_item_download_button_7.link = ResultJSON["url"];
 				sharefile_content_link_item_download_button_8.link = ResultJSON["url"];
+				sharefile_content_link_item_download_button_9.link = ResultJSON["url"];
+				sharefile_content_link_item_download_button_10.link = ResultJSON["url"];
 				sharefile_content_link_item_copy_link_button.link = ResultJSON["url"];
 				sharefile_content_link_item_copy_link_button.onclick = function(){
 					show_link(download_web_url + this.link);
@@ -3162,6 +3166,12 @@ function get_sharefile(id,key){
 				}
 				sharefile_content_link_item_download_button_8.onclick = function() {
 					window.open("https://cdn-download.yunzhongzhuan.xyz" + this.link);
+				}
+				sharefile_content_link_item_download_button_9.onclick = function() {
+					window.open("https://download.yunzhongzhuan.eu.org" + this.link);
+				}
+				sharefile_content_link_item_download_button_10.onclick = function() {
+					window.open("https://download.yantudefengjing.eu.org" + this.link);
 				}
 				sharefile_content_link_item_sharefile_copy_button.share_id = id;
 				sharefile_content_link_item_sharefile_copy_button.share_key = key;
