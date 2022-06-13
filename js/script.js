@@ -1938,6 +1938,25 @@ function wechat_bind_auto_click_login_button(){
 		login_input_button_login.click();
 	};
 }
+// 提前加载上传，获取域名IP
+let cdn_cgi_trace_upload_locked = false;
+function cdn_cgi_trace_upload(){
+	if(cdn_cgi_trace_upload_locked){
+		return false;
+	}
+	let xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function(){
+		if(xmlhttp.readyState==4 && xmlhttp.status==200){
+			console.log(xmlhttp.responseText);
+			cdn_cgi_trace_upload_locked = true;
+		}
+		if(xmlhttp.readyState==4){
+			setTimeout(cdn_cgi_trace_upload,100);
+		}
+	}
+	xmlhttp.open("GET","https://upload.yunzhongzhuan.com/cdn-cgi/trace",true);
+	xmlhttp.send();
+}
 // 登录按钮
 let login_input_button_login = document.getElementById('login-input-button-login');
 login_input_button_login.onclick = function(){
@@ -1976,6 +1995,7 @@ login_input_button_login.onclick = function(){
 				// pages_hide();
 				// nav_files_button.click();
 				setTimeout(showlove,500);
+				setTimeout(cdn_cgi_trace_upload,100);
 			}else{
 				// 如果是账号密码不正确
 				if(ResultJSON["status_code"]==403){
@@ -2604,7 +2624,7 @@ function get_userinfo(){
 			setTimeout(function(){
 				get_userinfo_locked = false;
 			},200);
-			
+			setTimeout(cdn_cgi_trace_upload,100);
 		}
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
 			let ResultJSON = JSON.parse(xmlhttp.responseText);
