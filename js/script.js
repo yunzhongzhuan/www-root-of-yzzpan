@@ -617,6 +617,7 @@ function push_files_to_files_page(files_items,isPrepend){
 		div.item_id = item["id"];
 		div.url = item["url"];
 		div.url_localhost = item["url_localhost"];
+		div.url_public_link = public_link_hostname + item["public_link"];
 		div.media = item["media"];
 		div.media_localhost = item["media_localhost"];
 		div.share = item["share"];
