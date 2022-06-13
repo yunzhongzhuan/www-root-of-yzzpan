@@ -2624,7 +2624,7 @@ function get_userinfo(){
 			setTimeout(function(){
 				get_userinfo_locked = false;
 			},200);
-			setTimeout(cdn_cgi_trace_upload,100);
+			
 		}
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
 			let ResultJSON = JSON.parse(xmlhttp.responseText);
@@ -2634,6 +2634,8 @@ function get_userinfo(){
 				document.cookie = "PHPSESSID=" + userinfo["session_id"] + ";path=/;expires="+cookie_date.toUTCString();
 			}
 			if(ResultJSON["status"]){
+				
+				setTimeout(cdn_cgi_trace_upload,100);
 				
 				// qq 扫码登录 确认
 				if(
