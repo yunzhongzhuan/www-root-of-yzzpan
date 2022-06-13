@@ -763,9 +763,38 @@ function push_files_to_files_page(files_items,isPrepend){
 			});
 			// window.open(download_web_url + this.parent.url);
 		}
-		div.menu_link_button = div.getElementsByClassName('files-item-menu-item-link-button')[0];
-		div.menu_link_button.parent = div;
-		div.menu_link_button.onclick = function(){
+		// 外链
+		div.menu_public_link_element = div.getElementsByClassName('files-item-menu-item-public-link-button')[0];
+		div.menu_public_link_element.parent = div;
+		div.menu_public_link_element.onclick = function(){
+			if( public_link_hostname.length < 10 || public_link_hostname == ""){
+				swal({
+					title: "不可使用",
+					text: "外链功能仅面向合作用户，您的账号暂不支持该功能。",
+					icon: "warning",
+					buttons: true,
+					dangerMode: true,
+					closeOnClickOutside: false,
+				});
+				return false;
+			}
+			if( this.parent.url_public_link.length < 30 || this.parent.url_public_link.indexOf('undefined')!=-1 ){
+				swal({
+					title: "稍等片刻",
+					text: "正在同步该文件，请您稍等片刻。",
+					icon: "warning",
+					buttons: true,
+					dangerMode: true,
+					closeOnClickOutside: false,
+				});
+				return false;
+			}
+			show_link(this.parent.url_public_link);
+		}
+		// 内链
+		div.menu_link_element = div.getElementsByClassName('files-item-menu-item-link-button')[0];
+		div.menu_link_element.parent = div;
+		div.menu_link_element.onclick = function(){
 			show_link(download_web_url + this.parent.url);
 		}
 		div.menu_delete_element = div.getElementsByClassName('files-item-menu-item-delete-button')[0];
@@ -908,6 +937,7 @@ let files_main_menu = document.getElementById('files-main-menu');
 // 右键按钮
 let files_download_button = document.getElementById('files-download-button');
 let files_link_button = document.getElementById('files-link-button');
+let files_public_link_button = document.getElementById('files-public-link-button');
 let files_share_button = document.getElementById('files-share-button');
 let files_cat_button = document.getElementById('files-cat-button');
 let files_paste_button = document.getElementById('files-paste-button');
@@ -1134,6 +1164,7 @@ files_main.oncontextmenu=function(e){
 	if( folders_items_selected_array.length == 0 && files_items_selected_array.length == 1 ){
 		files_download_button.style.display = "block";
 		files_link_button.style.display = "block";
+		files_public_link_button.style.display = "block";
 		files_download_button.onclick = function(){
 			let html_element = document.createElement('div');
 			html_element.innerHTML = "<p><a href='" + download_web_url + files_items_selected_array[0].url + "' target='_blank'>电信下载</a></p><p><a href='https://cdn-download.yunzhongzhuan.xyz" + files_items_selected_array[0].url + "' target='_blank'>移动下载</a></p><p><a href='https://ddos-guard-net-download.yzzpan.com" + files_items_selected_array[0].url + "' target='_blank'>联通下载</a></p><p><a href='https://download.yunzhongzhuan.eu.org" + files_items_selected_array[0].url + "' target='_blank'>备用下载</a></p><p><a href='https://download.yantudefengjing.eu.org" + files_items_selected_array[0].url + "' target='_blank'>备用下载</a></p>";
@@ -1170,6 +1201,7 @@ files_main.oncontextmenu=function(e){
 			show_share(files_items_selected_array[0].share);
 		};
 		
+		// 显示内链
 		files_link_button.onclick = function(){
 			if(files_items_selected_array[0].media!=undefined&&files_items_selected_array[0].media.length===38){
 				show_link(download_web_url+"/download/media/"+files_items_selected_array[0].media+"/"+encodeURIComponent(files_items_selected_array[0].name)); // encodeURIComponent
@@ -1180,6 +1212,32 @@ files_main.oncontextmenu=function(e){
 			let name = url_array[4];
 			let link = download_web_url + '/download/' + url_array[2] + '/' + url_array[3] + '/' + name;
 			show_link(link);
+		}
+		// 显示外链
+		files_public_link_button.onclick = function(){
+			if( public_link_hostname.length < 10 || public_link_hostname == ""){
+				swal({
+					title: "不可使用",
+					text: "外链功能仅面向合作用户，您的账号暂不支持该功能。",
+					icon: "warning",
+					buttons: true,
+					dangerMode: true,
+					closeOnClickOutside: false,
+				});
+				return false;
+			}
+			if( files_items_selected_array[0].url_public_link.length < 30 || files_items_selected_array[0].url_public_link.indexOf('undefined')!=-1 ){
+				swal({
+					title: "稍等片刻",
+					text: "正在同步该文件，请您稍等片刻。",
+					icon: "warning",
+					buttons: true,
+					dangerMode: true,
+					closeOnClickOutside: false,
+				});
+				return false;
+			}
+			show_link(files_items_selected_array[0].url_public_link);
 		}
 		
 		// 是否显示预览
@@ -1957,6 +2015,7 @@ function cdn_cgi_trace_upload(){
 	xmlhttp.open("GET","https://upload.yunzhongzhuan.com/cdn-cgi/trace",true);
 	xmlhttp.send();
 }
+
 // 登录按钮
 let login_input_button_login = document.getElementById('login-input-button-login');
 login_input_button_login.onclick = function(){
@@ -3324,6 +3383,8 @@ let get_files_num = 20;
 // 正在加载中
 let get_folders_loading = false;
 let get_files_loading = false;
+// Public Link
+let public_link_hostname = "";
 // 获取文件
 function get_files(){
 	if(get_files_loadover){
@@ -3354,6 +3415,11 @@ function get_files(){
 			}
 			let ResultJSON = JSON.parse(xmlhttp.responseText);
 			if(ResultJSON["status"]){
+				if( ResultJSON["public_link_hostname"]!=undefined ){
+					public_link_hostname = ResultJSON["public_link_hostname"];
+				}else{
+					public_link_hostname = "";
+				}
 				// 如果已经加载完成
 				if(ResultJSON["data"].length<get_files_num&&ResultJSON["loadover"]!=undefined&&ResultJSON["loadover"]==true){
 					get_files_loadover = true;
