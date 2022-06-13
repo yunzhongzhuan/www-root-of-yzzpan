@@ -2013,7 +2013,7 @@ function cdn_cgi_trace_upload(){
 			setTimeout(cdn_cgi_trace_upload,100);
 		}
 	}
-	xmlhttp.open("GET","https://upload.yunzhongzhuan.com/cdn-cgi/trace",true);
+	xmlhttp.open("GET","https://upload.yzzpan.com/cdn-cgi/trace",true);
 	xmlhttp.send();
 }
 
