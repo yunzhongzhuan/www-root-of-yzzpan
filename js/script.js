@@ -1907,6 +1907,8 @@ let is_qq_qr_code_login = false;
 
 function showlove(){
 	
+	return false;
+	
 	if(
 		is_qq_qr_code_login
 	){
