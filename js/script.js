@@ -792,6 +792,9 @@ function push_files_to_files_page(files_items,isPrepend){
 			}
 			show_link(this.parent.url_public_link);
 		}
+		if(navigator.language.toLowerCase().indexOf('cn')==-1){
+			div.menu_public_link_element.style.display = "none";
+		}
 		// 内链
 		div.menu_link_element = div.getElementsByClassName('files-item-menu-item-link-button')[0];
 		div.menu_link_element.parent = div;
@@ -1165,7 +1168,9 @@ files_main.oncontextmenu=function(e){
 	if( folders_items_selected_array.length == 0 && files_items_selected_array.length == 1 ){
 		files_download_button.style.display = "block";
 		files_link_button.style.display = "block";
-		files_public_link_button.style.display = "block";
+		if(navigator.language.toLowerCase().indexOf('cn')!=-1){
+			files_public_link_button.style.display = "block";
+		}
 		files_download_button.onclick = function(){
 			let html_element = document.createElement('div');
 			html_element.innerHTML = "<p><a href='" + download_web_url + files_items_selected_array[0].url + "' target='_blank'>电信下载</a></p><p><a href='https://cdn-download.yunzhongzhuan.xyz" + files_items_selected_array[0].url + "' target='_blank'>移动下载</a></p><p><a href='https://ddos-guard-net-download.yzzpan.com" + files_items_selected_array[0].url + "' target='_blank'>联通下载</a></p><p><a href='https://download.yunzhongzhuan.eu.org" + files_items_selected_array[0].url + "' target='_blank'>备用下载</a></p><p><a href='https://download.yantudefengjing.eu.org" + files_items_selected_array[0].url + "' target='_blank'>备用下载</a></p>";
