@@ -771,7 +771,7 @@ function push_files_to_files_page(files_items,isPrepend){
 			if( public_link_hostname.length < 10 || public_link_hostname == ""){
 				swal({
 					title: "不可使用",
-					text: "外链功能仅面向开发者，您的账号暂不支持该功能。",
+					text: "外链功能仅面向企业用户，您的账号暂不支持该功能。",
 					icon: "warning",
 					buttons: true,
 					dangerMode: true,
@@ -1224,7 +1224,7 @@ files_main.oncontextmenu=function(e){
 			if( public_link_hostname.length < 10 || public_link_hostname == ""){
 				swal({
 					title: "不可使用",
-					text: "外链功能仅面向开发者，您的账号暂不支持该功能。",
+					text: "外链功能仅面向企业用户，您的账号暂不支持该功能。",
 					icon: "warning",
 					buttons: true,
 					dangerMode: true,
