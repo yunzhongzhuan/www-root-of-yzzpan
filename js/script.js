@@ -3710,12 +3710,12 @@ let links_data = [
 				"name":"yzzpan.com",
 				"new_open":true,
 				"link":"https://yzzpan.com/#files"
-			},
+			},/*
 			{
 				"name":"kuocaitm.net",
 				"new_open":true,
 				"link":"https://kuocaitm.net/"
-			}/*,
+			},
 			{
 				"name":"pc.yunzhongzhuan.com",
 				"new_open":true,
@@ -3750,6 +3750,11 @@ let links_data = [
 				"name":"BootCDN",
 				"new_open":true,
 				"link":"https://www.bootcdn.cn/"
+			},
+			{
+				"name":"括彩科技",
+				"new_open":true,
+				"link":"https://kuocaitm.net/"
 			},
 		]
 	},
