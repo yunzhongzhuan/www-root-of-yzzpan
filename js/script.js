@@ -3715,8 +3715,7 @@ let links_data = [
 				"name":"kuocaitm.net",
 				"new_open":true,
 				"link":"https://kuocaitm.net/"
-			}
-			/*,
+			}/*,
 			{
 				"name":"pc.yunzhongzhuan.com",
 				"new_open":true,
@@ -3724,7 +3723,7 @@ let links_data = [
 			}*/
 		]
 	},
-	{
+	/*{
 		"title":"服务提供",
 		"data":[
 			{
@@ -3783,7 +3782,7 @@ let links_data = [
 				"link":"https://www.wepe.com.cn"
 			}
 		]
-	}/*,
+	},
 	{
 		"title":"更多链接",
 		"data":[
