@@ -3756,6 +3756,11 @@ let links_data = [
 				"new_open":true,
 				"link":"https://kuocaitm.net/"
 			},
+			{
+				"name":"墨轩竹",
+				"new_open":true,
+				"link":"https://www.mxzsp.com/"
+			},
 		]
 	},
 	/*{
