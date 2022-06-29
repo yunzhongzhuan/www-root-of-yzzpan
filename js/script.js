@@ -3723,6 +3723,36 @@ let links_data = [
 			}*/
 		]
 	},
+	{
+		"title":"更多产品",
+		"data":[
+			{
+				"name":"极兔云",
+				"new_open":true,
+				"link":"https://www.jitucdn.com/"
+			},
+			{
+				"name":"极兔智能云",
+				"new_open":true,
+				"link":"https://www.jituy.com/"
+			},
+			{
+				"name":"白熊云",
+				"new_open":true,
+				"link":"https://www.baixiong.cloud/"
+			},
+			{
+				"name":"极兔图床",
+				"new_open":true,
+				"link":"https://pic.jitudisk.com/"
+			},
+			{
+				"name":"BootCDN",
+				"new_open":true,
+				"link":"https://www.bootcdn.cn/"
+			},
+		]
+	},
 	/*{
 		"title":"服务提供",
 		"data":[
