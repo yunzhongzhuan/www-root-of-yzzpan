@@ -3691,11 +3691,11 @@ let links_data = [
 				"name": "B1-20220812/B2-20220232",
 				"new_open": true,
 				"link": "https://dxzhgl.miit.gov.cn/dxxzsp/xkz/xkzgl/resource/qiyesearch.jsp?num=%E4%B8%8A%E6%B5%B7%E6%8B%AC%E5%BD%A9%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&type=xuke"
-			}, {
+			}/*, {
 				"name":"用户协议",
 				"new_open":true,
 				"link":"https://yzzpan.com/#terms"
-			}
+			}*/
 		]
 	},
 	{
