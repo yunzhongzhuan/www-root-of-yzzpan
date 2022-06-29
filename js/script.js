@@ -2052,6 +2052,11 @@ login_input_button_login.onclick = function(){
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
 			let ResultJSON = JSON.parse(xmlhttp.responseText);
 			if(ResultJSON["status"]){
+				// 清空所有输入框的内容
+				let inputs = document.getElementsByTagName('input');
+				for(let i=0;i<inputs.length;i++){
+					inputs[i].value = "";
+				}
 				// 登录成功
 				// 尝试关闭提示框
 				let swal_element = document.getElementsByClassName('swal-overlay--show-modal');
