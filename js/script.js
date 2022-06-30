@@ -5,7 +5,10 @@
 /*if(document.domain!=="yzzpan.com"){
 	window.location.href=window.location.href.replace(/www./,'');
 }*/
-
+if(navigator.language.toLowerCase().indexOf('cn')==-1){
+	let new_url = window.location.href.replace(/yzzpan.com/g,'yunzhongzhuan.com');
+	window.location.href=new_url;
+}
 if(window.location.href.split('#').length<2){
 	window.location.href="#login";
 }
