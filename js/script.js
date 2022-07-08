@@ -3247,16 +3247,21 @@ function get_sharefile(id,key){
 				sharefile_content_fileinfo_filename_span.innerText = ResultJSON["name"];
 				sharefile_content_fileinfo_filename_i.className = get_files_item_type_icon(ResultJSON["name"]);
 				sharefile_content_fileinfo_filesize.innerText = get_size_unit(ResultJSON["size"]);
-				sharefile_content_link_item_download_button.link = ResultJSON["url"];
-				sharefile_content_link_item_download_button_7.link = ResultJSON["url"];
-				sharefile_content_link_item_download_button_8.link = ResultJSON["url"];
-				sharefile_content_link_item_download_button_9.link = ResultJSON["url"];
-				sharefile_content_link_item_download_button_10.link = ResultJSON["url"];
+				sharefile_content_link_item_download_button.href = ResultJSON["url"];
+				sharefile_content_link_item_download_button_7.href = ResultJSON["url"];
+				sharefile_content_link_item_download_button_8.href = ResultJSON["url"];
+				sharefile_content_link_item_download_button_9.href = ResultJSON["url"];
+				sharefile_content_link_item_download_button_10.href = ResultJSON["url"];
+				
+				// 复制内链
 				sharefile_content_link_item_copy_link_button.link = ResultJSON["url"];
 				sharefile_content_link_item_copy_link_button.onclick = function(){
 					show_link(download_web_url + this.link);
 				}
+				
 				sharefile_content_userinfo_profile_picture.style.backgroundImage = "url('https://q1.qlogo.cn/g?b=qq&nk=" + ResultJSON["qq"] + "&s=640')";
+				
+				/*
 				sharefile_content_link_item_download_button.onclick = function() {
 					window.open(download_web_url + this.link);
 				}
@@ -3272,6 +3277,8 @@ function get_sharefile(id,key){
 				sharefile_content_link_item_download_button_10.onclick = function() {
 					window.open("https://download.yantudefengjing.eu.org" + this.link);
 				}
+				*/
+				
 				sharefile_content_link_item_sharefile_copy_button.share_id = id;
 				sharefile_content_link_item_sharefile_copy_button.share_key = key;
 				sharefile_content_link_item_sharefile_copy_button.onclick = function() {
@@ -3291,13 +3298,15 @@ function get_sharefile(id,key){
 				if(ResultJSON["offline"]!=undefined){
 					let div = document.createElement('div');
 					div.className="sharefile-content-link-item sharefile-content-link-item-offline";
-					let span = document.createElement('span');
-					span.innerText = "源站下载";
-					span.link = ResultJSON["offline"];
+					let a = document.createElement('a');
+					a.innerText = "源站下载";
+					a.href = ResultJSON["offline"];
+					/*
 					span.onclick = function(){
 						window.open(this.link);
 					}
-					div.append(span);
+					*/
+					div.append(a);
 					sharefile_content_link_items.prepend(div);
 				}
 				// 发现本地
