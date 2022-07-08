@@ -3301,6 +3301,7 @@ function get_sharefile(id,key){
 					let a = document.createElement('a');
 					a.innerText = "源站下载";
 					a.href = ResultJSON["offline"];
+					a.target = "_blank";
 					/*
 					span.onclick = function(){
 						window.open(this.link);
