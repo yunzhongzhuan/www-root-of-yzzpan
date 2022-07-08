@@ -3247,11 +3247,12 @@ function get_sharefile(id,key){
 				sharefile_content_fileinfo_filename_span.innerText = ResultJSON["name"];
 				sharefile_content_fileinfo_filename_i.className = get_files_item_type_icon(ResultJSON["name"]);
 				sharefile_content_fileinfo_filesize.innerText = get_size_unit(ResultJSON["size"]);
-				sharefile_content_link_item_download_button.href = ResultJSON["url"];
-				sharefile_content_link_item_download_button_7.href = ResultJSON["url"];
-				sharefile_content_link_item_download_button_8.href = ResultJSON["url"];
-				sharefile_content_link_item_download_button_9.href = ResultJSON["url"];
-				sharefile_content_link_item_download_button_10.href = ResultJSON["url"];
+				
+				sharefile_content_link_item_download_button.href = download_web_url + ResultJSON["url"];
+				sharefile_content_link_item_download_button_7.href = "https://ddos-guard-net-download.yzzpan.com" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_8.href = "https://cdn-download.yunzhongzhuan.xyz" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_9.href = "https://download.yunzhongzhuan.eu.org" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_10.href = "https://download.yantudefengjing.eu.org" + ResultJSON["url"];
 				
 				// 复制内链
 				sharefile_content_link_item_copy_link_button.link = ResultJSON["url"];
