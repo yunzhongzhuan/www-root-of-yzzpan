@@ -1909,6 +1909,13 @@ function showpay(){
 	});
 }
 
+// 支持我们
+let nav_love_me_button = document.getElementById('nav-love-me-button');
+if(navigator.language.toLowerCase().indexOf('cn')==-1){
+	nav_love_me_button.remove();
+}else{
+	nav_love_me_button.onclick = showpay;
+}
 
 
 // 获取容量
