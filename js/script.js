@@ -1922,6 +1922,7 @@ function get_usedsize_function(){
 			usedsize_unit = get_size_unit(usedsize);
 			if(usedsize >= 300 * 1024 * 1024 * 1024){
 				show_love_pay();
+				nav_love_me_button.onclick = show_love_pay;
 			}
 		}
 	}
@@ -2790,6 +2791,8 @@ function get_userinfo(){
 			if(ResultJSON["status"]){
 				
 				nav_love_me_button.style.display = "block";
+				
+				get_usedsize_function();
 				
 
 				// 如果支持外链
