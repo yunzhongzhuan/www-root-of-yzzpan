@@ -2789,6 +2789,8 @@ function get_userinfo(){
 			
 			if(ResultJSON["status"]){
 				
+				nav_love_me_button.style.display = "block";
+				
 
 				// 如果支持外链
 				if(ResultJSON["public_link"]!=undefined&&ResultJSON["public_link"]==true){
