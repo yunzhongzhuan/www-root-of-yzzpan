@@ -2329,7 +2329,9 @@ let login_input_username = document.getElementById('login-input-username');
 // let api_server_url = "https://server.yzzpan.com.cdn.cloudflare.net";
 // let api_server_url = "https://www.yunzhongzhuan.com";
 let api_server_url = "https://applicationprogramminginterface.yzzpan.com";
-// let api_server_url = "https://apiyunzhongzhuancom.vercel.app";
+if(navigator.language.toLowerCase().indexOf('cn')==-1){
+	let api_server_url = "https://apiyunzhongzhuancom.vercel.app";
+}
 // let api_server_url = "https://ddos-guard-net-api.yzzpan.com";
 let not_vip_upload_file_size = 8 * 1024 * 1024 * 1024; // 非会员用户上传文件最大允许1GB
 // 如果用户试图修改JS绕过限制，在上传文件后，系统将匹配文件大小，异常则永久封号
