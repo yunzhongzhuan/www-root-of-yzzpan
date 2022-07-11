@@ -1909,14 +1909,6 @@ function showpay(){
 	});
 }
 
-// 支持我们
-let nav_love_me_button = document.getElementById('nav-love-me-button');
-if(navigator.language.toLowerCase().indexOf('cn')==-1){
-	nav_love_me_button.remove();
-}else{
-	nav_love_me_button.onclick = showpay;
-}
-
 
 // 获取容量
 let usedsize;
@@ -3116,6 +3108,16 @@ nav_reset_password_button.onclick = function(){
 	  }
 	});
 }
+
+
+// 支持我们
+let nav_love_me_button = document.getElementById('nav-love-me-button');
+if(navigator.language.toLowerCase().indexOf('cn')==-1){
+	nav_love_me_button.remove();
+}else{
+	nav_love_me_button.onclick = showpay;
+}
+
 
 function set_upload_cdn_cloudflare(){
 	if(upload_window_iframe_element.src != api_upload_web_url){
