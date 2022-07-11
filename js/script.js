@@ -1921,7 +1921,9 @@ function get_usedsize_function(){
 			usedsize = xmlhttp.responseText;
 			usedsize_unit = get_size_unit(usedsize);
 			if(usedsize >= 300 * 1024 * 1024 * 1024){
-				show_love_pay();
+				if(window.location.href.indexOf("#files")!=-1&&files.className.indexOf("files-hide")==-1){
+					show_love_pay();
+				}
 				nav_love_me_button.onclick = show_love_pay;
 			}
 		}
