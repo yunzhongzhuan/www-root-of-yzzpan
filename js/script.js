@@ -1909,6 +1909,60 @@ function showpay(){
 	});
 }
 
+
+
+// 获取容量
+let usedsize;
+let usedsize_unit;
+function get_usedsize_function(){
+
+	let xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function(){
+		if(xmlhttp.readyState==4 && xmlhttp.status==200){
+			usedsize = xmlhttp.responseText;
+			usedsize_unit = get_size_unit(usedsize);
+			if(usedsize >= 300 * 1024 * 1024 * 1024){
+				show_love_pay();
+			}
+		}
+	}
+	xmlhttp.open("POST",api_server_url+"/php/v4/get_usedsize",true);
+	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	xmlhttp.withCredentials = true;
+	xmlhttp.send("post=1&session_id="+userinfo["session_id"]);
+	
+}
+
+
+// 显示捐助
+function show_love_pay(){
+	
+	return false;
+	
+	let y = 2020;
+	let m = 12;
+	// let d = 10;
+	let t = 1607529600; // 成立时间 2020-12-10 00:00:00
+	
+	let y_n = (((t_system_online-1607529600)/60/60/24/365)+".").split('.')[0];
+	let m_n = ((((t_system_online-1607529600)/60/60/24/(365/12))%12)+".")[0];
+
+	swal({
+		title: "支持我们",
+		text: "亲爱的用户，您好！\r\n云中转自"+y+"年"+m+"月"+d+"日创立以来，已经陪伴全体用户走过"+y_n+"年"+m_n+"月之久，每周7x24小时在线服务永远为您准备。\r\n目前，您的账号下总共保存了"+get_size_unit(usedsize)+"的文件数据，假设有50%的文件是重复的（即其他用户也保存着一份与您同样的文件），云中转系统中也仍然为您保存着至少"+get_size_unit((usedsize/2))+"的文件数据，按照0.083元/GB/月（85元/TB/月）的最低价格计算，云中转每月约至少为您保存的文件数据支付着"+((usedsize/2)*0.083)+"元的数据存储经济成本，这并未包括上传/下载所使用的网络流量/宽带、服务器资源、运行维护等其他方面投入的经济成本。\r\n如果您对我们的服务感到满意，希望您能够捐助我们，以支持我们继续前行！\r\n捐助15元，并备注您的云中转账号绑定的QQ号码（"+userinfo["qq"]+"），我们为您的账号开通云中转会员身份，上传单个文件大小升级至20GB，并支持文件夹分享等功能。\r\n我们永远陪伴你！",
+		icon: "warning",
+		buttons: ["关我屁事","支持一下"],
+		dangerMode: true,
+		closeOnClickOutside: false,
+	}).then((willDelete) => {
+		if (willDelete) {
+			showpay();
+		}
+	});
+
+}
+
+
 // 是否 qq 扫码登录
 let is_qq_qr_code_login = false;
 
@@ -1931,6 +1985,8 @@ function showlove(){
 	}catch(e){
 		
 	};
+	
+	get_usedsize_function();
 	
 	return false;
 
@@ -2660,7 +2716,9 @@ function show_verify_code(){
 
 }
 
-
+// 系统时间戳
+let t_system_online = 1657535600;
+				
 let nav_setting_button = document.getElementById('nav-setting-button');
 let setting_user_span_wechat_name = document.getElementById('setting-user-span-wechat-name');
 let setting_user_span_username = document.getElementById('setting-user-span-username');
@@ -2705,6 +2763,13 @@ function get_userinfo(){
 		}
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
 			let ResultJSON = JSON.parse(xmlhttp.responseText);
+						
+			// 系统时间戳
+			try{
+				t_system_online = ResultJSON["t"];
+			}catch(e){};
+			
+			
 			if(ResultJSON["session_id"] != undefined && ResultJSON["session_id"] != null && ResultJSON["session_id"] != "" ){
 				userinfo["session_id"] = ResultJSON["session_id"];
 				let cookie_date = new Date(2100,10,01);
