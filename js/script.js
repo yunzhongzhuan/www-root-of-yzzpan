@@ -1943,6 +1943,7 @@ function show_love_pay(){
 		return false;
 	}
 	
+	
 	// 成立时间 2020-12-10 00:00:00
 	let y = 2020;
 	let m = 12;
@@ -1964,6 +1965,7 @@ function show_love_pay(){
 			showpay();
 		}
 	});
+
 
 }
 
