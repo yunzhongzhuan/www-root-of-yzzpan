@@ -1898,7 +1898,7 @@ function nav_buttons_unset_selected(){
 // 捐助我们
 function showpay(){
 	let content_element = document.createElement('div');
-	content_element.innerHTML = '<img src="//tva1.sinaimg.cn/mw2000/005CbWF8gy1h0ac79obn1j308t0rswju.jpg" />'; // ./img/pay_wx_zfb_qq_2.png
+	content_element.innerHTML = '<img src="//tva1.sinaimg.cn/mw2000/005CbWF8gy1h43fzoh8wij308t0rsn2s.jpg" />'; // ./img/pay_wx_zfb_qq_2.png
 	swal({
 		text:"真诚感谢你的支持，我们承诺永久免费。",
 		content: content_element,
