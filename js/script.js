@@ -1933,23 +1933,28 @@ function get_usedsize_function(){
 	
 }
 
+// 是否支持外链
+let public_link_status = false;
 
 // 显示捐助
 function show_love_pay(){
+
+	if(public_link_status){
+		return false;
+	}
 	
-	return false;
-	
+	// 成立时间 2020-12-10 00:00:00
 	let y = 2020;
 	let m = 12;
-	// let d = 10;
-	let t = 1607529600; // 成立时间 2020-12-10 00:00:00
+	let d = 10;
+	let t = 1607529600;
 	
 	let y_n = (((t_system_online-1607529600)/60/60/24/365)+".").split('.')[0];
 	let m_n = ((((t_system_online-1607529600)/60/60/24/(365/12))%12)+".")[0];
 
 	swal({
 		title: "支持我们",
-		text: "亲爱的用户，您好！\r\n云中转自"+y+"年"+m+"月"+d+"日创立以来，已经陪伴全体用户走过"+y_n+"年"+m_n+"月之久，每周7x24小时在线服务永远为您准备。\r\n目前，您的账号下总共保存了"+get_size_unit(usedsize)+"的文件数据，假设有50%的文件是重复的（即其他用户也保存着一份与您同样的文件），云中转系统中也仍然为您保存着至少"+get_size_unit((usedsize/2))+"的文件数据，按照0.083元/GB/月（85元/TB/月）的最低价格计算，云中转每月约至少为您保存的文件数据支付着"+((usedsize/2)*0.083)+"元的数据存储经济成本，这并未包括上传/下载所使用的网络流量/宽带、服务器资源、运行维护等其他方面投入的经济成本。\r\n如果您对我们的服务感到满意，希望您能够捐助我们，以支持我们继续前行！\r\n捐助15元，并备注您的云中转账号绑定的QQ号码（"+userinfo["qq"]+"），我们为您的账号开通云中转会员身份，上传单个文件大小升级至20GB，并支持文件夹分享等功能。\r\n我们永远陪伴你！",
+		text: "亲爱的用户，您好！\r\n云中转自"+y+"年"+m+"月"+d+"日创立以来，已经陪伴全体用户走过"+y_n+"年"+m_n+"个月之久，每周7x24小时在线服务永远为您准备。\r\n目前，您的账号下总共保存了"+get_size_unit(usedsize)+"的文件数据，假设有50%的文件是重复的（即其他用户也保存着一份与您同样的文件），云中转系统中也仍然为您保存着至少"+get_size_unit((usedsize/2))+"-"+get_size_unit((usedsize))+"的文件数据，按照0.083元/GB/月（85元/TB/月）的超低存储价格计算，云中转每月约至少为您保存的文件数据支付着"+((((usedsize/2)/1024/1024/1024)*0.083)+".").split('.')[0]+"-"+((((usedsize)/1024/1024/1024)*0.083)+".").split('.')[0]+"元人民币的数据存储经济成本，这并未包括上传/下载所使用到的网络宽带/流量、服务器资源、运维等其他方面投入的经济成本。\r\n如果您对我们的服务感到满意，希望您能够捐助以支持我们！",
 		icon: "warning",
 		buttons: ["关我屁事","支持一下"],
 		dangerMode: true,
@@ -2762,8 +2767,15 @@ function get_userinfo(){
 			
 		}
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
+			
+			
+			
+			
 			let ResultJSON = JSON.parse(xmlhttp.responseText);
-						
+					
+
+			
+			
 			// 系统时间戳
 			try{
 				t_system_online = ResultJSON["t"];
@@ -2775,7 +2787,15 @@ function get_userinfo(){
 				let cookie_date = new Date(2100,10,01);
 				document.cookie = "PHPSESSID=" + userinfo["session_id"] + ";path=/;expires="+cookie_date.toUTCString();
 			}
+			
 			if(ResultJSON["status"]){
+				
+
+				// 如果支持外链
+				if(ResultJSON["public_link"]!=undefined&&ResultJSON["public_link"]==true){
+					public_link_status = true;
+				}
+
 				
 				// 如果信用不好
 				if(ResultJSON["money"] < 0){
