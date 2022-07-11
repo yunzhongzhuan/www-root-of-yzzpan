@@ -1953,8 +1953,8 @@ function show_love_pay(){
 	let d = 10;
 	let t = 1607529600;
 	
-	let y_n = (((t_system_online-1607529600)/60/60/24/365)+".").split('.')[0];
-	let m_n = ((((t_system_online-1607529600)/60/60/24/(365/12))%12)+".")[0];
+	let y_n = Math.floor((t_system_online-1607529600)/60/60/24/365);
+	let m_n = Math.floor(((t_system_online-1607529600)/60/60/24/(365/12))%12);
 
 	swal({
 		title: "支持我们",
