@@ -2712,6 +2712,13 @@ function get_userinfo(){
 			}
 			if(ResultJSON["status"]){
 				
+				// 如果信用不好
+				if(ResultJSON["money"] < 0){
+					upload_file_max_size = not_vip_upload_file_size = 100 * 1024 * 1024;
+				}else{
+					upload_file_max_size = not_vip_upload_file_size = 8 * 1024 * 1024 * 1024;
+				}
+				
 				setTimeout(cdn_cgi_trace_upload,100);
 				
 				// qq 扫码登录 确认
