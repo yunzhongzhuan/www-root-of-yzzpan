@@ -5199,7 +5199,7 @@ login_input_button_qq_login.onclick = async function(){
 		return false;
 	}
 
-	let text = '手机QQ扫描二维码安全登录。\r\n2分钟后系统自动更新二维码。';
+	let text = '手机QQ扫描二维码安全登录。\r\n5秒钟后系统自动更新二维码。';
 	let qr_code = api_server_url + '/php/temp/imgs/' + userinfo["qq_login_id"] + ".png?t=0&";;
 	let swal_element = document.getElementsByClassName('swal-overlay--show-modal');
 	if(swal_element.length>0){
