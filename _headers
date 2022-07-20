@@ -3,3 +3,11 @@
   Cache-Control: max-age=31536000
 /plug-in/font-awesome-4.7.0/css/font-awesome.min.css
   Cache-Control: max-age=31536000
+/plug-in/sweetalert/sweetalert.min.js
+  Cache-Control: max-age=31536000
+/img/pointer.cur
+  Cache-Control: max-age=31536000
+/plug-in/font-awesome-4.7.0/fonts/*
+  Cache-Control: max-age=31536000
+/favicon.ico
+  Cache-Control: max-age=31536000
