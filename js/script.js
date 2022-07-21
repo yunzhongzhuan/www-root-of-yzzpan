@@ -3505,6 +3505,30 @@ let now_datetime = new Date();
 let yunzhongzhuan_cnzz_ip_iframe = document.getElementById('yunzhongzhuan-cnzz-ip-iframe');
 
 
+
+// 预加载计算哈希的文件
+let js_calc_hash_preload_locked = false;
+function js_calc_hash_preload(){
+	if(js_calc_hash_preload_locked){
+		return false;
+	}
+	let xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function(){
+		if(xmlhttp.readyState==4 && xmlhttp.status==200){
+			// console.log(xmlhttp.responseText);
+			js_calc_hash_preload_locked = true;
+		}
+		if(xmlhttp.readyState==4){
+			setTimeout(js_calc_hash_preload,100);
+		}
+	}
+	xmlhttp.open("GET","/js/calc_hash.js",true);
+	xmlhttp.send();
+}
+// js_calc_hash_preload();
+// setTimeout(js_calc_hash_preload,100);
+
+
 // 页面加载完成开始检查用户登录状态
 window.onload = function(){
 
@@ -3515,6 +3539,9 @@ window.onload = function(){
 	setTimeout(function(){
 		// yunzhongzhuan_cnzz_ip_iframe.src = "/51la_ip.html";
 	},1000);
+	
+	
+	setTimeout(js_calc_hash_preload,100);
 
 }
 
@@ -5602,26 +5629,3 @@ if(navigator.language.toLowerCase().indexOf('cn')!=-1){
 
 
 
-
-
-// 预加载计算哈希的文件
-let js_calc_hash_preload_locked = false;
-function js_calc_hash_preload(){
-	if(js_calc_hash_preload_locked){
-		return false;
-	}
-	let xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange=function(){
-		if(xmlhttp.readyState==4 && xmlhttp.status==200){
-			// console.log(xmlhttp.responseText);
-			js_calc_hash_preload_locked = true;
-		}
-		if(xmlhttp.readyState==4){
-			setTimeout(js_calc_hash_preload,100);
-		}
-	}
-	xmlhttp.open("GET","/js/calc_hash.js",true);
-	xmlhttp.send();
-}
-// js_calc_hash_preload();
-setTimeout(js_calc_hash_preload,100);
