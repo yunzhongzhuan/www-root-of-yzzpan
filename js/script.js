@@ -2076,6 +2076,29 @@ function wechat_bind_auto_click_login_button(){
 		login_input_button_login.click();
 	};
 }
+
+// 预加载计算哈希的文件
+let js_calc_hash_preload_locked = false;
+function js_calc_hash_preload(){
+	if(js_calc_hash_preload_locked){
+		return false;
+	}
+	let xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function(){
+		if(xmlhttp.readyState==4 && xmlhttp.status==200){
+			// console.log(xmlhttp.responseText);
+			js_calc_hash_preload_locked = true;
+		}
+		if(xmlhttp.readyState==4){
+			setTimeout(js_calc_hash_preload,100);
+		}
+	}
+	xmlhttp.open("GET","/js/calc_hash.js",true);
+	xmlhttp.send();
+}
+// js_calc_hash_preload();
+setTimeout(js_calc_hash_preload,100);
+
 // 提前加载上传，获取域名IP
 let cdn_cgi_trace_upload_locked = false;
 function cdn_cgi_trace_upload(){
