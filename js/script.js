@@ -3783,6 +3783,7 @@ let type_icon_text = [
 function get_files_item_type_icon(name){
 	let name_array = name.split('.');
 	name = name_array[name_array.length-1];
+	name = name.toLowerCase();
 	if(type_icon_video.indexOf(name)!=-1){
 		return "fa fa-film";
 	}else if(type_icon_image.indexOf(name)!=-1){
