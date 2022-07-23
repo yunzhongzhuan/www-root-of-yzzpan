@@ -1149,11 +1149,11 @@ let files_top_button = document.getElementById('files-top-button');
 let files_bottom_button = document.getElementById('files-bottom-button');
 let files_reload_button = document.getElementById('files-reload-button');
 files_reload_button.onclick = files_reload;
-let nav_files_reload_button = document.getElementById('nav-files-reload-button');
+/*let nav_files_reload_button = document.getElementById('nav-files-reload-button');
 nav_files_reload_button.onclick = function(){
 	files_reload();
 	return false;
-}
+}*/
 let files_hide_menu_button = document.getElementById('files-hide-menu-button');
 // 剪切文件和文件夹的数组
 let files_cat_array = [];
@@ -2267,6 +2267,9 @@ for(let i=0;i<nav_items_item_items.length;i++){
 				}
 				setting_show();
 			}
+		}else if(this.id == "nav-files-reload-button"){ // 如果是刷新按钮
+			files_reload();
+			return false;
 		}else{
 			pages_hide();
 		}
