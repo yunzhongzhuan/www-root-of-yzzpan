@@ -1150,7 +1150,10 @@ let files_bottom_button = document.getElementById('files-bottom-button');
 let files_reload_button = document.getElementById('files-reload-button');
 files_reload_button.onclick = files_reload;
 let nav_files_reload_button = document.getElementById('nav-files-reload-button');
-nav_files_reload_button.onclick = files_reload;
+nav_files_reload_button.onclick = function(){
+	files_reload();
+	return false;
+}
 let files_hide_menu_button = document.getElementById('files-hide-menu-button');
 // 剪切文件和文件夹的数组
 let files_cat_array = [];
