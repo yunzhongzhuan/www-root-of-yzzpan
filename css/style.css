@@ -160,7 +160,7 @@ body{
 .files-hide .files-buttons-items{
 	left: calc(-0% - 230px);
 }
-.files-hide .files-inputs-items{
+.files-hide .files-inputs-items,.files-hide .files-reload-button-items{
 	right: calc(-100% - 200px);
 }
 .links{
@@ -234,6 +234,8 @@ body{
 	border-radius: 10px;
 	border: 1px solid #c1c1c1;
 	margin-left: 10px;
+	position: relative;
+	right: 0%;
 }
 .files-inputs-items{
 	width: calc(100% - 190px);
@@ -1310,7 +1312,7 @@ body{
 	.files-hide .files-item:nth-child(odd) {
 		right: calc(100% + 30px);
 	}
-	.files-hide .files-inputs-items {
+	.files-hide .files-inputs-items,.files-hide .files-reload-button-items{
 	    right: calc(-100% + 100px);
 	}
 	.files-hide .files-buttons-items {
@@ -1425,7 +1427,7 @@ body{
 	.files-hide .files-buttons-items {
 		left: calc(-100% - 30px);
 	}
-	.files-hide .files-inputs-items {
+	.files-hide .files-inputs-items,.files-hide .files-reload-button-items{
 		right: calc(-100% - 30px);
 	}
 	.uploads-window{
