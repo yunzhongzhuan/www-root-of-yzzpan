@@ -4060,6 +4060,9 @@ function files_reload(){
 	if(files_reload_locked){
 		return false;
 	}
+	if(window.location.href.indexOf('/#files')==-1){
+		return false;
+	}
 	files_reload_locked = true;
 	let timeout_time = remove_files_items();
 	setTimeout(function(){
