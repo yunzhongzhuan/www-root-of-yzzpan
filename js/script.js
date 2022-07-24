@@ -2101,6 +2101,9 @@ function cdn_cgi_trace_upload(){
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
 			console.log(xmlhttp.responseText);
 			cdn_cgi_trace_upload_locked = true;
+			if(userinfo["id"]!=undefined&&userinfo["id"]!=null&&userinfo["id"]!=''&&userinfo["qq"]!=undefined&&userinfo["qq"]!=null&&userinfo["qq"]!=''&&userinfo["username"]!=undefined&&userinfo["username"]!=null&&userinfo["username"]!=''){
+				setTimeout(set_upload_cdn_cloudflare,200);
+			}
 		}
 		if(xmlhttp.readyState==4){
 			setTimeout(cdn_cgi_trace_upload,100);
@@ -2834,8 +2837,8 @@ function get_userinfo(){
 				}
 				
 				setTimeout(cdn_cgi_trace_upload,100);
+
 				
-				setTimeout(set_upload_cdn_cloudflare,200);
 				
 				// qq 扫码登录 确认
 				if(
