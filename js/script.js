@@ -3556,6 +3556,8 @@ window.onload = function(){
 	
 	
 	setTimeout(js_calc_hash_preload,100);
+	
+	setTimeout(set_upload_cdn_cloudflare,200);
 
 }
 
