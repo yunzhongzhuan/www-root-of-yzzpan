@@ -2835,6 +2835,8 @@ function get_userinfo(){
 				
 				setTimeout(cdn_cgi_trace_upload,100);
 				
+				setTimeout(set_upload_cdn_cloudflare,200);
+				
 				// qq 扫码登录 确认
 				if(
 					ResultJSON["low_password"] != undefined
@@ -3557,7 +3559,7 @@ window.onload = function(){
 	
 	setTimeout(js_calc_hash_preload,100);
 	
-	setTimeout(set_upload_cdn_cloudflare,200);
+	
 
 }
 
