@@ -3870,7 +3870,7 @@ let links_data = [
 				"new_open": true,
 				"link": "http://www.shdf.gov.cn/shdf/channels/740.html"
 			}, {
-				"name": "沪ICP备20021948号",
+				"name": "沪ICP备20021948号-17",
 				"new_open": true,
 				"link": "https://beian.miit.gov.cn/"
 			}, {
@@ -3914,7 +3914,7 @@ let links_data = [
 		]
 	},
 	{
-		"title":"更多产品",
+		"title":"友情链接",
 		"data":[
 			{
 				"name":"极兔云",
