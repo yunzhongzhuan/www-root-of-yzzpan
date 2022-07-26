@@ -872,7 +872,7 @@ function copy_text(text){
 let web_url = window.location.protocol + "//" + window.location.href.split('://')[1].split('/')[0];
 let download_web_url = "https://download.yzzpan.com";
 let upload_web_url = "https://upload.yzzpan.com";
-let api_upload_web_url = upload_web_url + "/v4/upload";
+let api_upload_web_url = upload_web_url + "/v5/upload";
 // 显示分享文件
 function show_share(share){
 	let sharelink = web_url + share;
