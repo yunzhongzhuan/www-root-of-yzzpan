@@ -4924,7 +4924,7 @@ let workers;
 						}
 						if (true || document.getElementById('hash_hash').checked) {
 						  if (is_crypto && file.size < max_crypto_file_size) {
-							crypto_algos.push({id: "#hash_file_hash_" + file_id, name: "SHA-256"});
+							crypto_algos.push({id: "#hash_file_hash_" + file_id, name: "Hash"});
 						  } else {
 							worker = new Worker('js/calc_hash.js');
 							worker.addEventListener('message', handle_worker_event('hash_file_hash_' + file_id,status_element,2,file));
