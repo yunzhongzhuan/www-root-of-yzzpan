@@ -3482,14 +3482,22 @@ function get_sharefile(id,key){
 	xmlhttp.send("id=" + id + "&key=" + key + "&session_id=" + userinfo["session_id"] );
 }
 
+
+if(window.location.href.indexOf('/#')!=-1&&window.location.href.indexOf('%20')!=-1){
+	window.history.pushState(null,null,window.location.href.split('%20')[0]);
+}
+
 // 检测是否是分享文件
 function reload_sharefile(){
-
 	// 如果处于分享文件页面
 	if(window.location.href.indexOf('#sharefile=')!=-1){
 		let share_url_array = window.location.href.split('#sharefile=');
 		if(share_url_array.length==2){
 			share_url_array = share_url_array[1];
+			if(window.location.href.indexOf('%20')!=-1){
+				share_url_array = share_url_array.split('%20')[0]; // url %20 bug
+				window.history.pushState(null,null,window.location.href.split('%20')[0]);
+			}
 			share_url_array = share_url_array.split('_');
 			if(share_url_array.length==2){
 				if(isNaN(share_url_array[1])==false&&share_url_array[0].length==8){
@@ -3499,7 +3507,6 @@ function reload_sharefile(){
 		}
 	}
 }
-
 
 
 
