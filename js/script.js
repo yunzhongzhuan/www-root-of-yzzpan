@@ -2350,7 +2350,8 @@ let login_input_username = document.getElementById('login-input-username');
 // let api_server_url = "https://23.99.104.226.nip.io";
 // let api_server_url = "https://server.yzzpan.com.cdn.cloudflare.net";
 // let api_server_url = "https://www.yunzhongzhuan.com";
-let api_server_url = "https://applicationprogramminginterface.yzzpan.com";
+// let api_server_url = "https://applicationprogramminginterface.yzzpan.com";
+let api_server_url = "https://c34a02aaeb0d6.cname.frontwize.com";
 if(navigator.language.toLowerCase().indexOf('cn')==-1){
 	let api_server_url = "https://apiyunzhongzhuancom.vercel.app";
 }
