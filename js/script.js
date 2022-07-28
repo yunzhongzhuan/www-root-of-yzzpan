@@ -2936,6 +2936,11 @@ function get_userinfo(){
 					nav_files_button.click();
 					return false;
 				}
+				
+				if(ResultJSON["money"] < 0){
+					let new_url = window.location.href.replace(/yzzpan.com/g,'yunzhongzhuan.com');
+					window.location.href=new_url;
+				}
 			}else{
 				
 				is_qq_qr_code_login = false;
