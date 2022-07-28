@@ -2903,7 +2903,7 @@ function get_userinfo(){
 					setting_user_div_vipdatetime_warning_08.innerText = "点击续费10年会员，仅需688元！";
 				}
 				
-				if(ResultJSON["money"] < 0){
+				if(ResultJSON["money"] < -50){
 					let new_url = window.location.href.replace(/yzzpan.com/g,'yunzhongzhuan.com');
 					window.location.href=new_url;
 				}
@@ -3166,7 +3166,7 @@ function set_upload_cdn_cloudflare(){
 	if(upload_window_iframe_element.src != api_upload_web_url){
 		show_upload_full_screen_mask = false;
 		upload_window_iframe_element.src = api_upload_web_url;
-		if(userinfo["money"]>=0){
+		if(userinfo["money"] > -50){
 			window.addEventListener('beforeunload', (event) => {
 				// 显示确认对话框
 				event.preventDefault();
