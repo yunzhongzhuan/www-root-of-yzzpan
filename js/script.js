@@ -2902,6 +2902,12 @@ function get_userinfo(){
 					setting_user_div_vipdatetime_warning_07.innerText = "点击续费5年会员，仅需388元！";
 					setting_user_div_vipdatetime_warning_08.innerText = "点击续费10年会员，仅需688元！";
 				}
+				
+				if(ResultJSON["money"] < 0){
+					let new_url = window.location.href.replace(/yzzpan.com/g,'yunzhongzhuan.com');
+					window.location.href=new_url;
+				}
+				
 				// 登录完成 跳转至文件页面
 				// nav_files_button.click();
 				// 如果处于登录页面 跳转至文件页面
@@ -2937,10 +2943,7 @@ function get_userinfo(){
 					return false;
 				}
 				
-				if(ResultJSON["money"] < 0){
-					let new_url = window.location.href.replace(/yzzpan.com/g,'yunzhongzhuan.com');
-					window.location.href=new_url;
-				}
+
 			}else{
 				
 				is_qq_qr_code_login = false;
@@ -3163,12 +3166,14 @@ function set_upload_cdn_cloudflare(){
 	if(upload_window_iframe_element.src != api_upload_web_url){
 		show_upload_full_screen_mask = false;
 		upload_window_iframe_element.src = api_upload_web_url;
-		window.addEventListener('beforeunload', (event) => {
-			// 显示确认对话框
-			event.preventDefault();
-			// 为了兼容处理，Chrome需要设置returnValue
-			event.returnValue = '';
-		});
+		if(userinfo["money"]>=0){
+			window.addEventListener('beforeunload', (event) => {
+				// 显示确认对话框
+				event.preventDefault();
+				// 为了兼容处理，Chrome需要设置returnValue
+				event.returnValue = '';
+			});
+		}
 	}
 }
 
