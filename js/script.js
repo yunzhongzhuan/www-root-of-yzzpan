@@ -111,6 +111,44 @@ function files_order_by_date_int_function(){
 
 		}
 	}
+
+
+	// 文件夹
+	let folders_items = files_items_folders_items.getElementsByClassName('files-item');
+	for(let i=0;i<folders_items.length;i++){
+		let folder_item = folders_items[i];
+		//alert(i + ' --');
+		for(let i2=0;i2<i;i2++){
+			let folder_item_i2 = folders_items[i2];
+			//alert(i2 + ' ---');
+			//alert(file_item.size + '---' + file_item_i2.size);
+			//alert(file_item.size<file_item_i2.size);
+			// 判断排序方法
+			if(files_order_by_date_by_int_max){
+				if(parseInt(folder_item.date_int)>parseInt(folder_item_i2.date_int)){
+					//alert('小于');
+					// let insert_before_element = files_items_files_items.getElementsByClassName('files-item')[0];
+					// insert_before_element.parentNode.insertBefore(file_item,insert_before_element);
+					folder_item_i2.parentNode.insertBefore(folder_item,folder_item_i2);
+					//alert(i + ' -' + i2);
+					i2--;
+					i--;
+				}
+			}else{
+				if(parseInt(folder_item.date_int)<parseInt(folder_item_i2.date_int)){
+					//alert('小于');
+					// let insert_before_element = files_items_files_items.getElementsByClassName('files-item')[0];
+					// insert_before_element.parentNode.insertBefore(file_item,insert_before_element);
+					folder_item_i2.parentNode.insertBefore(folder_item,folder_item_i2);
+					//alert(i + ' -' + i2);
+					i2--;
+					i--;
+				}
+			}
+
+		}
+	}
+
 }
 let files_order_date_button = document.getElementById('files-order-date-button');
 files_order_date_button.onclick = function(){
