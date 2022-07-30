@@ -29,6 +29,95 @@ i--;
 }
 }
 */
+// 是否从大到小排序？
+let files_order_by_size_by_max = true;
+function files_order_by_size_function(){
+	let files_items = files_items_files_items.getElementsByClassName('files-item');
+	for(let i=0;i<files_items.length;i++){
+		let file_item = files_items[i];
+		//alert(i + ' --');
+		for(let i2=0;i2<i;i2++){
+			let file_item_i2 = files_items[i2];
+			//alert(i2 + ' ---');
+			//alert(file_item.size + '---' + file_item_i2.size);
+			//alert(file_item.size<file_item_i2.size);
+			// 判断排序方法
+			if(files_order_by_size_by_max){
+				if(parseInt(file_item.size)>parseInt(file_item_i2.size)){
+					//alert('小于');
+					// let insert_before_element = files_items_files_items.getElementsByClassName('files-item')[0];
+					// insert_before_element.parentNode.insertBefore(file_item,insert_before_element);
+					file_item_i2.parentNode.insertBefore(file_item,file_item_i2);
+					//alert(i + ' -' + i2);
+					i2--;
+					i--;
+				}
+			}else{
+				if(parseInt(file_item.size)<parseInt(file_item_i2.size)){
+					//alert('小于');
+					// let insert_before_element = files_items_files_items.getElementsByClassName('files-item')[0];
+					// insert_before_element.parentNode.insertBefore(file_item,insert_before_element);
+					file_item_i2.parentNode.insertBefore(file_item,file_item_i2);
+					//alert(i + ' -' + i2);
+					i2--;
+					i--;
+				}
+			}
+
+		}
+	}
+}
+let files_order_size_button = document.getElementById('files-order-size-button');
+files_order_size_button.onclick = function(){
+	files_order_by_size_function();
+	files_order_by_size_by_max=!files_order_by_size_by_max;
+}
+
+
+// 是否从新到旧排序？
+let files_order_by_date_by_int_max = true;
+function files_order_by_date_int_function(){
+	let files_items = files_items_files_items.getElementsByClassName('files-item');
+	for(let i=0;i<files_items.length;i++){
+		let file_item = files_items[i];
+		//alert(i + ' --');
+		for(let i2=0;i2<i;i2++){
+			let file_item_i2 = files_items[i2];
+			//alert(i2 + ' ---');
+			//alert(file_item.size + '---' + file_item_i2.size);
+			//alert(file_item.size<file_item_i2.size);
+			// 判断排序方法
+			if(files_order_by_date_by_int_max){
+				if(parseInt(file_item.date_int)>parseInt(file_item_i2.date_int)){
+					//alert('小于');
+					// let insert_before_element = files_items_files_items.getElementsByClassName('files-item')[0];
+					// insert_before_element.parentNode.insertBefore(file_item,insert_before_element);
+					file_item_i2.parentNode.insertBefore(file_item,file_item_i2);
+					//alert(i + ' -' + i2);
+					i2--;
+					i--;
+				}
+			}else{
+				if(parseInt(file_item.date_int)<parseInt(file_item_i2.date_int)){
+					//alert('小于');
+					// let insert_before_element = files_items_files_items.getElementsByClassName('files-item')[0];
+					// insert_before_element.parentNode.insertBefore(file_item,insert_before_element);
+					file_item_i2.parentNode.insertBefore(file_item,file_item_i2);
+					//alert(i + ' -' + i2);
+					i2--;
+					i--;
+				}
+			}
+
+		}
+	}
+}
+let files_order_date_button = document.getElementById('files-order-date-button');
+files_order_date_button.onclick = function(){
+	files_order_by_date_int_function();
+	files_order_by_date_by_int_max=!files_order_by_date_by_int_max;
+}
+
 
 let ad_items = document.getElementsByClassName('sharefile-ad-only-one');
 if(navigator.language.toLowerCase().indexOf('cn')==-1){for(let i=0;i<ad_items.length;i++){let item = ad_items[i];item.remove();i--;}}
@@ -1193,6 +1282,8 @@ let folders_cat_array = [];
 files_main.oncontextmenu=function(e){
 	// 先隐藏右键菜单所有可点击的按钮
 	menu_buttons_hide();
+	files_order_size_button.style.display = "block";
+	files_order_date_button.style.display = "block";
 	files_upload_button.style.display = "block";
 	files_create_button.style.display = "block";
 	files_offline_button.style.display = "none";
