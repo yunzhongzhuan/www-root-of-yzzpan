@@ -333,6 +333,7 @@ function push_folders_to_files_page(folders_items,isPrepend){
 		div.className = "files-item files-item-hide";
 		div.name = item["name"];
 		div.date = item["date"];
+		div.date_int = item["date_int"];
 		div.item_id = item["id"];
 		div.parent = item["parent"];
 		div.innerHTML = '<div class="files-item-icon"><i class="fa fa-folder"></i></div><div class="files-item-name"><span>' + div.name + '</span></div><div class="files-item-date"><span>' + div.date + '</span></div><div class="files-item-size"><span>文件夹</span></div><div class="files-item-menu"><i class="fa fa-bars"></i><div class="files-item-menu-items files-item-menu-items-hide"><div class="files-item-menu-item files-item-menu-item-rename-button"><i class="fa fa-pencil"></i>命名</div><div class="files-item-menu-item files-item-menu-item-delete-button"><i class="fa fa-trash"></i>删除</div></div></div>';
@@ -633,6 +634,7 @@ function push_files_to_files_page(files_items,isPrepend){
 		let div = document.createElement('div');
 		div.name = item["name"];
 		div.date = item["date"];
+		div.date_int = item["date_int"];
 		div.size = item["size"];
 		div.offline = item["offline"];
 		div.offline_id = item["offline_id"];
