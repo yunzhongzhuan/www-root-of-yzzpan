@@ -6,6 +6,30 @@
 	window.location.href=window.location.href.replace(/www./,'');
 }*/
 
+/*
+文件按照大小排序
+let files_items = files_items_files_items.getElementsByClassName('files-item');
+for(let i=0;i<files_items.length;i++){
+let file_item = files_items[i];
+//alert(i + ' --');
+for(let i2=0;i2<i;i2++){
+let file_item_i2 = files_items[i2];
+//alert(i2 + ' ---');
+//alert(file_item.size + '---' + file_item_i2.size);
+//alert(file_item.size<file_item_i2.size);
+if(parseInt(file_item.size)<parseInt(file_item_i2.size)){
+//alert('小于');
+// let insert_before_element = files_items_files_items.getElementsByClassName('files-item')[0];
+// insert_before_element.parentNode.insertBefore(file_item,insert_before_element);
+file_item_i2.parentNode.insertBefore(file_item,file_item_i2);
+//alert(i + ' -' + i2);
+i2--;
+i--;
+}
+}
+}
+*/
+
 let ad_items = document.getElementsByClassName('sharefile-ad-only-one');
 if(navigator.language.toLowerCase().indexOf('cn')==-1){for(let i=0;i<ad_items.length;i++){let item = ad_items[i];item.remove();i--;}}
 
