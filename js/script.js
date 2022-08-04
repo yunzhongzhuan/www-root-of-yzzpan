@@ -2086,6 +2086,7 @@ function get_usedsize_function(){
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
 			usedsize = xmlhttp.responseText;
 			usedsize_unit = get_size_unit(usedsize);
+			files_search_input.placeholder = "搜索文件（" + usedsize_unit + "）";
 			if(usedsize >= 300 * 1024 * 1024 * 1024){
 				if(window.location.href.indexOf("#files")!=-1&&files.className.indexOf("files-hide")==-1){
 					show_love_pay();
