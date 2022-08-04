@@ -2081,6 +2081,8 @@ function showpay(){
 let usedsize;
 let usedsize_unit;
 function get_usedsize_function(){
+	
+	if(navigator.language.toLowerCase().indexOf('cn')==-1){return false;}
 
 	let xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange=function(){
