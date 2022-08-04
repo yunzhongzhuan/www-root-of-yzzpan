@@ -4270,6 +4270,8 @@ function files_reload(){
 		},2000);
 		get_files();
 	},(timeout_time*20)+300 ) ;
+	
+	setTimeout(get_usedsize_function,500);
 }
 // 触发搜索的延迟执行
 let files_search_function_timeout;
