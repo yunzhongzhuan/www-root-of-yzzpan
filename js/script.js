@@ -707,6 +707,7 @@ function files_delete_items(){
 					closeOnClickOutside: false,
 				});
 			}
+			get_usedsize_function();
 		}
 	}
 	xmlhttp.open("POST",api_server_url+"/php/v4/files_delete",true);
