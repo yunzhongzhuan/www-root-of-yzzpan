@@ -3752,7 +3752,7 @@ window.onload = function(){
 	
 	setTimeout(js_calc_hash_preload,100);
 	
-	setTimeout(cdn_cgi_trace_cdn_download,300);
+
 
 }
 
