@@ -906,6 +906,15 @@ function push_files_to_files_page(files_items,isPrepend){
 				p.append(a);
 				html_element.append(p);
 			}
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1 && cdn_cgi_trace_cdn_download_locked){
+				let p = document.createElement('p');
+				let a = document.createElement('a');
+				a.href = cdn_download_web_url + this.parent.url;
+				a.target = "_blank";
+				a.innerText = "本地下载";
+				p.append(a);
+				html_element.prepend(p);
+			}
 			if(this.parent.url_localhost!=undefined){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
@@ -1352,6 +1361,15 @@ files_main.oncontextmenu=function(e){
 				a.innerText = "源站下载";
 				p.append(a);
 				html_element.append(p);
+			}
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1 && cdn_cgi_trace_cdn_download_locked){
+				let p = document.createElement('p');
+				let a = document.createElement('a');
+				a.href = cdn_download_web_url + files_items_selected_array[0].url;
+				a.target = "_blank";
+				a.innerText = "本地下载";
+				p.append(a);
+				html_element.prepend(p);
 			}
 			if(files_items_selected_array[0].url_localhost!=undefined){
 				let p = document.createElement('p');
@@ -2246,6 +2264,55 @@ function wechat_bind_auto_click_login_button(){
 		login_input_button_login.click();
 	};
 }
+
+
+
+
+
+
+// 试一下能不能使用非 Cloudflare CN2 节点 下载 是否可用
+let cdn_download_web_url = "https://cdn-download.yunzhongzhuan.com";
+let cdn_cgi_trace_cdn_download_locked = false;
+if(window.location.href.indexOf('/#sharefile')!=-1){
+	cdn_cgi_trace_cdn_download_locked = true;
+}
+let cdn_cgi_trace_cdn_download_error_times = 0;
+function cdn_cgi_trace_cdn_download(){
+	if(navigator.language.toLowerCase().indexOf('cn')==-1){
+		return false;
+	}
+	if(cdn_cgi_trace_cdn_download_locked){
+		return false;
+	}
+	if(cdn_cgi_trace_cdn_download_error_times>3){
+		return false;
+	}
+	let xmlhttp = new XMLHttpRequest();
+	xmlhttp.onerror = function(){
+		cdn_cgi_trace_cdn_download_error_times+=1;
+		setTimeout(cdn_cgi_trace_cdn_download,100);
+	}
+	xmlhttp.onreadystatechange=function(){
+		if(xmlhttp.readyState==4 && xmlhttp.status==200){
+			// console.log(xmlhttp.responseText);
+			cdn_cgi_trace_cdn_download_locked = true;
+			
+		}
+		if(xmlhttp.readyState==4){
+			setTimeout(cdn_cgi_trace_cdn_download,100);
+		}
+	}
+	xmlhttp.open("GET",cdn_download_web_url + "/cdn-cgi/trace",true);
+	xmlhttp.send();
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -3535,6 +3602,7 @@ let sharefile_content_link_item_download_button_8 = document.getElementById('sha
 let sharefile_content_link_item_download_button_9 = document.getElementById('sharefile-content-link-item-download-button-9');
 let sharefile_content_link_item_download_button_10 = document.getElementById('sharefile-content-link-item-download-button-10');
 let sharefile_content_link_item_download_button_11 = document.getElementById('sharefile-content-link-item-download-button-11');
+let sharefile_content_link_item_download_button_12 = document.getElementById('sharefile-content-link-item-download-button-12');
 let sharefile_content_link_item_copy_link_button = document.getElementById('sharefile-content-link-item-copy-link-button');
 // sharefile_content_link_item_copy_link_button.style.display = "none";
 let sharefile_content_link_item_sharefile_copy_button = document.getElementById('sharefile-content-link-item-sharefile-copy-button');
@@ -3563,6 +3631,14 @@ function get_sharefile(id,key){
 				sharefile_content_link_item_download_button_9.href = "https://download.yunzhongzhuan.eu.org" + ResultJSON["url"];
 				sharefile_content_link_item_download_button_10.href = "https://download.yantudefengjing.eu.org" + ResultJSON["url"];
 				sharefile_content_link_item_download_button_11.href = "https://download.wenhua.eu.org" + ResultJSON["url"];
+				
+			
+				if(navigator.language.toLowerCase().indexOf('cn')!=-1 && cdn_cgi_trace_cdn_download_locked){
+					//if(userinfo["id"]!=undefined&&userinfo["id"]!=null&&userinfo["id"]!=''&&userinfo["qq"]!=undefined&&userinfo["qq"]!=null&&userinfo["qq"]!=''&&userinfo["username"]!=undefined&&userinfo["username"]!=null&&userinfo["username"]!=''){
+					sharefile_content_link_item_download_button_12.href = cdn_download_web_url + ResultJSON["url"];
+					//}
+				}
+
 				
 				// 复制内链
 				sharefile_content_link_item_copy_link_button.link = ResultJSON["url"];
