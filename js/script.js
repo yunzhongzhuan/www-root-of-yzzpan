@@ -4993,10 +4993,11 @@ let workers;
 					setTimeout(fun_1,10);
 
 
+
 					swal({
 						title: "系统信息",
 						// text: "免费用户单个文件上传最大允许" + get_size_unit( not_vip_upload_file_size ) + "。\r\n会员用户单个文件上传最大允许" + get_size_unit( upload_file_max_size ) + "。\r\n联系我们，支持上传文件大小不限。",
-						text: "上传单个文件最大允许" + get_size_unit( not_vip_upload_file_size ) + "。\r\n联系我们，支持上传文件大小不限。",
+						text: "您的账号上传单个文件最大允许" + get_size_unit( not_vip_upload_file_size ) + "。\r\n联系我们上传单个文件最大支持" + get_size_unit(8*1024*1024*1024) + "。",
 						icon: "warning",
 						buttons: ["取消","详情"],
 						closeOnClickOutside: false,
@@ -5006,6 +5007,7 @@ let workers;
 						window.open('/welcome/index.html#mail-talk-position');
 					  }
 					});
+
 
 
 					return false;
