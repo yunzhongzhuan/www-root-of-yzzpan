@@ -4178,11 +4178,11 @@ let links_data = [
 	{
 		"title":"友情链接",
 		"data":[
-			{
+			/*{
 				"name":"投诉/举报/留言/反馈/意见/建议",
 				"new_open":true,
 				"link":"https://jq.qq.com/?_wv=1027&k=wvWcRa3H"
-			},
+			},*/
 			{
 				"name":"极兔云",
 				"new_open":true,
