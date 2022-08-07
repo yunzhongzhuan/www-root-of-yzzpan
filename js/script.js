@@ -2126,10 +2126,15 @@ function get_usedsize_function(){
 // 是否支持外链
 let public_link_status = false;
 
+let show_love_pay_locked = false;
 // 显示捐助
 function show_love_pay(){
 
 	if(public_link_status){
+		return false;
+	}
+	
+	if(show_love_pay_locked){
 		return false;
 	}
 	
@@ -2154,6 +2159,8 @@ function show_love_pay(){
 	}).then((willDelete) => {
 		if (willDelete) {
 			showpay();
+		}else{
+			show_love_pay_locked = true;
 		}
 	});
 
