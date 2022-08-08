@@ -190,8 +190,8 @@ let top_apps = [
 		"name":"云中转",
 		"link":"https://yzzpan.com/#files",
 		"description":"云中转-免费云盘不限容量不限速度不限流量全球网络传输文件",
-		// "icon":"/img/logo.png",
-		"icon":"//tva1.sinaimg.cn/mw2000/005CbWF8gy1h16lkvt5ubj30go0goq4h.jpg",
+		"icon":"/img/logo.png",
+		// "icon":"//tva1.sinaimg.cn/mw2000/005CbWF8gy1h16lkvt5ubj30go0goq4h.jpg",
 		"new_open":false
 	}
 ];
