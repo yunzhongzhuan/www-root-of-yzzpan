@@ -3808,6 +3808,9 @@ function js_calc_hash_preload(){
 // setTimeout(js_calc_hash_preload,100);
 
 
+let yzzpan_51la_ip_iframe = document.getElementById('yzzpan-51la-ip-iframe');
+
+
 // 页面加载完成开始检查用户登录状态
 window.onload = function(){
 
@@ -3823,7 +3826,12 @@ window.onload = function(){
 	setTimeout(js_calc_hash_preload,100);
 	
 	setTimeout(cdn_cgi_trace_download,100);
-
+	
+	
+	setTimeout(function(){
+		yzzpan_51la_ip_iframe.src = "/51la_ip";
+	},300);
+	
 
 }
 
