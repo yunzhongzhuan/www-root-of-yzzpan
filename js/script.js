@@ -2341,7 +2341,12 @@ function cdn_cgi_trace_download(){
 
 
 
-
+// 加载一下上传文件时的遮罩提示图片
+function get_preload_upload_file_mask_png(){
+	let xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("GET","/img/upload_file_full_screen.png",true);
+	xmlhttp.send();
+}
 
 
 
@@ -3826,6 +3831,8 @@ window.onload = function(){
 	setTimeout(js_calc_hash_preload,100);
 	
 	setTimeout(cdn_cgi_trace_download,100);
+	
+	setTimeout(get_preload_upload_file_mask_png,100);
 	
 	
 	setTimeout(function(){
