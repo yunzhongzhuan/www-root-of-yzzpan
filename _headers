@@ -1,4 +1,6 @@
 # This is a comment
+/img/logo.png
+  Cache-Control: max-age=31536000
 /51la_ip
   Cache-Control: max-age=31536000
 /js/calc_hash.js
