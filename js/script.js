@@ -915,7 +915,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				p.append(a);
 				html_element.prepend(p);
 			}
-			if(true){
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
 				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + this.parent.url);
@@ -1371,7 +1371,7 @@ files_main.oncontextmenu=function(e){
 				p.append(a);
 				html_element.prepend(p);
 			}
-			if(true){
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
 				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + files_items_selected_array[0].url);
@@ -3592,7 +3592,9 @@ function get_sharefile(id,key){
 				sharefile_content_link_item_download_button_10.href = "https://download.yantudefengjing.eu.org" + ResultJSON["url"];
 				sharefile_content_link_item_download_button_11.href = "https://download.wenhua.eu.org" + ResultJSON["url"];
 				
-				sharefile_content_link_item_download_button_12.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + ResultJSON["url"]);
+				if(navigator.language.toLowerCase().indexOf('cn')!=-1){
+					sharefile_content_link_item_download_button_12.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + ResultJSON["url"]);
+				}
 
 				
 				// 复制内链
