@@ -915,7 +915,16 @@ function push_files_to_files_page(files_items,isPrepend){
 				p.append(a);
 				html_element.prepend(p);
 			}
-			console.log(html_element);
+			if(true){
+				let p = document.createElement('p');
+				let a = document.createElement('a');
+				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + this.parent.url_localhost);
+				a.target = "_blank";
+				a.innerText = "本地下载";
+				p.append(a);
+				html_element.prepend(p);
+			}
+			// console.log(html_element);
 			swal({
 				title: "选择下载",
 				content: html_element,
@@ -1362,7 +1371,16 @@ files_main.oncontextmenu=function(e){
 				p.append(a);
 				html_element.prepend(p);
 			}
-			console.log(html_element);
+			if(true){
+				let p = document.createElement('p');
+				let a = document.createElement('a');
+				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + files_items_selected_array[0].url);
+				a.target = "_blank";
+				a.innerText = "本地下载";
+				p.append(a);
+				html_element.prepend(p);
+			}
+			// console.log(html_element);
 			swal({
 				title: "选择下载",
 				content: html_element,
