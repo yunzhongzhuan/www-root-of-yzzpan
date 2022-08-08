@@ -1,4 +1,6 @@
 # This is a comment
+/img/upload_file_full_screen.png
+  Cache-Control: max-age=31536000
 /img/wechat-profile-picture-default.png
   Cache-Control: max-age=31536000
 /img/qq-profile-picture-default.png
