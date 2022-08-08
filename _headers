@@ -1,4 +1,8 @@
 # This is a comment
+/img/wechat-profile-picture-default.png
+  Cache-Control: max-age=31536000
+/img/qq-profile-picture-default.png
+  Cache-Control: max-age=31536000
 /img/logo.png
   Cache-Control: max-age=31536000
 /51la_ip
