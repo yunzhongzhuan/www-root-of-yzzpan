@@ -971,16 +971,16 @@ body{
 	overflow: hidden;
 }
 .upload-file-full-screen{
-    width: calc(100% - 8px);
-    height: calc(100vh - 8px);
-    background-color: #ffffff50;
-    position: fixed;
-    /*background-image: url('/img/upload_file_full_screen.png');*/
-	background-image: url('//tva1.sinaimg.cn/mw2000/005CbWF8gy1h16lsil4a2j30f703ijri.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    border: 4px dashed #ccc;
-    display: none;
+	width: calc(100% - 8px);
+	height: calc(100vh - 8px);
+	background-color: #ffffff50;
+	position: fixed;
+	background-image: url('/img/upload_file_full_screen.png');
+	/*background-image: url('//tva1.sinaimg.cn/mw2000/005CbWF8gy1h16lsil4a2j30f703ijri.jpg');*/
+	background-repeat: no-repeat;
+	background-position: center center;
+	border: 4px dashed #ccc;
+	display: none;
 }
 .swal-content img{
 	max-width: 100%;
