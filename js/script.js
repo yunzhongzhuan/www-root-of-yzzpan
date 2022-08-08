@@ -918,7 +918,8 @@ function push_files_to_files_page(files_items,isPrepend){
 			if(navigator.language.toLowerCase().indexOf('cn')!=-1){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
-				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + this.parent.url);
+				// a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + this.parent.url);
+				a.href = "http://cdn-download.yzzpan.com" + this.parent.url;
 				a.target = "_blank";
 				a.innerText = "本地下载";
 				p.append(a);
@@ -1374,7 +1375,8 @@ files_main.oncontextmenu=function(e){
 			if(navigator.language.toLowerCase().indexOf('cn')!=-1){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
-				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + files_items_selected_array[0].url);
+				// a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + files_items_selected_array[0].url);
+				a.href = "http://cdn-download.yzzpan.com" + files_items_selected_array[0].url;
 				a.target = "_blank";
 				a.innerText = "本地下载";
 				p.append(a);
@@ -3593,7 +3595,8 @@ function get_sharefile(id,key){
 				sharefile_content_link_item_download_button_11.href = "https://download.wenhua.eu.org" + ResultJSON["url"];
 				
 				if(navigator.language.toLowerCase().indexOf('cn')!=-1){
-					sharefile_content_link_item_download_button_12.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + ResultJSON["url"]);
+					// sharefile_content_link_item_download_button_12.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + ResultJSON["url"]);
+					sharefile_content_link_item_download_button_12.href = "http://cdn-download.yzzpan.com" + ResultJSON["url"];
 				}
 
 				
