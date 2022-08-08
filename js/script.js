@@ -915,7 +915,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				p.append(a);
 				html_element.prepend(p);
 			}
-			if(navigator.language.toLowerCase().indexOf('cn')!=-1){
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
 				// a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + this.parent.url);
@@ -1373,7 +1373,7 @@ files_main.oncontextmenu=function(e){
 				p.append(a);
 				html_element.prepend(p);
 			}
-			if(navigator.language.toLowerCase().indexOf('cn')!=-1){
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
 				// a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + files_items_selected_array[0].url);
@@ -2302,6 +2302,48 @@ function cdn_cgi_trace_upload(){
 	xmlhttp.open("GET",upload_web_url + "/cdn-cgi/trace",true);
 	xmlhttp.send();
 }
+
+
+
+
+
+// 探测下载线路，是否中国移动香港
+let cdn_cgi_trace_download_locked = false;
+let cdn_cgi_trace_download_error_times = 0;
+let cdn_cgi_trace_download_hkg = false;
+function cdn_cgi_trace_download(){
+	if(cdn_cgi_trace_download_locked){
+		return false;
+	}
+	if(cdn_cgi_trace_download_error_times>3){
+		return false;
+	}
+	let xmlhttp = new XMLHttpRequest();
+	xmlhttp.onerror = function(){
+		cdn_cgi_trace_download_error_times+=1;
+	}
+	xmlhttp.onreadystatechange=function(){
+		if(xmlhttp.readyState==4 && xmlhttp.status==200){
+			// console.log(xmlhttp.responseText);
+			cdn_cgi_trace_download_locked = true;
+			if(xmlhttp.responseText.indexOf('colo=HKG')!=-1){
+				cdn_cgi_trace_download_hkg = true;
+			}
+
+		}
+		if(xmlhttp.readyState==4){
+			setTimeout(cdn_cgi_trace_download,100);
+		}
+	}
+	xmlhttp.open("GET",download_web_url + "/cdn-cgi/trace",true);
+	xmlhttp.send();
+}
+
+
+
+
+
+
 
 // 登录按钮
 let login_input_button_login = document.getElementById('login-input-button-login');
@@ -3596,7 +3638,7 @@ function get_sharefile(id,key){
 				sharefile_content_link_item_download_button_10.href = "https://download.yantudefengjing.eu.org" + ResultJSON["url"];
 				sharefile_content_link_item_download_button_11.href = "https://download.wenhua.eu.org" + ResultJSON["url"];
 				
-				if(navigator.language.toLowerCase().indexOf('cn')!=-1){
+				if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
 					// sharefile_content_link_item_download_button_12.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + ResultJSON["url"]);
 					sharefile_content_link_item_download_button_12.href = "https://cdn-download.yzzpan.com" + ResultJSON["url"];
 					// sharefile_content_link_item_download_button_12.href = "https://cdn-upload.yzzpan.com" + ResultJSON["url"] + "&d=cdn-download.yzzpan.com";
@@ -3780,6 +3822,7 @@ window.onload = function(){
 	
 	setTimeout(js_calc_hash_preload,100);
 	
+	setTimeout(cdn_cgi_trace_download,100);
 
 
 }
