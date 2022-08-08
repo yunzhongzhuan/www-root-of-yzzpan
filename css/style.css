@@ -1100,8 +1100,8 @@ body{
 	margin: 18px;
 	border-radius: 160px;
 	border: 2px solid #ececec;
-	/*background-image: url('/img/defaukt_user_profile_picture_1.png');*/
-	background-image: url('//tva1.sinaimg.cn/mw2000/005CbWF8gy1h16lmc68ycj305k05kmx3.jpg');
+	background-image: url('/img/defaukt_user_profile_picture_1.png');
+	/*background-image: url('//tva1.sinaimg.cn/mw2000/005CbWF8gy1h16lmc68ycj305k05kmx3.jpg');*/
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center center;
