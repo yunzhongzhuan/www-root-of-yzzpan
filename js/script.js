@@ -918,7 +918,7 @@ function push_files_to_files_page(files_items,isPrepend){
 			if(true){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
-				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + this.parent.url_localhost);
+				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + this.parent.url);
 				a.target = "_blank";
 				a.innerText = "本地下载";
 				p.append(a);
