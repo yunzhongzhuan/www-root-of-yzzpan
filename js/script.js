@@ -1413,6 +1413,24 @@ files_main.oncontextmenu=function(e){
 			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
+				a.href = "https://cdn-1gbps-us-download.yzzpan.com" + files_items_selected_array[0].url;
+				a.target = "_blank";
+				a.innerText = "本地下载";
+				p.append(a);
+				html_element.prepend(p);
+			}
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
+				let p = document.createElement('p');
+				let a = document.createElement('a');
+				a.href = "https://cdn-1gbps-download.yzzpan.com" + files_items_selected_array[0].url;
+				a.target = "_blank";
+				a.innerText = "本地下载";
+				p.append(a);
+				html_element.prepend(p);
+			}
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
+				let p = document.createElement('p');
+				let a = document.createElement('a');
 				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + files_items_selected_array[0].url);
 				// a.href = "https://cdn-download.yzzpan.com" + files_items_selected_array[0].url;
 				// a.href = "https://cdn-upload.yzzpan.com" + files_items_selected_array[0].url + "&d=cdn-download.yzzpan.com";
