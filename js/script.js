@@ -897,7 +897,7 @@ function push_files_to_files_page(files_items,isPrepend){
 		div.menu_download_element.parent = div;
 		div.menu_download_element.onclick = function(){
 			let html_element = document.createElement('div');
-			html_element.innerHTML = "<p><a href='https://cdn-download.yunzhongzhuan.xyz" + this.parent.url + "' target='_blank'>移动下载</a></p><p><a href='https://ddos-guard-net-download.yunzhongzhuan.com" + this.parent.url + "' target='_blank'>联通下载</a></p><p><a href='https://download.yunzhongzhuan.eu.org" + this.parent.url + "' target='_blank'>备用下载</a></p><p><a href='https://download.yantudefengjing.eu.org" + this.parent.url + "' target='_blank'>备用下载</a></p><p><a href='https://download.wenhua.eu.org" + this.parent.url + "' target='_blank'>备用下载</a></p>";
+			html_element.innerHTML = "<p><a href='https://download.yzzpan.com" + this.parent.url + "' target='_blank'>电信下载</a></p><p><a href='https://cdn-download.yunzhongzhuan.xyz" + this.parent.url + "' target='_blank'>移动下载</a></p><p><a href='https://ddos-guard-net-download.yunzhongzhuan.com" + this.parent.url + "' target='_blank'>联通下载</a></p><p><a href='https://download.yunzhongzhuan.eu.org" + this.parent.url + "' target='_blank'>备用下载</a></p><p><a href='https://download.yantudefengjing.eu.org" + this.parent.url + "' target='_blank'>备用下载</a></p><p><a href='https://download.wenhua.eu.org" + this.parent.url + "' target='_blank'>备用下载</a></p>";
 			if(this.parent.offline!=undefined){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
@@ -911,15 +911,6 @@ function push_files_to_files_page(files_items,isPrepend){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
 				a.href = "https://www.yunzhongzhuan.com" + this.parent.url_localhost;
-				a.target = "_blank";
-				a.innerText = "本地下载";
-				p.append(a);
-				html_element.prepend(p);
-			}
-			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
-				let p = document.createElement('p');
-				let a = document.createElement('a');
-				a.href = "https://cdn-download.yzzpan.com" + this.parent.url;
 				a.target = "_blank";
 				a.innerText = "本地下载";
 				p.append(a);
