@@ -923,7 +923,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				// a.href = "https://cdn-download.yzzpan.com" + this.parent.url;
 				// a.href = "https://cdn-upload.yzzpan.com" + this.parent.url + "&d=cdn-download.yzzpan.com";
 				a.target = "_blank";
-				a.innerText = "本地下载";
+				a.innerText = "玄学下载";
 				p.append(a);
 				html_element.prepend(p);
 			}
@@ -1381,7 +1381,7 @@ files_main.oncontextmenu=function(e){
 				// a.href = "https://cdn-download.yzzpan.com" + files_items_selected_array[0].url;
 				// a.href = "https://cdn-upload.yzzpan.com" + files_items_selected_array[0].url + "&d=cdn-download.yzzpan.com";
 				a.target = "_blank";
-				a.innerText = "本地下载";
+				a.innerText = "玄学下载";
 				p.append(a);
 				html_element.prepend(p);
 			}
