@@ -7,6 +7,7 @@
 }*/
 
 /*
+window.history.pushState(null,null,"/"); // 地址变动 不刷新
 文件按照大小排序
 let files_items = files_items_files_items.getElementsByClassName('files-item');
 for(let i=0;i<files_items.length;i++){
