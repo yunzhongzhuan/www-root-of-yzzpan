@@ -928,6 +928,24 @@ function push_files_to_files_page(files_items,isPrepend){
 			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
+				a.href = "https://cdn-1gbps-us-download.yzzpan.com" + this.parent.url;
+				a.target = "_blank";
+				a.innerText = "本地下载";
+				p.append(a);
+				html_element.prepend(p);
+			}
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
+				let p = document.createElement('p');
+				let a = document.createElement('a');
+				a.href = "https://cdn-1gbps-download.yzzpan.com" + this.parent.url;
+				a.target = "_blank";
+				a.innerText = "本地下载";
+				p.append(a);
+				html_element.prepend(p);
+			}
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
+				let p = document.createElement('p');
+				let a = document.createElement('a');
 				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + this.parent.url);
 				// a.href = "https://cdn-download.yzzpan.com" + this.parent.url;
 				// a.href = "https://cdn-upload.yzzpan.com" + this.parent.url + "&d=cdn-download.yzzpan.com";
@@ -1364,7 +1382,7 @@ files_main.oncontextmenu=function(e){
 		}
 		files_download_button.onclick = function(){
 			let html_element = document.createElement('div');
-			html_element.innerHTML = "<p><a href='https://cdn-upload.yzzpan.com" + files_items_selected_array[0].url + "' target='_blank'>本地下载</a></p><p><a href='" + download_web_url + files_items_selected_array[0].url + "' target='_blank'>电信下载</a></p><p><a href='https://cdn-download.yunzhongzhuan.xyz" + files_items_selected_array[0].url + "' target='_blank'>移动下载</a></p><p><a href='https://ddos-guard-net-download.yunzhongzhuan.com" + files_items_selected_array[0].url + "' target='_blank'>联通下载</a></p><p><a href='https://download.yunzhongzhuan.eu.org" + files_items_selected_array[0].url + "' target='_blank'>备用下载</a></p><p><a href='https://download.yantudefengjing.eu.org" + files_items_selected_array[0].url + "' target='_blank'>备用下载</a></p><p><a href='https://download.wenhua.eu.org" + files_items_selected_array[0].url + "' target='_blank'>备用下载</a></p>";
+			html_element.innerHTML = "<p><a href='" + download_web_url + files_items_selected_array[0].url + "' target='_blank'>电信下载</a></p><p><a href='https://cdn-download.yunzhongzhuan.xyz" + files_items_selected_array[0].url + "' target='_blank'>移动下载</a></p><p><a href='https://ddos-guard-net-download.yunzhongzhuan.com" + files_items_selected_array[0].url + "' target='_blank'>联通下载</a></p><p><a href='https://download.yunzhongzhuan.eu.org" + files_items_selected_array[0].url + "' target='_blank'>备用下载</a></p><p><a href='https://download.yantudefengjing.eu.org" + files_items_selected_array[0].url + "' target='_blank'>备用下载</a></p><p><a href='https://download.wenhua.eu.org" + files_items_selected_array[0].url + "' target='_blank'>备用下载</a></p>";
 			if(files_items_selected_array[0].offline!=undefined){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
@@ -1378,6 +1396,15 @@ files_main.oncontextmenu=function(e){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
 				a.href = "https://www.yunzhongzhuan.com" + files_items_selected_array[0].url_localhost;
+				a.target = "_blank";
+				a.innerText = "本地下载";
+				p.append(a);
+				html_element.prepend(p);
+			}
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
+				let p = document.createElement('p');
+				let a = document.createElement('a');
+				a.href = "https://cdn-upload.yzzpan.com" + files_items_selected_array[0].url;
 				a.target = "_blank";
 				a.innerText = "本地下载";
 				p.append(a);
@@ -3625,6 +3652,8 @@ let sharefile_content_link_item_download_button_10 = document.getElementById('sh
 let sharefile_content_link_item_download_button_11 = document.getElementById('sharefile-content-link-item-download-button-11');
 let sharefile_content_link_item_download_button_12 = document.getElementById('sharefile-content-link-item-download-button-12');
 let sharefile_content_link_item_download_button_13 = document.getElementById('sharefile-content-link-item-download-button-13');
+let sharefile_content_link_item_download_button_14 = document.getElementById('sharefile-content-link-item-download-button-14');
+let sharefile_content_link_item_download_button_15 = document.getElementById('sharefile-content-link-item-download-button-15');
 let sharefile_content_link_item_copy_link_button = document.getElementById('sharefile-content-link-item-copy-link-button');
 // sharefile_content_link_item_copy_link_button.style.display = "none";
 let sharefile_content_link_item_sharefile_copy_button = document.getElementById('sharefile-content-link-item-sharefile-copy-button');
@@ -3656,6 +3685,8 @@ function get_sharefile(id,key){
 				
 				
 				if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
+					sharefile_content_link_item_download_button_14.href = "https://cdn-1gbps-download.yzzpan.com" + ResultJSON["url"];
+					sharefile_content_link_item_download_button_15.href = "https://cdn-1gbps-us-download.yzzpan.com" + ResultJSON["url"];
 					sharefile_content_link_item_download_button_13.href = "https://cdn-upload.yzzpan.com" + ResultJSON["url"];
 					sharefile_content_link_item_download_button_12.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + ResultJSON["url"]);
 					// sharefile_content_link_item_download_button_12.href = "https://cdn-download.yzzpan.com" + ResultJSON["url"];
