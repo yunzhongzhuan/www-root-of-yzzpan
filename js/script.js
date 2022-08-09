@@ -934,7 +934,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				a.target = "_blank";
 				a.innerText = "玄学下载";
 				p.append(a);
-				html_element.prepend(p);
+				html_element.append(p);
 			}
 			// console.log(html_element);
 			swal({
@@ -1392,7 +1392,7 @@ files_main.oncontextmenu=function(e){
 				a.target = "_blank";
 				a.innerText = "玄学下载";
 				p.append(a);
-				html_element.prepend(p);
+				html_element.append(p);
 			}
 			// console.log(html_element);
 			swal({
