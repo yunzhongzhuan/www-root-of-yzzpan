@@ -939,7 +939,27 @@ function push_files_to_files_page(files_items,isPrepend){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
 				// a.href = "https://cdn-1gbps-download.yzzpan.com" + this.parent.url;
-				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-1gbps-download.yzzpan.com" + this.parent.url);
+				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://kr.download.yzzpan.com" + this.parent.url);
+				a.target = "_blank";
+				a.innerText = "本地下载";
+				p.append(a);
+				html_element.prepend(p);
+			}
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
+				let p = document.createElement('p');
+				let a = document.createElement('a');
+				// a.href = "https://cdn-1gbps-download.yzzpan.com" + this.parent.url;
+				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://jp.download.yzzpan.com" + this.parent.url);
+				a.target = "_blank";
+				a.innerText = "本地下载";
+				p.append(a);
+				html_element.prepend(p);
+			}
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
+				let p = document.createElement('p');
+				let a = document.createElement('a');
+				// a.href = "https://cdn-1gbps-download.yzzpan.com" + this.parent.url;
+				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://hk.download.yzzpan.com" + this.parent.url);
 				a.target = "_blank";
 				a.innerText = "本地下载";
 				p.append(a);
@@ -1426,7 +1446,27 @@ files_main.oncontextmenu=function(e){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
 				// a.href = "https://cdn-1gbps-download.yzzpan.com" + files_items_selected_array[0].url;
-				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-1gbps-download.yzzpan.com" + files_items_selected_array[0].url);
+				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://kr.download.yzzpan.com" + files_items_selected_array[0].url);
+				a.target = "_blank";
+				a.innerText = "本地下载";
+				p.append(a);
+				html_element.prepend(p);
+			}
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
+				let p = document.createElement('p');
+				let a = document.createElement('a');
+				// a.href = "https://cdn-1gbps-download.yzzpan.com" + files_items_selected_array[0].url;
+				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://jp.download.yzzpan.com" + files_items_selected_array[0].url);
+				a.target = "_blank";
+				a.innerText = "本地下载";
+				p.append(a);
+				html_element.prepend(p);
+			}
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
+				let p = document.createElement('p');
+				let a = document.createElement('a');
+				// a.href = "https://cdn-1gbps-download.yzzpan.com" + files_items_selected_array[0].url;
+				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://hk.download.yzzpan.com" + files_items_selected_array[0].url);
 				a.target = "_blank";
 				a.innerText = "本地下载";
 				p.append(a);
@@ -3676,6 +3716,8 @@ let sharefile_content_link_item_download_button_12 = document.getElementById('sh
 let sharefile_content_link_item_download_button_13 = document.getElementById('sharefile-content-link-item-download-button-13');
 let sharefile_content_link_item_download_button_14 = document.getElementById('sharefile-content-link-item-download-button-14');
 let sharefile_content_link_item_download_button_15 = document.getElementById('sharefile-content-link-item-download-button-15');
+let sharefile_content_link_item_download_button_15 = document.getElementById('sharefile-content-link-item-download-button-16');
+let sharefile_content_link_item_download_button_15 = document.getElementById('sharefile-content-link-item-download-button-17');
 let sharefile_content_link_item_copy_link_button = document.getElementById('sharefile-content-link-item-copy-link-button');
 // sharefile_content_link_item_copy_link_button.style.display = "none";
 let sharefile_content_link_item_sharefile_copy_button = document.getElementById('sharefile-content-link-item-sharefile-copy-button');
@@ -3709,7 +3751,9 @@ function get_sharefile(id,key){
 				if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
 					// sharefile_content_link_item_download_button_14.href = "https://cdn-1gbps-download.yzzpan.com" + ResultJSON["url"];
 					// sharefile_content_link_item_download_button_15.href = "https://cdn-1gbps-us-download.yzzpan.com" + ResultJSON["url"];
-					sharefile_content_link_item_download_button_14.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-1gbps-download.yzzpan.com" + ResultJSON["url"]);
+					sharefile_content_link_item_download_button_14.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://hk.download.yzzpan.com" + ResultJSON["url"]);
+					sharefile_content_link_item_download_button_16.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://jp.download.yzzpan.com" + ResultJSON["url"]);
+					sharefile_content_link_item_download_button_17.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://kr.download.yzzpan.com" + ResultJSON["url"]);
 					sharefile_content_link_item_download_button_15.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-1gbps-us-download.yzzpan.com" + ResultJSON["url"]);
 					sharefile_content_link_item_download_button_13.href = "https://cdn-upload.yzzpan.com" + ResultJSON["url"];
 					sharefile_content_link_item_download_button_12.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-download.yzzpan.com" + ResultJSON["url"]);
