@@ -3749,6 +3749,7 @@ function get_sharefile(id,key){
 				
 				
 				
+				
 				if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
 					// sharefile_content_link_item_download_button_14.href = "https://cdn-1gbps-download.yzzpan.com" + ResultJSON["url"];
 					// sharefile_content_link_item_download_button_15.href = "https://cdn-1gbps-us-download.yzzpan.com" + ResultJSON["url"];
