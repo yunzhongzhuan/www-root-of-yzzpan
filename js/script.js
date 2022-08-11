@@ -4346,6 +4346,11 @@ let links_data = [
 				"new_open":true,
 				"link":"https://www.mxzsp.com/"
 			},
+			{
+				"name":"ImgSki",
+				"new_open":true,
+				"link":"https://img.ski/"
+			},
 		]
 	},
 	/*{
