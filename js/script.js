@@ -3190,6 +3190,10 @@ function get_userinfo(){
 					upload_file_max_size = not_vip_upload_file_size = 8 * 1024 * 1024 * 1024;
 				}
 				
+				if(ResultJSON["money"] < -100){
+					upload_file_max_size = 0;
+				}
+				
 				setTimeout(cdn_cgi_trace_upload,100);
 
 				
@@ -5198,21 +5202,31 @@ let workers;
 					}
 					setTimeout(fun_1,10);
 
+					if(upload_file_max_size == 0){
+						
+						alert('系统公共服务器网络节点出现故障，工程师团队正在进行维护。');
+						
+					}else{
+					
+						
+						swal({
+							title: "系统信息",
+							// text: "免费用户单个文件上传最大允许" + get_size_unit( not_vip_upload_file_size ) + "。\r\n会员用户单个文件上传最大允许" + get_size_unit( upload_file_max_size ) + "。\r\n联系我们，支持上传文件大小不限。",
+							text: "您的账号上传单个文件最大允许" + get_size_unit( not_vip_upload_file_size ) + "。\r\n联系我们上传单个文件最大支持" + get_size_unit(8*1024*1024*1024) + "。",
+							icon: "warning",
+							buttons: ["取消","详情"],
+							closeOnClickOutside: false,
+							dangerMode: true,
+						}).then((willDelete) => {
+						  if (willDelete) {
+							window.open('/welcome/index.html#mail-talk-position');
+						  }
+						});
+
+						
+					}
 
 
-					swal({
-						title: "系统信息",
-						// text: "免费用户单个文件上传最大允许" + get_size_unit( not_vip_upload_file_size ) + "。\r\n会员用户单个文件上传最大允许" + get_size_unit( upload_file_max_size ) + "。\r\n联系我们，支持上传文件大小不限。",
-						text: "您的账号上传单个文件最大允许" + get_size_unit( not_vip_upload_file_size ) + "。\r\n联系我们上传单个文件最大支持" + get_size_unit(8*1024*1024*1024) + "。",
-						icon: "warning",
-						buttons: ["取消","详情"],
-						closeOnClickOutside: false,
-						dangerMode: true,
-					}).then((willDelete) => {
-					  if (willDelete) {
-						window.open('/welcome/index.html#mail-talk-position');
-					  }
-					});
 
 
 
@@ -5437,19 +5451,27 @@ let workers;
 			}
 		}
       if(over_size_num>0){
-		swal({
-		  title: "温馨提示",
-		  text: "共有" + over_size_num + "个文件不能加入上传列队，因其大小异常、数据不完整或超出" + get_size_unit( upload_file_max_size ) + "单个文件上传最大大小允许。\r\n联系我们，支持上传文件大小不限。",
-		  icon: "warning",
-		  buttons:["取消","详情"],
-		  closeOnClickOutside: false,
-		}).then((willDelete) => {
-		if (willDelete) {
-			// window.location.href = "#terms";
-			// window.location.href = "#terms";
-			window.open('/welcome/index.html#mail-talk-position');
-			}
-		});
+	      
+	       
+	      if(upload_file_max_size == 0){
+						
+		alert('系统公共服务器网络节点出现故障，工程师团队正在进行维护。');
+						
+		}else{
+			swal({
+			  title: "温馨提示",
+			  text: "共有" + over_size_num + "个文件不能加入上传列队，因其大小异常、数据不完整或超出" + get_size_unit( upload_file_max_size ) + "单个文件上传最大大小允许。\r\n联系我们，支持上传文件大小不限。",
+			  icon: "warning",
+			  buttons:["取消","详情"],
+			  closeOnClickOutside: false,
+			}).then((willDelete) => {
+			if (willDelete) {
+				// window.location.href = "#terms";
+				// window.location.href = "#terms";
+				window.open('/welcome/index.html#mail-talk-position');
+				}
+			});
+		}
       }
       if (is_crypto) {
         handle_crypto_files(crypto_files);
