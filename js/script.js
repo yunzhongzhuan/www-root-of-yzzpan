@@ -4000,6 +4000,15 @@ window.onload = function(){
 		yzzpan_51la_ip_iframe.src = "/51la_ip";
 	},300);
 	
+	
+	if(navigator.language.toLowerCase().indexOf('cn')!=-1){
+	
+		setTimeout(function(){
+			alert('2022年8月12日17时至20时因CDN网络波动与配置错误原因，导致文件上传至100%时无法完成上传，已及时发现问题并修复。');
+		},1000);
+	
+	}
+	
 
 }
 
