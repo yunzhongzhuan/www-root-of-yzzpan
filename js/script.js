@@ -935,15 +935,22 @@ function push_files_to_files_page(files_items,isPrepend){
 				p.append(a);
 				html_element.prepend(p);
 			}
-			if(false&&navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
-				let p = document.createElement('p');
-				let a = document.createElement('a');
-				// a.href = "https://cdn-1gbps-download.yzzpan.com" + this.parent.url;
-				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://kr.download.http.yzzpan.com" + this.parent.url);
-				a.target = "_blank";
-				a.innerText = "本地下载";
-				p.append(a);
-				html_element.prepend(p);
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
+				if(
+					hkg_cdn_test_domain_text!=undefined
+					&&
+					hkg_cdn_test_domain_text!=""
+					&&
+					hkg_cdn_test_domain_text.length>10
+				){
+					let p = document.createElement('p');
+					let a = document.createElement('a');
+					a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://" + hkg_cdn_test_domain_text + this.parent.url);
+					a.target = "_blank";
+					a.innerText = "测试下载（不稳定）";
+					p.append(a);
+					html_element.prepend(p);
+				}
 			}
 			if(false&&navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
 				let p = document.createElement('p');
@@ -1442,15 +1449,23 @@ files_main.oncontextmenu=function(e){
 				p.append(a);
 				html_element.prepend(p);
 			}
-			if(false&&navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
-				let p = document.createElement('p');
-				let a = document.createElement('a');
-				// a.href = "https://cdn-1gbps-download.yzzpan.com" + files_items_selected_array[0].url;
-				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://kr.download.http.yzzpan.com" + files_items_selected_array[0].url);
-				a.target = "_blank";
-				a.innerText = "本地下载";
-				p.append(a);
-				html_element.prepend(p);
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
+				if(
+					hkg_cdn_test_domain_text!=undefined
+					&&
+					hkg_cdn_test_domain_text!=""
+					&&
+					hkg_cdn_test_domain_text.length>10
+				){
+					let p = document.createElement('p');
+					let a = document.createElement('a');
+					// a.href = "https://cdn-1gbps-download.yzzpan.com" + files_items_selected_array[0].url;
+					a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://kr.download.http.yzzpan.com" + files_items_selected_array[0].url);
+					a.target = "_blank";
+					a.innerText = "测试下载（不稳定）";
+					p.append(a);
+					html_element.prepend(p);
+				}
 			}
 			if(false&&navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
 				let p = document.createElement('p');
@@ -3731,6 +3746,22 @@ function get_sharefile(id,key){
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
 			let ResultJSON = JSON.parse(xmlhttp.responseText);
 			if(ResultJSON["status"]){
+				
+				
+				if(
+					ResultJSON["hkg_cdn"]!=undefined
+					&&
+					ResultJSON["hkg_cdn"]!=""
+					&&
+					ResultJSON["hkg_cdn"]!=null
+					&&
+					ResultJSON["hkg_cdn"].length>10
+				){
+					hkg_cdn_test_domain_text = ResultJSON["hkg_cdn"];
+				}
+				
+				
+				
 				sharefile_content_userinfo_username.innerText = ResultJSON["username"];
 				sharefile_content_userinfo_datetime.innerText = ResultJSON["date"];
 				sharefile_content_fileinfo_filename_span.innerText = ResultJSON["name"];
@@ -3832,6 +3863,7 @@ function get_sharefile(id,key){
 					sharefile_content_link_items.prepend(div);
 				}
 				
+				
 				if(
 					hkg_cdn_test_domain_text!=""
 					&&
@@ -3842,12 +3874,13 @@ function get_sharefile(id,key){
 					let div = document.createElement('div');
 					div.className="sharefile-content-link-item";
 					let a = document.createElement('a');
-					a.innerText = "本地下载";
+					a.innerText = "测试下载（不稳定）";
 					a.target = "_blank";
 					a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa( "http://" + hkg_cdn_test_domain_text + ResultJSON["url"]);
 					div.prepend(a);
 					sharefile_content_link_items.prepend(div);
 				}
+
 
 				
 				
