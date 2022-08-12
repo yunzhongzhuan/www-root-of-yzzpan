@@ -1460,7 +1460,7 @@ files_main.oncontextmenu=function(e){
 					let p = document.createElement('p');
 					let a = document.createElement('a');
 					// a.href = "https://cdn-1gbps-download.yzzpan.com" + files_items_selected_array[0].url;
-					a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://kr.download.http.yzzpan.com" + files_items_selected_array[0].url);
+					a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://" + hkg_cdn_test_domain_text + files_items_selected_array[0].url);
 					a.target = "_blank";
 					a.innerText = "测试下载（不稳定）";
 					p.append(a);
