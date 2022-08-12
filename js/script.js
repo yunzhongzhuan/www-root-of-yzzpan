@@ -3831,6 +3831,26 @@ function get_sharefile(id,key){
 					div.append(span);
 					sharefile_content_link_items.prepend(div);
 				}
+				
+				if(
+					hkg_cdn_test_domain_text!=""
+					&&
+					hkg_cdn_test_domain_text!=undefined
+					&&
+					hkg_cdn_test_domain_text.length>10
+				){
+					let div = document.createElement('div');
+					div.className="sharefile-content-link-item";
+					let a = document.createElement('a');
+					a.innerText = "本地下载";
+					a.target = "_blank";
+					a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa( "http://" + hkg_cdn_test_domain_text + ResultJSON["url"]);
+					div.prepend(a);
+					sharefile_content_link_items.prepend(div);
+				}
+
+				
+				
 			}else{
 				swal({
 					title: "链接无效",
@@ -3950,6 +3970,9 @@ window.onload = function(){
 
 }
 
+// 香港 CDN
+let hkg_cdn_test_domain_text = "";
+
 // 当前文件位置
 let get_files_folders_array = ["0"];
 let get_files_folders_array_name = ["全部文件"];
@@ -3997,6 +4020,20 @@ function get_files(){
 				return false;
 			}
 			let ResultJSON = JSON.parse(xmlhttp.responseText);
+			
+			
+			if(
+				ResultJSON["hkg_cdn"]!=undefined
+				&&
+				ResultJSON["hkg_cdn"]!=""
+				&&
+				ResultJSON["hkg_cdn"]!=null
+				&&
+				ResultJSON["hkg_cdn"].length>10
+			){
+				hkg_cdn_test_domain_text = ResultJSON["hkg_cdn"];
+			}
+			
 			if(ResultJSON["status"]){
 				if( ResultJSON["public_link_hostname"]!=undefined ){
 					public_link_hostname = ResultJSON["public_link_hostname"];
