@@ -9,6 +9,8 @@
   Cache-Control: max-age=31536000
 /img/logo.png
   Cache-Control: max-age=31536000
+/img/telecomspeed.png
+  Cache-Control: max-age=31536000
 /51la_ip
   Cache-Control: max-age=31536000
 /js/calc_hash.js
