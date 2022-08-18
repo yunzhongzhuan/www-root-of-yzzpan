@@ -4378,16 +4378,7 @@ let links_data = [
 			}*/
 		]
 	},
-	{
-		"title":"福利活动",
-		"data":[
-			{
-				"name":"腾讯大王卡",
-				"new_open":true,
-				"link":"https://txwk.10010.com/kcardorder/gotoUid?state=KCARD_INVITE2021Q2_ORDERLAND&channel=01-0379-a4dm-a53a&ADTAG=01-0379-a4dm-a53a&ShareID=ZDJZQWl1TFVYWFgvVFV3Ti8xUVdndz09&IdType=TEL"
-			}
-		]
-	},
+
 	{
 		"title":"友情链接",
 		"data":[
