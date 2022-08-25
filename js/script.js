@@ -904,7 +904,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				let a = document.createElement('a');
 				a.href = "https://www.yunzhongzhuan.com" + this.parent.url_localhost;
 				a.target = "_blank";
-				a.innerText = "本地下载";
+				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
 			}
@@ -913,7 +913,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				let a = document.createElement('a');
 				a.href = "https://cdn-download.yzzpan.com" + this.parent.url;
 				a.target = "_blank";
-				a.innerText = "本地下载";
+				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
 			}
@@ -1420,7 +1420,7 @@ files_main.oncontextmenu=function(e){
 				let a = document.createElement('a');
 				a.href = "https://www.yunzhongzhuan.com" + files_items_selected_array[0].url_localhost;
 				a.target = "_blank";
-				a.innerText = "本地下载";
+				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
 			}
@@ -1440,7 +1440,7 @@ files_main.oncontextmenu=function(e){
 				// a.href = "https://cdn-1gbps-us-download.yzzpan.com" + files_items_selected_array[0].url;
 				a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://cdn-1gbps-us-download.yzzpan.com" + files_items_selected_array[0].url);
 				a.target = "_blank";
-				a.innerText = "本地下载";
+				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
 			}
@@ -3852,7 +3852,7 @@ function get_sharefile(id,key){
 					let div = document.createElement('div');
 					div.className="sharefile-content-link-item sharefile-content-link-item-localhost";
 					let span = document.createElement('span');
-					span.innerText = "本地下载";
+					span.innerText = "点击下载";
 					span.link = "https://www.yunzhongzhuan.com" + ResultJSON["url_localhost"];
 					span.onclick = function(){
 						window.open(this.link);
