@@ -908,7 +908,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				p.append(a);
 				html_element.prepend(p);
 			}
-			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
+			/*if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
 				a.href = "https://cdn-download.yzzpan.com" + this.parent.url;
@@ -916,7 +916,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
-			}
+			}*/
 			/*if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
