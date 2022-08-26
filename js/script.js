@@ -4386,7 +4386,16 @@ let links_data = [
 			}*/
 		]
 	},
-
+	{
+		"title":"相关链接",
+		"data":[
+			{
+				"name":"用户协议",
+				"new_open":false,
+				"link":"/#terms-of-services"
+			},
+		]
+	},
 	{
 		"title":"友情链接",
 		"data":[
