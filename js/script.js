@@ -1407,7 +1407,7 @@ files_main.oncontextmenu=function(e){
 	// 是否显示下载分享按钮
 	if( folders_items_selected_array.length == 0 && files_items_selected_array.length == 1 ){
 		files_download_button.style.display = "block";
-		files_link_button.style.display = "block";
+		// files_link_button.style.display = "block"; // 展示内链
 		if(navigator.language.toLowerCase().indexOf('cn')!=-1){
 			files_public_link_button.style.display = "block";
 		}
@@ -1521,6 +1521,7 @@ files_main.oncontextmenu=function(e){
 		
 		// 显示内链
 		files_link_button.onclick = function(){
+			return false;
 			if(files_items_selected_array[0].media!=undefined&&files_items_selected_array[0].media.length===38){
 				show_link(download_web_url+"/download/media/"+files_items_selected_array[0].media+"/"+encodeURIComponent(files_items_selected_array[0].name)); // encodeURIComponent
 				return false;
