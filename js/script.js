@@ -4414,17 +4414,17 @@ let links_data = [
 				"new_open":true,
 				"link":"https://www.jituy.com/"
 			},
-			{
+			/*{
 				"name":"白熊云",
 				"new_open":true,
 				"link":"https://www.baixiong.cloud/"
-			},
+			},*/
 			{
 				"name":"极兔图床",
 				"new_open":true,
 				"link":"https://pic.jitudisk.com/"
 			},
-			{
+			/*{
 				"name":"BootCDN",
 				"new_open":true,
 				"link":"https://www.bootcdn.cn/"
@@ -4438,7 +4438,7 @@ let links_data = [
 				"name":"墨轩竹",
 				"new_open":true,
 				"link":"https://www.mxzsp.com/"
-			},
+			},*/
 			{
 				"name":"ImgSki",
 				"new_open":true,
