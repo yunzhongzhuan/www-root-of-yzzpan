@@ -2552,9 +2552,10 @@ function wechat_bind_auto_click_login_button(){
 
 
 
-// 加载上传域名，提前获取IP
+// cdn-download 加速下载的域名
 let cdn_cgi_trace_cdn_download_locked = false;
 let cdn_cgi_trace_cdn_download_status = false;
+let sharefile_content_link_items_cdn_download = document.getElementById('sharefile-content-link-items-cdn-download');
 function cdn_cgi_trace_cdn_download(){
 	if(cdn_cgi_trace_cdn_download_locked){
 		return false;
@@ -2565,6 +2566,7 @@ function cdn_cgi_trace_cdn_download(){
 			// console.log(xmlhttp.responseText);
 			cdn_cgi_trace_cdn_download_locked = true;
 			cdn_cgi_trace_cdn_download_status = true;
+			sharefile_content_link_items_cdn_download.style.display = "block";
 		}
 		if(xmlhttp.readyState==4){
 			setTimeout(cdn_cgi_trace_cdn_download,100);
@@ -4076,6 +4078,89 @@ function get_sharefile(id,key){
 					*/
 					div.append(a);
 					sharefile_content_link_items.prepend(div);
+				}
+				
+				// cdn-download
+				// if(cdn_cgi_trace_cdn_download_status&&cdn_cgi_trace_download_hkg==false){
+				if(true){
+					sharefile_content_link_items_cdn_download.innerHTML = '';
+					if(true){
+						let div = document.createElement('div');
+						div.className="sharefile-content-link-item";
+						let a = document.createElement('a');
+						a.innerText = "点击下载";
+						a.target = "_blank";
+						a.style.fontWeight = "bold";
+						a.href = "https://cdn-download.yunzhongzhuan.eu.org" + ResultJSON["url"];
+						div.prepend(a);
+						sharefile_content_link_items.prepend(div);
+					}
+					if(true){
+						let div = document.createElement('div');
+						div.className="sharefile-content-link-item";
+						let a = document.createElement('a');
+						a.innerText = "点击下载";
+						a.target = "_blank";
+						a.style.fontWeight = "bold";
+						a.href = "https://cdn-download.yantudefengjing.eu.org" + ResultJSON["url"];
+						div.prepend(a);
+						sharefile_content_link_items.prepend(div);
+					}
+					if(true){
+						let div = document.createElement('div');
+						div.className="sharefile-content-link-item";
+						let a = document.createElement('a');
+						a.innerText = "点击下载";
+						a.target = "_blank";
+						a.style.fontWeight = "bold";
+						a.href = "https://cdn-download.chunghuatelecom.eu.org" + ResultJSON["url"];
+						div.prepend(a);
+						sharefile_content_link_items.prepend(div);
+					}
+					if(true){
+						let div = document.createElement('div');
+						div.className="sharefile-content-link-item";
+						let a = document.createElement('a');
+						a.innerText = "点击下载";
+						a.target = "_blank";
+						a.style.fontWeight = "bold";
+						a.href = "https://cdn-download.cmhkg.eu.org" + ResultJSON["url"];
+						div.prepend(a);
+						sharefile_content_link_items.prepend(div);
+					}
+					if(true){
+						let div = document.createElement('div');
+						div.className="sharefile-content-link-item";
+						let a = document.createElement('a');
+						a.innerText = "点击下载";
+						a.target = "_blank";
+						a.style.fontWeight = "bold";
+						a.href = "https://cdn-download.unicomtelecom.eu.org" + ResultJSON["url"];
+						div.prepend(a);
+						sharefile_content_link_items.prepend(div);
+					}
+					if(true){
+						let div = document.createElement('div');
+						div.className="sharefile-content-link-item";
+						let a = document.createElement('a');
+						a.innerText = "点击下载";
+						a.target = "_blank";
+						a.style.fontWeight = "bold";
+						a.href = "https://cdn-download.wenhua.eu.org" + ResultJSON["url"];
+						div.prepend(a);
+						sharefile_content_link_items.prepend(div);
+					}
+					if(true){
+						let div = document.createElement('div');
+						div.className="sharefile-content-link-item";
+						let a = document.createElement('a');
+						a.innerText = "点击下载";
+						a.target = "_blank";
+						a.style.fontWeight = "bold";
+						a.href = "https://cdn-download.chunghwatelecom.eu.org" + ResultJSON["url"];
+						div.prepend(a);
+						sharefile_content_link_items.prepend(div);
+					}
 				}
 				
 				
