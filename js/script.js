@@ -2638,7 +2638,7 @@ function cdn_cgi_trace_download(){
 				cdn_cgi_trace_download_hkg = true;
 			}
 			
-			setTimeout(cdn_cgi_trace_cdn_download,100);
+			
 
 		}
 		if(xmlhttp.readyState==4){
@@ -4281,7 +4281,7 @@ window.onload = function(){
 	
 	setTimeout(cdn_cgi_trace_download,100);
 	
-	
+	setTimeout(cdn_cgi_trace_cdn_download,100);
 	
 	setTimeout(get_preload_upload_file_mask_png,100);
 	
