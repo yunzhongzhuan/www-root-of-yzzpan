@@ -1269,6 +1269,10 @@ body{
 	background-color:#9f9f9f2b;
 	transition: width .12s ease;
 }
+.sharefile-content-link-items-cdn-download{
+	width: 100%;
+	float: left;
+}
 @media screen and (max-width: 1500px){
 	.login-content-logo{
 		width: 0px;
