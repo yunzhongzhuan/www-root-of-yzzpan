@@ -992,7 +992,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				let a = document.createElement('a');
 				a.href = "https://cdn-download.yunzhongzhuan.eu.org" + this.parent.url;
 				a.target = "_blank";
-				a.style.color = "red";
+				a.style.fontWeight = "bold";
 				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
@@ -1002,7 +1002,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				let a = document.createElement('a');
 				a.href = "https://cdn-download.yantudefengjing.eu.org" + this.parent.url;
 				a.target = "_blank";
-				a.style.color = "red";
+				a.style.fontWeight = "bold";
 				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
@@ -1012,7 +1012,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				let a = document.createElement('a');
 				a.href = "https://cdn-download.chunghuatelecom.eu.org" + this.parent.url;
 				a.target = "_blank";
-				a.style.color = "red";
+				a.style.fontWeight = "bold";
 				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
@@ -1022,7 +1022,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				let a = document.createElement('a');
 				a.href = "https://cdn-download.cmhkg.eu.org" + this.parent.url;
 				a.target = "_blank";
-				a.style.color = "red";
+				a.style.fontWeight = "bold";
 				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
@@ -1032,7 +1032,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				let a = document.createElement('a');
 				a.href = "https://cdn-download.unicomtelecom.eu.org" + this.parent.url;
 				a.target = "_blank";
-				a.style.color = "red";
+				a.style.fontWeight = "bold";
 				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
@@ -1042,7 +1042,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				let a = document.createElement('a');
 				a.href = "https://cdn-download.wenhua.eu.org" + this.parent.url;
 				a.target = "_blank";
-				a.style.color = "red";
+				a.style.fontWeight = "bold";
 				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
@@ -1052,7 +1052,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				let a = document.createElement('a');
 				a.href = "https://cdn-download.chunghwatelecom.eu.org" + this.parent.url;
 				a.target = "_blank";
-				a.style.color = "red";
+				a.style.fontWeight = "bold";
 				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
@@ -1585,7 +1585,7 @@ files_main.oncontextmenu=function(e){
 				let a = document.createElement('a');
 				a.href = "https://cdn-download.yunzhongzhuan.eu.org" + files_items_selected_array[0].url;
 				a.target = "_blank";
-				a.style.color = "red";
+				a.style.fontWeight = "bold";
 				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
@@ -1595,7 +1595,7 @@ files_main.oncontextmenu=function(e){
 				let a = document.createElement('a');
 				a.href = "https://cdn-download.yantudefengjing.eu.org" + files_items_selected_array[0].url;
 				a.target = "_blank";
-				a.style.color = "red";
+				a.style.fontWeight = "bold";
 				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
@@ -1605,7 +1605,7 @@ files_main.oncontextmenu=function(e){
 				let a = document.createElement('a');
 				a.href = "https://cdn-download.chunghuatelecom.eu.org" + files_items_selected_array[0].url;
 				a.target = "_blank";
-				a.style.color = "red";
+				a.style.fontWeight = "bold";
 				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
@@ -1615,7 +1615,7 @@ files_main.oncontextmenu=function(e){
 				let a = document.createElement('a');
 				a.href = "https://cdn-download.cmhkg.eu.org" + files_items_selected_array[0].url;
 				a.target = "_blank";
-				a.style.color = "red";
+				a.style.fontWeight = "bold";
 				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
@@ -1625,7 +1625,7 @@ files_main.oncontextmenu=function(e){
 				let a = document.createElement('a');
 				a.href = "https://cdn-download.unicomtelecom.eu.org" + files_items_selected_array[0].url;
 				a.target = "_blank";
-				a.style.color = "red";
+				a.style.fontWeight = "bold";
 				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
@@ -1635,7 +1635,7 @@ files_main.oncontextmenu=function(e){
 				let a = document.createElement('a');
 				a.href = "https://cdn-download.wenhua.eu.org" + files_items_selected_array[0].url;
 				a.target = "_blank";
-				a.style.color = "red";
+				a.style.fontWeight = "bold";
 				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
@@ -1645,7 +1645,7 @@ files_main.oncontextmenu=function(e){
 				let a = document.createElement('a');
 				a.href = "https://cdn-download.chunghwatelecom.eu.org" + files_items_selected_array[0].url;
 				a.target = "_blank";
-				a.style.color = "red";
+				a.style.fontWeight = "bold";
 				a.innerText = "点击下载";
 				p.append(a);
 				html_element.prepend(p);
