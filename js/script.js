@@ -2564,6 +2564,9 @@ function cdn_cgi_trace_cdn_download(){
 	if(cdn_cgi_trace_cdn_download_error_times>5){
 		return false;
 	}
+	if(navigator.language.toLowerCase().indexOf('cn')==-1){
+		return false;
+	}
 	let xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange=function(){
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
