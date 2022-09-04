@@ -4100,7 +4100,7 @@ function get_sharefile(id,key){
 						a.style.fontWeight = "bold";
 						a.href = "https://cdn-download.yunzhongzhuan.eu.org" + ResultJSON["url"];
 						div.prepend(a);
-						sharefile_content_link_items.prepend(div);
+						sharefile_content_link_items_cdn_download.prepend(div);
 					}
 					if(true){
 						let div = document.createElement('div');
@@ -4111,7 +4111,7 @@ function get_sharefile(id,key){
 						a.style.fontWeight = "bold";
 						a.href = "https://cdn-download.yantudefengjing.eu.org" + ResultJSON["url"];
 						div.prepend(a);
-						sharefile_content_link_items.prepend(div);
+						sharefile_content_link_items_cdn_download.prepend(div);
 					}
 					if(true){
 						let div = document.createElement('div');
@@ -4122,7 +4122,7 @@ function get_sharefile(id,key){
 						a.style.fontWeight = "bold";
 						a.href = "https://cdn-download.chunghuatelecom.eu.org" + ResultJSON["url"];
 						div.prepend(a);
-						sharefile_content_link_items.prepend(div);
+						sharefile_content_link_items_cdn_download.prepend(div);
 					}
 					if(true){
 						let div = document.createElement('div');
@@ -4133,7 +4133,7 @@ function get_sharefile(id,key){
 						a.style.fontWeight = "bold";
 						a.href = "https://cdn-download.cmhkg.eu.org" + ResultJSON["url"];
 						div.prepend(a);
-						sharefile_content_link_items.prepend(div);
+						sharefile_content_link_items_cdn_download.prepend(div);
 					}
 					if(true){
 						let div = document.createElement('div');
@@ -4144,7 +4144,7 @@ function get_sharefile(id,key){
 						a.style.fontWeight = "bold";
 						a.href = "https://cdn-download.unicomtelecom.eu.org" + ResultJSON["url"];
 						div.prepend(a);
-						sharefile_content_link_items.prepend(div);
+						sharefile_content_link_items_cdn_download.prepend(div);
 					}
 					if(true){
 						let div = document.createElement('div');
@@ -4155,7 +4155,7 @@ function get_sharefile(id,key){
 						a.style.fontWeight = "bold";
 						a.href = "https://cdn-download.wenhua.eu.org" + ResultJSON["url"];
 						div.prepend(a);
-						sharefile_content_link_items.prepend(div);
+						sharefile_content_link_items_cdn_download.prepend(div);
 					}
 					if(true){
 						let div = document.createElement('div');
@@ -4166,9 +4166,10 @@ function get_sharefile(id,key){
 						a.style.fontWeight = "bold";
 						a.href = "https://cdn-download.chunghwatelecom.eu.org" + ResultJSON["url"];
 						div.prepend(a);
-						sharefile_content_link_items.prepend(div);
+						sharefile_content_link_items_cdn_download.prepend(div);
 					}
 				}
+				
 				
 				
 			}else{
