@@ -2556,8 +2556,12 @@ function wechat_bind_auto_click_login_button(){
 let cdn_cgi_trace_cdn_download_locked = false;
 let cdn_cgi_trace_cdn_download_status = false;
 let sharefile_content_link_items_cdn_download = document.getElementById('sharefile-content-link-items-cdn-download');
+let cdn_cgi_trace_cdn_download_error_times = 0;
 function cdn_cgi_trace_cdn_download(){
 	if(cdn_cgi_trace_cdn_download_locked){
+		return false;
+	}
+	if(cdn_cgi_trace_cdn_download_error_times>5){
 		return false;
 	}
 	let xmlhttp = new XMLHttpRequest();
@@ -2571,6 +2575,9 @@ function cdn_cgi_trace_cdn_download(){
 		if(xmlhttp.readyState==4){
 			setTimeout(cdn_cgi_trace_cdn_download,100);
 		}
+	}
+	xmlhttp.onerror = function(){
+		cdn_cgi_trace_cdn_download_error_times++;
 	}
 	xmlhttp.open("GET","https://cdn-download.yunzhongzhuan.com/cdn-cgi/trace",true);
 	xmlhttp.send();
