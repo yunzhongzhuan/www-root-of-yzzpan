@@ -2590,10 +2590,13 @@ function cdn_cgi_trace_cdn_download(){
 			// console.log(xmlhttp.responseText);
 			cdn_cgi_trace_cdn_download_locked = true;
 			cdn_cgi_trace_cdn_download_status = true;
-			sharefile_content_link_items_cdn_download.style.display = "block";
+			
 			if(cdn_cgi_trace_download_hkg){
 				sharefile_content_link_items_cdn_download.style.display = "none";
+			}else{
+				sharefile_content_link_items_cdn_download.style.display = "block";
 			}
+			
 		}
 		if(xmlhttp.readyState==4){
 			setTimeout(cdn_cgi_trace_cdn_download,100);
