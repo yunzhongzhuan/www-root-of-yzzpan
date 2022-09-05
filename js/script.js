@@ -963,7 +963,8 @@ function push_files_to_files_page(files_items,isPrepend){
 			
 			
 			
-			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
+			// if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1){
 				if(
 					hkg_cdn_test_domain_text!=undefined
 					&&
@@ -980,23 +981,7 @@ function push_files_to_files_page(files_items,isPrepend){
 					html_element.prepend(p);
 				}
 			}
-			if(true){
-				if(
-					hkg_cdn_test_domain_text!=undefined
-					&&
-					hkg_cdn_test_domain_text!=""
-					&&
-					hkg_cdn_test_domain_text.length>10
-				){
-					let p = document.createElement('p');
-					let a = document.createElement('a');
-					a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://" + hkg_cdn_test_domain_text + this.parent.url);
-					a.target = "_blank";
-					a.innerText = "点击下载";
-					p.append(a);
-					html_element.prepend(p);
-				}
-			}
+			
 			
 			
 			if(this.parent.offline!=undefined){
@@ -1577,7 +1562,8 @@ files_main.oncontextmenu=function(e){
 			
 			
 			
-			if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
+			// if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1){
 				if(
 					hkg_cdn_test_domain_text!=undefined
 					&&
@@ -1595,24 +1581,7 @@ files_main.oncontextmenu=function(e){
 					html_element.prepend(p);
 				}
 			}
-			if(true){
-				if(
-					hkg_cdn_test_domain_text!=undefined
-					&&
-					hkg_cdn_test_domain_text!=""
-					&&
-					hkg_cdn_test_domain_text.length>10
-				){
-					let p = document.createElement('p');
-					let a = document.createElement('a');
-					// a.href = "https://cdn-1gbps-download.yzzpan.com" + files_items_selected_array[0].url;
-					a.href = "http://http-redirects-www-http.yzzpan.com/http-redirects.html?url=" + window.btoa("http://" + hkg_cdn_test_domain_text + files_items_selected_array[0].url);
-					a.target = "_blank";
-					a.innerText = "点击下载";
-					p.append(a);
-					html_element.prepend(p);
-				}
-			}
+			
 			
 			
 			
@@ -4110,6 +4079,8 @@ function get_sharefile(id,key){
 					hkg_cdn_test_domain_text!=undefined
 					&&
 					hkg_cdn_test_domain_text.length>10
+					&&
+					navigator.language.toLowerCase().indexOf('cn')!=-1
 				){
 					let div = document.createElement('div');
 					div.className="sharefile-content-link-item";
