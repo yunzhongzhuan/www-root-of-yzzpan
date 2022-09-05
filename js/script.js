@@ -2591,6 +2591,9 @@ function cdn_cgi_trace_cdn_download(){
 			cdn_cgi_trace_cdn_download_locked = true;
 			cdn_cgi_trace_cdn_download_status = true;
 			sharefile_content_link_items_cdn_download.style.display = "block";
+			if(cdn_cgi_trace_download_hkg){
+				sharefile_content_link_items_cdn_download.style.display = "none";
+			}
 		}
 		if(xmlhttp.readyState==4){
 			setTimeout(cdn_cgi_trace_cdn_download,100);
@@ -2656,6 +2659,7 @@ function cdn_cgi_trace_download(){
 			cdn_cgi_trace_download_locked = true;
 			if(xmlhttp.responseText.indexOf('colo=HKG')!=-1||xmlhttp.responseText.indexOf('colo=FRA--')!=-1){
 				cdn_cgi_trace_download_hkg = true;
+				sharefile_content_link_items_cdn_download.style.display = "none";
 			}
 			
 			
