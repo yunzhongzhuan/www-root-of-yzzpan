@@ -2665,7 +2665,8 @@ function cdn_cgi_trace_download(){
 			setTimeout(cdn_cgi_trace_download,100);
 		}
 	}
-	xmlhttp.open("GET",download_web_url + "/cdn-cgi/trace",true);
+	// xmlhttp.open("GET",download_web_url + "/cdn-cgi/trace",true);
+	xmlhttp.open("GET","https://download.yunzhongzhuan.com/cdn-cgi/trace",true);
 	xmlhttp.send();
 }
 
