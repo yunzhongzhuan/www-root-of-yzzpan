@@ -2660,7 +2660,7 @@ function cdn_cgi_trace_download(){
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
 			// console.log(xmlhttp.responseText);
 			cdn_cgi_trace_download_locked = true;
-			if(xmlhttp.responseText.indexOf('colo=HKG--')!=-1||xmlhttp.responseText.indexOf('colo=FRA--')!=-1||xmlhttp.responseText.indexOf('colo=ICN--')!=-1){
+			if(xmlhttp.responseText.indexOf('colo=HKG')!=-1||xmlhttp.responseText.indexOf('colo=FRA--')!=-1||xmlhttp.responseText.indexOf('colo=ICN--')!=-1){
 				cdn_cgi_trace_download_hkg = true;
 				sharefile_content_link_items_cdn_download.style.display = "none";
 			}
