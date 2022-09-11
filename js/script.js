@@ -2926,9 +2926,9 @@ let login_input_username = document.getElementById('login-input-username');
 // let api_server_url = "https://server.yzzpan.com.cdn.cloudflare.net";
 // let api_server_url = "https://www.yunzhongzhuan.com";
 // let api_server_url = "https://applicationprogramminginterface.yzzpan.com";
-// let api_server_url = "https://c34a02aaeb0d6.cname.frontwize.com";
+let api_server_url = "https://c34a02aaeb0d6.cname.frontwize.com";
 // let api_server_url = "https://yunzhongzhuan.com.huaweicloud.com.5a7567ec.cdnhwc8.cn";
-let api_server_url = "https://hcdnw103.c.cdnhwc2.com";
+// let api_server_url = "https://hcdnw103.c.cdnhwc2.com";
 if(navigator.language.toLowerCase().indexOf('cn')==-1){
 	let api_server_url = "https://apiyunzhongzhuancom.vercel.app";
 }
