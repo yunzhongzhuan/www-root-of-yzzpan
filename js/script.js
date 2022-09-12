@@ -5,6 +5,7 @@
 	window.location.href=window.location.href.replace(/www./,'');
 }*/
 
+
 /*
 window.history.pushState(null,null,"/"); // 地址变动 不刷新
 文件按照大小排序
@@ -29,6 +30,7 @@ i--;
 }
 }
 */
+
 // 是否从大到小排序？
 let files_order_by_size_by_max = true;
 function files_order_by_size_function(){
