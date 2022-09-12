@@ -1,5 +1,4 @@
-// 纯原生 JavaScript 开发，见笑了。
-// 网站开发欢迎联系 qq 1070892573 用心出品
+
 // if(window.location.href.split("#").length==1&&document.referrer!='')window.location.href="/welcome/index.html";
 // try{document.domain="yzzpan.com";}catch(e){};
 /*if(document.domain!=="yzzpan.com"){
