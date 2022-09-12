@@ -188,11 +188,19 @@ if( session_id != undefined && session_id != null && session_id != "" ){
 let top_apps = [
 	{
 		"name":"云中转",
-		"link":"https://yzzpan.com/#files",
+		"link":"https://www.yzzpan.com/#files",
 		"description":"云中转-免费云盘不限容量不限速度不限流量全球网络传输文件",
 		"icon":"/img/logo.png",
 		// "icon":"//tva1.sinaimg.cn/mw2000/005CbWF8gy1h16lkvt5ubj30go0goq4h.jpg",
 		"new_open":false
+	},
+	{
+		"name":"极兔云",
+		"link":"https://www.jitucdn.com/",
+		"description":"极兔云-企业级CDN服务商专业的国内外内容分发加速服务平台",
+		"icon":"/img/jitucdn-com-logo-a1.png",
+		// "icon":"//tva1.sinaimg.cn/mw2000/005CbWF8gy1h16lkvt5ubj30go0goq4h.jpg",
+		"new_open":true
 	}
 ];
 // 首页顶部应用列表
