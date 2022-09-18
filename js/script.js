@@ -2613,6 +2613,7 @@ function cdn_cgi_trace_cdn_download(){
 	}
 	xmlhttp.onerror = function(){
 		cdn_cgi_trace_cdn_download_error_times++;
+		setTimeout(cdn_cgi_trace_cdn_download,100);
 	}
 	xmlhttp.open("GET","https://cdn-download.yunzhongzhuan.com/cdn-cgi/trace",true);
 	xmlhttp.send();
@@ -2664,6 +2665,7 @@ function cdn_cgi_trace_download(){
 	let xmlhttp = new XMLHttpRequest();
 	xmlhttp.onerror = function(){
 		cdn_cgi_trace_download_error_times+=1;
+		setTimeout(cdn_cgi_trace_download,100);
 	}
 	xmlhttp.onreadystatechange=function(){
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
