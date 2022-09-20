@@ -906,7 +906,7 @@ function push_files_to_files_page(files_items,isPrepend){
 		div.menu_download_element.parent = div;
 		div.menu_download_element.onclick = function(){
 			let html_element = document.createElement('div');
-			html_element.innerHTML = "<p style=\"display:none;\"><a href='https://download.yzzpan.com" + this.parent.url + "' target='_blank'>电信下载（稳定）</a></p><p><a href='https://cdn-download.yunzhongzhuan.xyz" + this.parent.url + "' target='_blank'>点击下载</a></p><p style=\"display:none;\"><a href='https://ddos-guard-net-download.yunzhongzhuan.com" + this.parent.url + "' target='_blank'>联通下载（稳定）</a></p><p><a href='https://download.yunzhongzhuan.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://download.yantudefengjing.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://download.wenhua.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://download.chunghuatelecom.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://download.unicomtelecom.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://download.chunghwatelecom.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://download.cmhkg.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p>";
+			html_element.innerHTML = "<p style=\"display:none;\"><a href='https://download.yzzpan.com" + this.parent.url + "' target='_blank'>电信下载（稳定）</a></p><p><a href='https://cdn-download.yunzhongzhuan.xyz" + this.parent.url + "' target='_blank'>点击下载</a></p><p style=\"display:none;\"><a href='https://ddos-guard-net-download.yunzhongzhuan.com" + this.parent.url + "' target='_blank'>联通下载（稳定）</a></p><p><a href='https://download.yunzhongzhuan.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://download.yantudefengjing.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://download.wenhua.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://download.chunghuatelecom.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://download.unicomtelecom.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://download.chunghwatelecom.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://download.cmhkg.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://downloading.yunzhongzhuan.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://downloading.yantudefengjing.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://downloading.wenhua.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://downloading.chunghuatelecom.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://downloading.unicomtelecom.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://downloading.chunghwatelecom.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a href='https://downloading.cmhkg.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p>";
 
 			if(this.parent.url_localhost!=undefined){
 				let p = document.createElement('p');
@@ -1504,7 +1504,7 @@ files_main.oncontextmenu=function(e){
 		}
 		files_download_button.onclick = function(){
 			let html_element = document.createElement('div');
-			html_element.innerHTML = "<p style=\"display:none;\"><a href='" + download_web_url + files_items_selected_array[0].url + "' target='_blank'>电信下载（稳定）</a></p><p><a href='https://cdn-download.yunzhongzhuan.xyz" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p style=\"display:none;\"><a href='https://ddos-guard-net-download.yunzhongzhuan.com" + files_items_selected_array[0].url + "' target='_blank'>联通下载（稳定）</a></p><p><a href='https://download.yunzhongzhuan.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://download.yantudefengjing.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://download.wenhua.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://download.chunghuatelecom.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://download.unicomtelecom.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://download.chunghwatelecom.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://download.cmhkg.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p>";
+			html_element.innerHTML = "<p style=\"display:none;\"><a href='" + download_web_url + files_items_selected_array[0].url + "' target='_blank'>电信下载（稳定）</a></p><p><a href='https://cdn-download.yunzhongzhuan.xyz" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p style=\"display:none;\"><a href='https://ddos-guard-net-download.yunzhongzhuan.com" + files_items_selected_array[0].url + "' target='_blank'>联通下载（稳定）</a></p><p><a href='https://download.yunzhongzhuan.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://download.yantudefengjing.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://download.wenhua.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://download.chunghuatelecom.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://download.unicomtelecom.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://download.chunghwatelecom.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://download.cmhkg.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://downloading.yunzhongzhuan.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://downloading.yantudefengjing.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://downloading.wenhua.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://downloading.chunghuatelecom.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://downloading.unicomtelecom.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://downloading.chunghwatelecom.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a href='https://downloading.cmhkg.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p>";
 
 			if(files_items_selected_array[0].url_localhost!=undefined){
 				let p = document.createElement('p');
@@ -3971,6 +3971,13 @@ let sharefile_content_link_item_download_button_16 = document.getElementById('sh
 let sharefile_content_link_item_download_button_17 = document.getElementById('sharefile-content-link-item-download-button-17');
 let sharefile_content_link_item_download_button_18 = document.getElementById('sharefile-content-link-item-download-button-18');
 let sharefile_content_link_item_download_button_19 = document.getElementById('sharefile-content-link-item-download-button-19');
+let sharefile_content_link_item_download_button_20 = document.getElementById('sharefile-content-link-item-download-button-20');
+let sharefile_content_link_item_download_button_21 = document.getElementById('sharefile-content-link-item-download-button-21');
+let sharefile_content_link_item_download_button_22 = document.getElementById('sharefile-content-link-item-download-button-22');
+let sharefile_content_link_item_download_button_23 = document.getElementById('sharefile-content-link-item-download-button-23');
+let sharefile_content_link_item_download_button_24 = document.getElementById('sharefile-content-link-item-download-button-24');
+let sharefile_content_link_item_download_button_25 = document.getElementById('sharefile-content-link-item-download-button-25');
+let sharefile_content_link_item_download_button_26 = document.getElementById('sharefile-content-link-item-download-button-26');
 let sharefile_content_link_item_copy_link_button = document.getElementById('sharefile-content-link-item-copy-link-button');
 // sharefile_content_link_item_copy_link_button.style.display = "none";
 let sharefile_content_link_item_sharefile_copy_button = document.getElementById('sharefile-content-link-item-sharefile-copy-button');
@@ -4012,6 +4019,7 @@ function get_sharefile(id,key){
 				sharefile_content_link_item_download_button.href = download_web_url + ResultJSON["url"];
 				sharefile_content_link_item_download_button_7.href = "https://ddos-guard-net-download.yzzpan.com" + ResultJSON["url"];
 				sharefile_content_link_item_download_button_8.href = "https://cdn-download.yunzhongzhuan.xyz" + ResultJSON["url"];
+				
 				sharefile_content_link_item_download_button_9.href = "https://download.yunzhongzhuan.eu.org" + ResultJSON["url"];
 				sharefile_content_link_item_download_button_10.href = "https://download.yantudefengjing.eu.org" + ResultJSON["url"];
 				sharefile_content_link_item_download_button_11.href = "https://download.wenhua.eu.org" + ResultJSON["url"];
@@ -4021,6 +4029,13 @@ function get_sharefile(id,key){
 				sharefile_content_link_item_download_button_19.href = "https://download.cmhkg.eu.org" + ResultJSON["url"];
 				
 				
+				sharefile_content_link_item_download_button_20.href = "https://download.yunzhongzhuan.eu.org" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_21.href = "https://download.yantudefengjing.eu.org" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_22.href = "https://download.wenhua.eu.org" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_23.href = "https://download.chunghuatelecom.eu.org" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_24.href = "https://download.unicomtelecom.eu.org" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_25.href = "https://download.chunghwatelecom.eu.org" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_26.href = "https://download.cmhkg.eu.org" + ResultJSON["url"];
 				
 				
 				if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
