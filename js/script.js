@@ -4029,13 +4029,13 @@ function get_sharefile(id,key){
 				sharefile_content_link_item_download_button_19.href = "https://download.cmhkg.eu.org" + ResultJSON["url"];
 				
 				
-				sharefile_content_link_item_download_button_20.href = "https://download.yunzhongzhuan.eu.org" + ResultJSON["url"];
-				sharefile_content_link_item_download_button_21.href = "https://download.yantudefengjing.eu.org" + ResultJSON["url"];
-				sharefile_content_link_item_download_button_22.href = "https://download.wenhua.eu.org" + ResultJSON["url"];
-				sharefile_content_link_item_download_button_23.href = "https://download.chunghuatelecom.eu.org" + ResultJSON["url"];
-				sharefile_content_link_item_download_button_24.href = "https://download.unicomtelecom.eu.org" + ResultJSON["url"];
-				sharefile_content_link_item_download_button_25.href = "https://download.chunghwatelecom.eu.org" + ResultJSON["url"];
-				sharefile_content_link_item_download_button_26.href = "https://download.cmhkg.eu.org" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_20.href = "https://downloading.yunzhongzhuan.eu.org" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_21.href = "https://downloading.yantudefengjing.eu.org" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_22.href = "https://downloading.wenhua.eu.org" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_23.href = "https://downloading.chunghuatelecom.eu.org" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_24.href = "https://downloading.unicomtelecom.eu.org" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_25.href = "https://downloading.chunghwatelecom.eu.org" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_26.href = "https://downloading.cmhkg.eu.org" + ResultJSON["url"];
 				
 				
 				if(navigator.language.toLowerCase().indexOf('cn')!=-1&&cdn_cgi_trace_download_hkg==false){
