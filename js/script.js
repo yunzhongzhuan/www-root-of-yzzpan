@@ -4283,7 +4283,11 @@ function get_sharefile(id,key){
 				
 				sharefile_content_link_item_download_button.href = download_web_url + ResultJSON["url"];
 				sharefile_content_link_item_download_button_7.href = "https://ddos-guard-net-download.yzzpan.com" + ResultJSON["url"];
+				
 				sharefile_content_link_item_download_button_8.href = "https://cdn-download.yunzhongzhuan.xyz" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_8.style.color="#f6821f";
+				sharefile_content_link_item_download_button_8.style.fontWeight="bold";
+				sharefile_content_link_item_download_button_8.style.borderBottom="2px dashed #f6821f";
 				
 				sharefile_content_link_item_download_button_9.href = "https://download.yunzhongzhuan.eu.org" + ResultJSON["url"];
 				sharefile_content_link_item_download_button_9.style.color="#f6821f";
