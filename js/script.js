@@ -1085,6 +1085,9 @@ function push_files_to_files_page(files_items,isPrepend){
 					a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-yunzhongzhuan-downloading.yunzhongzhuan.com" + this.parent.url);
 					// a.href = "https://cdn-download.yzzpan.com" + this.parent.url;
 					// a.href = "https://cdn-upload.yzzpan.com" + this.parent.url + "&d=cdn-download.yzzpan.com";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 					a.target = "_blank";
 					a.innerText = "点击下载";
 					p.append(a);
@@ -1096,6 +1099,9 @@ function push_files_to_files_page(files_items,isPrepend){
 					a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-yantudefengjing-downloading.yunzhongzhuan.com" + this.parent.url);
 					// a.href = "https://cdn-download.yzzpan.com" + this.parent.url;
 					// a.href = "https://cdn-upload.yzzpan.com" + this.parent.url + "&d=cdn-download.yzzpan.com";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 					a.target = "_blank";
 					a.innerText = "点击下载";
 					p.append(a);
@@ -1107,6 +1113,9 @@ function push_files_to_files_page(files_items,isPrepend){
 					a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-chunghuatelecom-downloading.yunzhongzhuan.com" + this.parent.url);
 					// a.href = "https://cdn-download.yzzpan.com" + this.parent.url;
 					// a.href = "https://cdn-upload.yzzpan.com" + this.parent.url + "&d=cdn-download.yzzpan.com";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 					a.target = "_blank";
 					a.innerText = "点击下载";
 					p.append(a);
@@ -1118,6 +1127,9 @@ function push_files_to_files_page(files_items,isPrepend){
 					a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-cmhkg-downloading.yunzhongzhuan.com" + this.parent.url);
 					// a.href = "https://cdn-download.yzzpan.com" + this.parent.url;
 					// a.href = "https://cdn-upload.yzzpan.com" + this.parent.url + "&d=cdn-download.yzzpan.com";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 					a.target = "_blank";
 					a.innerText = "点击下载";
 					p.append(a);
@@ -1129,6 +1141,9 @@ function push_files_to_files_page(files_items,isPrepend){
 					a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-unicomtelecom-downloading.yunzhongzhuan.com" + this.parent.url);
 					// a.href = "https://cdn-download.yzzpan.com" + this.parent.url;
 					// a.href = "https://cdn-upload.yzzpan.com" + this.parent.url + "&d=cdn-download.yzzpan.com";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 					a.target = "_blank";
 					a.innerText = "点击下载";
 					p.append(a);
@@ -1140,6 +1155,9 @@ function push_files_to_files_page(files_items,isPrepend){
 					a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-wenhua-downloading.yunzhongzhuan.com" + this.parent.url);
 					// a.href = "https://cdn-download.yzzpan.com" + this.parent.url;
 					// a.href = "https://cdn-upload.yzzpan.com" + this.parent.url + "&d=cdn-download.yzzpan.com";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 					a.target = "_blank";
 					a.innerText = "点击下载";
 					p.append(a);
@@ -1151,6 +1169,9 @@ function push_files_to_files_page(files_items,isPrepend){
 					a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-chunghwatelecom-downloading.yunzhongzhuan.com" + this.parent.url);
 					// a.href = "https://cdn-download.yzzpan.com" + this.parent.url;
 					// a.href = "https://cdn-upload.yzzpan.com" + this.parent.url + "&d=cdn-download.yzzpan.com";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 					a.target = "_blank";
 					a.innerText = "点击下载";
 					p.append(a);
@@ -1162,6 +1183,9 @@ function push_files_to_files_page(files_items,isPrepend){
 					a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-yunzhongzhuan-downloaded.yunzhongzhuan.com" + this.parent.url);
 					// a.href = "https://cdn-download.yzzpan.com" + this.parent.url;
 					// a.href = "https://cdn-upload.yzzpan.com" + this.parent.url + "&d=cdn-download.yzzpan.com";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 					a.target = "_blank";
 					a.innerText = "点击下载";
 					p.append(a);
@@ -1783,6 +1807,9 @@ files_main.oncontextmenu=function(e){
 					a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-yunzhongzhuan-downloading.yunzhongzhuan.com" + files_items_selected_array[0].url);
 					// a.href = "https://cdn-download.yzzpan.com" + files_items_selected_array[0].url;
 					// a.href = "https://cdn-upload.yzzpan.com" + files_items_selected_array[0].url + "&d=cdn-download.yzzpan.com";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 					a.target = "_blank";
 					a.innerText = "点击下载";
 					p.append(a);
@@ -1794,6 +1821,9 @@ files_main.oncontextmenu=function(e){
 					a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-yantudefengjing-downloading.yunzhongzhuan.com" + files_items_selected_array[0].url);
 					// a.href = "https://cdn-download.yzzpan.com" + files_items_selected_array[0].url;
 					// a.href = "https://cdn-upload.yzzpan.com" + files_items_selected_array[0].url + "&d=cdn-download.yzzpan.com";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 					a.target = "_blank";
 					a.innerText = "点击下载";
 					p.append(a);
@@ -1805,6 +1835,9 @@ files_main.oncontextmenu=function(e){
 					a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-chunghuatelecom-downloading.yunzhongzhuan.com" + files_items_selected_array[0].url);
 					// a.href = "https://cdn-download.yzzpan.com" + files_items_selected_array[0].url;
 					// a.href = "https://cdn-upload.yzzpan.com" + files_items_selected_array[0].url + "&d=cdn-download.yzzpan.com";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 					a.target = "_blank";
 					a.innerText = "点击下载";
 					p.append(a);
@@ -1816,6 +1849,9 @@ files_main.oncontextmenu=function(e){
 					a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-cmhkg-downloading.yunzhongzhuan.com" + files_items_selected_array[0].url);
 					// a.href = "https://cdn-download.yzzpan.com" + files_items_selected_array[0].url;
 					// a.href = "https://cdn-upload.yzzpan.com" + files_items_selected_array[0].url + "&d=cdn-download.yzzpan.com";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 					a.target = "_blank";
 					a.innerText = "点击下载";
 					p.append(a);
@@ -1827,6 +1863,9 @@ files_main.oncontextmenu=function(e){
 					a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-unicomtelecom-downloading.yunzhongzhuan.com" + files_items_selected_array[0].url);
 					// a.href = "https://cdn-download.yzzpan.com" + files_items_selected_array[0].url;
 					// a.href = "https://cdn-upload.yzzpan.com" + files_items_selected_array[0].url + "&d=cdn-download.yzzpan.com";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 					a.target = "_blank";
 					a.innerText = "点击下载";
 					p.append(a);
@@ -1838,6 +1877,9 @@ files_main.oncontextmenu=function(e){
 					a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-wenhua-downloading.yunzhongzhuan.com" + files_items_selected_array[0].url);
 					// a.href = "https://cdn-download.yzzpan.com" + files_items_selected_array[0].url;
 					// a.href = "https://cdn-upload.yzzpan.com" + files_items_selected_array[0].url + "&d=cdn-download.yzzpan.com";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 					a.target = "_blank";
 					a.innerText = "点击下载";
 					p.append(a);
@@ -1849,6 +1891,9 @@ files_main.oncontextmenu=function(e){
 					a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-chunghwatelecom-downloading.yunzhongzhuan.com" + files_items_selected_array[0].url);
 					// a.href = "https://cdn-download.yzzpan.com" + files_items_selected_array[0].url;
 					// a.href = "https://cdn-upload.yzzpan.com" + files_items_selected_array[0].url + "&d=cdn-download.yzzpan.com";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 					a.target = "_blank";
 					a.innerText = "点击下载";
 					p.append(a);
@@ -1860,6 +1905,9 @@ files_main.oncontextmenu=function(e){
 					a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-yunzhongzhuan-downloaded.yunzhongzhuan.com" + files_items_selected_array[0].url);
 					// a.href = "https://cdn-download.yzzpan.com" + files_items_selected_array[0].url;
 					// a.href = "https://cdn-upload.yzzpan.com" + files_items_selected_array[0].url + "&d=cdn-download.yzzpan.com";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 					a.target = "_blank";
 					a.innerText = "点击下载";
 					p.append(a);
@@ -4248,6 +4296,9 @@ function get_sharefile(id,key){
 						let a = document.createElement('a');
 						a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-yunzhongzhuan-downloading.yunzhongzhuan.com" + ResultJSON["url"]);
 						a.target = "_blank";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 						a.innerText = "点击下载";
 						div.append(a);
 						sharefile_content_arvancloud_cdn_download_items.append(div);
@@ -4258,6 +4309,9 @@ function get_sharefile(id,key){
 						let a = document.createElement('a');
 						a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-yantudefengjing-downloading.yunzhongzhuan.com" + ResultJSON["url"]);
 						a.target = "_blank";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 						a.innerText = "点击下载";
 						div.append(a);
 						sharefile_content_arvancloud_cdn_download_items.append(div);
@@ -4268,6 +4322,9 @@ function get_sharefile(id,key){
 						let a = document.createElement('a');
 						a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-chunghuatelecom-downloading.yunzhongzhuan.com" + ResultJSON["url"]);
 						a.target = "_blank";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 						a.innerText = "点击下载";
 						div.append(a);
 						sharefile_content_arvancloud_cdn_download_items.append(div);
@@ -4278,6 +4335,9 @@ function get_sharefile(id,key){
 						let a = document.createElement('a');
 						a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-cmhkg-downloading.yunzhongzhuan.com" + ResultJSON["url"]);
 						a.target = "_blank";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 						a.innerText = "点击下载";
 						div.append(a);
 						sharefile_content_arvancloud_cdn_download_items.append(div);
@@ -4288,6 +4348,9 @@ function get_sharefile(id,key){
 						let a = document.createElement('a');
 						a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-unicomtelecom-downloading.yunzhongzhuan.com" + ResultJSON["url"]);
 						a.target = "_blank";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 						a.innerText = "点击下载";
 						div.append(a);
 						sharefile_content_arvancloud_cdn_download_items.append(div);
@@ -4298,6 +4361,9 @@ function get_sharefile(id,key){
 						let a = document.createElement('a');
 						a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-wenhua-downloading.yunzhongzhuan.com" + ResultJSON["url"]);
 						a.target = "_blank";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 						a.innerText = "点击下载";
 						div.append(a);
 						sharefile_content_arvancloud_cdn_download_items.append(div);
@@ -4308,6 +4374,9 @@ function get_sharefile(id,key){
 						let a = document.createElement('a');
 						a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-chunghwatelecom-downloading.yunzhongzhuan.com" + ResultJSON["url"]);
 						a.target = "_blank";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 						a.innerText = "点击下载";
 						div.append(a);
 						sharefile_content_arvancloud_cdn_download_items.append(div);
@@ -4318,6 +4387,9 @@ function get_sharefile(id,key){
 						let a = document.createElement('a');
 						a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-yunzhongzhuan-downloaded.yunzhongzhuan.com" + ResultJSON["url"]);
 						a.target = "_blank";
+						a.style.color = "#00baba";
+						a.style.borderBottom = "2px dashed #00baba";
+						a.style.fontWeight = "bold";
 						a.innerText = "点击下载";
 						div.append(a);
 						sharefile_content_arvancloud_cdn_download_items.append(div);
