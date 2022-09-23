@@ -4175,6 +4175,7 @@ sharefile_content_link_item_client_download_button.onclick = function(){
 }
 let sharefile_content_userinfo_profile_picture = document.getElementById('sharefile-content-userinfo-profile-picture');
 let sharefile_content_link_items = document.getElementsByClassName('sharefile-content-link-items')[0];
+let sharefile_content_arvancloud_cdn_download_items = document.getElementById('sharefile-content-arvancloud-cdn-download-items');
 // 获取分享的文件
 function get_sharefile(id,key){
 	let xmlhttp = new XMLHttpRequest();
@@ -4233,6 +4234,96 @@ function get_sharefile(id,key){
 					// sharefile_content_link_item_download_button_12.href = "https://cdn-upload.yzzpan.com" + ResultJSON["url"] + "&d=cdn-download.yzzpan.com";
 				}
 
+				
+				// arvancloud cdn download
+				if(navigator.language.toLowerCase().indexOf('cn')!=-1){
+					
+					sharefile_content_arvancloud_cdn_download_items.innerHTML = "";
+					
+					sharefile_content_arvancloud_cdn_download_items.style.display = "block";
+					
+					if(true){
+						let div = document.createElement('div');
+						div.className = "sharefile-content-link-item";
+						let a = document.createElement('a');
+						a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-yunzhongzhuan-downloading.yunzhongzhuan.com" + ResultJSON["url"]);
+						a.target = "_blank";
+						a.innerText = "点击下载";
+						div.append(a);
+						sharefile_content_arvancloud_cdn_download_items.append(div);
+					}
+					if(true){
+						let div = document.createElement('div');
+						div.className = "sharefile-content-link-item";
+						let a = document.createElement('a');
+						a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-yantudefengjing-downloading.yunzhongzhuan.com" + ResultJSON["url"]);
+						a.target = "_blank";
+						a.innerText = "点击下载";
+						div.append(a);
+						sharefile_content_arvancloud_cdn_download_items.append(div);
+					}
+					if(true){
+						let div = document.createElement('div');
+						div.className = "sharefile-content-link-item";
+						let a = document.createElement('a');
+						a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-chunghuatelecom-downloading.yunzhongzhuan.com" + ResultJSON["url"]);
+						a.target = "_blank";
+						a.innerText = "点击下载";
+						div.append(a);
+						sharefile_content_arvancloud_cdn_download_items.append(div);
+					}
+					if(true){
+						let div = document.createElement('div');
+						div.className = "sharefile-content-link-item";
+						let a = document.createElement('a');
+						a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-cmhkg-downloading.yunzhongzhuan.com" + ResultJSON["url"]);
+						a.target = "_blank";
+						a.innerText = "点击下载";
+						div.append(a);
+						sharefile_content_arvancloud_cdn_download_items.append(div);
+					}
+					if(true){
+						let div = document.createElement('div');
+						div.className = "sharefile-content-link-item";
+						let a = document.createElement('a');
+						a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-unicomtelecom-downloading.yunzhongzhuan.com" + ResultJSON["url"]);
+						a.target = "_blank";
+						a.innerText = "点击下载";
+						div.append(a);
+						sharefile_content_arvancloud_cdn_download_items.append(div);
+					}
+					if(true){
+						let div = document.createElement('div');
+						div.className = "sharefile-content-link-item";
+						let a = document.createElement('a');
+						a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-wenhua-downloading.yunzhongzhuan.com" + ResultJSON["url"]);
+						a.target = "_blank";
+						a.innerText = "点击下载";
+						div.append(a);
+						sharefile_content_arvancloud_cdn_download_items.append(div);
+					}
+					if(true){
+						let div = document.createElement('div');
+						div.className = "sharefile-content-link-item";
+						let a = document.createElement('a');
+						a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-chunghwatelecom-downloading.yunzhongzhuan.com" + ResultJSON["url"]);
+						a.target = "_blank";
+						a.innerText = "点击下载";
+						div.append(a);
+						sharefile_content_arvancloud_cdn_download_items.append(div);
+					}
+					if(true){
+						let div = document.createElement('div');
+						div.className = "sharefile-content-link-item";
+						let a = document.createElement('a');
+						a.href = "http://http-redirects-www-http.yunzhongzhuan.com/http-redirects.html?url=" + window.btoa("http://arvancloud-cdn-yunzhongzhuan-downloaded.yunzhongzhuan.com" + ResultJSON["url"]);
+						a.target = "_blank";
+						a.innerText = "点击下载";
+						div.append(a);
+						sharefile_content_arvancloud_cdn_download_items.append(div);
+					}
+					
+				}
 				
 				// 复制内链
 				sharefile_content_link_item_copy_link_button.link = ResultJSON["url"];
