@@ -1095,7 +1095,7 @@ function push_files_to_files_page(files_items,isPrepend){
 			
 
 			// arvancloud cdn download
-			if(true){
+			if(false){
 				if(navigator.language.toLowerCase().indexOf('cn')!=-1){
 					let p = document.createElement('p');
 					let a = document.createElement('a');
@@ -1833,7 +1833,7 @@ files_main.oncontextmenu=function(e){
 			
 
 			// arvancloud cdn download
-			if(true){
+			if(false){
 				
 				if(navigator.language.toLowerCase().indexOf('cn')!=-1){
 					let p = document.createElement('p');
@@ -4367,7 +4367,7 @@ function get_sharefile(id,key){
 
 				
 				// arvancloud cdn download
-				if(navigator.language.toLowerCase().indexOf('cn')!=-1){
+				if(false&&navigator.language.toLowerCase().indexOf('cn')!=-1){
 					
 					sharefile_content_arvancloud_cdn_download_items.innerHTML = "";
 					
