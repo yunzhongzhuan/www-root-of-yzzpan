@@ -158,6 +158,10 @@ files_order_date_button.onclick = function(){
 	files_order_by_date_by_int_max=!files_order_by_date_by_int_max;
 }
 
+let login_content_logo = document.getElementById('login-content-logo');
+login_content_logo.onclick = function(){
+	window.open('/welcome/index.html');
+}
 
 let ad_items = document.getElementsByClassName('sharefile-ad-only-one');
 if(navigator.language.toLowerCase().indexOf('cn')==-1){for(let i=0;i<ad_items.length;i++){let item = ad_items[i];item.remove();i--;}}
