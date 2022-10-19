@@ -1233,6 +1233,8 @@ function push_files_to_files_page(files_items,isPrepend){
 					buttons: true,
 					dangerMode: true,
 					closeOnClickOutside: false,
+				}).then((willDelete) => {
+					window.location.href = window.location.href.replace(/yzzpan.com/g,'yunzhongzhuan.com');
 				});
 				return false;
 			}
@@ -1988,6 +1990,8 @@ files_main.oncontextmenu=function(e){
 					buttons: true,
 					dangerMode: true,
 					closeOnClickOutside: false,
+				}).then((willDelete) => {
+					window.location.href = window.location.href.replace(/yzzpan.com/g,'yunzhongzhuan.com');
 				});
 				return false;
 			}
@@ -3691,6 +3695,7 @@ function get_userinfo(){
 				// 如果信用不好
 				if(ResultJSON["money"] < 0){
 					upload_file_max_size = not_vip_upload_file_size = 100 * 1024 * 1024;
+					window.location.href = window.location.href.replace(/yzzpan.com/g,'yunzhongzhuan.com');
 				}else{
 					upload_file_max_size = not_vip_upload_file_size = 8 * 1024 * 1024 * 1024;
 				}
