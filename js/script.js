@@ -4793,6 +4793,40 @@ function js_calc_hash_preload(){
 let yzzpan_51la_ip_iframe = document.getElementById('yzzpan-51la-ip-iframe');
 
 
+
+// Download List
+let download_domain_list_cdn_cgi_trace = [
+	"https://download.yunzhongzhuan.com/cdn-cgi/trace",
+	"https://cdn-download.yunzhongzhuan.com/cdn-cgi/trace",
+	"https://cdn-download.chunghwatelecom.eu.org/cdn-cgi/trace",
+	"https://cdn-download.wenhua.eu.org/cdn-cgi/trace",
+	"https://cdn-download.unicomtelecom.eu.org/cdn-cgi/trace",
+	"https://cdn-download.cmhkg.eu.org/cdn-cgi/trace",
+	"https://cdn-download.chunghuatelecom.eu.org/cdn-cgi/trace",
+	"https://cdn-download.yantudefengjing.eu.org/cdn-cgi/trace",
+	"https://cdn-download.yunzhongzhuan.eu.org/cdn-cgi/trace",
+	"https://a.download.yunzhongzhuan.com/cdn-cgi/trace",
+	"https://b.download.yunzhongzhuan.com/cdn-cgi/trace",
+	"https://c.download.yunzhongzhuan.com/cdn-cgi/trace",
+	"https://d.download.yunzhongzhuan.com/cdn-cgi/trace",
+	"https://e.download.yunzhongzhuan.com/cdn-cgi/trace",
+	"https://f.download.yunzhongzhuan.com/cdn-cgi/trace",
+	"https://g.download.yunzhongzhuan.com/cdn-cgi/trace",
+	"https://h.download.yunzhongzhuan.com/cdn-cgi/trace",
+	"https://i.download.yunzhongzhuan.com/cdn-cgi/trace",
+	"https://j.download.yunzhongzhuan.com/cdn-cgi/trace",
+];
+
+function access_download_domain_list_cdn_cgi_trace(url){
+	let xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function(){
+	}
+	xmlhttp.open("GET",url,true);
+	xmlhttp.send();
+}
+
+
+
 // 页面加载完成开始检查用户登录状态
 window.onload = function(){
 
@@ -4819,7 +4853,9 @@ window.onload = function(){
 	},300);
 	
 	
-	
+	for(let i=0;i<download_domain_list_cdn_cgi_trace.length;i++){
+		setTimeout(access_download_domain_list_cdn_cgi_trace,20*i,download_domain_list_cdn_cgi_trace[i]);
+	}
 	
 
 }
