@@ -5205,7 +5205,7 @@ let links_data = [
 			{
 				"name":"yunzhongzhuan.com",
 				"new_open":true,
-				"link":"https://yunzhongzhuan.com/#files"
+				"link":"http://yunzhongzhuan.com"
 			},
 			{
 				"name":"yzzpan.com",
