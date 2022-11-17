@@ -4723,6 +4723,11 @@ let links_data = [
 				"new_open":false,
 				"link":"/#terms-of-services"
 			},
+			{
+				"name":"关于我们",
+				"new_open":true,
+				"link":"https://www.yunzhongzhuan.com/welcome/index.html#nav-about-position"
+			},
 		]
 	},
 	{
