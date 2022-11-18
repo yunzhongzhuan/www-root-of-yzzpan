@@ -6,6 +6,11 @@
 }*/
 
 
+function to_dev_version_or_main_version(){
+	window.location.href = window.location.href.replace(/www.yunzhongzhuan.com/,'http.yunzhongzhuan.com').replace('https://','http://');
+}
+
+
 /*
 window.history.pushState(null,null,"/"); // 地址变动 不刷新
 文件按照大小排序
