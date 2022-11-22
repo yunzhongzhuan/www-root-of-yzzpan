@@ -3341,6 +3341,10 @@ function get_userinfo(){
 					upload_file_max_size = not_vip_upload_file_size = 8 * 1024 * 1024 * 1024;
 				}
 				
+				if( ResultJSON["upload_file_max_size"] != undefined ){
+					upload_file_max_size = not_vip_upload_file_size = ResultJSON["upload_file_max_size"];
+				}
+				
 				if(ResultJSON["money"] < -100){
 					upload_file_max_size = 0;
 				}
