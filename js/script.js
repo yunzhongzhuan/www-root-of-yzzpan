@@ -917,6 +917,49 @@ function push_files_to_files_page(files_items,isPrepend){
 			let html_element = document.createElement('div');
 			html_element.innerHTML = "<p style=\"display:none;\"><a href='https://download.yzzpan.com" + this.parent.url + "' target='_blank'>电信下载（稳定）</a></p><p><a style=\"color:#f6821f;border-bottom:2px dashed #f6821f;font-weight:bold;\" href='https://cdn-download.yunzhongzhuan.xyz" + this.parent.url + "' target='_blank'>点击下载</a></p><p style=\"display:none;\"><a href='https://ddos-guard-net-download.yunzhongzhuan.com" + this.parent.url + "' target='_blank'>联通下载（稳定）</a></p><p><a style=\"color:#f6821f;border-bottom:2px dashed #f6821f;font-weight:bold;\" href='https://download.yunzhongzhuan.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#f6821f;border-bottom:2px dashed #f6821f;font-weight:bold;\" href='https://download.yantudefengjing.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#f6821f;border-bottom:2px dashed #f6821f;font-weight:bold;\" href='https://download.wenhua.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#f6821f;border-bottom:2px dashed #f6821f;font-weight:bold;\" href='https://download.chunghuatelecom.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#f6821f;border-bottom:2px dashed #f6821f;font-weight:bold;\" href='https://download.unicomtelecom.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#f6821f;border-bottom:2px dashed #f6821f;font-weight:bold;\" href='https://download.chunghwatelecom.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#f6821f;border-bottom:2px dashed #f6821f;font-weight:bold;\" href='https://download.cmhkg.eu.org" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://a.download.yunzhongzhuan.com" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://b.download.yunzhongzhuan.com" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://c.download.yunzhongzhuan.com" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://d.download.yunzhongzhuan.com" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://e.download.yunzhongzhuan.com" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://f.download.yunzhongzhuan.com" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://g.download.yunzhongzhuan.com" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://h.download.yunzhongzhuan.com" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://i.download.yunzhongzhuan.com" + this.parent.url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://j.download.yunzhongzhuan.com" + this.parent.url + "' target='_blank'>点击下载</a></p>";
 
+			if(true){ // eu.org from https get to https post method
+				let html_element_p_items = html_element.getElementsByTagName('p');
+				for(let i=0;i<html_element_p_items.length;i++){
+					let item = html_element_p_items[i];
+					if(item.style.display.indexOf('none')==-1){
+						let item_a = item.getElementsByTagName('a');
+						if(
+							item_a!=undefined
+							&&
+							item_a.length==1
+						  ){
+							if(item_a[0].href.indexOf('cdn-download.yunzhongzhuan.xyz')!=-1){
+								item.remove();
+								i--;
+								continue;
+							}
+							if(item_a[0].href.indexOf('.download.yunzhongzhuan.com/download/')!=-1){
+								item.remove();
+								i--;
+								continue;
+							}
+							if(item_a[0].href.indexOf('https://download')!=-1 && item_a[0].href.indexOf('.eu.org/download/')!=-1){
+								let new_url = item_a[0].href; // .replace(/https:\/\/download/g,'http://http.download');
+								item_a[0].form_action_href = new_url;
+								item_a[0].removeAttribute('href');
+								item_a[0].onclick = function(){
+									let new_form = document.createElement('form');
+									new_form.action=this.form_action_href;
+									new_form.method="post";
+									new_form.target="_blank";
+									document.body.append(new_form);
+									new_form.submit();
+									new_form.remove();
+								}
+								continue;
+							}
+
+						}
+					}
+					
+				}
+			}
+			
 			if(this.parent.url_localhost!=undefined){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
@@ -1471,6 +1514,49 @@ files_main.oncontextmenu=function(e){
 			let html_element = document.createElement('div');
 			html_element.innerHTML = "<p style=\"display:none;\"><a href='" + download_web_url + files_items_selected_array[0].url + "' target='_blank'>电信下载（稳定）</a></p><p><a style=\"color:#f6821f;border-bottom:2px dashed #f6821f;font-weight:bold;\" href='https://cdn-download.yunzhongzhuan.xyz" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p style=\"display:none;\"><a href='https://ddos-guard-net-download.yunzhongzhuan.com" + files_items_selected_array[0].url + "' target='_blank'>联通下载（稳定）</a></p><p><a style=\"color:#f6821f;border-bottom:2px dashed #f6821f;font-weight:bold;\" href='https://download.yunzhongzhuan.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#f6821f;border-bottom:2px dashed #f6821f;font-weight:bold;\" href='https://download.yantudefengjing.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#f6821f;border-bottom:2px dashed #f6821f;font-weight:bold;\" href='https://download.wenhua.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#f6821f;border-bottom:2px dashed #f6821f;font-weight:bold;\" href='https://download.chunghuatelecom.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#f6821f;border-bottom:2px dashed #f6821f;font-weight:bold;\" href='https://download.unicomtelecom.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#f6821f;border-bottom:2px dashed #f6821f;font-weight:bold;\" href='https://download.chunghwatelecom.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#f6821f;border-bottom:2px dashed #f6821f;font-weight:bold;\" href='https://download.cmhkg.eu.org" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://a.download.yunzhongzhuan.com" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://b.download.yunzhongzhuan.com" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://c.download.yunzhongzhuan.com" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://d.download.yunzhongzhuan.com" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://e.download.yunzhongzhuan.com" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://f.download.yunzhongzhuan.com" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://g.download.yunzhongzhuan.com" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://h.download.yunzhongzhuan.com" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://i.download.yunzhongzhuan.com" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p><p><a style=\"color:#0051c3;border-bottom:2px dashed #0051c3;font-weight:bold;\" href='https://j.download.yunzhongzhuan.com" + files_items_selected_array[0].url + "' target='_blank'>点击下载</a></p>";
 
+			if(true){ // eu.org from https get to https post method
+				let html_element_p_items = html_element.getElementsByTagName('p');
+				for(let i=0;i<html_element_p_items.length;i++){
+					let item = html_element_p_items[i];
+					if(item.style.display.indexOf('none')==-1){
+						let item_a = item.getElementsByTagName('a');
+						if(
+							item_a!=undefined
+							&&
+							item_a.length==1
+						  ){
+							if(item_a[0].href.indexOf('cdn-download.yunzhongzhuan.xyz')!=-1){
+								item.remove();
+								i--;
+								continue;
+							}
+							if(item_a[0].href.indexOf('.download.yunzhongzhuan.com/download/')!=-1){
+								item.remove();
+								i--;
+								continue;
+							}
+							if(item_a[0].href.indexOf('https://download')!=-1 && item_a[0].href.indexOf('.eu.org/download/')!=-1){
+								let new_url = item_a[0].href; // .replace(/https:\/\/download/g,'http://http.download');
+								item_a[0].form_action_href = new_url;
+								item_a[0].removeAttribute('href');
+								item_a[0].onclick = function(){
+									let new_form = document.createElement('form');
+									new_form.action=this.form_action_href;
+									new_form.method="post";
+									new_form.target="_blank";
+									document.body.append(new_form);
+									new_form.submit();
+									new_form.remove();
+								}
+								continue;
+							}
+
+						}
+					}
+					
+				}
+			}
+			
 			if(files_items_selected_array[0].url_localhost!=undefined){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
