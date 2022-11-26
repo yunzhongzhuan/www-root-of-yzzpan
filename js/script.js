@@ -928,7 +928,7 @@ function push_files_to_files_page(files_items,isPrepend){
 							&&
 							item_a.length==1
 						  ){
-							if(item_a[0].href.indexOf('cdn-download.yunzhongzhuan.xyz')!=-1){
+							/*if(item_a[0].href.indexOf('cdn-download.yunzhongzhuan.xyz')!=-1){
 								item.remove();
 								i--;
 								continue;
@@ -937,7 +937,7 @@ function push_files_to_files_page(files_items,isPrepend){
 								item.remove();
 								i--;
 								continue;
-							}
+							}*/
 							if(item_a[0].href.indexOf('https://download')!=-1 && item_a[0].href.indexOf('.eu.org/download/')!=-1){
 								let new_url = item_a[0].href; // .replace(/https:\/\/download/g,'http://http.download');
 								item_a[0].form_action_href = new_url;
@@ -1525,7 +1525,7 @@ files_main.oncontextmenu=function(e){
 							&&
 							item_a.length==1
 						  ){
-							if(item_a[0].href.indexOf('cdn-download.yunzhongzhuan.xyz')!=-1){
+							/*if(item_a[0].href.indexOf('cdn-download.yunzhongzhuan.xyz')!=-1){
 								item.remove();
 								i--;
 								continue;
@@ -1534,7 +1534,7 @@ files_main.oncontextmenu=function(e){
 								item.remove();
 								i--;
 								continue;
-							}
+							}*/
 							if(item_a[0].href.indexOf('https://download')!=-1 && item_a[0].href.indexOf('.eu.org/download/')!=-1){
 								let new_url = item_a[0].href; // .replace(/https:\/\/download/g,'http://http.download');
 								item_a[0].form_action_href = new_url;
