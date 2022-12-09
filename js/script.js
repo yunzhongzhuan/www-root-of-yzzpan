@@ -2949,7 +2949,7 @@ if(navigator.language.toLowerCase().indexOf('cn')==-1){
 	let api_server_url = "https://apiyunzhongzhuancom.vercel.app";
 }
 // let api_server_url = "https://ddos-guard-net-api.yzzpan.com";
-let not_vip_upload_file_size = 8 * 1024 * 1024 * 1024; // 非会员用户上传文件最大允许1GB
+let not_vip_upload_file_size = 1 * 1024 * 1024 * 1024; // 非会员用户上传文件最大允许1GB
 // 如果用户试图修改JS绕过限制，在上传文件后，系统将匹配文件大小，异常则永久封号
 
 // 余额
@@ -3428,7 +3428,7 @@ function get_userinfo(){
 					upload_file_max_size = not_vip_upload_file_size = 100 * 1024 * 1024;
 					window.location.href = window.location.href.replace(/yzzpan.com/g,'yunzhongzhuan.com');
 				}else{
-					upload_file_max_size = not_vip_upload_file_size = 8 * 1024 * 1024 * 1024;
+					upload_file_max_size = not_vip_upload_file_size = 1 * 1024 * 1024 * 1024;
 				}
 				
 				if( ResultJSON["upload_file_max_size"] != undefined ){
@@ -5156,7 +5156,7 @@ upload_file_full_screen_mask.onclick = function(){
 let upload_items = document.getElementById('uploads-items');
 // 最大允许上传
 // 如果用户试图修改JS绕过限制，在上传文件后，系统将匹配文件大小，异常则永久封号
-let upload_file_max_size = 8 * 1024 * 1024 * 1024; // 8GB
+let upload_file_max_size = 1 * 1024 * 1024 * 1024; // 8GB
 // 每次提交大小
 let upload_file_item_size = 100 * 1024 * 1024; // 100MB
 
@@ -5758,7 +5758,7 @@ let workers;
 						swal({
 							title: "系统信息",
 							// text: "免费用户单个文件上传最大允许" + get_size_unit( not_vip_upload_file_size ) + "。\r\n会员用户单个文件上传最大允许" + get_size_unit( upload_file_max_size ) + "。\r\n联系我们，支持上传文件大小不限。",
-							text: "您的账号上传单个文件最大允许" + get_size_unit( not_vip_upload_file_size ) + "。\r\n联系我们上传单个文件最大支持" + get_size_unit(8*1024*1024*1024) + "。",
+							text: "您的账号上传单个文件最大允许" + get_size_unit( not_vip_upload_file_size ) + "。\r\n联系我们上传单个文件最大支持" + get_size_unit(1*1024*1024*1024) + "。",
 							icon: "warning",
 							buttons: ["取消","详情"],
 							closeOnClickOutside: false,
