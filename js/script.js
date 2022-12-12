@@ -2601,7 +2601,7 @@ function cdn_cgi_trace_cdn_download(){
 			cdn_cgi_trace_cdn_download_locked = true;
 			cdn_cgi_trace_cdn_download_status = true;
 			
-			if(cdn_cgi_trace_download_hkg){
+			if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
 				sharefile_content_link_items_cdn_download.style.display = "none";
 			}else{
 				sharefile_content_link_items_cdn_download.style.display = "block";
