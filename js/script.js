@@ -1104,7 +1104,9 @@ function push_files_to_files_page(files_items,isPrepend){
 					dangerMode: true,
 					closeOnClickOutside: false,
 				}).then((willDelete) => {
-					window.location.href = window.location.href.replace(/yzzpan.com/g,'yunzhongzhuan.com');
+					if(willDelete){
+						window.location.href = window.location.href.replace(/yzzpan.com/g,'yunzhongzhuan.com');
+					}
 				});
 				return false;
 			}
@@ -1718,7 +1720,9 @@ files_main.oncontextmenu=function(e){
 					dangerMode: true,
 					closeOnClickOutside: false,
 				}).then((willDelete) => {
-					window.location.href = window.location.href.replace(/yzzpan.com/g,'yunzhongzhuan.com');
+					if(willDelete){
+						window.location.href = window.location.href.replace(/yzzpan.com/g,'yunzhongzhuan.com');
+					}
 				});
 				return false;
 			}
