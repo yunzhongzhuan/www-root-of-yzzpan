@@ -21,6 +21,10 @@
   Cache-Control: max-age=31536000
 /img/pointer.cur
   Cache-Control: max-age=31536000
+/img/2022122815120001.jpg
+  Cache-Control: max-age=31536000
+/img/2022122815120002.jpg
+  Cache-Control: max-age=31536000
 /plug-in/font-awesome-4.7.0/fonts/*
   Cache-Control: max-age=31536000
 /favicon.ico
