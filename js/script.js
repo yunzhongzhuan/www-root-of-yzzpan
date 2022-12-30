@@ -2435,6 +2435,8 @@ let public_link_status = false;
 let show_love_pay_locked = false;
 // 显示捐助
 function show_love_pay(){
+	
+	return false;
 
 	if(public_link_status){
 		return false;
