@@ -3296,6 +3296,10 @@ let use_qq_qr_code_login = false;
 function show_verify_code(){
 	let html_element = document.createElement('div');
 	html_element.innerHTML = '<img class="verify-pass-img" src="'+api_server_url+'/php/v4/verify_code.php?session_id=' + userinfo["session_id"] + '&t=' + new Date().getTime() + '"/><br/><br/><input placeholder="请输入图片中12位验证文字！" autocomplete="off" class="swal-content__input verify-pass-input">';
+	if(navigator.language.toLowerCase().indexOf('cn')==-1){
+		let new_src = html_element.getElementsByClassName('verify-pass-img')[0].src.replace(/verify_code.php/g,'verify_code');
+		html_element.getElementsByClassName('verify-pass-img')[0].src = new_src;
+	}
 	swal({
 		title: "请先验证！",
 		icon: "warning",
@@ -3329,7 +3333,11 @@ function show_verify_code(){
 							}
 						}
 					}
-					xmlhttp.open("GET",api_server_url+"/php/v4/verify_code.php?session_id="+userinfo["session_id"]+"&submit_verify_code="+verify_pass_input.value+"&t="+new Date().getTime(),true);
+					if(navigator.language.toLowerCase().indexOf('cn')==-1){
+						xmlhttp.open("GET",api_server_url+"/php/v4/verify_code?session_id="+userinfo["session_id"]+"&submit_verify_code="+verify_pass_input.value+"&t="+new Date().getTime(),true);
+					}else{
+						xmlhttp.open("GET",api_server_url+"/php/v4/verify_code.php?session_id="+userinfo["session_id"]+"&submit_verify_code="+verify_pass_input.value+"&t="+new Date().getTime(),true);
+					}
 					xmlhttp.withCredentials = true;
 					xmlhttp.send();
 				}else{
@@ -3343,7 +3351,11 @@ function show_verify_code(){
 	if(verify_pass_img_items.length>0){
 		let verify_pass_img = verify_pass_img_items[0];
 		verify_pass_img.onclick = function(){
-			this.src = api_server_url+'/php/v4/verify_code.php?session_id=' + userinfo["session_id"] + '&t=' + new Date().getTime();
+			if(navigator.language.toLowerCase().indexOf('cn')==-1){
+				this.src = api_server_url+'/php/v4/verify_code?session_id=' + userinfo["session_id"] + '&t=' + new Date().getTime();
+			}else{
+				this.src = api_server_url+'/php/v4/verify_code.php?session_id=' + userinfo["session_id"] + '&t=' + new Date().getTime();
+			}
 		}
 	}
 
@@ -6452,8 +6464,17 @@ forget_password_input_button_forget_password.onclick = function(){
 }
 // 实时验证QQ用户名是否匹配验证字符串
 let register_verify_timeout;
+let register_verify_xmlhttp_error_times = 0;
 function register_verify(id,verify){
 	let xmlhttp = new XMLHttpRequest();
+
+	xmlhttp.onerror = function(){
+		register_verify_xmlhttp_error_times++;
+		if(register_verify_xmlhttp_error_times>10){
+			return false;
+		}
+		setTimeout(register_verify,3000,id,verify);
+	}
 	xmlhttp.onreadystatechange=function(){
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
 			let ResultJSON = JSON.parse(xmlhttp.responseText);
@@ -6476,6 +6497,7 @@ function register_verify(id,verify){
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
 	xmlhttp.send( "id=" + id + "&verify=" + verify );
+	register_verify_xmlhttp_error_times = 0;
 }
 // 注册页面输入框
 let register_input_username = document.getElementById('register-input-username');
