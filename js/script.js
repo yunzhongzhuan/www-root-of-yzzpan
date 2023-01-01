@@ -2976,7 +2976,8 @@ let api_server_url = "https://c34a02aaeb0d6.cname.frontwize.com";
 // let api_server_url = "https://yunzhongzhuan.com.huaweicloud.com.5a7567ec.cdnhwc8.cn";
 // let api_server_url = "https://hcdnw103.c.cdnhwc2.com";
 if(navigator.language.toLowerCase().indexOf('cn')==-1){
-	let api_server_url = "https://apiyunzhongzhuancom.vercel.app";
+	// api_server_url = "https://apiyunzhongzhuancom.vercel.app";
+	api_server_url = "https://mfm.yunzhongzhuan.com";
 }
 // let api_server_url = "https://ddos-guard-net-api.yzzpan.com";
 let not_vip_upload_file_size = 1000 * 1024 * 1024; // 非会员用户上传文件最大允许1GB
@@ -3322,6 +3323,7 @@ function show_verify_code(){
 	html_element.innerHTML = '<img class="verify-pass-img" src="'+api_server_url+'/php/v4/verify_code.php?session_id=' + userinfo["session_id"] + '&t=' + new Date().getTime() + '"/><br/><br/><input placeholder="请输入图片中12位验证文字！" autocomplete="off" class="swal-content__input verify-pass-input">';
 	if(navigator.language.toLowerCase().indexOf('cn')==-1){
 		let new_src = html_element.getElementsByClassName('verify-pass-img')[0].src.replace(/verify_code.php/g,'verify_code');
+		new_src = new_src.replace(api_server_url,'https://apiyunzhongzhuancom.vercel.app');
 		html_element.getElementsByClassName('verify-pass-img')[0].src = new_src;
 	}
 	swal({
@@ -3358,7 +3360,7 @@ function show_verify_code(){
 						}
 					}
 					if(navigator.language.toLowerCase().indexOf('cn')==-1){
-						xmlhttp.open("GET",api_server_url+"/php/v4/verify_code?session_id="+userinfo["session_id"]+"&submit_verify_code="+verify_pass_input.value+"&t="+new Date().getTime(),true);
+						xmlhttp.open("GET","https://apiyunzhongzhuancom.vercel.app/php/v4/verify_code?session_id="+userinfo["session_id"]+"&submit_verify_code="+verify_pass_input.value+"&t="+new Date().getTime(),true);
 					}else{
 						xmlhttp.open("GET",api_server_url+"/php/v4/verify_code.php?session_id="+userinfo["session_id"]+"&submit_verify_code="+verify_pass_input.value+"&t="+new Date().getTime(),true);
 					}
@@ -3376,7 +3378,7 @@ function show_verify_code(){
 		let verify_pass_img = verify_pass_img_items[0];
 		verify_pass_img.onclick = function(){
 			if(navigator.language.toLowerCase().indexOf('cn')==-1){
-				this.src = api_server_url+'/php/v4/verify_code?session_id=' + userinfo["session_id"] + '&t=' + new Date().getTime();
+				this.src = 'https://apiyunzhongzhuancom.vercel.app/php/v4/verify_code?session_id=' + userinfo["session_id"] + '&t=' + new Date().getTime();
 			}else{
 				this.src = api_server_url+'/php/v4/verify_code.php?session_id=' + userinfo["session_id"] + '&t=' + new Date().getTime();
 			}
