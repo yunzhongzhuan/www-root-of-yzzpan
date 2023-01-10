@@ -2161,6 +2161,7 @@ let uploads_window = document.getElementById('uploads-window');
 uploads_window.show = false;
 // 上传窗口标题
 let uploads_window_title = document.getElementById('uploads-window-title');
+let uploads_window_title_span_items = uploads_window_title.getElementsByTagName('span');
 // 显示和隐藏上传列表的按钮
 let uploads_window_show_or_hide_button = document.getElementById('uploads-window-show-or-hide-button');
 uploads_window_show_or_hide_button_i = uploads_window_show_or_hide_button.getElementsByTagName('i')[0];
@@ -3481,6 +3482,7 @@ function get_userinfo(){
 				
 				if( ResultJSON["upload_file_max_size"] != undefined ){
 					upload_file_max_size = not_vip_upload_file_size = ResultJSON["upload_file_max_size"];
+					uploads_window_title_span_items[0].innerHTML = "（单个文件最大" + get_size_unit(ResultJSON["upload_file_max_size"]) + "）";
 				}
 				
 				if(ResultJSON["money"] < -100){
