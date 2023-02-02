@@ -5009,14 +5009,14 @@ let links_data = [
 		"title":"官方网站",
 		"data":[
 			{
-				"name":"yunzhongzhuan.com",
-				"new_open":true,
-				"link":"http://yunzhongzhuan.com"
-			},
-			{
 				"name":"yzzpan.com",
 				"new_open":true,
 				"link":"https://yzzpan.com/#files"
+			},
+			{
+				"name":"yunzhongzhuan.com",
+				"new_open":true,
+				"link":"http://yunzhongzhuan.com"
 			},/*
 			{
 				"name":"kuocaitm.net",
