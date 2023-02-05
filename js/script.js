@@ -960,6 +960,33 @@ function push_files_to_files_page(files_items,isPrepend){
 				}
 			}
 			
+			// 如果是移动或联通，隐藏EU.ORG地址，移动因未知原因无法访问EU.ORG，联通访问EU.ORG速度普通，故只适合电信访问EU.ORG。
+			if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+				let html_element_p_items = html_element.getElementsByTagName('p');
+				for(let i=0;i<html_element_p_items.length;i++){
+					let item = html_element_p_items[i];
+					if(item.style.display.indexOf('none')==-1){
+						let item_a = item.getElementsByTagName('a');
+						if(
+							item_a!=undefined
+							&&
+							item_a.length==1
+						  ){
+							if(item_a[0].href.indexOf('https://download')!=-1 && item_a[0].href.indexOf('.eu.org/download/')!=-1){
+								item.remove();
+								i--;
+								continue;
+							}
+
+						}
+					}
+					
+				}
+			}else{
+				// CT PASS
+			}
+			
+			
 			if(this.parent.url_localhost!=undefined){
 				let p = document.createElement('p');
 				let a = document.createElement('a');
@@ -1570,6 +1597,34 @@ files_main.oncontextmenu=function(e){
 					
 				}
 			}
+			
+			
+			// 如果是移动或联通，隐藏EU.ORG地址，移动因未知原因无法访问EU.ORG，联通访问EU.ORG速度普通，故只适合电信访问EU.ORG。
+			if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+				let html_element_p_items = html_element.getElementsByTagName('p');
+				for(let i=0;i<html_element_p_items.length;i++){
+					let item = html_element_p_items[i];
+					if(item.style.display.indexOf('none')==-1){
+						let item_a = item.getElementsByTagName('a');
+						if(
+							item_a!=undefined
+							&&
+							item_a.length==1
+						  ){
+							if(item_a[0].href.indexOf('https://download')!=-1 && item_a[0].href.indexOf('.eu.org/download/')!=-1){
+								item.remove();
+								i--;
+								continue;
+							}
+
+						}
+					}
+					
+				}
+			}else{
+				// CT PASS
+			}
+			
 			
 			if(files_items_selected_array[0].url_localhost!=undefined){
 				let p = document.createElement('p');
@@ -4089,150 +4144,208 @@ function get_sharefile(id,key){
 				sharefile_content_link_item_download_button_8.style.fontWeight="bold";
 				sharefile_content_link_item_download_button_8.style.borderBottom="2px dashed #f6821f";
 				
-				sharefile_content_link_item_download_button_9.href = "https://download.yunzhongzhuan.eu.org" + ResultJSON["url"];
-				sharefile_content_link_item_download_button_9.style.color="#f6821f";
-				sharefile_content_link_item_download_button_9.style.fontWeight="bold";
-				sharefile_content_link_item_download_button_9.style.borderBottom="2px dashed #f6821f";
-				if(cdn_cgi_trace_download_hkg==true){
-					sharefile_content_link_item_download_button_9.form_action_href = sharefile_content_link_item_download_button_9.href;
-					sharefile_content_link_item_download_button_9.removeAttribute('href');
-					sharefile_content_link_item_download_button_9.onclick = function(){
-						let new_form = document.createElement('form');
-						new_form.action=this.form_action_href;
-						new_form.method="post";
-						new_form.target="_blank";
-						document.body.append(new_form);
-						new_form.submit();
-						new_form.remove();
+				
+				if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+					// CM CU NOT EU.ORG SO PASS
+					sharefile_content_link_item_download_button_9.style.display = "none";
+				}else{
+					// CT TO EU.ORG GOOD
+					sharefile_content_link_item_download_button_9.href = "https://download.yunzhongzhuan.eu.org" + ResultJSON["url"];
+					sharefile_content_link_item_download_button_9.style.color="#f6821f";
+					sharefile_content_link_item_download_button_9.style.fontWeight="bold";
+					sharefile_content_link_item_download_button_9.style.borderBottom="2px dashed #f6821f";
+					if(cdn_cgi_trace_download_hkg==true){
+						sharefile_content_link_item_download_button_9.form_action_href = sharefile_content_link_item_download_button_9.href;
+						sharefile_content_link_item_download_button_9.removeAttribute('href');
+						sharefile_content_link_item_download_button_9.onclick = function(){
+							let new_form = document.createElement('form');
+							new_form.action=this.form_action_href;
+							new_form.method="post";
+							new_form.target="_blank";
+							document.body.append(new_form);
+							new_form.submit();
+							new_form.remove();
+						}
 					}
+					sharefile_content_link_item_download_button_9.style.display = "unset";
 				}
 				
-				sharefile_content_link_item_download_button_10.href = "https://download.yantudefengjing.eu.org" + ResultJSON["url"];
-				sharefile_content_link_item_download_button_10.style.color="#f6821f";
-				sharefile_content_link_item_download_button_10.style.fontWeight="bold";
-				sharefile_content_link_item_download_button_10.style.borderBottom="2px dashed #f6821f";
-				if(cdn_cgi_trace_download_hkg==true){
-					sharefile_content_link_item_download_button_10.form_action_href = sharefile_content_link_item_download_button_10.href;
-					sharefile_content_link_item_download_button_10.removeAttribute('href');
-					sharefile_content_link_item_download_button_10.onclick = function(){
-						let new_form = document.createElement('form');
-						new_form.action=this.form_action_href;
-						new_form.method="post";
-						new_form.target="_blank";
-						document.body.append(new_form);
-						new_form.submit();
-						new_form.remove();
+				if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+					// CM CU NOT EU.ORG SO PASS
+					sharefile_content_link_item_download_button_10.style.display = "none";
+				}else{
+					// CT TO EU.ORG GOOD
+					sharefile_content_link_item_download_button_10.href = "https://download.yantudefengjing.eu.org" + ResultJSON["url"];
+					sharefile_content_link_item_download_button_10.style.color="#f6821f";
+					sharefile_content_link_item_download_button_10.style.fontWeight="bold";
+					sharefile_content_link_item_download_button_10.style.borderBottom="2px dashed #f6821f";
+					if(cdn_cgi_trace_download_hkg==true){
+						sharefile_content_link_item_download_button_10.form_action_href = sharefile_content_link_item_download_button_10.href;
+						sharefile_content_link_item_download_button_10.removeAttribute('href');
+						sharefile_content_link_item_download_button_10.onclick = function(){
+							let new_form = document.createElement('form');
+							new_form.action=this.form_action_href;
+							new_form.method="post";
+							new_form.target="_blank";
+							document.body.append(new_form);
+							new_form.submit();
+							new_form.remove();
+						}
 					}
+					sharefile_content_link_item_download_button_10.style.display = "unset";
 				}
 				
-				sharefile_content_link_item_download_button_11.href = "https://download.wenhua.eu.org" + ResultJSON["url"];
-				sharefile_content_link_item_download_button_11.style.color="#f6821f";
-				sharefile_content_link_item_download_button_11.style.fontWeight="bold";
-				sharefile_content_link_item_download_button_11.style.borderBottom="2px dashed #f6821f";
-				if(cdn_cgi_trace_download_hkg==true){
-					sharefile_content_link_item_download_button_11.form_action_href = sharefile_content_link_item_download_button_11.href;
-					sharefile_content_link_item_download_button_11.removeAttribute('href');
-					sharefile_content_link_item_download_button_11.onclick = function(){
-						let new_form = document.createElement('form');
-						new_form.action=this.form_action_href;
-						new_form.method="post";
-						new_form.target="_blank";
-						document.body.append(new_form);
-						new_form.submit();
-						new_form.remove();
+				if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+					// CM CU NOT EU.ORG SO PASS
+					sharefile_content_link_item_download_button_11.style.display = "none";
+				}else{
+					// CT TO EU.ORG GOOD
+					sharefile_content_link_item_download_button_11.href = "https://download.wenhua.eu.org" + ResultJSON["url"];
+					sharefile_content_link_item_download_button_11.style.color="#f6821f";
+					sharefile_content_link_item_download_button_11.style.fontWeight="bold";
+					sharefile_content_link_item_download_button_11.style.borderBottom="2px dashed #f6821f";
+					if(cdn_cgi_trace_download_hkg==true){
+						sharefile_content_link_item_download_button_11.form_action_href = sharefile_content_link_item_download_button_11.href;
+						sharefile_content_link_item_download_button_11.removeAttribute('href');
+						sharefile_content_link_item_download_button_11.onclick = function(){
+							let new_form = document.createElement('form');
+							new_form.action=this.form_action_href;
+							new_form.method="post";
+							new_form.target="_blank";
+							document.body.append(new_form);
+							new_form.submit();
+							new_form.remove();
+						}
 					}
-				}
-				
-				sharefile_content_link_item_download_button_16.href = "https://download.chunghuatelecom.eu.org" + ResultJSON["url"];
-				sharefile_content_link_item_download_button_16.style.color="#f6821f";
-				sharefile_content_link_item_download_button_16.style.fontWeight="bold";
-				sharefile_content_link_item_download_button_16.style.borderBottom="2px dashed #f6821f";
-				if(cdn_cgi_trace_download_hkg==true){
-					sharefile_content_link_item_download_button_16.form_action_href = sharefile_content_link_item_download_button_16.href;
-					sharefile_content_link_item_download_button_16.removeAttribute('href');
-					sharefile_content_link_item_download_button_16.onclick = function(){
-						let new_form = document.createElement('form');
-						new_form.action=this.form_action_href;
-						new_form.method="post";
-						new_form.target="_blank";
-						document.body.append(new_form);
-						new_form.submit();
-						new_form.remove();
-					}
-				}
-				
-				sharefile_content_link_item_download_button_17.href = "https://download.unicomtelecom.eu.org" + ResultJSON["url"];
-				sharefile_content_link_item_download_button_17.style.color="#f6821f";
-				sharefile_content_link_item_download_button_17.style.fontWeight="bold";
-				sharefile_content_link_item_download_button_17.style.borderBottom="2px dashed #f6821f";
-				if(cdn_cgi_trace_download_hkg==true){
-					sharefile_content_link_item_download_button_17.form_action_href = sharefile_content_link_item_download_button_17.href;
-					sharefile_content_link_item_download_button_17.removeAttribute('href');
-					sharefile_content_link_item_download_button_17.onclick = function(){
-						let new_form = document.createElement('form');
-						new_form.action=this.form_action_href;
-						new_form.method="post";
-						new_form.target="_blank";
-						document.body.append(new_form);
-						new_form.submit();
-						new_form.remove();
-					}
-				}
-				
-				sharefile_content_link_item_download_button_18.href = "https://download.chunghwatelecom.eu.org" + ResultJSON["url"];
-				sharefile_content_link_item_download_button_18.style.color="#f6821f";
-				sharefile_content_link_item_download_button_18.style.fontWeight="bold";
-				sharefile_content_link_item_download_button_18.style.borderBottom="2px dashed #f6821f";
-				if(cdn_cgi_trace_download_hkg==true){
-					sharefile_content_link_item_download_button_18.form_action_href = sharefile_content_link_item_download_button_18.href;
-					sharefile_content_link_item_download_button_18.removeAttribute('href');
-					sharefile_content_link_item_download_button_18.onclick = function(){
-						let new_form = document.createElement('form');
-						new_form.action=this.form_action_href;
-						new_form.method="post";
-						new_form.target="_blank";
-						document.body.append(new_form);
-						new_form.submit();
-						new_form.remove();
-					}
+					sharefile_content_link_item_download_button_11.style.display = "unset";
 				}
 				
 				
-				sharefile_content_link_item_download_button_30.href = "https://download.kaohsiung.eu.org" + ResultJSON["url"];
-				sharefile_content_link_item_download_button_30.style.color="#f6821f";
-				sharefile_content_link_item_download_button_30.style.fontWeight="bold";
-				sharefile_content_link_item_download_button_30.style.borderBottom="2px dashed #f6821f";
-				if(cdn_cgi_trace_download_hkg==true){
-					sharefile_content_link_item_download_button_30.form_action_href = sharefile_content_link_item_download_button_30.href;
-					sharefile_content_link_item_download_button_30.removeAttribute('href');
-					sharefile_content_link_item_download_button_30.onclick = function(){
-						let new_form = document.createElement('form');
-						new_form.action=this.form_action_href;
-						new_form.method="post";
-						new_form.target="_blank";
-						document.body.append(new_form);
-						new_form.submit();
-						new_form.remove();
+				if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+					// CM CU NOT EU.ORG SO PASS
+					sharefile_content_link_item_download_button_16.style.display = "none";
+				}else{
+					// CT TO EU.ORG GOOD
+					sharefile_content_link_item_download_button_16.href = "https://download.chunghuatelecom.eu.org" + ResultJSON["url"];
+					sharefile_content_link_item_download_button_16.style.color="#f6821f";
+					sharefile_content_link_item_download_button_16.style.fontWeight="bold";
+					sharefile_content_link_item_download_button_16.style.borderBottom="2px dashed #f6821f";
+					if(cdn_cgi_trace_download_hkg==true){
+						sharefile_content_link_item_download_button_16.form_action_href = sharefile_content_link_item_download_button_16.href;
+						sharefile_content_link_item_download_button_16.removeAttribute('href');
+						sharefile_content_link_item_download_button_16.onclick = function(){
+							let new_form = document.createElement('form');
+							new_form.action=this.form_action_href;
+							new_form.method="post";
+							new_form.target="_blank";
+							document.body.append(new_form);
+							new_form.submit();
+							new_form.remove();
+						}
 					}
+					sharefile_content_link_item_download_button_16.style.display = "unset";
+				}
+				
+				if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+					// CM CU NOT EU.ORG SO PASS
+					sharefile_content_link_item_download_button_17.style.display = "none";
+				}else{
+					// CT TO EU.ORG GOOD
+					sharefile_content_link_item_download_button_17.href = "https://download.unicomtelecom.eu.org" + ResultJSON["url"];
+					sharefile_content_link_item_download_button_17.style.color="#f6821f";
+					sharefile_content_link_item_download_button_17.style.fontWeight="bold";
+					sharefile_content_link_item_download_button_17.style.borderBottom="2px dashed #f6821f";
+					if(cdn_cgi_trace_download_hkg==true){
+						sharefile_content_link_item_download_button_17.form_action_href = sharefile_content_link_item_download_button_17.href;
+						sharefile_content_link_item_download_button_17.removeAttribute('href');
+						sharefile_content_link_item_download_button_17.onclick = function(){
+							let new_form = document.createElement('form');
+							new_form.action=this.form_action_href;
+							new_form.method="post";
+							new_form.target="_blank";
+							document.body.append(new_form);
+							new_form.submit();
+							new_form.remove();
+						}
+					}
+					sharefile_content_link_item_download_button_17.style.display = "unset";
+				}
+				
+				if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+					// CM CU NOT EU.ORG SO PASS
+					sharefile_content_link_item_download_button_18.style.display = "none";
+				}else{
+					// CT TO EU.ORG GOOD
+					sharefile_content_link_item_download_button_18.href = "https://download.chunghwatelecom.eu.org" + ResultJSON["url"];
+					sharefile_content_link_item_download_button_18.style.color="#f6821f";
+					sharefile_content_link_item_download_button_18.style.fontWeight="bold";
+					sharefile_content_link_item_download_button_18.style.borderBottom="2px dashed #f6821f";
+					if(cdn_cgi_trace_download_hkg==true){
+						sharefile_content_link_item_download_button_18.form_action_href = sharefile_content_link_item_download_button_18.href;
+						sharefile_content_link_item_download_button_18.removeAttribute('href');
+						sharefile_content_link_item_download_button_18.onclick = function(){
+							let new_form = document.createElement('form');
+							new_form.action=this.form_action_href;
+							new_form.method="post";
+							new_form.target="_blank";
+							document.body.append(new_form);
+							new_form.submit();
+							new_form.remove();
+						}
+					}
+					sharefile_content_link_item_download_button_18.style.display = "unset";
 				}
 				
 				
-				sharefile_content_link_item_download_button_19.href = "https://download.cmhkg.eu.org" + ResultJSON["url"];
-				sharefile_content_link_item_download_button_19.style.color="#f6821f";
-				sharefile_content_link_item_download_button_19.style.fontWeight="bold";
-				sharefile_content_link_item_download_button_19.style.borderBottom="2px dashed #f6821f";
-				if(cdn_cgi_trace_download_hkg==true){
-					sharefile_content_link_item_download_button_19.form_action_href = sharefile_content_link_item_download_button_19.href;
-					sharefile_content_link_item_download_button_19.removeAttribute('href');
-					sharefile_content_link_item_download_button_19.onclick = function(){
-						let new_form = document.createElement('form');
-						new_form.action=this.form_action_href;
-						new_form.method="post";
-						new_form.target="_blank";
-						document.body.append(new_form);
-						new_form.submit();
-						new_form.remove();
+				if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+					// CM CU NOT EU.ORG SO PASS
+					sharefile_content_link_item_download_button_30.style.display = "none";
+				}else{
+					// CT TO EU.ORG GOOD
+					sharefile_content_link_item_download_button_30.href = "https://download.kaohsiung.eu.org" + ResultJSON["url"];
+					sharefile_content_link_item_download_button_30.style.color="#f6821f";
+					sharefile_content_link_item_download_button_30.style.fontWeight="bold";
+					sharefile_content_link_item_download_button_30.style.borderBottom="2px dashed #f6821f";
+					if(cdn_cgi_trace_download_hkg==true){
+						sharefile_content_link_item_download_button_30.form_action_href = sharefile_content_link_item_download_button_30.href;
+						sharefile_content_link_item_download_button_30.removeAttribute('href');
+						sharefile_content_link_item_download_button_30.onclick = function(){
+							let new_form = document.createElement('form');
+							new_form.action=this.form_action_href;
+							new_form.method="post";
+							new_form.target="_blank";
+							document.body.append(new_form);
+							new_form.submit();
+							new_form.remove();
+						}
 					}
+					sharefile_content_link_item_download_button_30.style.display = "unset";
+				}
+				
+				
+				if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+					// CM CU NOT EU.ORG SO PASS
+					sharefile_content_link_item_download_button_19.style.display = "none";
+				}else{
+					// CT TO EU.ORG GOOD
+					sharefile_content_link_item_download_button_19.href = "https://download.cmhkg.eu.org" + ResultJSON["url"];
+					sharefile_content_link_item_download_button_19.style.color="#f6821f";
+					sharefile_content_link_item_download_button_19.style.fontWeight="bold";
+					sharefile_content_link_item_download_button_19.style.borderBottom="2px dashed #f6821f";
+					if(cdn_cgi_trace_download_hkg==true){
+						sharefile_content_link_item_download_button_19.form_action_href = sharefile_content_link_item_download_button_19.href;
+						sharefile_content_link_item_download_button_19.removeAttribute('href');
+						sharefile_content_link_item_download_button_19.onclick = function(){
+							let new_form = document.createElement('form');
+							new_form.action=this.form_action_href;
+							new_form.method="post";
+							new_form.target="_blank";
+							document.body.append(new_form);
+							new_form.submit();
+							new_form.remove();
+						}
+					}
+					sharefile_content_link_item_download_button_19.style.display = "unset";
 				}
 				
 				
