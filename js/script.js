@@ -678,61 +678,80 @@ function files_delete_items(){
 	// console.log(files_id);
 	let parent_folder_id = get_files_folders_array[get_files_folders_index];
 	// console.log(parent_folder_id);
+	
+	
 	swal({
-		title: "正在删除",
-		text: '正在删除。',
+		title: "危险操作",
+		text: "是否删除文件？",
 		icon: "warning",
+		buttons: true,
 		dangerMode: true,
 		closeOnClickOutside: false,
-	});
-	let xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange=function(){
-		if(xmlhttp.readyState==4 && xmlhttp.status==200){
-			let ResultJSON = JSON.parse(xmlhttp.responseText);
-			if(ResultJSON["status"]){
-				files_unpaste_button.click();
-				swal({
-					title: "删除成功",
-					text: '删除成功！',
-					icon: "success",
-					dangerMode: true,
-					closeOnClickOutside: false,
-				});
-				for(let i=0;i<folders_will_delete_element.length;i++){
-					let item = folders_will_delete_element[i];
-					setTimeout(function(item){
-						item.className = "files-item files-item-hide";
-						setTimeout(function(item){
-							item.remove();
-						},300,item);
-					},(i+1)*50,item);
+	}).then((willDelete) => {
+		if (willDelete) {
+	
+	
+
+			swal({
+				title: "正在删除",
+				text: '正在删除。',
+				icon: "warning",
+				dangerMode: true,
+				closeOnClickOutside: false,
+			});
+			let xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange=function(){
+				if(xmlhttp.readyState==4 && xmlhttp.status==200){
+					let ResultJSON = JSON.parse(xmlhttp.responseText);
+					if(ResultJSON["status"]){
+						files_unpaste_button.click();
+						swal({
+							title: "删除成功",
+							text: '删除成功！',
+							icon: "success",
+							dangerMode: true,
+							closeOnClickOutside: false,
+						});
+						for(let i=0;i<folders_will_delete_element.length;i++){
+							let item = folders_will_delete_element[i];
+							setTimeout(function(item){
+								item.className = "files-item files-item-hide";
+								setTimeout(function(item){
+									item.remove();
+								},300,item);
+							},(i+1)*50,item);
+						}
+						for(let i=0;i<files_will_delete_element.length;i++){
+							let item = files_will_delete_element[i];
+							setTimeout(function(item){
+								item.className = "files-item files-item-hide";
+								setTimeout(function(item){
+									item.remove();
+								},300,item);
+							},(i+1)*50,item);
+						}
+					}else{
+						swal({
+							title: "删除失败",
+							text: ResultJSON["message"],
+							icon: "error",
+							// buttons: true,
+							// dangerMode: true,
+							closeOnClickOutside: false,
+						});
+					}
+					get_usedsize_function();
 				}
-				for(let i=0;i<files_will_delete_element.length;i++){
-					let item = files_will_delete_element[i];
-					setTimeout(function(item){
-						item.className = "files-item files-item-hide";
-						setTimeout(function(item){
-							item.remove();
-						},300,item);
-					},(i+1)*50,item);
-				}
-			}else{
-				swal({
-					title: "删除失败",
-					text: ResultJSON["message"],
-					icon: "error",
-					// buttons: true,
-					// dangerMode: true,
-					closeOnClickOutside: false,
-				});
 			}
-			get_usedsize_function();
+			xmlhttp.open("POST",api_server_url+"/php/v4/files_delete",true);
+			xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+			xmlhttp.withCredentials = true;
+			xmlhttp.send("folders_id="+folders_id+"&files_id="+files_id+"&parent_folder_id="+parent_folder_id+"&session_id="+userinfo["session_id"]);
+			
+			
 		}
-	}
-	xmlhttp.open("POST",api_server_url+"/php/v4/files_delete",true);
-	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-	xmlhttp.withCredentials = true;
-	xmlhttp.send("folders_id="+folders_id+"&files_id="+files_id+"&parent_folder_id="+parent_folder_id+"&session_id="+userinfo["session_id"]);
+	});
+	
 }
 function push_files_to_files_page(files_items,isPrepend){
 	// 文件数据
