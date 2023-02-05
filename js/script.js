@@ -2744,6 +2744,9 @@ let cdn_cgi_trace_download_error_times = 0;
 let cdn_cgi_trace_download_hkg = false;
 let cdn_cgi_trace_download_fra = false;
 function cdn_cgi_trace_download(){
+	if(navigator.language.toLowerCase().indexOf('cn')==-1){
+		return false;
+	}
 	if(cdn_cgi_trace_download_locked){
 		return false;
 	}
@@ -2767,6 +2770,16 @@ function cdn_cgi_trace_download(){
 				cdn_cgi_trace_download_fra = true;
 			}
 			
+			if(cdn_cgi_trace_download_hkg||cdn_cgi_trace_download_fra){
+				sharefile_content_link_item_download_button_9.style.display = "none";
+				sharefile_content_link_item_download_button_10.style.display = "none";
+				sharefile_content_link_item_download_button_11.style.display = "none";
+				sharefile_content_link_item_download_button_16.style.display = "none";
+				sharefile_content_link_item_download_button_17.style.display = "none";
+				sharefile_content_link_item_download_button_18.style.display = "none";
+				sharefile_content_link_item_download_button_30.style.display = "none";
+				sharefile_content_link_item_download_button_19.style.display = "none";
+			}
 			
 
 		}
