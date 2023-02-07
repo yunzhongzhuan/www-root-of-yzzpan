@@ -3398,7 +3398,7 @@ setting_user_div_vipdatetime_warning_08.onclick = function(){
 
 
 let use_qq_qr_code_login = false;
-
+let need_show_qq_qr_code_login_swal = false;
 function show_verify_code(){
 	let html_element = document.createElement('div');
 	html_element.innerHTML = '<img class="verify-pass-img" src="'+api_server_url+'/php/v4/verify_code.php?session_id=' + userinfo["session_id"] + '&t=' + new Date().getTime() + '"/><br/><br/><input placeholder="请输入图片中12位验证文字！" autocomplete="off" class="swal-content__input verify-pass-input">';
@@ -3427,6 +3427,13 @@ function show_verify_code(){
 						if(xmlhttp.readyState==4 && xmlhttp.status==200){
 							let ResultJSON = JSON.parse(xmlhttp.responseText);
 							if(ResultJSON["status"]){
+								if(
+									ResultJSON["verify_pass"] != undefined
+									&&
+									ResultJSON["verify_pass"] == true
+								){
+									need_show_qq_qr_code_login_swal = true;
+								}
 								get_userinfo();
 							}else{
 								swal({
@@ -3696,6 +3703,15 @@ function get_userinfo(){
 
 							setTimeout(get_userinfo,1000);
 
+					}else{
+						
+						if(
+							need_show_qq_qr_code_login_swal == true
+						){
+							need_show_qq_qr_code_login_swal = false;
+							setTimeout(function(){login_input_button_qq_login.click()},100);
+						}
+					
 					}
 				}
 			}
