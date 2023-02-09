@@ -36,6 +36,175 @@ i--;
 }
 */
 
+
+
+
+// 排序代码来自 https://www.cnblogs.com/sanrenblog/p/16623040.html 我十分致敬作者的水平！
+/**
+ * 比较字符串
+ * @param str1
+ * @param str2
+ */
+function strCompare(str1, str2) {
+    // 处理数据为null的情况
+    if (str1 == undefined && str2 == undefined) {
+        return 0;
+    }
+    if (str1 == undefined) {
+        return -1;
+    }
+    if (str2 == undefined) {
+        return 1;
+    }
+
+    // 比较字符串中的每个字符
+    let c1;
+    let c2;
+
+    let regexArr = ['-', '_', '—', '~', '·'], canRegex = /[^0-9\.]/g;
+    // 如果都不是数字格式（含有其它内容）
+    if (canRegex.test(str1) && canRegex.test(str2)) {
+        for (let i = 0; i < regexArr.length; i++) {
+            let regex = eval('(/[^0-9\\' + regexArr[i] + '\\.]/g)');
+            // 去除后缀
+            let tps1 = str1.replace(/\.[0-9a-zA-Z]+$/, '');
+            let tps2 = str2.replace(/\.[0-9a-zA-Z]+$/, '');
+            // 如果在名字正则要求范围内（没有正则以外的值）
+            if (!regex.test(tps1) && !regex.test(tps2)) {
+                // 转换为字符串数组
+                let numberArray1 = tps1.split(regexArr[i]);
+                let numberArray2 = tps2.split(regexArr[i]);
+                return compareNumberArray(numberArray1, numberArray2);
+            }
+        }
+    }
+
+    // 逐字比较返回结果
+    for (let i = 0; i < str1.length; i++) {
+        c1 = str1[i];
+        if (i > str2.length - 1) { // 如果在该字符前，两个串都一样，str2更短，则str1较大
+            return 1;
+        }
+        c2 = str2[i];
+        // 如果都是数字的话，则需要考虑多位数的情况，取出完整的数字字符串，转化为数字再进行比较
+        if (isNumber(c1) && isNumber(c2)) {
+            let numStr1 = "";
+            let numStr2 = "";
+            // 获取数字部分字符串
+            for (let j = i; j < str1.length; j++) {
+                c1 = str1[j];
+                if (!isNumber(c1) && c1 !== '.') { // 不是数字则直接退出循环
+                    break;
+                }
+                numStr1 += c1;
+            }
+            for (let j = i; j < str2.length; j++) {
+                c2 = str2[j];
+                if (!isNumber(c2) && c2 !== '.') {
+                    break;
+                }
+                numStr2 += c2;
+            }
+            // 将带小数点的数字转换为数字字符串数组
+            let numberArray1 = numStr1.split('.');
+            let numberArray2 = numStr2.split('.');
+            return compareNumberArray(numberArray1, numberArray2);
+        }
+
+        // 不是数字的比较方式
+        if (c1 != c2) {
+            return c1 - c2;
+        }
+    }
+    return 0;
+}
+
+/**
+ * 判断是否为数字
+ * @param obj
+ * @returns
+ */
+function isNumber(obj) {
+    if (parseFloat(obj).toString() == "NaN") {
+        return false;
+    }
+    return true;
+}
+
+/**
+ * 比较两个数字数组
+ *
+ * @param numberArray1
+ * @param numberArray2
+ */
+function compareNumberArray(numberArray1, numberArray2) {
+    for (let i = 0; i < numberArray1.length; i++) {
+        if (numberArray2.length < i + 1) { // 此时数字数组2比1短，直接返回
+            return 1;
+        }
+        let compareResult = parseInt(numberArray1[i]) - parseInt(numberArray2[i]);
+        if (compareResult != 0) {
+            return compareResult;
+        }
+    }
+    // 说明数组1比数组2短，返回小于
+    return -1;
+}
+
+/*
+let arr = ["5栋", "7栋", "4栋", "4.5栋", "4.1栋", "4栋", "15栋", "24栋"];
+arr.sort(function(str1, str2) {
+    return strCompare(str1, str2)
+});
+*/
+
+// 是否从文件名排序，可能对非英语文字文本无效
+let files_order_by_name_function_order_is_123 = true; // 是否正序
+function files_order_by_name_function(){
+	let files_items = files_items_files_items.getElementsByClassName('files-item');
+	let files_items_json_info_array = new Array();
+	for(let i=0;i<files_items.length;i++){
+		let item = files_items[i];
+		files_items_json_info_array.push({
+			"name":item.name,
+			"size":item.size,
+			"id":item.item_id
+		});
+	}
+	// alert(JSON.stringify(files_items_json_info_array));
+	//[{"name":"01.mp4","size":"313207866","id":"176132"},{"name":"13.mp4","size":"203651797","id":"176120"},{"name":"08.mp4","size":"304623668","id":"176127"},{"name":"04.mp4","size":"280701895","id":"176126"},{"name":"10.mp4","size":"262996367","id":"176129"},{"name":"02.mp4","size":"238375914","id":"176128"},{"name":"03.mp4","size":"274166392","id":"176131"},{"name":"11.mp4","size":"215385843","id":"176121"},{"name":"06.mp4","size":"254527332","id":"176130"},{"name":"07.mp4","size":"219882772","id":"176125"},{"name":"12.mp4","size":"197584877","id":"176122"},{"name":"05.mp4","size":"231547172","id":"176124"},{"name":"09.mp4","size":"210474913","id":"176123"},{"name":"17.mp4","size":"187836470","id":"176119"},{"name":"15.mp4","size":"99511843","id":"176118"},{"name":"16.mp4","size":"52202176","id":"176117"},{"name":"18.mp4","size":"41405850","id":"176116"}]
+	let files_items_json_info_array_for_name = new Array();
+	for(let i=0;i<files_items_json_info_array.length;i++){
+		let item = files_items_json_info_array[i];
+		files_items_json_info_array_for_name.push(item["name"]);
+	}
+	let name_order_result = files_items_json_info_array_for_name.sort(function(str1, str2) {
+		if(files_order_by_name_function_order_is_123){
+			return strCompare(str1, str2)
+		}else{
+			return strCompare(str2, str1)
+		}
+	});
+	for(let i=0;i<name_order_result.length;i++){
+		let item = name_order_result[i];
+		// 开始查看哪些文件名称是这个，是的话，放到第一位
+		for(let i2=0;i2<files_items.length;i2++){
+			let item2 = files_items[i2];
+			if(item2.name == item){
+				files_items[0].parentNode.insertBefore(item2,files_items[0]);
+			}
+		}
+	}
+	files_order_by_name_function_order_is_123 = !files_order_by_name_function_order_is_123;
+}
+let files_order_name_button = document.getElementById('files-order-name-button');
+if(files_order_name_button!=undefined){
+	files_order_name_button.onclick = files_order_by_name_function;
+}
+
+
+
+
 // 是否从大到小排序？
 let files_order_by_size_by_max = true;
 function files_order_by_size_function(){
