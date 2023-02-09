@@ -1335,6 +1335,56 @@ let files_preview_button = document.getElementById('files-preview-button');
 let files_unpaste_button = document.getElementById('files-unpaste-button');
 let files_rename_button = document.getElementById('files-rename-button');
 let files_upload_button = document.getElementById('files-upload-button');
+
+
+// 批量复制
+let files_public_all_link_button = document.getElementById('files-public-all-link-button');
+if(files_public_all_link_button!=undefined){
+	files_public_all_link_button.onclick = function(){
+		if( public_link_hostname.length < 10 || public_link_hostname == ""){
+			files_public_all_link_button.style.display = "none";
+			return false;
+		}
+		let files_items = files_items_files_items.getElementsByClassName('files-item');
+		let array_url_public_link = new Array();
+		for(let i=0;i<files_items.length;i++){
+			let item = files_items[i];
+			if(item.url_public_link != undefined && item.url_public_link.length > 30 && item.url_public_link.indexOf('undefined')==-1  ){
+				array_url_public_link.push(item.name + "\r\n" + item.url_public_link);
+			}else{
+				array_url_public_link.push(item.name + "\r\n正在同步该文件，请您稍等片刻。");
+			}
+		}
+		let link = array_url_public_link.join('\r\n\r\n');
+		swal({
+			title: "分享成功",
+			text: link,
+			icon: "success",
+			buttons: ["取消","复制"],
+			closeOnClickOutside: false,
+		}).then((willDelete) => {
+			if (willDelete) {
+				// 复制文本 复制文字 JS自动选中文字
+				// copy_text(link);
+				var selection = window.getSelection();
+				selection.removeAllRanges();
+				var range = document.createRange();
+				range.selectNodeContents(document.getElementsByClassName('swal-text')[0]);
+				selection.addRange(range);
+				document.execCommand("Copy");
+				swal({
+				    title: "复制成功",
+				    text: "复制成功！",
+				    icon: "success",
+				    buttons: "确定",
+				    closeOnClickOutside: false,
+				});
+			}
+		});
+	}
+}
+
+
 files_upload_button.onclick = function(){
 	// 如果未登录
 	if(userinfo["id"]!=undefined&&userinfo["id"]!=null&&userinfo["id"]!=''&&userinfo["qq"]!=undefined&&userinfo["qq"]!=null&&userinfo["qq"]!=''&&userinfo["username"]!=undefined&&userinfo["username"]!=null&&userinfo["username"]!=''){
@@ -1854,6 +1904,10 @@ files_main.oncontextmenu=function(e){
 			//files_preview_button.style.display = "block";
 			//files_preview_button.onclick = preview_media;
 		}
+	}
+	// 是否显示批量复制外链
+	if( public_link_hostname.length < 10 || public_link_hostname == ""){}else{
+		files_public_all_link_button.style.display = "block";
 	}
 	// 是否显示剪切按钮
 	if( ( folders_items_selected_array.length + files_items_selected_array.length ) > 0 ){
