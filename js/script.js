@@ -1766,6 +1766,7 @@ files_main.oncontextmenu=function(e){
 	// 先隐藏右键菜单所有可点击的按钮
 	menu_buttons_hide();
 	files_order_size_button.style.display = "block";
+	files_order_name_button.style.display = "block";
 	files_order_date_button.style.display = "block";
 	files_upload_button.style.display = "block";
 	files_create_button.style.display = "block";
