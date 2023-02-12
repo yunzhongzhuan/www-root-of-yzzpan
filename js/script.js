@@ -5981,6 +5981,32 @@ function file_upload(Blobs,Element){
 		remove_element(this.parent);
 	}
 	// 上传
+	
+	
+	// 任务队列 上传排队
+	// 查看有多少个文件正在上传，如果太多，就排队！
+	let ElementIsUploadingNumberMax = 5; // 最大同时上传五个
+	let upload_items_uploading_items = upload_items.getElementsByClassName('uploads-item');
+	let upload_items_uploading_items_running_number = 0; // 正在上传多少个
+	for(let i=0;i<upload_items_uploading_items.length;i++){
+		let item = upload_items_uploading_items[i];
+		if( item.stop != undefined && item.stop == false ){
+			if(item.isUploading != undefined && item.isUploading == true){
+				upload_items_uploading_items_running_number = upload_items_uploading_items_running_number + 1;
+			}
+		}
+		if(upload_items_uploading_items_running_number >= ElementIsUploadingNumberMax){
+			break;
+		}
+	}
+	
+	if(upload_items_uploading_items_running_number >= ElementIsUploadingNumberMax){
+		// 等待之后，重新上传。
+		setTimeout(file_upload,1000,Blobs,Element);
+		return false;
+	}
+	Element.isUploading = true;
+	
 	upload_window_iframe_element.contentWindow.FileUploadStart(Blobs,Element);
 }
 // 计算 hash 的数组
