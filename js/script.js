@@ -6002,10 +6002,13 @@ function file_upload(Blobs,Element){
 	
 	if(upload_items_uploading_items_running_number >= ElementIsUploadingNumberMax){
 		// 等待之后，重新上传。
+		Element.upload_speed_element.innerText = "正在排队";
 		setTimeout(file_upload,1000,Blobs,Element);
 		return false;
 	}
 	Element.isUploading = true;
+
+	Element.upload_speed_element.innerText = "正在上传";
 	
 	upload_window_iframe_element.contentWindow.FileUploadStart(Blobs,Element);
 }
