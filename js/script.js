@@ -3,7 +3,7 @@
 // email admin@yunzhongzhuan.com
 // email 1070892573@qq.com
 
-// 2023/2/15 17:36 1
+// 2023/2/15 17:47 1
 
 // if(window.location.href.split("#").length==1&&document.referrer!='')window.location.href="/welcome/index.html";
 // try{document.domain="yzzpan.com";}catch(e){};
@@ -6481,12 +6481,15 @@ let workers;
 							&&
 							ElementIsUploadingNumberMaxStatus==true
 						  ){
-							if(
-								need_calc_hash_push_number!=undefined
-								&&
-								need_calc_hash_push_number<0
-							){
-								need_calc_hash_push_number = 0;
+							if(need_calc_hash_push_number!=undefined){
+								if(
+									need_calc_hash_push_number < ElementIsUploadingNumberMax
+								){
+									ElementIsUploadingNumberMaxStatus = false;
+								}
+								if(need_calc_hash_push_number<0){
+									need_calc_hash_push_number = 0;
+								}
 							}
 							setTimeout(start_upload,1000,status_element,file,workers,crypto_algos);
 							return false;
@@ -6544,12 +6547,15 @@ let workers;
 							&&
 							ElementIsUploadingNumberMaxStatus==true
 						  ){
-							if(
-								need_calc_hash_push_number!=undefined
-								&&
-								need_calc_hash_push_number<0
-							){
-								need_calc_hash_push_number = 0;
+							if(need_calc_hash_push_number!=undefined){
+								if(
+									need_calc_hash_push_number < ElementIsUploadingNumberMax
+								){
+									ElementIsUploadingNumberMaxStatus = false;
+								}
+								if(need_calc_hash_push_number<0){
+									need_calc_hash_push_number = 0;
+								}
 							}
 							setTimeout(need_calc_hash_,1000,status_element,file,workers,crypto_algos);
 							return false;
