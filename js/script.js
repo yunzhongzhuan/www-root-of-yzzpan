@@ -5951,7 +5951,10 @@ function upload_file_error(title,text,icon){
 }
 // 上传函数
 // 上传文件操作
+let ElementIsUploadingNumberMaxStatus = false; // 是否应该等待
+let ElementIsUploadingNumberMax = 5; // 最大同时上传五个
 function file_upload(Blobs,Element){
+	need_calc_hash_push_number = need_calc_hash_push_number - 1;
 	// 如果未登录
 	if(userinfo["id"]!=undefined&&userinfo["id"]!=null&&userinfo["id"]!=''&&userinfo["qq"]!=undefined&&userinfo["qq"]!=null&&userinfo["qq"]!=''){
 		// pass
@@ -5985,7 +5988,6 @@ function file_upload(Blobs,Element){
 	
 	// 任务队列 上传排队
 	// 查看有多少个文件正在上传，如果太多，就排队！
-	let ElementIsUploadingNumberMax = 5; // 最大同时上传五个
 	let upload_items_uploading_items = upload_items.getElementsByClassName('uploads-item');
 	let upload_items_uploading_items_running_number = 0; // 正在上传多少个
 	for(let i=0;i<upload_items_uploading_items.length;i++){
@@ -6002,16 +6004,20 @@ function file_upload(Blobs,Element){
 	
 	if(upload_items_uploading_items_running_number >= ElementIsUploadingNumberMax){
 		// 等待之后，重新上传。
+		ElementIsUploadingNumberMaxStatus = true;
 		Element.upload_speed_element.innerText = "正在排队";
 		setTimeout(file_upload,1000,Blobs,Element);
 		return false;
 	}
+	ElementIsUploadingNumberMaxStatus = false;
 	Element.isUploading = true;
 
 	Element.upload_speed_element.innerText = "正在上传";
 	
 	upload_window_iframe_element.contentWindow.FileUploadStart(Blobs,Element);
 }
+// 计算等待 排队
+let need_calc_hash_push_number = 0; // 已加入计算的数量是多少
 // 计算 hash 的数组
 let workers;
 // 上传文件的程序
@@ -6460,6 +6466,29 @@ let workers;
 					upload_list_file_show(div,i);
 					// 开始上传
 					function start_upload(status_element,file,workers,crypto_algos){
+						// 如果要等待，那就等待
+						if(
+							ElementIsUploadingNumberMaxStatus!=undefined
+							&&
+							ElementIsUploadingNumberMaxStatus==true
+						  ){
+							setTimeout(start_upload,1000,status_element,file,workers,crypto_algos);
+							return false;
+							
+						}else{
+							// pass
+						}
+						
+						if(
+							need_calc_hash_push_number != undefined
+							&&
+							need_calc_hash_push_number >= ElementIsUploadingNumberMax
+						){
+							ElementIsUploadingNumberMaxStatus = true;
+							setTimeout(start_upload,1000,status_element,file,workers,crypto_algos);
+							return false;
+						}
+						
 						if(status_element.need_calc_hash){
 							// 如果需要计算
 						}else{
@@ -6472,6 +6501,9 @@ let workers;
 								status_element.need_calc_hash = true;
 							}
 						}
+						
+						need_calc_hash_push_number = need_calc_hash_push_number + 1;
+						
 						if (true || document.getElementById('hash_hash').checked) {
 						  if (is_crypto && file.size < max_crypto_file_size) {
 							crypto_algos.push({id: "#hash_file_hash_" + file_id, name: "Hash"});
@@ -6489,6 +6521,29 @@ let workers;
 					}
 					// 判断文件是否可以边计算边上传
 					function need_calc_hash_(status_element,file,workers,crypto_algos){
+						
+						// 如果要等待
+						if(
+							ElementIsUploadingNumberMaxStatus!=undefined
+							&&
+							ElementIsUploadingNumberMaxStatus==true
+						  ){
+							setTimeout(need_calc_hash_,1000,status_element,file,workers,crypto_algos);
+							return false;
+							
+						}else{
+							// pass
+						}
+						
+						if(
+							need_calc_hash_push_number != undefined
+							&&
+							need_calc_hash_push_number >= ElementIsUploadingNumberMax
+						){
+							setTimeout(need_calc_hash_,1000,status_element,file,workers,crypto_algos);
+							return false;
+						}
+						
 						let xmlhttp_need_calc_hash = new XMLHttpRequest();
 						let session_id = encodeURIComponent(userinfo["session_id"]);
 						xmlhttp_need_calc_hash.onreadystatechange=function(){
