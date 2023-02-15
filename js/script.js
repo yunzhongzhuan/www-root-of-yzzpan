@@ -3,7 +3,7 @@
 // email admin@yunzhongzhuan.com
 // email 1070892573@qq.com
 
-// 2023/2/15 17:19 1
+// 2023/2/15 17:36 1
 
 // if(window.location.href.split("#").length==1&&document.referrer!='')window.location.href="/welcome/index.html";
 // try{document.domain="yzzpan.com";}catch(e){};
