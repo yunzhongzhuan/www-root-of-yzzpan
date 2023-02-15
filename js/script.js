@@ -5960,7 +5960,7 @@ function upload_file_error(title,text,icon){
 let ElementIsUploadingNumberMaxStatus = false; // 是否应该等待
 let ElementIsUploadingNumberMax = 5; // 最大同时上传五个
 function file_upload(Blobs,Element){
-	need_calc_hash_push_number = need_calc_hash_push_number - 1;
+
 	// 如果未登录
 	if(userinfo["id"]!=undefined&&userinfo["id"]!=null&&userinfo["id"]!=''&&userinfo["qq"]!=undefined&&userinfo["qq"]!=null&&userinfo["qq"]!=''){
 		// pass
@@ -6103,6 +6103,7 @@ let workers;
 			if(so.xhrObj!=undefined){
     			so.xhrObj.abort();
     		}
+			need_calc_hash_push_number = need_calc_hash_push_number - 1;
 			return false;
 		}
         if (event.data.result) {
@@ -6110,6 +6111,7 @@ let workers;
           	so.md5 = event.data.result;// 得到 MD5
           }
           if(type==2){
+		need_calc_hash_push_number = need_calc_hash_push_number - 1;
           	so.upload_speed_element.innerText = '0MB/s';
           	so.hash = event.data.result; // 得到 hash
           	let session_id = encodeURIComponent(userinfo["session_id"]);
@@ -6244,6 +6246,7 @@ let workers;
         		    so.upload_speed_element.innerText = (event.data.block.end * 100 / event.data.block.file_size).toFixed(2) + '%';
         		}
         	}else{
+			need_calc_hash_push_number = need_calc_hash_push_number - 1;
         		return false;
         	}
         	// ////////console.log((event.data.block.end * 100 / event.data.block.file_size).toFixed(2) + '%');
@@ -6478,6 +6481,13 @@ let workers;
 							&&
 							ElementIsUploadingNumberMaxStatus==true
 						  ){
+							if(
+								need_calc_hash_push_number!=undefined
+								&&
+								need_calc_hash_push_number<0
+							){
+								need_calc_hash_push_number = 0;
+							}
 							setTimeout(start_upload,1000,status_element,file,workers,crypto_algos);
 							return false;
 							
@@ -6534,6 +6544,13 @@ let workers;
 							&&
 							ElementIsUploadingNumberMaxStatus==true
 						  ){
+							if(
+								need_calc_hash_push_number!=undefined
+								&&
+								need_calc_hash_push_number<0
+							){
+								need_calc_hash_push_number = 0;
+							}
 							setTimeout(need_calc_hash_,1000,status_element,file,workers,crypto_algos);
 							return false;
 							
