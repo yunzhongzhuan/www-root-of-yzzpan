@@ -3653,7 +3653,7 @@ function show_verify_code(){
 				let verify_pass_input = verify_pass_input_items[0];
 				let verify_pass_input_value = verify_pass_input.value;
 				if(verify_pass_input_value.length>0&&verify_pass_input_value.length==12){
-					/*swal({
+					swal({
 						title: "正在验证",
 						text: "正在验证",
 						icon: "info",
@@ -3661,7 +3661,7 @@ function show_verify_code(){
 						closeOnClickOutside: false,
 					}).then((willDelete) => {
 						// pass
-					});*/
+					});
 					let xmlhttp = new XMLHttpRequest();
 					xmlhttp.onreadystatechange=function(){
 						if(xmlhttp.readyState==4 && xmlhttp.status==200){
@@ -6922,7 +6922,8 @@ login_input_button_qq_login.onclick = async function(){
 	// let qr_code = api_server_url + '/php/temp/imgs/' + userinfo["qq_login_id"] + ".png?t=0&";;
 	let qr_code = 'https://c34a02aaeb0d6.cname.frontwize.com/php/temp/imgs/' + userinfo["qq_login_id"] + ".png?t=0&";;
 	let swal_element = document.getElementsByClassName('swal-overlay--show-modal');
-	if(swal_element.length>0){
+	let qq_login_id_qr_code_element = document.getElementsByClassName('qq_login_id_qr_code');
+	if(swal_element.length>0 && qq_login_id_qr_code_element.length>0){
 		// pass
 		swal_element[0].getElementsByClassName('swal-text')[0].innerText = text;
 		let qq_code_element = document.getElementsByClassName('qq_login_id_qr_code');
