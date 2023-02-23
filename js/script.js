@@ -3653,7 +3653,7 @@ function show_verify_code(){
 				let verify_pass_input = verify_pass_input_items[0];
 				let verify_pass_input_value = verify_pass_input.value;
 				if(verify_pass_input_value.length>0&&verify_pass_input_value.length==12){
-					swal({
+					/*swal({
 						title: "正在验证",
 						text: "正在验证",
 						icon: "info",
@@ -3661,7 +3661,7 @@ function show_verify_code(){
 						closeOnClickOutside: false,
 					}).then((willDelete) => {
 						// pass
-					});
+					});*/
 					let xmlhttp = new XMLHttpRequest();
 					xmlhttp.onreadystatechange=function(){
 						if(xmlhttp.readyState==4 && xmlhttp.status==200){
