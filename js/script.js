@@ -3651,7 +3651,17 @@ function show_verify_code(){
 			let verify_pass_input_items = document.getElementsByClassName('verify-pass-input');
 			if(verify_pass_input_items.length>0){
 				let verify_pass_input = verify_pass_input_items[0];
-				if(verify_pass_input.value.length>0&&verify_pass_input.value.length==12){
+				let verify_pass_input_value = verify_pass_input.value;
+				if(verify_pass_input_value.length>0&&verify_pass_input_value.length==12){
+					swal({
+						title: "正在验证",
+						text: "正在验证",
+						icon: "info",
+						dangerMode: true,
+						closeOnClickOutside: false,
+					}).then((willDelete) => {
+						// pass
+					});
 					let xmlhttp = new XMLHttpRequest();
 					xmlhttp.onreadystatechange=function(){
 						if(xmlhttp.readyState==4 && xmlhttp.status==200){
@@ -3668,7 +3678,7 @@ function show_verify_code(){
 							}else{
 								swal({
 									title: "输入错误！",
-									text: "请重新输入！",
+									text: "重新输入！",
 									icon: "error",
 									dangerMode: true,
 									closeOnClickOutside: false,
@@ -3679,10 +3689,10 @@ function show_verify_code(){
 						}
 					}
 					if(navigator.language.toLowerCase().indexOf('cn')==-1){
-						// xmlhttp.open("GET","https://apiyunzhongzhuancom.vercel.app/php/v4/verify_code?session_id="+userinfo["session_id"]+"&submit_verify_code="+verify_pass_input.value+"&t="+new Date().getTime(),true);
-						xmlhttp.open("GET","https://api.yunzhongzhuan.com/php/v4/verify_code?session_id="+userinfo["session_id"]+"&submit_verify_code="+verify_pass_input.value+"&t="+new Date().getTime(),true);
+						// xmlhttp.open("GET","https://apiyunzhongzhuancom.vercel.app/php/v4/verify_code?session_id="+userinfo["session_id"]+"&submit_verify_code="+verify_pass_input_value+"&t="+new Date().getTime(),true);
+						xmlhttp.open("GET","https://api.yunzhongzhuan.com/php/v4/verify_code?session_id="+userinfo["session_id"]+"&submit_verify_code="+verify_pass_input_value+"&t="+new Date().getTime(),true);
 					}else{
-						xmlhttp.open("GET",api_server_url+"/php/v4/verify_code.php?session_id="+userinfo["session_id"]+"&submit_verify_code="+verify_pass_input.value+"&t="+new Date().getTime(),true);
+						xmlhttp.open("GET",api_server_url+"/php/v4/verify_code.php?session_id="+userinfo["session_id"]+"&submit_verify_code="+verify_pass_input_value+"&t="+new Date().getTime(),true);
 					}
 					xmlhttp.withCredentials = true;
 					xmlhttp.send();
