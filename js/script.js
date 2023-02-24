@@ -3,7 +3,7 @@
 // email admin@yunzhongzhuan.com
 // email 1070892573@qq.com
 
-// 2023/2/23 12:40 1
+// 2023/2/24 22:38 1
 
 // if(window.location.href.split("#").length==1&&document.referrer!='')window.location.href="/welcome/index.html";
 // try{document.domain="yzzpan.com";}catch(e){};
@@ -5141,6 +5141,7 @@ function get_files(){
 	}
 	xmlhttp.onerror = function(){
 		get_files_loading = false;
+		get_files();
 	}
 	xmlhttp.open("POST",api_server_url+"/php/v4/files",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
@@ -5187,6 +5188,7 @@ function get_folders(){
 	}
 	xmlhttp.onerror = function(){
 		get_folders_loading = false;
+		get_folders();
 	}
 	xmlhttp.open("POST",api_server_url+"/php/v4/folders",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
