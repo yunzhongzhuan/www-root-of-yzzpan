@@ -918,7 +918,7 @@ function files_delete_items(){
 					get_usedsize_function();
 				}
 			}
-			xmlhttp.open("POST",api_server_url+"/php/v4/files_delete.php",true);
+			xmlhttp.open("POST",api_server_url+"/php/v4/files_delete",true);
 			xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 			xmlhttp.withCredentials = true;
 			xmlhttp.send("folders_id="+folders_id+"&files_id="+files_id+"&parent_folder_id="+parent_folder_id+"&session_id="+userinfo["session_id"]);
@@ -1491,7 +1491,7 @@ function create_folder(name,parent_folder_id){
 			}
 		}
 	}
-	xmlhttp.open("POST",api_server_url+"/php/v4/create_folder.php",true);
+	xmlhttp.open("POST",api_server_url+"/php/v4/create_folder",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
 	xmlhttp.send("folder_name=" + folder_name + "&parent_folder_id=" + parent_folder_id + "&session_id=" + userinfo["session_id"] );
@@ -1695,7 +1695,7 @@ function new_offline_https(){
 						}
 					}
 				}
-				xmlhttp.open("POST",api_server_url+"/php/v4/new_offline.php",true);
+				xmlhttp.open("POST",api_server_url+"/php/v4/new_offline",true);
 				xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 				xmlhttp.withCredentials = true;
 				xmlhttp.send("offline_ua="+offline_ua+"&offline_cookie="+offline_cookie+"&offline_referer="+offline_referer+"&url=" + url + "&parent_folder_id=" + parent_folder_id + "&session_id=" + userinfo["session_id"] );
@@ -2153,7 +2153,7 @@ function files_file_rename(item_id,new_name,element){
 			}
 		}
 	}
-	xmlhttp.open("POST",api_server_url+"/php/v4/file_rename.php",true);
+	xmlhttp.open("POST",api_server_url+"/php/v4/file_rename",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
 	xmlhttp.send("file_id=" + item_id + "&parent_folder_id=" + parent_folder_id + "&new_name=" + new_name + "&session_id=" + userinfo["session_id"] );
@@ -2189,7 +2189,7 @@ function files_folder_rename(item_id,new_name,element){
 			}
 		}
 	}
-	xmlhttp.open("POST",api_server_url+"/php/v4/folder_rename.php",true);
+	xmlhttp.open("POST",api_server_url+"/php/v4/folder_rename",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
 	xmlhttp.send("folder_id=" + item_id + "&parent_folder_id=" + parent_folder_id + "&new_name=" + new_name +"&session_id=" + userinfo["session_id"] );
@@ -2408,7 +2408,7 @@ function files_paste_functions(){
 			}
 		}
 	}
-	xmlhttp.open("POST",api_server_url+"/php/v4/files_paste.php",true);
+	xmlhttp.open("POST",api_server_url+"/php/v4/files_paste",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
 	xmlhttp.send("new_parent_folder_id=" + parent_folder_id + "&folders_id=" + folders_id_array_string + "&files_id=" + files_id_array_string + "&session_id=" + userinfo["session_id"] );
@@ -2743,7 +2743,7 @@ function get_usedsize_function(){
 			}
 		}
 	}
-	xmlhttp.open("POST",api_server_url+"/php/v4/get_usedsize.php",true);
+	xmlhttp.open("POST",api_server_url+"/php/v4/get_usedsize",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
 	xmlhttp.send("post=1&session_id="+userinfo["session_id"]);
@@ -2876,7 +2876,7 @@ function logout(){
 					}
 				}
 			}
-			xmlhttp.open("POST",api_server_url+"/php/v4/exit.php",true);
+			xmlhttp.open("POST",api_server_url+"/php/v4/exit",true);
 			xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 			xmlhttp.withCredentials = true;
 			xmlhttp.send("session_id="+userinfo["session_id"]);
@@ -3119,7 +3119,7 @@ login_input_button_login.onclick = function(){
 			}
 		}
 	}
-	xmlhttp.open("POST",api_server_url+"/php/v4/login.php",true);
+	xmlhttp.open("POST",api_server_url+"/php/v4/login",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
 	xmlhttp.send("username="+username+"&password="+password+"&session_id="+userinfo["session_id"]);
@@ -3282,14 +3282,13 @@ let login_input_username = document.getElementById('login-input-username');
 // let api_server_url = "https://server.yzzpan.com.cdn.cloudflare.net";
 // let api_server_url = "https://www.yunzhongzhuan.com";
 // let api_server_url = "https://applicationprogramminginterface.yzzpan.com";
-// let api_server_url = "https://c34a02aaeb0d6.cname.frontwize.com";
+let api_server_url = "https://c34a02aaeb0d6.cname.frontwize.com";
 // let api_server_url = "https://yunzhongzhuan.com.huaweicloud.com.5a7567ec.cdnhwc8.cn";
 // let api_server_url = "https://hcdnw103.c.cdnhwc2.com";
-let api_server_url = "https://hkg.yunzhongzhuan.com";
 if(navigator.language.toLowerCase().indexOf('cn')==-1){
 	// api_server_url = "https://apiyunzhongzhuancom.vercel.app";
 	// api_server_url = "https://api.yunzhongzhuan.com";
-	// api_server_url = "https://mfm.yunzhongzhuan.com";
+	api_server_url = "https://mfm.yunzhongzhuan.com";
 }
 // let api_server_url = "https://ddos-guard-net-api.yzzpan.com";
 let not_vip_upload_file_size = 1000 * 1024 * 1024; // 非会员用户上传文件最大允许1GB
@@ -3372,7 +3371,7 @@ function update_vip_function(day_int){
 			}
 		}
 	}
-	xmlhttp.open("POST",api_server_url+"/php/v4/update_vip.php",true);
+	xmlhttp.open("POST",api_server_url+"/php/v4/update_vip",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
 	xmlhttp.send("day="+day_int+"&session_id="+userinfo["session_id"]);
@@ -3633,11 +3632,11 @@ let need_show_qq_qr_code_login_swal = false;
 function show_verify_code(){
 	let html_element = document.createElement('div');
 	html_element.innerHTML = '<img class="verify-pass-img" src="'+api_server_url+'/php/v4/verify_code.php?session_id=' + userinfo["session_id"] + '&t=' + new Date().getTime() + '"/><br/><br/><input placeholder="请输入图片中12位验证文字！" autocomplete="off" class="swal-content__input verify-pass-input">';
-	if(false && navigator.language.toLowerCase().indexOf('cn')==-1){
-		// let new_src = html_element.getElementsByClassName('verify-pass-img')[0].src.replace(/verify_code.php/g,'verify_code');
+	if(navigator.language.toLowerCase().indexOf('cn')==-1){
+		let new_src = html_element.getElementsByClassName('verify-pass-img')[0].src.replace(/verify_code.php/g,'verify_code');
 		// new_src = new_src.replace(api_server_url,'https://apiyunzhongzhuancom.vercel.app');
-		// new_src = new_src.replace(api_server_url,'https://api.yunzhongzhuan.com');
-		// html_element.getElementsByClassName('verify-pass-img')[0].src = new_src;
+		new_src = new_src.replace(api_server_url,'https://api.yunzhongzhuan.com');
+		html_element.getElementsByClassName('verify-pass-img')[0].src = new_src;
 	}
 	swal({
 		title: "请先验证！",
@@ -3689,7 +3688,12 @@ function show_verify_code(){
 							}
 						}
 					}
-					xmlhttp.open("GET",api_server_url+"/php/v4/verify_code.php?session_id="+userinfo["session_id"]+"&submit_verify_code="+verify_pass_input_value+"&t="+new Date().getTime(),true);
+					if(navigator.language.toLowerCase().indexOf('cn')==-1){
+						// xmlhttp.open("GET","https://apiyunzhongzhuancom.vercel.app/php/v4/verify_code?session_id="+userinfo["session_id"]+"&submit_verify_code="+verify_pass_input_value+"&t="+new Date().getTime(),true);
+						xmlhttp.open("GET","https://api.yunzhongzhuan.com/php/v4/verify_code?session_id="+userinfo["session_id"]+"&submit_verify_code="+verify_pass_input_value+"&t="+new Date().getTime(),true);
+					}else{
+						xmlhttp.open("GET",api_server_url+"/php/v4/verify_code.php?session_id="+userinfo["session_id"]+"&submit_verify_code="+verify_pass_input_value+"&t="+new Date().getTime(),true);
+					}
 					xmlhttp.withCredentials = true;
 					xmlhttp.send();
 				}else{
@@ -3703,7 +3707,12 @@ function show_verify_code(){
 	if(verify_pass_img_items.length>0){
 		let verify_pass_img = verify_pass_img_items[0];
 		verify_pass_img.onclick = function(){
-			this.src = api_server_url+'/php/v4/verify_code.php?session_id=' + userinfo["session_id"] + '&t=' + new Date().getTime();
+			if(navigator.language.toLowerCase().indexOf('cn')==-1){
+				// this.src = 'https://apiyunzhongzhuancom.vercel.app/php/v4/verify_code?session_id=' + userinfo["session_id"] + '&t=' + new Date().getTime();
+				this.src = 'https://api.yunzhongzhuan.com/php/v4/verify_code?session_id=' + userinfo["session_id"] + '&t=' + new Date().getTime();
+			}else{
+				this.src = api_server_url+'/php/v4/verify_code.php?session_id=' + userinfo["session_id"] + '&t=' + new Date().getTime();
+			}
 		}
 	}
 
@@ -4053,7 +4062,7 @@ function get_userinfo(){
 			}
 		}
 	}
-	xmlhttp.open("POST",api_server_url+"/php/v4/userinfo.php",true);
+	xmlhttp.open("POST",api_server_url+"/php/v4/userinfo",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
 	xmlhttp.send("post=1&session_id="+userinfo["session_id"]);
@@ -4121,7 +4130,7 @@ nav_reset_password_button.onclick = function(){
 						}
 					}
 				}
-				xmlhttp.open("POST",api_server_url+"/php/v4/nav_reset_password.php",true);
+				xmlhttp.open("POST",api_server_url+"/php/v4/nav_reset_password",true);
 				xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 				xmlhttp.withCredentials = true;
 				xmlhttp.send("new_password=" + new_password + "&session_id=" + userinfo["session_id"] );
@@ -4317,7 +4326,7 @@ function sharefile_copy(id,key){
 			}
 		}
 	}
-	xmlhttp.open("POST",api_server_url+"/php/v4/sharefile_copy.php",true);
+	xmlhttp.open("POST",api_server_url+"/php/v4/sharefile_copy",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
 	xmlhttp.send("id=" + id + "&key=" + key + "&session_id=" + userinfo["session_id"] );
@@ -4861,7 +4870,7 @@ function get_sharefile(id,key){
 			}
 		}
 	}
-	xmlhttp.open("POST",api_server_url+"/php/v4/sharefile.php",true);
+	xmlhttp.open("POST",api_server_url+"/php/v4/sharefile",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
 	xmlhttp.send("id=" + id + "&key=" + key + "&session_id=" + userinfo["session_id"] );
@@ -5134,7 +5143,7 @@ function get_files(){
 		get_files_loading = false;
 		get_files();
 	}
-	xmlhttp.open("POST",api_server_url+"/php/v4/files.php",true);
+	xmlhttp.open("POST",api_server_url+"/php/v4/files",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
 	xmlhttp.send("parent_folder_id=" + parent_folder_id + "&page=" + page + "&like=" + like + "&session_id=" + userinfo["session_id"] );
@@ -5181,7 +5190,7 @@ function get_folders(){
 		get_folders_loading = false;
 		get_folders();
 	}
-	xmlhttp.open("POST",api_server_url+"/php/v4/folders.php",true);
+	xmlhttp.open("POST",api_server_url+"/php/v4/folders",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
 	xmlhttp.send("parent_folder_id=" + parent_folder_id + "&page=" + page + "&like=" + like + "&session_id=" + userinfo["session_id"] );
@@ -6218,7 +6227,7 @@ let workers;
 					}
 				}
 			}
-			xmlhttp.open("POST",api_server_url+"/php/v4/hash_copy.php",true);
+			xmlhttp.open("POST",api_server_url+"/php/v4/hash_copy",true);
 			xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 			// xmlhttp.withCredentials = true;
 			// xmlhttp.onerror = get_user_info_error;
@@ -6588,7 +6597,7 @@ let workers;
 								start_upload(status_element,file,workers,crypto_algos);
 							}
 						}
-						xmlhttp_need_calc_hash.open("POST",api_server_url+"/php/v4/need_calc_hash.php",true);
+						xmlhttp_need_calc_hash.open("POST",api_server_url+"/php/v4/need_calc_hash",true);
 						xmlhttp_need_calc_hash.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 						// xmlhttp_need_calc_hash.withCredentials = true;
 						xmlhttp_need_calc_hash.send("size=" + file.size + "&name=" + file.name + "&session_id=" + session_id );
@@ -6994,7 +7003,7 @@ function forget_password_functions(){
 			}
 		}
 	}
-	xmlhttp.open("POST",api_server_url+"/php/v4/forget_password.php",true);
+	xmlhttp.open("POST",api_server_url+"/php/v4/forget_password",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
 	xmlhttp.send( "username=" + username + "&password=" + password + "&qq=" + qq );
@@ -7047,7 +7056,7 @@ function register_verify(id,verify){
 			}
 		}
 	}
-	xmlhttp.open("POST",api_server_url+"/php/v4/register_verify.php",true);
+	xmlhttp.open("POST",api_server_url+"/php/v4/register_verify",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
 	xmlhttp.send( "id=" + id + "&verify=" + verify );
@@ -7099,7 +7108,7 @@ function register_functions(){
 			}
 		}
 	}
-	xmlhttp.open("POST",api_server_url+"/php/v4/register.php",true);
+	xmlhttp.open("POST",api_server_url+"/php/v4/register",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
 	xmlhttp.send( "username=" + username + "&qq=" + qq + "&password=" + password );
@@ -7160,7 +7169,7 @@ function query_all_files_sum_size(){
 			}
 		}
 	}
-	xmlhttp.open("POST",api_server_url+"/php/v4/query_all_files_sum_size.php",true);
+	xmlhttp.open("POST",api_server_url+"/php/v4/query_all_files_sum_size",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	// xmlhttp_need_calc_hash.withCredentials = true;
 	xmlhttp.send("t=1&session_id=" + session_id );
