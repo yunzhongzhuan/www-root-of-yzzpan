@@ -1327,7 +1327,17 @@ function push_files_to_files_page(files_items,isPrepend){
 				html_element.prepend(p);
 			}
 			
-			
+			// Qr Code
+			if(
+				true
+			){
+				let p = document.createElement('p');
+				let img = document.createElement('img');
+				img.style.width = "100%";
+				img.src = "//gimg2.baidu.com/gimg/app=2011&src=" + ("https://www.yunzhongzhuan.com/welcome/index.html?redirect_location=" + encodeURIComponent(download_web_url + this.parent.url));
+				p.append(img);
+				html_element.prepend(p);
+			}
 
 			
 			// console.log(html_element);
@@ -2012,6 +2022,19 @@ files_main.oncontextmenu=function(e){
 				a.style.color = "#d2270e";
 				a.innerText = "点击下载";
 				p.append(a);
+				html_element.prepend(p);
+			}
+			
+			
+			// Qr Code
+			if(
+				true
+			){
+				let p = document.createElement('p');
+				let img = document.createElement('img');
+				img.style.width = "100%";
+				img.src = "//gimg2.baidu.com/gimg/app=2011&src=" + ("https://www.yunzhongzhuan.com/welcome/index.html?redirect_location=" + encodeURIComponent(download_web_url + files_items_selected_array[0].url));
+				p.append(img);
 				html_element.prepend(p);
 			}
 
