@@ -1334,6 +1334,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				let p = document.createElement('p');
 				let img = document.createElement('img');
 				img.style.width = "399px";
+				img.style.maxHeight = "399px";
 				img.style.maxWidth = "100%";
 				img.style.margin = "20px auto";
 				p.style.textAlign = "center";
@@ -2036,6 +2037,7 @@ files_main.oncontextmenu=function(e){
 				let p = document.createElement('p');
 				let img = document.createElement('img');
 				img.style.width = "399px";
+				img.style.maxHeight = "399px";
 				img.style.maxWidth = "100%";
 				img.style.margin = "20px auto";
 				p.style.textAlign = "center";
