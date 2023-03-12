@@ -1334,7 +1334,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				let p = document.createElement('p');
 				let img = document.createElement('img');
 				img.style.width = "100%";
-				img.src = "//gimg2.baidu.com/gimg/app=2011&src=" + ("https://www.yunzhongzhuan.com/welcome/index.html?redirect_location=" + encodeURIComponent(download_web_url + this.parent.url));
+				img.src = "//gimg2.baidu.com/gimg/app=2011&src="  + encodeURIComponent(https://api.qrserver.com/v1/create-qr-code/?size=150x150&data= + encodeURIComponent("https://www.yunzhongzhuan.com/welcome/index.html?redirect_location=" + encodeURIComponent(download_web_url + this.parent.url)));
 				p.append(img);
 				html_element.prepend(p);
 			}
@@ -2033,7 +2033,7 @@ files_main.oncontextmenu=function(e){
 				let p = document.createElement('p');
 				let img = document.createElement('img');
 				img.style.width = "100%";
-				img.src = "//gimg2.baidu.com/gimg/app=2011&src=" + ("https://www.yunzhongzhuan.com/welcome/index.html?redirect_location=" + encodeURIComponent(download_web_url + files_items_selected_array[0].url));
+				img.src = "//gimg2.baidu.com/gimg/app=2011&src="  + encodeURIComponent(https://api.qrserver.com/v1/create-qr-code/?size=150x150&data= + encodeURIComponent("https://www.yunzhongzhuan.com/welcome/index.html?redirect_location=" + encodeURIComponent(download_web_url + files_items_selected_array[0].url)));
 				p.append(img);
 				html_element.prepend(p);
 			}
