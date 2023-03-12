@@ -1335,6 +1335,8 @@ function push_files_to_files_page(files_items,isPrepend){
 				let img = document.createElement('img');
 				img.style.width = "399px";
 				img.style.maxWidth = "100%";
+				img.style.margin = "20px auto";
+				p.style.textAlign = "center";
 				img.src = "//gimg2.baidu.com/gimg/app=2011&src="  + encodeURIComponent("https://api.qrserver.com/v1/create-qr-code/?size=399x399&data=" + encodeURIComponent("https://www.yunzhongzhuan.com/welcome/index.html?redirect_location=" + encodeURIComponent(download_web_url + this.parent.url)));
 				p.append(img);
 				html_element.prepend(p);
@@ -2035,6 +2037,8 @@ files_main.oncontextmenu=function(e){
 				let img = document.createElement('img');
 				img.style.width = "399px";
 				img.style.maxWidth = "100%";
+				img.style.margin = "20px auto";
+				p.style.textAlign = "center";
 				img.src = "//gimg2.baidu.com/gimg/app=2011&src="  + encodeURIComponent("https://api.qrserver.com/v1/create-qr-code/?size=399x399&data=" + encodeURIComponent("https://www.yunzhongzhuan.com/welcome/index.html?redirect_location=" + encodeURIComponent(download_web_url + files_items_selected_array[0].url)));
 				p.append(img);
 				html_element.prepend(p);
