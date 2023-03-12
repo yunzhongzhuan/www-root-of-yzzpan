@@ -1339,7 +1339,7 @@ function push_files_to_files_page(files_items,isPrepend){
 				p.style.textAlign = "center";
 				img.src = "//gimg2.baidu.com/gimg/app=2011&src="  + encodeURIComponent("https://api.qrserver.com/v1/create-qr-code/?size=399x399&data=" + encodeURIComponent("https://www.yunzhongzhuan.com/welcome/index.html?redirect_location=" + encodeURIComponent(download_web_url + this.parent.url)));
 				p.append(img);
-				html_element.prepend(p);
+				html_element.append(p);
 			}
 
 			
@@ -2041,7 +2041,7 @@ files_main.oncontextmenu=function(e){
 				p.style.textAlign = "center";
 				img.src = "//gimg2.baidu.com/gimg/app=2011&src="  + encodeURIComponent("https://api.qrserver.com/v1/create-qr-code/?size=399x399&data=" + encodeURIComponent("https://www.yunzhongzhuan.com/welcome/index.html?redirect_location=" + encodeURIComponent(download_web_url + files_items_selected_array[0].url)));
 				p.append(img);
-				html_element.prepend(p);
+				html_element.append(p);
 			}
 
 			
