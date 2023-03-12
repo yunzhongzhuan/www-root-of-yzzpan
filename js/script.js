@@ -401,6 +401,12 @@ let top_apps = [
 		"description":"中国联通-中国第三大电信运营商",
 		"icon":"//gimg2.baidu.com/gimg/app=2011&src=bkimg.cdn.bcebos.com/pic/203fb80e7bec54e736d1578e56728c504fc2d5623c42",
 		"new_open":true
+	},{
+		"name":"中国电信",
+		"link":"https://www.189.cn",
+		"description":"中国电信-全球第十大电信运营商",
+		"icon":"//gimg2.baidu.com/gimg/app=2011&src=bkimg.cdn.bcebos.com/pic/0b55b319ebc4b74543a9a7e170ad09178a82b801bfb1",
+		"new_open":true
 	}
 ];
 // 首页顶部应用列表
