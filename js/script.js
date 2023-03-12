@@ -387,6 +387,20 @@ let top_apps = [
 		"icon":"/img/jitucdn-com-logo-a1.png",
 		// "icon":"//tva1.sinaimg.cn/mw2000/005CbWF8gy1h16lkvt5ubj30go0goq4h.jpg",
 		"new_open":true
+	},
+	{
+		"name":"中国移动",
+		"link":"https://www.10086.cn",
+		"description":"中国移动-全球第三大电信运营商",
+		"icon":"//gimg2.baidu.com/gimg/app=2011&src=bkimg.cdn.bcebos.com/pic/64380cd7912397dda14425d493d7a5b7d0a20df4299f",
+		"new_open":true
+	},
+	{
+		"name":"中国联通",
+		"link":"https://www.10010.com",
+		"description":"中国联通-中国第三大电信运营商",
+		"icon":"//gimg2.baidu.com/gimg/app=2011&src=bkimg.cdn.bcebos.com/pic/203fb80e7bec54e736d1578e56728c504fc2d5623c42",
+		"new_open":true
 	}
 ];
 // 首页顶部应用列表
