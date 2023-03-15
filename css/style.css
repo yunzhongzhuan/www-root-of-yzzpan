@@ -1494,6 +1494,6 @@ body{
 }
 @media screen and (max-width: 500px){
 	.file-download-qr-code-p img{
-		height: calc(100vw - 94px);
+		height: calc(100vw - 94px)!important;
 	}
 }
