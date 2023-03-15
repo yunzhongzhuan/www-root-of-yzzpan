@@ -1333,8 +1333,11 @@ function push_files_to_files_page(files_items,isPrepend){
 				true
 			){
 				let p = document.createElement('p');
+				p.className = "file-download-qr-code-p";
 				let img = document.createElement('img');
 				img.style.width = "399px";
+				img.style.height = "399px";
+				img.style.backgroundColor = "#f5f5f5";
 				img.style.maxHeight = "399px";
 				img.style.maxWidth = "100%";
 				img.style.margin = "20px auto";
@@ -2036,8 +2039,11 @@ files_main.oncontextmenu=function(e){
 				true
 			){
 				let p = document.createElement('p');
+				p.className = "file-download-qr-code-p";
 				let img = document.createElement('img');
 				img.style.width = "399px";
+				img.style.height = "399px";
+				img.style.backgroundColor = "#f5f5f5";
 				img.style.maxHeight = "399px";
 				img.style.maxWidth = "100%";
 				img.style.margin = "20px auto";
