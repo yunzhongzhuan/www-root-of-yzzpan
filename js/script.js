@@ -375,11 +375,11 @@ if( session_id != undefined && session_id != null && session_id != "" ){
 let top_apps = [
 	{
 		"name":"云中转",
-		"link":"https://www.yzzpan.com/#files",
+		"link":"https://www.yunzhongzhuan.com/welcome/index.html",
 		"description":"云中转-全球网络传文件不限速",
 		"icon":"/img/logo.png",
 		// "icon":"//tva1.sinaimg.cn/mw2000/005CbWF8gy1h16lkvt5ubj30go0goq4h.jpg",
-		"new_open":false
+		"new_open":true
 	},
 	{
 		"name":"极兔云",
