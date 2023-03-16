@@ -388,7 +388,7 @@ let top_apps = [
 		"icon":"/img/jitucdn-com-logo-a1.png",
 		// "icon":"//tva1.sinaimg.cn/mw2000/005CbWF8gy1h16lkvt5ubj30go0goq4h.jpg",
 		"new_open":true
-	},
+	},/*
 	{
 		"name":"中国移动",
 		"link":"https://www.10086.cn",
@@ -408,7 +408,7 @@ let top_apps = [
 		"description":"中国电信-全球第十大电信运营商",
 		"icon":"//gimg2.baidu.com/gimg/app=2011&src=bkimg.cdn.bcebos.com/pic/0b55b319ebc4b74543a9a7e170ad09178a82b801bfb1",
 		"new_open":true
-	}
+	}*/
 ];
 // 首页顶部应用列表
 let top_applications_items = document.getElementById('top-applications-items');
