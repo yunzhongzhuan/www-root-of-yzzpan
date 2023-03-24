@@ -1365,7 +1365,7 @@ function push_files_to_files_page(files_items,isPrepend){
 			if( public_link_hostname.length < 10 || public_link_hostname == ""){
 				swal({
 					title: "不可使用",
-					text: "您的账号不支持外链。\r\n您的网站/项目需要使用该文件链接/下载地址？",
+					text: "您的账号不支持外链。\r\n您的网站/项目需要使用该文件链接/下载地址？\r\nhttps://download.yunzhongzhuan.com\r\n联系我们，支持绑定自定义域名。",
 					icon: "warning",
 					buttons: true,
 					dangerMode: true,
@@ -2088,7 +2088,7 @@ files_main.oncontextmenu=function(e){
 			if( public_link_hostname.length < 10 || public_link_hostname == ""){
 				swal({
 					title: "不可使用",
-					text: "您的账号不支持外链。\r\n您的网站/项目需要使用该文件链接/下载地址？",
+					text: "您的账号不支持外链。\r\n您的网站/项目需要使用该文件链接/下载地址？\r\nhttps://download.yunzhongzhuan.com\r\n联系我们，支持绑定自定义域名。",
 					icon: "warning",
 					buttons: true,
 					dangerMode: true,
