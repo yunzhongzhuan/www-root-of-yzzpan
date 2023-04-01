@@ -4991,29 +4991,6 @@ let download_domain_list_cdn_cgi_trace = [
 	"https://j.download.yunzhongzhuan.com/cdn-cgi/trace",
 ];
 
-// No HSTS
-let download_domain_list_no_hsts = [
-	"https://upload.yunzhongzhuan.com/",
-	"https://download.yunzhongzhuan.com/",
-];
-let set_no_hsts_functions_run_times = 0;
-function set_no_hsts_functions(){
-	if(set_no_hsts_functions_run_times>3){
-		return false;
-	}
-	for(let i=0;i<download_domain_list_no_hsts.length;i++){
-		let item = download_domain_list_no_hsts[i];
-		let new_iframe = document.createElement('iframe');
-	    new_iframe.style.display = "none";
-		new_iframe.src = item;
-	    new_iframe.onload = function(){
-		this.remove();
-	    }
-	    document.body.append(new_iframe);
-	}
-	set_no_hsts_functions_run_times++;
-	setTimeout(set_no_hsts_functions,1000);
-}
 
 
 function access_download_domain_list_cdn_cgi_trace(url){
@@ -5055,7 +5032,7 @@ window.onload = function(){
 		setTimeout(access_download_domain_list_cdn_cgi_trace,20*i,download_domain_list_cdn_cgi_trace[i]);
 	}
 	
-	setTimeout(set_no_hsts_functions,1000);
+	
 
 }
 
