@@ -1172,7 +1172,7 @@ function push_files_to_files_page(files_items,isPrepend){
 			}
 			
 			// 如果是移动或联通，隐藏EU.ORG地址，移动因未知原因无法访问EU.ORG，联通访问EU.ORG速度普通，故只适合电信访问EU.ORG。
-			if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1 || cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
 				let html_element_p_items = html_element.getElementsByTagName('p');
 				for(let i=0;i<html_element_p_items.length;i++){
 					let item = html_element_p_items[i];
@@ -1875,7 +1875,7 @@ files_main.oncontextmenu=function(e){
 			
 			
 			// 如果是移动或联通，隐藏EU.ORG地址，移动因未知原因无法访问EU.ORG，联通访问EU.ORG速度普通，故只适合电信访问EU.ORG。
-			if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1 || cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
 				let html_element_p_items = html_element.getElementsByTagName('p');
 				for(let i=0;i<html_element_p_items.length;i++){
 					let item = html_element_p_items[i];
@@ -2986,7 +2986,7 @@ function cdn_cgi_trace_cdn_download(){
 			cdn_cgi_trace_cdn_download_locked = true;
 			cdn_cgi_trace_cdn_download_status = true;
 			
-			if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1 || cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
 				sharefile_content_link_items_cdn_download.style.display = "none";
 			}else{
 				sharefile_content_link_items_cdn_download.style.display = "block";
@@ -3069,7 +3069,7 @@ function cdn_cgi_trace_download(){
 				cdn_cgi_trace_download_fra = true;
 			}
 			
-			if(cdn_cgi_trace_download_hkg||cdn_cgi_trace_download_fra){
+			if(navigator.language.toLowerCase().indexOf('cn')!=-1 || cdn_cgi_trace_download_hkg||cdn_cgi_trace_download_fra){
 				sharefile_content_link_item_download_button_9.style.display = "none";
 				sharefile_content_link_item_download_button_10.style.display = "none";
 				sharefile_content_link_item_download_button_11.style.display = "none";
@@ -4480,7 +4480,7 @@ function get_sharefile(id,key){
 
 				
 				
-				if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+				if(navigator.language.toLowerCase().indexOf('cn')!=-1 || cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
 					// CM CU NOT EU.ORG SO PASS
 					sharefile_content_link_item_download_button_9.style.display = "none";
 				}else{
@@ -4505,7 +4505,7 @@ function get_sharefile(id,key){
 					sharefile_content_link_item_download_button_9.style.display = "unset";
 				}
 				
-				if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+				if(navigator.language.toLowerCase().indexOf('cn')!=-1 || cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
 					// CM CU NOT EU.ORG SO PASS
 					sharefile_content_link_item_download_button_10.style.display = "none";
 				}else{
@@ -4530,7 +4530,7 @@ function get_sharefile(id,key){
 					sharefile_content_link_item_download_button_10.style.display = "unset";
 				}
 				
-				if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+				if(navigator.language.toLowerCase().indexOf('cn')!=-1 || cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
 					// CM CU NOT EU.ORG SO PASS
 					sharefile_content_link_item_download_button_11.style.display = "none";
 				}else{
@@ -4556,7 +4556,7 @@ function get_sharefile(id,key){
 				}
 				
 				
-				if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+				if(navigator.language.toLowerCase().indexOf('cn')!=-1 || cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
 					// CM CU NOT EU.ORG SO PASS
 					sharefile_content_link_item_download_button_16.style.display = "none";
 				}else{
@@ -4581,7 +4581,7 @@ function get_sharefile(id,key){
 					sharefile_content_link_item_download_button_16.style.display = "unset";
 				}
 				
-				if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+				if(navigator.language.toLowerCase().indexOf('cn')!=-1 || cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
 					// CM CU NOT EU.ORG SO PASS
 					sharefile_content_link_item_download_button_17.style.display = "none";
 				}else{
@@ -4606,7 +4606,7 @@ function get_sharefile(id,key){
 					sharefile_content_link_item_download_button_17.style.display = "unset";
 				}
 				
-				if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+				if(navigator.language.toLowerCase().indexOf('cn')!=-1 || cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
 					// CM CU NOT EU.ORG SO PASS
 					sharefile_content_link_item_download_button_18.style.display = "none";
 				}else{
@@ -4632,7 +4632,7 @@ function get_sharefile(id,key){
 				}
 				
 				
-				if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+				if(navigator.language.toLowerCase().indexOf('cn')!=-1 || cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
 					// CM CU NOT EU.ORG SO PASS
 					sharefile_content_link_item_download_button_30.style.display = "none";
 				}else{
@@ -4658,7 +4658,7 @@ function get_sharefile(id,key){
 				}
 				
 				
-				if(cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
+				if(navigator.language.toLowerCase().indexOf('cn')!=-1 || cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
 					// CM CU NOT EU.ORG SO PASS
 					sharefile_content_link_item_download_button_19.style.display = "none";
 				}else{
