@@ -2965,45 +2965,8 @@ function wechat_bind_auto_click_login_button(){
 
 
 // cdn-download 加速下载的域名
-let cdn_cgi_trace_cdn_download_locked = false;
 let cdn_cgi_trace_cdn_download_status = false;
 let sharefile_content_link_items_cdn_download = document.getElementById('sharefile-content-link-items-cdn-download');
-let cdn_cgi_trace_cdn_download_error_times = 0;
-function cdn_cgi_trace_cdn_download(){
-	if(cdn_cgi_trace_cdn_download_locked){
-		return false;
-	}
-	if(cdn_cgi_trace_cdn_download_error_times>5){
-		return false;
-	}
-	if(navigator.language.toLowerCase().indexOf('cn')==-1){
-		return false;
-	}
-	let xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange=function(){
-		if(xmlhttp.readyState==4 && xmlhttp.status==200){
-			// console.log(xmlhttp.responseText);
-			cdn_cgi_trace_cdn_download_locked = true;
-			cdn_cgi_trace_cdn_download_status = true;
-			
-			if(navigator.language.toLowerCase().indexOf('cn')!=-1 || cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
-				sharefile_content_link_items_cdn_download.style.display = "none";
-			}else{
-				sharefile_content_link_items_cdn_download.style.display = "block";
-			}
-			
-		}
-		if(xmlhttp.readyState==4){
-			setTimeout(cdn_cgi_trace_cdn_download,100);
-		}
-	}
-	xmlhttp.onerror = function(){
-		cdn_cgi_trace_cdn_download_error_times++;
-		setTimeout(cdn_cgi_trace_cdn_download,100);
-	}
-	xmlhttp.open("GET","https://cdn-download.yunzhongzhuan.com/cdn-cgi/trace",true);
-	xmlhttp.send();
-}
 
 
 
@@ -5079,7 +5042,6 @@ window.onload = function(){
 	
 	setTimeout(cdn_cgi_trace_download,100);
 	
-	setTimeout(cdn_cgi_trace_cdn_download,100);
 	
 	setTimeout(get_preload_upload_file_mask_png,100);
 	
