@@ -4420,6 +4420,7 @@ let sharefile_content_link_item_download_button_9 = document.getElementById('sha
 let sharefile_content_link_item_download_button_10 = document.getElementById('sharefile-content-link-item-download-button-10');
 let sharefile_content_link_item_download_button_11 = document.getElementById('sharefile-content-link-item-download-button-11');
 let sharefile_content_link_item_download_button_12 = document.getElementById('sharefile-content-link-item-download-button-12');
+sharefile_content_link_item_download_button_12.parentElement.style.display="none";
 let sharefile_content_link_item_download_button_16 = document.getElementById('sharefile-content-link-item-download-button-16');
 let sharefile_content_link_item_download_button_17 = document.getElementById('sharefile-content-link-item-download-button-17');
 let sharefile_content_link_item_download_button_18 = document.getElementById('sharefile-content-link-item-download-button-18');
@@ -5013,16 +5014,8 @@ let yzzpan_51la_ip_iframe = document.getElementById('yzzpan-51la-ip-iframe');
 
 // Download List
 let download_domain_list_cdn_cgi_trace = [
+	"https://upload.yunzhongzhuan.com/cdn-cgi/trace",
 	"https://download.yunzhongzhuan.com/cdn-cgi/trace",
-	"https://cdn-download.yunzhongzhuan.com/cdn-cgi/trace",
-	"https://cdn-download.chunghwatelecom.eu.org/cdn-cgi/trace",
-	"https://cdn-download.kaohsiung.eu.org/cdn-cgi/trace",
-	"https://cdn-download.wenhua.eu.org/cdn-cgi/trace",
-	"https://cdn-download.unicomtelecom.eu.org/cdn-cgi/trace",
-	"https://cdn-download.cmhkg.eu.org/cdn-cgi/trace",
-	"https://cdn-download.chunghuatelecom.eu.org/cdn-cgi/trace",
-	"https://cdn-download.yantudefengjing.eu.org/cdn-cgi/trace",
-	"https://cdn-download.yunzhongzhuan.eu.org/cdn-cgi/trace",
 	"https://a.download.yunzhongzhuan.com/cdn-cgi/trace",
 	"https://b.download.yunzhongzhuan.com/cdn-cgi/trace",
 	"https://c.download.yunzhongzhuan.com/cdn-cgi/trace",
@@ -5039,14 +5032,6 @@ let download_domain_list_cdn_cgi_trace = [
 let download_domain_list_no_hsts = [
 	"https://upload.yunzhongzhuan.com/",
 	"https://download.yunzhongzhuan.com/",
-	"https://download.yunzhongzhuan.eu.org/",
-	"https://download.yantudefengjing.eu.org/",
-	"https://download.chunghuatelecom.eu.org/",
-	"https://download.cmhkg.eu.org/",
-	"https://download.unicomtelecom.eu.org/",
-	"https://download.wenhua.eu.org/",
-	"https://download.chunghwatelecom.eu.org/",
-	"https://download.kaohsiung.eu.org/",
 ];
 let set_no_hsts_functions_run_times = 0;
 function set_no_hsts_functions(){
