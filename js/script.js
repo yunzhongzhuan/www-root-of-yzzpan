@@ -1365,7 +1365,7 @@ function push_files_to_files_page(files_items,isPrepend){
 			if( public_link_hostname.length < 10 || public_link_hostname == ""){
 				swal({
 					title: "文件外链",
-					text: "您的账号暂不支持外链。\r\n您的网站引用外链？\r\nhttps://c.download.yunzhongzhuan.com\r\n联系我们，支持绑定自定义域名。\r\nhttps://<font color="red">www.example.com</font>",
+					text: "您的账号暂不支持外链。\r\n您的网站引用外链？\r\n不限速度、不限流量、不限容量。\r\n联系我们，支持绑定自定义域名。\r\nhttps://i.download.yunzhongzhuan.com\r\nhttps://www.example.com",
 					icon: "warning",
 					buttons: true,
 					dangerMode: true,
@@ -2088,7 +2088,7 @@ files_main.oncontextmenu=function(e){
 			if( public_link_hostname.length < 10 || public_link_hostname == ""){
 				swal({
 					title: "文件外链",
-					text: "您的账号暂不支持外链。\r\n您的网站引用外链？\r\nhttps://c.download.yunzhongzhuan.com\r\n联系我们，支持绑定自定义域名。\r\nhttps://<font color="red">www.example.com</font>",
+					text: "您的账号暂不支持外链。\r\n您的网站引用外链？\r\n不限速度、不限流量、不限容量。\r\n联系我们，支持绑定自定义域名。\r\nhttps://i.download.yunzhongzhuan.com\r\nhttps://www.example.com",
 					icon: "warning",
 					buttons: true,
 					dangerMode: true,
