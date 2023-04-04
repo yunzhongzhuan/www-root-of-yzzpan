@@ -6275,7 +6275,7 @@ let workers;
 
 					if(upload_file_max_size == 0){
 						
-						alert('系统公共服务器网络节点出现故障，工程师团队正在进行维护。');
+						alert('您的账号因违反本平台《用户协议》已被禁止。');
 						
 					}else{
 					
@@ -6595,7 +6595,7 @@ let workers;
 	       
 	      if(upload_file_max_size == 0){
 						
-		alert('系统公共服务器网络节点出现故障，工程师团队正在进行维护。');
+		alert('您的账号因违反本平台《用户协议》已被禁止。');
 						
 		}else{
 			swal({
