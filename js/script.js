@@ -4116,7 +4116,7 @@ nav_reset_password_button.onclick = function(){
 	swal({
         	title: "重置密码",
 		icon: "warning",
-		text: "您的云中转帐号是："+userinfo["username"]+"\r\n账号绑定QQ号码："+userinfo["qq"]+"\r\n如果您是通过扫描二维码的方式登录。\r\n系统自动为您创建了高度复杂的密码。\r\n即使您已忘记密码仍可通过扫码登陆。\r\n现在您可以重新设置您的云中转密码。",
+		text: "您的云中转帐号是："+userinfo["username"]+"\r\n账号绑定QQ号码："+userinfo["qq"]+"\r\n如果您是通过扫描二维码的方式登录。\r\n系统自动为您创建了高度复杂的密码。\r\n即使您已忘记密码仍可通过扫码登录。\r\n现在您可以重新设置您的云中转密码。",
 		content: html_element,
 		closeOnClickOutside: false,
 		buttons:["朕先不改","提交重置"],
@@ -4202,7 +4202,7 @@ function qqpay_get_userinfo(){
 function show_qqpay(){
 
 
-	let text = '<p>打开手机QQ，登陆QQ号码<span class="qqpay-qq">' + userinfo["qq"] + '</span>，扫描二维码充值。</p><p>微信转入余额，最低充值1元。</p>';
+	let text = '<p>打开手机QQ，登录QQ号码<span class="qqpay-qq">' + userinfo["qq"] + '</span>，扫描二维码充值。</p><p>微信转入余额，最低充值1元。</p>';
 
 	let content_element = document.createElement('div');
 	content_element.innerHTML = text + '<img src="/img/QQShouKuanMa.png" />';
