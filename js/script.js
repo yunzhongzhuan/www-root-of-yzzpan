@@ -812,7 +812,7 @@ files_options_item_client_download_button.onclick = function(){
 }}
 let files_client_download_button = document.getElementById('files-client-download-button');
 files_client_download_button.onclick = function(){
-	window.open('//client.yzzpan.com/');
+	window.open('//www.yunzhongzhuan.com/downloads/index.html');
 }
 files_options_items.style.height = ( ( 45 * files_options_items.getElementsByClassName('files-options-item').length ) + 0 ) + "px";
 files_options_items.className = "files-options-items files-options-items-hide";
