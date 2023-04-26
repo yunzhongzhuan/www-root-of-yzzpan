@@ -1331,7 +1331,7 @@ function push_files_to_files_page(files_items,isPrepend){
 			
 			// Qr Code
 			if(
-				true
+				false
 			){
 				let p = document.createElement('p');
 				p.className = "file-download-qr-code-p";
@@ -2037,7 +2037,7 @@ files_main.oncontextmenu=function(e){
 			
 			// Qr Code
 			if(
-				true
+				false
 			){
 				let p = document.createElement('p');
 				p.className = "file-download-qr-code-p";
