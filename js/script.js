@@ -473,6 +473,11 @@ document.addEventListener('visibilitychange',function(){
 	keyon_ctrl = false;
    }
   }
+			  
+	if (document.visibilityState == 'hidden') {
+		keyon_ctrl = false;
+	}
+			  
 );
 // 搜索内容老的输入内容
 let files_search_input_value_old = "";
