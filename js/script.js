@@ -472,11 +472,14 @@ document.addEventListener('visibilitychange',function(){
    if(isHidden){
 	keyon_ctrl = false;
    }
-  }
-			  
+	
 	if (document.visibilityState == 'hidden') {
 		keyon_ctrl = false;
 	}
+	
+  }
+			  
+	
 			  
 );
 // 搜索内容老的输入内容
