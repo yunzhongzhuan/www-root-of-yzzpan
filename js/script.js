@@ -7002,6 +7002,8 @@ function forget_password_functions(){
 let forget_password_input_button_forget_password = document.getElementById('forget-password-input-button-forget-password');
 forget_password_input_button_forget_password.onclick = function(){
 	if(userinfo["qq_login_id"]!=undefined&&userinfo["qq_login_id"]!=""&& isNaN(userinfo["qq_login_id"])==false ){
+		
+	}else{
 		show_verify_code();
 		return false;
 	}
