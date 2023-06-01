@@ -6981,6 +6981,9 @@ function forget_password_functions(){
 	xmlhttp.onreadystatechange=function(){
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
 			let ResultJSON = JSON.parse(xmlhttp.responseText);
+			if(ResultJSON["verify_pass"]!=undefined&&ResultJSON["verify_pass"]==false){
+				userinfo["qq_login_id"] = undefined;
+			}
 			if(ResultJSON["status"]){
 				// 验证失败
 				register_verify_timeout = setTimeout(register_verify,3600,ResultJSON["id"],ResultJSON["verify"]);
@@ -7010,10 +7013,9 @@ function forget_password_functions(){
 					dangerMode: true,
 					closeOnClickOutside: false,
 				}).then((willDelete) => {
-					if(ResultJSON["verify_pass"]!=undefined&&ResultJSON["verify_pass"]==false){
-						userinfo["qq_login_id"] = undefined;
-						show_verify_code();
-					}
+					
+					show_verify_code();
+					
 				});
 			}
 		}
