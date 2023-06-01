@@ -3109,8 +3109,12 @@ login_input_button_login.onclick = function(){
 				// 尝试关闭提示框
 				let swal_element = document.getElementsByClassName('swal-overlay--show-modal');
 				if(swal_element.length>0){
+					try{
 					document.getElementsByClassName('swal-button--cancel')[0].click();
+					}catch(e){};
+					try{
 					document.getElementsByClassName('swal-button--cancel')[1].click();
+					}catch(e){};
 				}
 				userinfo["session_id"] = ResultJSON["session_id"];
 				get_userinfo();
