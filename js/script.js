@@ -6972,6 +6972,7 @@ function forget_password_functions(){
 	let username = encodeURIComponent( forget_password_input_username.value );
 	let password = encodeURIComponent( forget_password_input_password.value );
 	let qq = encodeURIComponent( forget_password_input_qq.value );
+	let session_id = encodeURIComponent(userinfo["session_id"]);
 	let xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange=function(){
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
@@ -7015,7 +7016,7 @@ function forget_password_functions(){
 	xmlhttp.open("POST",api_server_url+"/php/v4/forget_password",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
-	xmlhttp.send( "username=" + username + "&password=" + password + "&qq=" + qq );
+	xmlhttp.send( "username=" + username + "&password=" + password + "&qq=" + qq + "&session_id=" + session_id );
 }
 let forget_password_input_button_forget_password = document.getElementById('forget-password-input-button-forget-password');
 forget_password_input_button_forget_password.onclick = function(){
