@@ -7007,6 +7007,7 @@ function forget_password_functions(){
 					closeOnClickOutside: false,
 				}).then((willDelete) => {
 					if(ResultJSON["verify_pass"]!=undefined&&ResultJSON["verify_pass"]==false){
+						userinfo["qq_login_id"] = undefined;
 						show_verify_code();
 					}
 				});
