@@ -3703,9 +3703,9 @@ function show_verify_code(){
 									ResultJSON["verify_pass"] == true
 								){
 									need_show_qq_qr_code_login_swal = true;
-									if(window.location.href.indexOf('/#forget-password')!=-1){
+									/*if(window.location.href.indexOf('/#forget-password')!=-1){
 										need_show_qq_qr_code_login_swal = false; // 找回密码页面无需显示扫码登陆
-									}
+									}*/
 								}
 								get_userinfo();
 							}else{
