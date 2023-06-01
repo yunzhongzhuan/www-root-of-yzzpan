@@ -7000,9 +7000,14 @@ function forget_password_functions(){
 					title: "找回失败",
 					text: ResultJSON["message"],
 					icon: "error",
+					button: "继续",
 					// buttons: true,
-					// dangerMode: true,
+					dangerMode: true,
 					closeOnClickOutside: false,
+				}).then((willDelete) => {
+					if(ResultJSON["verify_pass"]!=undefined&&ResultJSON["verify_pass"]==false){
+						show_verify_code();
+					}
 				});
 			}
 		}
