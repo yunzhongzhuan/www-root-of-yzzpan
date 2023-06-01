@@ -7001,6 +7001,10 @@ function forget_password_functions(){
 }
 let forget_password_input_button_forget_password = document.getElementById('forget-password-input-button-forget-password');
 forget_password_input_button_forget_password.onclick = function(){
+	if(userinfo["qq_login_id"]!=undefined&&userinfo["qq_login_id"]!=""&& isNaN(userinfo["qq_login_id"])==false ){
+		show_verify_code();
+		return false;
+	}
 	// 如果账号密码为空
 	if( forget_password_input_username.value.length == 0 || forget_password_input_password.value.length == 0 || ( forget_password_input_password.value != forget_password_input_password_2.value ) || forget_password_input_qq.value.length < 5 || forget_password_input_qq.value.length > 10 || isNaN(forget_password_input_qq.value) || forget_password_input_qq.value.indexOf('.') != -1 ){
 		swal({
