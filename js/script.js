@@ -3989,8 +3989,7 @@ function get_userinfo(){
 							setTimeout(function(){login_input_button_qq_login.click()},100);
 						}
 						
-						if(){
-						}
+						
 					
 					}
 				}
