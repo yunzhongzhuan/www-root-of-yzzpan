@@ -3984,6 +3984,9 @@ function get_userinfo(){
 							need_show_qq_qr_code_login_swal = false;
 							setTimeout(function(){login_input_button_qq_login.click()},100);
 						}
+						
+						if(){
+						}
 					
 					}
 				}
@@ -6907,6 +6910,13 @@ login_input_button_qq_login.onclick = async function(){
 	
 	if(userinfo["qq_login_id"]==undefined||userinfo["qq_login_id"]=="0"||userinfo["qq_login_id"].length<5){
 		get_userinfo();
+		return false;
+	}
+	
+	if(window.location.href.indexOf('#forget-password')!=-1){
+		try{
+			document.getElementsByClassName('swal-button swal-button--confirm swal-button--danger')[0].click();
+		}catch(e){};
 		return false;
 	}
 
