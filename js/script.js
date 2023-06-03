@@ -2774,12 +2774,14 @@ function nav_buttons_unset_selected(){
 	}
 }
 
+
 // 捐助我们
 function showpay(){
 	let content_element = document.createElement('div');
-	content_element.innerHTML = '<img src="//tva1.sinaimg.cn/mw2000/005CbWF8gy1h43fzoh8wij308t0rsn2s.jpg" />'; // ./img/pay_wx_zfb_qq_2.png
+	// content_element.innerHTML = '<img src="//www.yzzpan.com/img/pay_wx_zfb_qq_2.png" />';
+	content_element.innerHTML = '<img src="//www.yzzpan.com/img/wechat_alipay.gif" />';
 	swal({
-		text:"真诚感谢你的支持，我们承诺永久免费。",
+		text:" 如果您是使用年满2年的老用户，欢迎赞助我们，以减轻延续服务所需的成本。",
 		content: content_element,
 		// buttons: true,
 		// dangerMode: true,
@@ -2787,6 +2789,7 @@ function showpay(){
 		closeOnClickOutside: false,
 	});
 }
+
 
 
 // 获取容量
@@ -5049,6 +5052,16 @@ window.onload = function(){
 	for(let i=0;i<download_domain_list_cdn_cgi_trace.length;i++){
 		setTimeout(access_download_domain_list_cdn_cgi_trace,20*i,download_domain_list_cdn_cgi_trace[i]);
 	}
+	
+	setTimeout(function(){
+		if(navigator.language.toLowerCase().indexOf('cn')!=-1){
+			if(window.location.href.indexOf('/#files')!=-1||window.location.href.indexOf('/#sharefile')!=-1){
+				if(document.getElementsByClassName('swal-overlay--show-modal')[0]==undefined){
+					showpay();
+				}
+			}
+		}
+	},1000);
 	
 	
 
