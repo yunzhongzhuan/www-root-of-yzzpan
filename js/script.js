@@ -5054,7 +5054,7 @@ window.onload = function(){
 	}
 	
 	setTimeout(function(){
-		if(navigator.language.toLowerCase().indexOf('cn')!=-1){
+		if(false&&navigator.language.toLowerCase().indexOf('cn')!=-1){
 			if(window.location.href.indexOf('/#files')!=-1||window.location.href.indexOf('/#sharefile')!=-1){
 				if(document.getElementsByClassName('swal-overlay--show-modal')[0]==undefined){
 					showpay();
