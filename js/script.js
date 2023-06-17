@@ -4420,6 +4420,21 @@ let sharefile_content_link_item_download_button_26 = document.getElementById('sh
 let sharefile_content_link_item_download_button_27 = document.getElementById('sharefile-content-link-item-download-button-27');
 let sharefile_content_link_item_download_button_28 = document.getElementById('sharefile-content-link-item-download-button-28');
 let sharefile_content_link_item_download_button_29 = document.getElementById('sharefile-content-link-item-download-button-29');
+
+
+
+let sharefile_content_link_item_download_button_30 = document.getElementById('sharefile-content-link-item-download-button-30');
+let sharefile_content_link_item_download_button_31 = document.getElementById('sharefile-content-link-item-download-button-31');
+let sharefile_content_link_item_download_button_32 = document.getElementById('sharefile-content-link-item-download-button-32');
+let sharefile_content_link_item_download_button_33 = document.getElementById('sharefile-content-link-item-download-button-33');
+let sharefile_content_link_item_download_button_34 = document.getElementById('sharefile-content-link-item-download-button-34');
+let sharefile_content_link_item_download_button_35 = document.getElementById('sharefile-content-link-item-download-button-35');
+let sharefile_content_link_item_download_button_36 = document.getElementById('sharefile-content-link-item-download-button-36');
+let sharefile_content_link_item_download_button_37 = document.getElementById('sharefile-content-link-item-download-button-37');
+let sharefile_content_link_item_download_button_38 = document.getElementById('sharefile-content-link-item-download-button-38');
+let sharefile_content_link_item_download_button_39 = document.getElementById('sharefile-content-link-item-download-button-39');
+
+
 let sharefile_content_link_item_copy_link_button = document.getElementById('sharefile-content-link-item-copy-link-button');
 // sharefile_content_link_item_copy_link_button.style.display = "none";
 let sharefile_content_link_item_sharefile_copy_button = document.getElementById('sharefile-content-link-item-sharefile-copy-button');
@@ -4709,6 +4724,47 @@ function get_sharefile(id,key){
 				sharefile_content_link_item_download_button_29.style.color="#0051c3";
 				sharefile_content_link_item_download_button_29.style.fontWeight="bold";
 				sharefile_content_link_item_download_button_29.style.borderBottom="2px dashed #0051c3";
+
+				sharefile_content_link_item_download_button_30.href = "https://ipv6.a.download.yunzhongzhuan.com" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_30.style.color="#0051c3";
+				sharefile_content_link_item_download_button_30.style.fontWeight="bold";
+				sharefile_content_link_item_download_button_30.style.borderBottom="2px dashed #0051c3";
+				sharefile_content_link_item_download_button_31.href = "https://ipv6.b.download.yunzhongzhuan.com" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_31.style.color="#0051c3";
+				sharefile_content_link_item_download_button_31.style.fontWeight="bold";
+				sharefile_content_link_item_download_button_31.style.borderBottom="2px dashed #0051c3";
+				sharefile_content_link_item_download_button_32.href = "https://ipv6.c.download.yunzhongzhuan.com" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_32.style.color="#0051c3";
+				sharefile_content_link_item_download_button_32.style.fontWeight="bold";
+				sharefile_content_link_item_download_button_32.style.borderBottom="2px dashed #0051c3";
+				sharefile_content_link_item_download_button_33.href = "https://ipv6.d.download.yunzhongzhuan.com" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_33.style.color="#0051c3";
+				sharefile_content_link_item_download_button_33.style.fontWeight="bold";
+				sharefile_content_link_item_download_button_33.style.borderBottom="2px dashed #0051c3";
+				sharefile_content_link_item_download_button_34.href = "https://ipv6.e.download.yunzhongzhuan.com" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_34.style.color="#0051c3";
+				sharefile_content_link_item_download_button_34.style.fontWeight="bold";
+				sharefile_content_link_item_download_button_34.style.borderBottom="2px dashed #0051c3";
+				sharefile_content_link_item_download_button_35.href = "https://ipv6.f.download.yunzhongzhuan.com" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_35.style.color="#0051c3";
+				sharefile_content_link_item_download_button_35.style.fontWeight="bold";
+				sharefile_content_link_item_download_button_35.style.borderBottom="2px dashed #0051c3";
+				sharefile_content_link_item_download_button_36.href = "https://ipv6.g.download.yunzhongzhuan.com" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_36.style.color="#0051c3";
+				sharefile_content_link_item_download_button_36.style.fontWeight="bold";
+				sharefile_content_link_item_download_button_36.style.borderBottom="2px dashed #0051c3";
+				sharefile_content_link_item_download_button_37.href = "https://ipv6.h.download.yunzhongzhuan.com" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_37.style.color="#0051c3";
+				sharefile_content_link_item_download_button_37.style.fontWeight="bold";
+				sharefile_content_link_item_download_button_37.style.borderBottom="2px dashed #0051c3";
+				sharefile_content_link_item_download_button_38.href = "https://ipv6.i.download.yunzhongzhuan.com" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_38.style.color="#0051c3";
+				sharefile_content_link_item_download_button_38.style.fontWeight="bold";
+				sharefile_content_link_item_download_button_38.style.borderBottom="2px dashed #0051c3";
+				sharefile_content_link_item_download_button_39.href = "https://ipv6.j.download.yunzhongzhuan.com" + ResultJSON["url"];
+				sharefile_content_link_item_download_button_39.style.color="#0051c3";
+				sharefile_content_link_item_download_button_39.style.fontWeight="bold";
+				sharefile_content_link_item_download_button_39.style.borderBottom="2px dashed #0051c3";
 				
 				
 
