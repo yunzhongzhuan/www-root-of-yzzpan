@@ -3051,7 +3051,7 @@ function cdn_cgi_trace_download(){
 				sharefile_content_link_item_download_button_16.style.display = "none";
 				sharefile_content_link_item_download_button_17.style.display = "none";
 				sharefile_content_link_item_download_button_18.style.display = "none";
-				sharefile_content_link_item_download_button_30.style.display = "none";
+				
 				sharefile_content_link_item_download_button_19.style.display = "none";
 			}
 			
@@ -4634,30 +4634,7 @@ function get_sharefile(id,key){
 				}
 				
 				
-				if(navigator.language.toLowerCase().indexOf('cn')!=-1 || cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
-					// CM CU NOT EU.ORG SO PASS
-					sharefile_content_link_item_download_button_30.style.display = "none";
-				}else{
-					// CT TO EU.ORG GOOD
-					sharefile_content_link_item_download_button_30.href = "https://download.kaohsiung.eu.org" + ResultJSON["url"];
-					sharefile_content_link_item_download_button_30.style.color="#f6821f";
-					sharefile_content_link_item_download_button_30.style.fontWeight="bold";
-					sharefile_content_link_item_download_button_30.style.borderBottom="2px dashed #f6821f";
-					if(cdn_cgi_trace_download_hkg==true){
-						sharefile_content_link_item_download_button_30.form_action_href = sharefile_content_link_item_download_button_30.href;
-						sharefile_content_link_item_download_button_30.removeAttribute('href');
-						sharefile_content_link_item_download_button_30.onclick = function(){
-							let new_form = document.createElement('form');
-							new_form.action=this.form_action_href;
-							new_form.method="post";
-							new_form.target="_blank";
-							document.body.append(new_form);
-							new_form.submit();
-							new_form.remove();
-						}
-					}
-					sharefile_content_link_item_download_button_30.style.display = "unset";
-				}
+				
 				
 				
 				if(navigator.language.toLowerCase().indexOf('cn')!=-1 || cdn_cgi_trace_download_hkg || cdn_cgi_trace_download_fra){
