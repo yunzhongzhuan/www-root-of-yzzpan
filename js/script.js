@@ -1,7 +1,5 @@
-// qq 1070892573
-// qq 1070892255
+
 // email admin@yunzhongzhuan.com
-// email 1070892573@qq.com
 
 // 2023/2/24 22:38 1
 
@@ -2508,7 +2506,7 @@ nav_top_button.onclick = scroll_top;
 // 到达底部
 function scroll_bottom(){
 	window.scrollTo({
-		top:1070892573,
+		top:100011000110001,
 		behavior:'smooth',
 	});
 }
