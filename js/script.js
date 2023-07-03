@@ -820,6 +820,12 @@ let files_client_download_button = document.getElementById('files-client-downloa
 files_client_download_button.onclick = function(){
 	window.open('//www.yunzhongzhuan.com/downloads/index.html');
 }
+let nav_client_for_windows_button = document.getElementById('nav-client-for-windows-button');
+if(nav_client_for_windows_button!=undefined){
+	nav_client_for_windows_button.onclick = function(){
+		window.open('//www.yunzhongzhuan.com/downloads/index.html');
+	}
+}
 files_options_items.style.height = ( ( 45 * files_options_items.getElementsByClassName('files-options-item').length ) + 0 ) + "px";
 files_options_items.className = "files-options-items files-options-items-hide";
 files_options_items.show = false;
