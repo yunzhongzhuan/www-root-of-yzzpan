@@ -3251,6 +3251,9 @@ for(let i=0;i<nav_items_item_items.length;i++){
 		}else if(this.id == "nav-files-reload-button"){ // 如果是刷新按钮
 			files_reload();
 			return false;
+		}else if(this.id == "nav-client-for-windows-button"){ // 如果是客户端按钮
+			window.oepn('//www.yunzhongzhuan.com/downloads/index.html');
+			return false;
 		}else{
 			pages_hide();
 		}
