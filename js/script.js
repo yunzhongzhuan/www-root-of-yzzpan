@@ -380,13 +380,21 @@ let top_apps = [
 		"new_open":true
 	},
 	{
+		"name":"括彩云智能CDN",
+		"link":"https://www.kuocaicdn.com/",
+		"description":"括彩云智能CDN-稳定的CDN网络与云服务",
+		"icon":"/img/logo-kuocaicdn.png",
+		// "icon":"//tva1.sinaimg.cn/mw2000/005CbWF8gy1h16lkvt5ubj30go0goq4h.jpg",
+		"new_open":true
+	},/*
+	{
 		"name":"极兔云",
 		"link":"https://www.jitucdn.com/",
 		"description":"极兔云-企业级CDN服务商专业的国内外内容分发加速服务平台",
 		"icon":"/img/jitucdn-com-logo-a1.png",
 		// "icon":"//tva1.sinaimg.cn/mw2000/005CbWF8gy1h16lkvt5ubj30go0goq4h.jpg",
 		"new_open":true
-	},/*
+	},
 	{
 		"name":"中国移动",
 		"link":"https://www.10086.cn",
@@ -5499,6 +5507,11 @@ let links_data = [
 				"link":"https://jq.qq.com/?_wv=1027&k=wvWcRa3H"
 			},*/
 			{
+				"name":"括彩云智能CDN",
+				"new_open":true,
+				"link":"https://www.kuocaicdn.com/"
+			},/*
+			{
 				"name":"极兔云",
 				"new_open":true,
 				"link":"https://www.jitucdn.com/"
@@ -5508,7 +5521,7 @@ let links_data = [
 				"new_open":true,
 				"link":"https://www.jituy.com/"
 			},
-			/*{
+			{
 				"name":"白熊云",
 				"new_open":true,
 				"link":"https://www.baixiong.cloud/"
