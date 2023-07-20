@@ -1568,6 +1568,7 @@ let files_main = document.getElementById('files-main');
 let files_main_menu = document.getElementById('files-main-menu');
 // 右键按钮
 let files_download_button = document.getElementById('files-download-button');
+let files_shell_download_button = document.getElementById('files-shell-download-button');
 let files_link_button = document.getElementById('files-link-button');
 let files_public_link_button = document.getElementById('files-public-link-button');
 let files_share_button = document.getElementById('files-share-button');
@@ -1855,6 +1856,7 @@ files_main.oncontextmenu=function(e){
 	// 是否显示下载分享按钮
 	if( folders_items_selected_array.length == 0 && files_items_selected_array.length == 1 ){
 		files_download_button.style.display = "block";
+		files_shell_download_button.style.display = "block";
 		// files_link_button.style.display = "block"; // 展示内链
 		if(navigator.language.toLowerCase().indexOf('cn')!=-1){
 			files_public_link_button.style.display = "block";
@@ -2094,6 +2096,15 @@ files_main.oncontextmenu=function(e){
 			});
 			// window.open(download_web_url + files_items_selected_array[0].url);
 		};
+
+		// 命令
+		files_shell_download_button.onclick = function(){
+			let new_download_url = files_items_selected_array[0].url.replace(/"/g,'');
+			let new_download_url_text = 'curl -L -X GET -H "Referer: https://www.yunzhongzhuan.com" "https://download.yunzhongzhuan.com' + new_download_url + '" -o "' + files_items_selected_array[0].name + '"';
+			show_link(new_download_url_text);
+		}
+
+		
 		files_share_button.style.display = "block";
 		files_share_button.onclick = function(){
 			show_share(files_items_selected_array[0].share);
