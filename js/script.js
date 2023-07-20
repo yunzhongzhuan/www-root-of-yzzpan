@@ -1384,7 +1384,7 @@ function push_files_to_files_page(files_items,isPrepend){
 		div.files_item_menu_item_shell_download_button.parent = div;
 		div.files_item_menu_item_shell_download_button.onclick = function(){
 			let new_download_url = this.parent.url.replace(/"/g,'');
-			let new_download_url_text = 'curl -L -X GET -H "Referer: https://www.yunzhongzhuan.com" "' + download_web_url + new_download_url + '" -o "' + this.parent.name + '"';
+			let new_download_url_text = 'curl -L -X GET -H "Referer: https://www.yunzhongzhuan.com" "https://download.yunzhongzhuan.com' + new_download_url + '" -o "' + this.parent.name + '"';
 			show_link(new_download_url_text);
 		}
 		// 外链
