@@ -1494,7 +1494,7 @@ function copy_text(text){
 // 当前网站官方网站地址
 let web_url = window.location.protocol + "//" + window.location.href.split('://')[1].split('/')[0];
 let download_web_url = "https://download.yzzpan.com";
-let upload_web_url = window.location.protocol + "//fake.upload.yzzpan.com";
+let upload_web_url = window.location.protocol + "//upload.yzzpan.com";
 let api_upload_web_url = upload_web_url + "/v6/upload";
 // 显示分享文件
 function show_share(share){
@@ -6057,6 +6057,9 @@ function upload_file_error(title,text,icon){
 let ElementIsUploadingNumberMaxStatus = false; // 是否应该等待
 let ElementIsUploadingNumberMax = 5; // 最大同时上传五个
 function file_upload(Blobs,Element){
+
+	alert('系统正在维护暂时禁止上传文件！');
+	return false;
 
 	// 如果未登录
 	if(userinfo["id"]!=undefined&&userinfo["id"]!=null&&userinfo["id"]!=''&&userinfo["qq"]!=undefined&&userinfo["qq"]!=null&&userinfo["qq"]!=''){
