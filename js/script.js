@@ -1494,7 +1494,7 @@ function copy_text(text){
 // 当前网站官方网站地址
 let web_url = window.location.protocol + "//" + window.location.href.split('://')[1].split('/')[0];
 let download_web_url = "https://download.yzzpan.com";
-let upload_web_url = window.location.protocol + "//upload.yzzpan.com";
+let upload_web_url = window.location.protocol + "//fake.upload.yzzpan.com";
 let api_upload_web_url = upload_web_url + "/v6/upload";
 // 显示分享文件
 function show_share(share){
