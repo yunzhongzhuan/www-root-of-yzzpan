@@ -1,5 +1,5 @@
 
-alert('目前系统正在维护，期间请勿上传文件！');
+// alert('目前系统正在维护，期间请勿上传文件！');
 
 // email admin@yunzhongzhuan.com
 
@@ -6058,8 +6058,8 @@ let ElementIsUploadingNumberMaxStatus = false; // 是否应该等待
 let ElementIsUploadingNumberMax = 5; // 最大同时上传五个
 function file_upload(Blobs,Element){
 
-	alert('系统正在维护暂时禁止上传文件！');
-	return false;
+	//alert('系统正在维护暂时禁止上传文件！');
+	//return false;
 
 	// 如果未登录
 	if(userinfo["id"]!=undefined&&userinfo["id"]!=null&&userinfo["id"]!=''&&userinfo["qq"]!=undefined&&userinfo["qq"]!=null&&userinfo["qq"]!=''){
