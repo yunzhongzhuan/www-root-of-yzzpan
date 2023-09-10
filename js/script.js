@@ -4975,8 +4975,8 @@ function get_sharefile(id,key){
 				
 			}else{
 				swal({
-					title: "链接无效",
-					text: "文件可能已经被删除。",
+					title: "提示信息",
+					text: ResultJSON["message"],
 					icon: "error",
 					dangerMode: true,
 					closeOnClickOutside: false,
