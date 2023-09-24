@@ -41,6 +41,11 @@
   X-Frame-Options: SAMEORIGIN
   Content-Security-Policy: frame-ancestors *.yzzpan.com
 
-
 /
+  Strict-Transport-Security: max-age=0; includeSubDomains
+  Origin-Agent-Cluster: ?0
   Cache-Control: no-cache
+  X-Frame-Options: SAMEORIGIN
+  Content-Security-Policy: frame-ancestors *.yunzhongzhuan.com
+
+  E-Mail: admin@yunzhongzhuan.com
