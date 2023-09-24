@@ -40,3 +40,7 @@
   Cache-Control: no-cache
   X-Frame-Options: SAMEORIGIN
   Content-Security-Policy: frame-ancestors *.yzzpan.com
+
+
+/
+  Cache-Control: no-cache
