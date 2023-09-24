@@ -7420,7 +7420,7 @@ function endebug(off, code) {
         })
     }
 }
-endebug(false, function () {
+endebug(true, function () {
     // 非法调试执行的代码(不要使用控制台输出的提醒)
     // document.write('<div style="text-align:center;color:red">检测到非法调试,请关闭后刷新重试</div>');
 });
