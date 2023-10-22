@@ -1397,7 +1397,7 @@ function push_files_to_files_page(files_items,isPrepend){
 			if( public_link_hostname.length < 10 || public_link_hostname == ""){
 				swal({
 					title: "绑定域名",
-					text: "请先联系我们，绑定您的域名！",
+					text: "请先联系我们，使用下载地址！",
 					icon: "warning",
 					buttons: ["取消","查看"],
 					dangerMode: true,
@@ -2131,7 +2131,7 @@ files_main.oncontextmenu=function(e){
 			if( public_link_hostname.length < 10 || public_link_hostname == ""){
 				swal({
 					title: "绑定域名",
-					text: "请先联系我们，绑定您的域名！",
+					text: "请先联系我们，使用下载地址！",
 					icon: "warning",
 					buttons: ["取消","查看"],
 					dangerMode: true,
