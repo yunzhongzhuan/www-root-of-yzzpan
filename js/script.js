@@ -1432,6 +1432,7 @@ function push_files_to_files_page(files_items,isPrepend){
 		div.menu_link_element.onclick = function(){
 
 			let link = public_download_web_url + this.parent.url ;
+			link = link.split('?t=')[0];
 			
 			swal({
 				title: "公共链接",
@@ -2140,6 +2141,7 @@ files_main.oncontextmenu=function(e){
 			let url_array = files_items_selected_array[0].url.split('/');
 			// let name = encodeURIComponent(url_array[4]);
 			let name = url_array[4];
+			name = name.split('?t=')[0];
 			let link = public_download_web_url + '/download/' + url_array[2] + '/' + url_array[3] + '/' + name;
 			
 			swal({
