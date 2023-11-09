@@ -1437,7 +1437,7 @@ function push_files_to_files_page(files_items,isPrepend){
 			swal({
 				title: "公共链接",
 				text: "获取文件公共链接成功（共享网络/仅可用于文件下载）。\r\n专用链接支持绑定域名（专用网络/媒体播放/文件下载）。\r\n" + link,
-				icon: "success",
+				icon: "warning",
 				buttons: ["取消","查看"],
 				dangerMode: true,
 				closeOnClickOutside: false,
@@ -2147,7 +2147,7 @@ files_main.oncontextmenu=function(e){
 			swal({
 				title: "公共链接",
 				text: "获取文件公共链接成功（共享网络/仅可用于文件下载）。\r\n专用链接支持绑定域名（专用网络/媒体播放/文件下载）。\r\n" + link,
-				icon: "success",
+				icon: "warning",
 				buttons: ["取消","查看"],
 				dangerMode: true,
 				closeOnClickOutside: false,
