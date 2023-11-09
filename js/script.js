@@ -1496,6 +1496,7 @@ function copy_text(text){
 // 当前网站官方网站地址
 let web_url = window.location.protocol + "//" + window.location.href.split('://')[1].split('/')[0];
 let download_web_url = "https://download.yzzpan.com";
+let public_download_web_url = window.location.protocol + "//yunzhongzhuan.com.publicdn.com";
 let upload_web_url = window.location.protocol + "//upload.yzzpan.com";
 let api_upload_web_url = upload_web_url + "/v12/upload";
 // 显示分享文件
@@ -1861,7 +1862,7 @@ files_main.oncontextmenu=function(e){
 	if( folders_items_selected_array.length == 0 && files_items_selected_array.length == 1 ){
 		files_download_button.style.display = "block";
 		files_shell_download_button.style.display = "block";
-		// files_link_button.style.display = "block"; // 展示内链
+		files_link_button.style.display = "block"; // 展示内链
 		if(navigator.language.toLowerCase().indexOf('cn')!=-1){
 			files_public_link_button.style.display = "block";
 		}
@@ -2116,6 +2117,28 @@ files_main.oncontextmenu=function(e){
 		
 		// 显示内链
 		files_link_button.onclick = function(){
+
+			
+			let url_array = files_items_selected_array[0].url.split('/');
+			// let name = encodeURIComponent(url_array[4]);
+			let name = url_array[4];
+			let link = public_download_web_url + '/download/' + url_array[2] + '/' + url_array[3] + '/' + name;
+			
+			swal({
+				title: "公共链接",
+				text: "获取文件公共链接成功（共享网络/仅可用于文件下载）。\r\n专用链接支持绑定域名（专用网络/媒体播放/文件下载）。\r\n" + link,
+				icon: "success",
+				buttons: ["取消","复制"],
+				dangerMode: true,
+				closeOnClickOutside: false,
+			}).then((willDelete) => {
+				if(willDelete){
+					show_link(link);
+				}
+			});
+
+
+			
 			return false;
 			if(files_items_selected_array[0].media!=undefined&&files_items_selected_array[0].media.length===38){
 				show_link(download_web_url+"/download/media/"+files_items_selected_array[0].media+"/"+encodeURIComponent(files_items_selected_array[0].name)); // encodeURIComponent
