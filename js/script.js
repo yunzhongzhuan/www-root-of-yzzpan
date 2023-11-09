@@ -1449,7 +1449,7 @@ function push_files_to_files_page(files_items,isPrepend){
 
 			
 			return false;
-			show_link(download_web_url + this.parent.url);
+			//show_link(download_web_url + this.parent.url);
 		}
 		div.menu_delete_element = div.getElementsByClassName('files-item-menu-item-delete-button')[0];
 		div.menu_delete_element.parent = div;
@@ -2158,7 +2158,7 @@ files_main.oncontextmenu=function(e){
 
 			
 			return false;
-			if(files_items_selected_array[0].media!=undefined&&files_items_selected_array[0].media.length===38){
+			/*if(files_items_selected_array[0].media!=undefined&&files_items_selected_array[0].media.length===38){
 				show_link(download_web_url+"/download/media/"+files_items_selected_array[0].media+"/"+encodeURIComponent(files_items_selected_array[0].name)); // encodeURIComponent
 				return false;
 			}
@@ -2166,7 +2166,7 @@ files_main.oncontextmenu=function(e){
 			// let name = encodeURIComponent(url_array[4]);
 			let name = url_array[4];
 			let link = download_web_url + '/download/' + url_array[2] + '/' + url_array[3] + '/' + name;
-			show_link(link);
+			show_link(link);*/
 		}
 		// 显示外链
 		files_public_link_button.onclick = function(){
