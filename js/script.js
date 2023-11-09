@@ -1043,7 +1043,7 @@ function push_files_to_files_page(files_items,isPrepend){
 		div.share = item["share"];
 		div.parent = item["parent"];
 		let type_icon = get_files_item_type_icon(div.name);
-		div.innerHTML = '<div class="files-item-icon"><i class="' + type_icon + '"></i></div><div class="files-item-name"><span>' + div.name + '</span></div><div class="files-item-date"><span>' + div.date + '</span></div><div class="files-item-size"><span>' + div.size_unit + '</span></div><div class="files-item-menu"><i class="fa fa-bars"></i><div class="files-item-menu-items files-item-menu-items-hide"><div class="files-item-menu-item files-item-menu-item-rename-button"><i class="fa fa-pencil"></i>命名文件</div><div class="files-item-menu-item files-item-menu-item-preview-button"><i class="fa fa fa-play-circle"></i>预览文件</div><div class="files-item-menu-item files-item-menu-item-share-button"><i class="fa fa-share-alt"></i>分享文件</div><div style="display:none;" class="files-item-menu-item files-item-menu-item-link-button"><i class="fa fa fa-link"></i>公共链接</div><div class="files-item-menu-item files-item-menu-item-public-link-button"><i class="fa fa fa-link"></i>专用链接</div><div class="files-item-menu-item files-item-menu-item-delete-button"><i class="fa fa-trash"></i>删除文件</div><div class="files-item-menu-item files-item-menu-item-shell-download-button"><i class="fa fa-terminal"></i>命令文件</div><div class="files-item-menu-item files-item-menu-item-download-button"><i class="fa fa-download"></i>下载文件</div></div></div>';
+		div.innerHTML = '<div class="files-item-icon"><i class="' + type_icon + '"></i></div><div class="files-item-name"><span>' + div.name + '</span></div><div class="files-item-date"><span>' + div.date + '</span></div><div class="files-item-size"><span>' + div.size_unit + '</span></div><div class="files-item-menu"><i class="fa fa-bars"></i><div class="files-item-menu-items files-item-menu-items-hide"><div class="files-item-menu-item files-item-menu-item-rename-button"><i class="fa fa-pencil"></i>命名文件</div><div class="files-item-menu-item files-item-menu-item-preview-button"><i class="fa fa fa-play-circle"></i>预览文件</div><div class="files-item-menu-item files-item-menu-item-share-button"><i class="fa fa-share-alt"></i>分享文件</div><div  class="files-item-menu-item files-item-menu-item-link-button"><i class="fa fa fa-link"></i>公共链接</div><div class="files-item-menu-item files-item-menu-item-public-link-button"><i class="fa fa fa-link"></i>专用链接</div><div class="files-item-menu-item files-item-menu-item-delete-button"><i class="fa fa-trash"></i>删除文件</div><div class="files-item-menu-item files-item-menu-item-shell-download-button"><i class="fa fa-terminal"></i>命令文件</div><div class="files-item-menu-item files-item-menu-item-download-button"><i class="fa fa-download"></i>下载文件</div></div></div>';
 		div.selected = false;
 		div.name_element = div.getElementsByClassName('files-item-name')[0];
 		div.name_element.title = div.name;
@@ -1430,6 +1430,24 @@ function push_files_to_files_page(files_items,isPrepend){
 		div.menu_link_element = div.getElementsByClassName('files-item-menu-item-link-button')[0];
 		div.menu_link_element.parent = div;
 		div.menu_link_element.onclick = function(){
+
+			let link = public_download_web_url + this.parent.url ;
+			
+			swal({
+				title: "公共链接",
+				text: "获取文件公共链接成功（共享网络/仅可用于文件下载）。\r\n专用链接支持绑定域名（专用网络/媒体播放/文件下载）。\r\n" + link,
+				icon: "success",
+				buttons: ["取消","复制"],
+				dangerMode: true,
+				closeOnClickOutside: false,
+			}).then((willDelete) => {
+				if(willDelete){
+					show_link(link);
+				}
+			});
+
+
+			
 			return false;
 			show_link(download_web_url + this.parent.url);
 		}
