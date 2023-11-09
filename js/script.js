@@ -1432,15 +1432,11 @@ function push_files_to_files_page(files_items,isPrepend){
 		div.menu_link_element.onclick = function(){
 
 			let link = public_download_web_url + this.parent.url ;
-			let this_parent_url = this.parent.url.split('?t=')[0];
 			link = link.split('?t=')[0];
-
-			let div = document.createElement('div');
-			div.innerHTML = '<div>获取文件公共链接成功（共享网络/仅可用于文件下载）。<br>专用链接支持绑定域名（专用网络/媒体播放/文件下载）。<br><span style="color:blue;">' + public_download_web_url + '</span>' + this_parent_url + '<br>绑定自定义域名可用专用网络，示例（example）：<br><span style="color:red;">https://www.example.com</span>' + this_parent_url + '</div>';
 			
 			swal({
 				title: "公共链接",
-				element: div,
+				text: "获取文件公共链接成功（共享网络/仅可用于文件下载）。\r\n专用链接支持绑定域名（专用网络/媒体播放/文件下载）。\r\n" + link,
 				icon: "warning",
 				buttons: ["取消","查看"],
 				dangerMode: true,
