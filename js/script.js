@@ -1432,11 +1432,16 @@ function push_files_to_files_page(files_items,isPrepend){
 		div.menu_link_element.onclick = function(){
 
 			let link = public_download_web_url + this.parent.url ;
+			let this_public_download_web_url = public_download_web_url.split('//')[1]; // yunzhongzhuan.com.publicdn.com
+			let this_parent_url = this.parent.url.split('?t=')[0];
 			link = link.split('?t=')[0];
+
+			let div = document.createElement('div');
+			div.innerHTML = '<div style="color:#5c5c5c;line-height:2;word-wrap:break-word;word-break:breal-all;">   <p>获取文件公共链接成功（共享网络/仅可用于文件下载）。</p>   <p>专用链接支持绑定域名（专用网络/媒体播放/文件下载）。</p>   <p>https://<span style="color:blue;">' + this_public_download_web_url + '</span>' + this_parent_url + '</p><p>绑定自定义域名可用专用网络，示例（example）：</p><p>https://<span style="color:red;">www.example.com</span>' + this_parent_url + '</p></div>';
 			
 			swal({
 				title: "公共链接",
-				text: "获取文件公共链接成功（共享网络/仅可用于文件下载）。\r\n专用链接支持绑定域名（专用网络/媒体播放/文件下载）。\r\n" + link,
+				content: div,
 				icon: "warning",
 				buttons: ["取消","查看"],
 				dangerMode: true,
@@ -2143,10 +2148,16 @@ files_main.oncontextmenu=function(e){
 			let name = url_array[4];
 			name = name.split('?t=')[0];
 			let link = public_download_web_url + '/download/' + url_array[2] + '/' + url_array[3] + '/' + name;
+
+			let this_parent_url = '/download/' + url_array[2] + '/' + url_array[3] + '/' + name;
+			let this_public_download_web_url = public_download_web_url.split('//')[1]; // yunzhongzhuan.com.publicdn.com
+			
+			let div = document.createElement('div');
+			div.innerHTML = '<div style="color:#5c5c5c;line-height:2;word-wrap:break-word;word-break:breal-all;">   <p>获取文件公共链接成功（共享网络/仅可用于文件下载）。</p>   <p>专用链接支持绑定域名（专用网络/媒体播放/文件下载）。</p>   <p>https://<span style="color:blue;">' + this_public_download_web_url + '</span>' + this_parent_url + '</p><p>绑定自定义域名可用专用网络，示例（example）：</p><p>https://<span style="color:red;">www.example.com</span>' + this_parent_url + '</p></div>';
 			
 			swal({
 				title: "公共链接",
-				text: "获取文件公共链接成功（共享网络/仅可用于文件下载）。\r\n专用链接支持绑定域名（专用网络/媒体播放/文件下载）。\r\n" + link,
+				content: div,
 				icon: "warning",
 				buttons: ["取消","查看"],
 				dangerMode: true,
