@@ -1440,7 +1440,7 @@ function push_files_to_files_page(files_items,isPrepend){
 			
 			swal({
 				title: "公共链接",
-				html: div,
+				element: div,
 				icon: "warning",
 				buttons: ["取消","查看"],
 				dangerMode: true,
