@@ -517,10 +517,11 @@ body{
 	text-align: center;
 	width: calc(100% - 40px);
 	padding: 0 20px;
-	line-height: 2.8;
+	line-height: 2.3;
 	color: #4c4c4c;
 	background-color: transparent;
 	user-select: none;
+	font-size: 15px;
 }
 .files-main-menu-item i{
 	padding-right: 6px;
