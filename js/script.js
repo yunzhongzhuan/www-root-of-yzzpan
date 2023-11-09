@@ -1397,8 +1397,8 @@ function push_files_to_files_page(files_items,isPrepend){
 		div.menu_public_link_element.onclick = function(){
 			if( public_link_hostname.length < 10 || public_link_hostname == ""){
 				swal({
-					title: "绑定域名",
-					text: "请先联系我们，使用下载地址！",
+					title: "专用链接",
+					text: "您的账号暂不支持该项功能。\r\n专用链接支持绑定自定义域名。\r\n联系我们，开启此项功能。",
 					icon: "warning",
 					buttons: ["取消","查看"],
 					dangerMode: true,
@@ -2131,8 +2131,8 @@ files_main.oncontextmenu=function(e){
 		files_public_link_button.onclick = function(){
 			if( public_link_hostname.length < 10 || public_link_hostname == ""){
 				swal({
-					title: "绑定域名",
-					text: "请先联系我们，使用下载地址！",
+					title: "专用链接",
+					text: "您的账号暂不支持该项功能。\r\n专用链接支持绑定自定义域名。\r\n联系我们，开启此项功能。",
 					icon: "warning",
 					buttons: ["取消","查看"],
 					dangerMode: true,
