@@ -1398,7 +1398,7 @@ function push_files_to_files_page(files_items,isPrepend){
 			if( public_link_hostname.length < 10 || public_link_hostname == ""){
 				swal({
 					title: "专用链接",
-					text: "您的账号暂不支持该项功能。\r\n专用链接支持绑定自定义域名。\r\n联系我们，开启此项功能。",
+					text: "您的账号暂不支持该项功能。\r\n专用链接支持绑定自定义域名。\r\n支持播放视频/播放音频/预览图片/文件下载等应用场景。\r\n联系我们，开启此项功能。",
 					icon: "warning",
 					buttons: ["取消","查看"],
 					dangerMode: true,
@@ -2132,7 +2132,7 @@ files_main.oncontextmenu=function(e){
 			if( public_link_hostname.length < 10 || public_link_hostname == ""){
 				swal({
 					title: "专用链接",
-					text: "您的账号暂不支持该项功能。\r\n专用链接支持绑定自定义域名。\r\n联系我们，开启此项功能。",
+					text: "您的账号暂不支持该项功能。\r\n专用链接支持绑定自定义域名。\r\n支持播放视频/播放音频/预览图片/文件下载等应用场景。\r\n联系我们，开启此项功能。",
 					icon: "warning",
 					buttons: ["取消","查看"],
 					dangerMode: true,
