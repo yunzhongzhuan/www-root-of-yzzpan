@@ -839,7 +839,7 @@ body{
 	font-size: 20px;
 	letter-spacing: 2px;
 }
-.login-content-input-qq-button-element i{
+.login-content-input-qq-button-element i,#login-input-button-login i{
 	padding-right: 4px;
 }
 .login-content-input-qq-button-element:hover{
