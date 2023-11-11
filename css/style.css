@@ -90,6 +90,13 @@ body{
 #nav-pay-cny-button:hover{
 	background-color: #efb021;
 }
+files-options-item-pay-cny-button{
+	background-color: #febf32;
+	color: #fff;
+}
+files-options-item-pay-cny-button:hover{
+	background-color: #efb021;
+}
 .nav-item span{
 	display: none;
 	font-size: 14px;
