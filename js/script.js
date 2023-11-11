@@ -5777,6 +5777,11 @@ if(navigator.language.toLowerCase().indexOf('cn')!=-1){
 	if(document.getElementById('nav-pay-cny-button')!=undefined){
 		document.getElementById('nav-pay-cny-button').style.display = "block";
 	}
+	if(document.getElementById('files-options-item-pay-cny-button')!=undefined){
+		document.getElementById('files-options-item-pay-cny-button').style.display = "block";
+		document.getElementById('files-options-item-pay-cny-button').onclick = pay_cny;
+	}
+	
 }
 
 
