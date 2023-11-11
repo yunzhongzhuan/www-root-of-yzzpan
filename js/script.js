@@ -5752,7 +5752,7 @@ function document_write_links(data){
 function pay_cny(){
 	
 	let div = document.createElement('div');
-	div.innerHTML = '<div style="color:#5c5c5c;line-height:2;word-wrap:break-word;word-break:breal-all;">   <p>云中转成立于2020年12月10日，至今始终在免费为用户提供稳定、纯粹的文件分享服务。</p>   <p>如果云中转已经帮助到了您，为您带来了许多方便，请您赞助我们，帮助我们继续扩容服务以及减轻每年的运营成本。</p>  <p><img style="background-color:#f5f5f5;width:100%;max-height:unset;margin-top:12px;" src="//global.yunzhongzhuan.com/img/pay_wx_zfb_qq_2.png" /></p>  </div>';
+	div.innerHTML = '<div style="color:#5c5c5c;line-height:2;word-wrap:break-word;word-break:breal-all;">   <p>云中转成立于2020年12月10日，至今始终在免费为用户提供稳定、纯粹的文件分享服务。</p>   <p>如果云中转已经帮助到了您，为您带来了许多方便，请您赞助我们，帮助我们继续扩容服务以及减轻每年的运营成本。</p>  <p><img style="background-color:#f5f5f5;margin-top:12px;" src="//global.yunzhongzhuan.com/img/pay_wx_zfb_qq_2.png" /></p>  </div>';
 	
 	swal({
 		title: "赞助我们",
