@@ -3294,6 +3294,10 @@ for(let i=0;i<nav_items_item_items.length;i++){
 			nav_hide();
 			return false;
 		}
+		if(this.id == "nav-pay-cny-button"){
+			pay_cny();
+			return false;
+		}
 		// 如果未登录 不做处理
 		if(userinfo["id"]==undefined||isNaN(userinfo["id"])||userinfo["id"]==''||userinfo["id"]==null||userinfo["qq"]==undefined||isNaN(userinfo["qq"])||userinfo["qq"]==''||userinfo["qq"]==null||userinfo["username"]==undefined||userinfo["username"]==''||userinfo["username"]==null){
 			swal({
