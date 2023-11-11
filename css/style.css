@@ -83,6 +83,13 @@ body{
 	font-size: 24px;
 	user-select: none;
 }
+#nav-pay-cny-button{
+	background-color: #febf32;
+	color: #fff;
+}
+#nav-pay-cny-button:hover{
+	background-color: #efb021;
+}
 .nav-item span{
 	display: none;
 	font-size: 14px;
