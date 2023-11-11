@@ -3336,6 +3336,9 @@ for(let i=0;i<nav_items_item_items.length;i++){
 		}else if(this.id == "nav-files-reload-button"){ // 如果是刷新按钮
 			files_reload();
 			return false;
+		}else if(this.id == "nav-pay-cny-button"){ // 如果是赞助按钮
+			pay_cny();
+			return false;
 		}else if(this.id == "nav-client-for-windows-button"){ // 如果是客户端按钮
 			window.open('//www.yunzhongzhuan.com/downloads/index.html');
 			return false;
@@ -5739,6 +5742,42 @@ function document_write_links(data){
 		links_items.append(links_item_element);
 	}
 }
+
+
+// 赞助我们
+function pay_cny(){
+	
+	let div = document.createElement('div');
+	div.innerHTML = '<div style="color:#5c5c5c;line-height:2;word-wrap:break-word;word-break:breal-all;">   <p>云中转成立于2020年12月10日，至今始终在免费为用户提供稳定、纯粹的文件分享服务。</p>   <p>如果云中转已经帮助到了您，为您带来了许多方便，请您赞助我们，帮助我们继续扩容服务以及减轻每年的运营成本。</p>  <p><img style="background-color:#f5f5f5;width:100%;max-height:unset;margin-top:12px;" src="//global.yunzhongzhuan.com/img/pay_wx_zfb_qq_2.png" /></p>  </div>';
+	
+	swal({
+		title: "赞助我们",
+		content: div,
+		icon: "warning",
+		buttons: ["取消","了解"],
+		dangerMode: true,
+		closeOnClickOutside: false,
+	}).then((willDelete) => {
+		if(willDelete){
+			
+		}
+	});
+
+	setTimeout(function(){
+		document.getElementsByClassName('swal-overlay swal-overlay--show-modal')[0].scrollTop=0;
+	},10);
+	
+}
+
+if(navigator.language.toLowerCase().indexOf('cn')!=-1){
+	if(document.getElementById('nav-pay-cny-button')!=undefined){
+		document.getElementById('nav-pay-cny-button').style.display = "block";
+	}
+}
+
+
+
+
 // 刷新文件
 // 刷新冷却时间
 let files_reload_locked = false;
