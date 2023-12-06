@@ -5773,7 +5773,7 @@ function pay_cny(){
 	
 }
 
-if(navigator.language.toLowerCase().indexOf('cn')!=-1){
+if(true||navigator.language.toLowerCase().indexOf('cn')!=-1){
 	if(document.getElementById('nav-pay-cny-button')!=undefined){
 		document.getElementById('nav-pay-cny-button').style.display = "block";
 	}
