@@ -5772,8 +5772,8 @@ function pay_cny(){
 	},10);
 	
 }
-
-if(true||navigator.language.toLowerCase().indexOf('cn')!=-1){
+// 隐藏赞助按钮
+if(false&&navigator.language.toLowerCase().indexOf('cn')!=-1){
 	if(document.getElementById('nav-pay-cny-button')!=undefined){
 		document.getElementById('nav-pay-cny-button').style.display = "block";
 	}
