@@ -3,7 +3,7 @@
   Origin-Agent-Cluster: ?0
   Cache-Control: no-cache
   X-Frame-Options: SAMEORIGIN
-  Content-Security-Policy: frame-ancestors *.yunzhongzhuan.com
+  Content-Security-Policy: frame-ancestors *.yzzpan.com
   Strict-Transport-Security: max-age=0; includeSubDomains
 /img/defaukt_user_profile_picture_1.png
   Cache-Control: max-age=31536000
@@ -45,7 +45,7 @@
   Cache-Control: max-age=31536000
   Access-Control-Allow-Credentials: true
   Access-Control-Allow-Methods: OPTIONS,GET,POST
-  Access-Control-Allow-Origin: https://www.yunzhongzhuan.com
+  Access-Control-Allow-Origin: https://www.yzzpan.com
 /plug-in/font-awesome-4.7.0/css/font-awesome.min.css
   Cache-Control: max-age=31536000
 /plug-in/sweetalert/sweetalert.min.js
@@ -80,4 +80,4 @@
   Cache-Control: max-age=31536000
   Access-Control-Allow-Credentials: true
   Access-Control-Allow-Methods: OPTIONS,GET,POST
-  Access-Control-Allow-Origin: https://www.yunzhongzhuan.com
+  Access-Control-Allow-Origin: https://www.yzzpan.com
