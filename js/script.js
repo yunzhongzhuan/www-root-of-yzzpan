@@ -1435,6 +1435,10 @@ function push_files_to_files_page(files_items,isPrepend){
 		div.menu_link_element.parent = div;
 		div.menu_link_element.onclick = function(){
 
+			alert("暂停支持。");
+
+			return false;
+
 			let link = public_download_web_url + this.parent.url ;
 			let this_public_download_web_url = public_download_web_url.split('//')[1]; // yunzhongzhuan.com.publicdn.com
 			let this_parent_url = this.parent.url.split('?t=')[0];
@@ -2145,6 +2149,10 @@ files_main.oncontextmenu=function(e){
 		
 		// 显示内链
 		files_link_button.onclick = function(){
+
+			alert("暂停支持。");
+
+			return false;
 
 			
 			let url_array = files_items_selected_array[0].url.split('/');
