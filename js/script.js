@@ -6252,7 +6252,7 @@ function file_upload(Blobs,Element){
   		alert('您的账号存储空间占用已超200GB，已达个人普通账号上限2倍。\r\n企业用户不限容量，并支持绑定自定义下载域名。\r\n详情：https://www.yunzhongzhuan.com/welcome/');
   		free_or_mini_or_big_vip.className = "";
   		window.location.href="/#setting";
-
+		Element.upload_speed_element.innerText = "空间不足";
   		return false;
 	}else{
 		upload_window_iframe_element.contentWindow.FileUploadStart(Blobs,Element);		
