@@ -5924,7 +5924,7 @@ function FileUploadStart(fb,so){
 	// 通过非法修改前端，强制提交数据，后端判断为异常，将直接永久封号。
 	// 如果容量超额，禁止继续上传。
  	if( usedsize >= 2*100*1024*1024*1024 && public_link_status==false ){
-  		alert('您的账号存储空间占用已超200GB，已达个人普通账号上限2倍。\r\n企业用户不限容量，并支持绑定自定义下载域名。\r\n详情：https://www.yunzhongzhuan.com/welcome/');
+  		alert('您的账号存储空间占用已超200GB，已达个人普通账号上限2倍。\r\n企业用户不限容量，并支持绑定自定义下载域名。\r\n示例：https://您的域名.com/download/123/abc/music.mp3\r\n详情：https://www.yunzhongzhuan.com/welcome/');
       		// free_or_mini_or_big_vip.className = "";
   		// window.location.href="/#setting";
   		return false;
@@ -6249,7 +6249,7 @@ function file_upload(Blobs,Element){
 	// 通过非法修改前端，强制提交数据，后端判断为异常，将直接永久封号。
 	// 如果容量超额，禁止继续上传。
  	if( usedsize >= 2*100*1024*1024*1024 && public_link_status==false ){
-  		alert('您的账号存储空间占用已超200GB，已达个人普通账号上限2倍。\r\n企业用户不限容量，并支持绑定自定义下载域名。\r\n详情：https://www.yunzhongzhuan.com/welcome/');
+  		alert('您的账号存储空间占用已超200GB，已达个人普通账号上限2倍。\r\n企业用户不限容量，并支持绑定自定义下载域名。\r\n示例：https://您的域名.com/download/123/abc/music.mp3\r\n详情：https://www.yunzhongzhuan.com/welcome/');
   		free_or_mini_or_big_vip.className = "";
   		window.location.href="/#setting";
 		Element.upload_speed_element.innerText = "空间不足";
