@@ -1162,7 +1162,7 @@ function push_files_to_files_page(files_items,isPrepend){
 			if(
 				this.parent.url.split('fakelink').length>1
 			){
-				alert('您的账号存储空间占用已超200GB，已达个人普通账号上限2倍，超额账号不支持使用网页端，请使用客户端下载此文件。');
+				alert('您的账号存储空间占用已超200GB，已达个人普通账号上限2倍，超额账号不支持使用网页端下载文件，请使用客户端下载此文件。');
 			}
 
 			
@@ -1912,7 +1912,7 @@ files_main.oncontextmenu=function(e){
 			if(
 				files_items_selected_array[0].url.split('fakelink').length>1
 			){
-				alert('您的账号存储空间占用已超200GB，已达个人普通账号上限2倍，超额账号不支持使用网页端，请使用客户端下载此文件。');
+				alert('您的账号存储空间占用已超200GB，已达个人普通账号上限2倍，超额账号不支持使用网页端下载文件，请使用客户端下载此文件。');
 			}
 			
 			let html_element = document.createElement('div');
