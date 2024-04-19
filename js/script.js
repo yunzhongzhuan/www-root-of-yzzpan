@@ -4591,6 +4591,12 @@ function get_sharefile(id,key){
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
 			let ResultJSON = JSON.parse(xmlhttp.responseText);
 			if(ResultJSON["status"]){
+
+				if(
+					ResultJSON["url"].split('fakelink').length>1
+				){
+					alert('请先转存此文件至您的账号内，再进行下载。\r\n点击下方（点击转存文件，存到我的云盘！）按钮，即可转存此文件至您的账号。');
+				}
 				
 				
 				if(
