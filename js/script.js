@@ -2898,7 +2898,7 @@ function showpay(){
 	// content_element.innerHTML = '<img src="//www.yzzpan.com/img/pay_wx_zfb_qq_2.png" />';
 	content_element.innerHTML = '<img src="//www.yzzpan.com/img/wechat_alipay.gif" />';
 	swal({
-		text:" 如果您是使用年满2年的老用户，欢迎赞助我们，以减轻延续服务所需的成本。",
+		text:" 赞助我们，以减轻延续服务所需的成本。\r\n直接下载，没有任何套路没有任何广告。",
 		content: content_element,
 		// buttons: true,
 		// dangerMode: true,
