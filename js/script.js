@@ -2922,20 +2922,20 @@ function get_usedsize_function(){
 			usedsize = xmlhttp.responseText;
 			usedsize_unit = get_size_unit(usedsize);
 			files_search_input.placeholder = "搜索文件（" + usedsize_unit + "）";
-			if(usedsize >= 10 * 1024 * 1024 * 1024){
+			/*if(usedsize >= 10 * 1024 * 1024 * 1024){
 				if(window.location.href.indexOf("#files")!=-1&&files.className.indexOf("files-hide")==-1){
 					show_love_pay();
 				}
 				nav_love_me_button.onclick = show_love_pay;
-			}
+			}*/
 
 			// 通过非法修改前端，强制提交数据，后端判断为异常，将直接永久封号。
 			// 如果容量超额，禁止继续上传。
-		 	if( usedsize >= 2*100*1024*1024*1024 && public_link_status==false ){
+		 	/*if( usedsize >= 2*100*1024*1024*1024 && public_link_status==false ){
 		  		swal('您的账号存储空间占用已超200GB，已达个人普通账号上限2倍。\r\n企业用户不限容量，并支持绑定自定义下载域名。\r\n示例：https://您的域名.com/download/123/abc/music.mp3\r\n详情：https://www.yunzhongzhuan.com/welcome/');
 		  		// free_or_mini_or_big_vip.className = "";
 		  		// window.location.href="/#setting";
-			}
+			}*/
 
 			
 		}
@@ -3001,6 +3001,7 @@ let is_qq_qr_code_login = false;
 
 function showlove(){
 	
+	return false;
 	
 	
 	if(
@@ -5794,6 +5795,8 @@ function document_write_links(data){
 
 // 赞助我们
 function pay_cny(){
+
+	return false;
 	
 	let div = document.createElement('div');
 	div.innerHTML = '<div style="color:#5c5c5c;line-height:2;word-wrap:break-word;word-break:breal-all;">   <p>云中转成立于2020年12月10日，至今始终在免费为用户提供稳定、纯粹的文件分享服务。</p>   <p>如果云中转已经帮助到了您，为您带来了许多方便，请您赞助我们，帮助我们继续扩容服务以及减轻每年的运营成本。</p>  <p><img style="background-color:#f5f5f5;margin-top:12px;" src="//global.yunzhongzhuan.com/img/pay_wx_zfb_qq_2.png" /></p>  </div>';
@@ -6280,15 +6283,16 @@ function file_upload(Blobs,Element){
 	
 	// 通过非法修改前端，强制提交数据，后端判断为异常，将直接永久封号。
 	// 如果容量超额，禁止继续上传。
- 	if( usedsize >= 2*100*1024*1024*1024 && public_link_status==false ){
+ 	/*if( usedsize >= 2*100*1024*1024*1024 && public_link_status==false ){
   		alert('您的账号存储空间占用已超200GB，已达个人普通账号上限2倍。\r\n企业用户不限容量，并支持绑定自定义下载域名。\r\n示例：https://您的域名.com/download/123/abc/music.mp3\r\n详情：https://www.yunzhongzhuan.com/welcome/');
   		free_or_mini_or_big_vip.className = "";
   		window.location.href="/#setting";
 		Element.upload_speed_element.innerText = "空间不足";
   		return false;
 	}else{
-		upload_window_iframe_element.contentWindow.FileUploadStart(Blobs,Element);		
-	}
+		upload_window_iframe_element.contentWindow.FileUploadStart(Blobs,Element);
+	}*/
+	upload_window_iframe_element.contentWindow.FileUploadStart(Blobs,Element);
 }
 // 计算等待 排队
 let need_calc_hash_push_number = 0; // 已加入计算的数量是多少
