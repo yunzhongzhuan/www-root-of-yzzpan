@@ -7192,6 +7192,13 @@ function qq_login_id_set_timeout_function(){
 	swal_button__cancel_button_element = document.getElementsByClassName('swal-button--cancel');
 }
 
+// GITHUB登录
+let login_input_button_github_login = document.getElementById('login-input-button-github-login');
+login_input_button_github_login.onclick = function(){
+	alert('别按！还没开发好！！！');
+}
+
+
 // QQ登录按钮
 let login_input_button_qq_login = document.getElementById('login-input-button-qq-login');
 login_input_button_qq_login.onclick = async function(){
