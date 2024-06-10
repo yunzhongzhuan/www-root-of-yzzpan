@@ -4270,6 +4270,29 @@ nav_reset_password_button.onclick = function(){
 		});
 		return false;
 	}
+
+	if(
+		userinfo["qq"] != undefined
+		&&
+		userinfo["qq"] != ""
+		&&
+		userinfo["qq"] > 1 && userinfo["qq"] < 2 // Github
+		&&
+		True
+	){
+		swal({
+			title: "系统提示",
+			text: "通过Github登录的账号不支持设置密码！",
+			icon: "error",
+			dangerMode: true,
+			closeOnClickOutside: false,
+		}).then((willDelete) => {
+			// pass
+		});
+		return false;
+	}
+
+	
 	let html_element = document.createElement('div');
 	html_element.innerHTML = '<input placeholder="新的密码" type="password" autocomplete="off" class="swal-content__input nav-reset-password-input">';
 	swal({
