@@ -7195,7 +7195,7 @@ function qq_login_id_set_timeout_function(){
 // GITHUB登录
 let login_input_button_github_login = document.getElementById('login-input-button-github-login');
 login_input_button_github_login.onclick = function(){
-	alert('别按！还没开发好！！！');
+	alert('还没开发好！WAITING FOR OUR TEAM TO DO THIS BUTTON!!!');
 }
 
 
