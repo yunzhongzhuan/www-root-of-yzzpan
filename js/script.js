@@ -7373,7 +7373,15 @@ function register_verify(id,verify){
 				});
 			}else{
 				// 验证失败
-				register_verify_timeout = setTimeout(register_verify,3000,id,verify);
+				if(
+					ResultJSON["verify_pass"]!=undefined
+					&&
+					ResultJSON["verify_pass"]==false
+				){
+					show_verify_code();
+				}else{
+					register_verify_timeout = setTimeout(register_verify,3000,id,verify);
+				}
 			}
 		}
 	}
