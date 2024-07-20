@@ -4109,6 +4109,10 @@ function get_userinfo(){
 				
 
 			}else{
+
+				if(userinfo["qq_login_id"]==undefined||userinfo["qq_login_id"]=="0"||userinfo["qq_login_id"]==0||userinfo["qq_login_id"].length<5){
+					userinfo["qq_login_id"] = undefined;
+				}
 				
 				is_qq_qr_code_login = false;
 				
