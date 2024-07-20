@@ -7405,6 +7405,7 @@ function register_functions(){
 	let username = encodeURIComponent(register_input_username.value);
 	let password = encodeURIComponent(register_input_password.value);
 	let qq = encodeURIComponent(register_input_qq.value);
+	let session_id = encodeURIComponent(userinfo["session_id"]);
 	let xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange=function(){
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
@@ -7457,7 +7458,7 @@ function register_functions(){
 	xmlhttp.open("POST",api_server_url+"/php/v4/register",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
-	xmlhttp.send( "username=" + username + "&qq=" + qq + "&password=" + password );
+	xmlhttp.send( "username=" + username + "&qq=" + qq + "&password=" + password + "&session_id=" + session_id );
 }
 register_input_button_register.onclick = function() {
 	// 如果账号密码为空
