@@ -7250,7 +7250,7 @@ login_input_button_qq_login.onclick = async function(){
 		&&
 		userinfo["wechat_login_id"] != undefined
 	){
-		show_verfiy_code();
+		show_verify_code();
 		return false;
 	}
 
