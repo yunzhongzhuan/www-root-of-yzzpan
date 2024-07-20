@@ -7239,6 +7239,12 @@ login_input_button_qq_login.onclick = async function(){
 		return false;
 	}
 
+	if(
+		userinfo["qq_login_id"] == undefined
+	){
+		return false;
+	}
+
 	use_qq_qr_code_login = true;
 	
 	if(userinfo["qq_login_id"]==undefined||userinfo["qq_login_id"]=="0"||userinfo["qq_login_id"].length<5){
