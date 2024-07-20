@@ -4118,7 +4118,7 @@ function get_userinfo(){
 					userinfo["wechat_login_id"] = ResultJSON["wechat_login_id"];
 					userinfo["qq_login_id"] = ResultJSON["qq_login_id"];
 					if(userinfo["qq_login_id"]==undefined||userinfo["qq_login_id"]=="0"||userinfo["qq_login_id"]==0||userinfo["qq_login_id"].length<5){
-
+							userinfo["qq_login_id"] = undefined;
 							setTimeout(get_userinfo,1000);
 
 					}else{
@@ -4244,6 +4244,7 @@ function get_userinfo(){
 				files_show();
 			}else{
 				if(userinfo["qq_login_id"]==undefined||userinfo["qq_login_id"]=="0"||userinfo["qq_login_id"]==0||userinfo["qq_login_id"].length<5){
+					userinfo["qq_login_id"] = undefined;
 					return false;
 				}
 				if(window.location.href.indexOf("#login")==-1){
