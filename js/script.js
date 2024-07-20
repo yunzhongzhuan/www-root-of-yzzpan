@@ -3808,6 +3808,8 @@ function show_verify_code(){
 	
 	if(
 		userinfo["qq_login_id"] == undefined
+		&&
+		userinfo["wechat_login_id"] != undefined
 	){
 		return false;
 	}
