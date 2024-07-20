@@ -4215,6 +4215,16 @@ function get_userinfo(){
 					pages_hide();
 				}
 				register_show();
+
+				if(
+					ResultJSON["verify_pass"]!=undefined
+					&&
+					ResultJSON["verify_pass"]==false
+				){
+					show_verify_code();
+				}
+
+				
 				return false;
 			}
 			// 判断是否在找回密码页面
