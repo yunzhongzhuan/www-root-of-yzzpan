@@ -1,7 +1,7 @@
 //alert('未知错误！');
 
 //alert('紧急通知：2023年9月25日发现在Google Chrome浏览器最新版本Chrome/117.0.0.0中无法正常上传文件至云中转，该问题云中转团队正在紧急修复，建议正在使用Google Chrome浏览器最新版本且无法正常上传文件的用户切换使用Firefox、Microsoft Edge、Safari等浏览器访问云中转官方网站yunzhongzhuan.com、yzzpan.com，或者在Windows系统中使用云中转客户端，紧急情况正在寻找问题根源并解决。');
-
+alert('网站系统正在升级中，请稍后访问。');
 
 // email admin@yunzhongzhuan.com
 
