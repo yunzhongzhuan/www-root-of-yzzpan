@@ -7247,6 +7247,8 @@ login_input_button_qq_login.onclick = async function(){
 
 	if(
 		userinfo["qq_login_id"] == undefined
+		&&
+		userinfo["wechat_login_id"] != undefined
 	){
 		return false;
 	}
