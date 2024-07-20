@@ -7458,7 +7458,7 @@ function register_functions(){
 	xmlhttp.open("POST",api_server_url+"/php/v4/register",true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.withCredentials = true;
-	xmlhttp.send( "username=" + username + "&qq=" + qq + "&password=" + password + "&session_id=" + session_id );
+	xmlhttp.send( "username=" + username + "&qq=" + qq + "&password=" + password + "&session_id=" + session_id + "&register=1" );
 }
 register_input_button_register.onclick = function() {
 	// 如果账号密码为空
