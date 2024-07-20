@@ -4107,13 +4107,14 @@ function get_userinfo(){
 						files_items_selected_array = [];
 						get_files_folders_index = 0;
 						get_files_folders_array = ["0"];
-						get_files();
+						// get_files();
 						/*function fun_2(){
 							set_upload_window_iframe_element();
 						}
 						setTimeout(fun_2,10);*/
 					},( ( files_num + 3) * 10 / 2 ) + 30 );
-					setTimeout(showlove,500);
+					//setTimeout(showlove,500);
+					setTimeout(get_files,2233);
 					return false;
 				}
 				if(window.location.href.indexOf("#files")!=-1&&files.className.indexOf("files-hide")==-1){
