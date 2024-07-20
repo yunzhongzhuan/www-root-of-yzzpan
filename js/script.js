@@ -7372,16 +7372,9 @@ function register_verify(id,verify){
 					closeOnClickOutside: false,
 				});
 			}else{
-				// 验证失败
-				if(
-					ResultJSON["verify_pass"]!=undefined
-					&&
-					ResultJSON["verify_pass"]==false
-				){
-					show_verify_code();
-				}else{
+
 					register_verify_timeout = setTimeout(register_verify,3000,id,verify);
-				}
+				
 			}
 		}
 	}
@@ -7426,14 +7419,28 @@ function register_functions(){
 					}
 				});
 			}else{
-				swal({
-					title: "注册失败",
-					text: ResultJSON["message"],
-					icon: "error",
-					// buttons: true,
-					// dangerMode: true,
-					closeOnClickOutside: false,
-				});
+
+
+				// 验证失败
+				if(
+					ResultJSON["verify_pass"]!=undefined
+					&&
+					ResultJSON["verify_pass"]==false
+				){
+					show_verify_code();
+				}else{
+					swal({
+						title: "注册失败",
+						text: ResultJSON["message"],
+						icon: "error",
+						// buttons: true,
+						// dangerMode: true,
+						closeOnClickOutside: false,
+					});
+				}
+
+				
+				
 			}
 		}
 	}
