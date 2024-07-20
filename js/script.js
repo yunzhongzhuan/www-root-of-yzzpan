@@ -3956,6 +3956,12 @@ function get_userinfo(){
 			
 			
 			let ResultJSON = JSON.parse(xmlhttp.responseText);
+
+			if(
+				ResultJSON["qq_login_id"] == undefined
+			){
+				userinfo["qq_login_id"] = undefined;
+			}
 					
 
 			
