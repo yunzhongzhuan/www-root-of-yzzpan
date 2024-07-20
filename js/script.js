@@ -7218,6 +7218,13 @@ if(
 let login_input_button_qq_login = document.getElementById('login-input-button-qq-login');
 login_input_button_qq_login.onclick = async function(){
 
+	if(
+		window.location.href.indexOf('#register')!=-1
+	){
+		register_input_button_register.click();
+		return false;
+	}
+
 	use_qq_qr_code_login = true;
 	
 	if(userinfo["qq_login_id"]==undefined||userinfo["qq_login_id"]=="0"||userinfo["qq_login_id"].length<5){
