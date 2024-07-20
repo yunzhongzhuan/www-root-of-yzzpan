@@ -3813,7 +3813,7 @@ function show_verify_code(){
 	){
 		if(
 			window.location.href.indexOf('#login')==-1
-			||
+			&&
 			window.location.href.indexOf('#register')==-1
 		){
 			return false;	
