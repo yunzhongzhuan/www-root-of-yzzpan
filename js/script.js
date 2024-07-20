@@ -3811,7 +3811,9 @@ function show_verify_code(){
 		&&
 		userinfo["wechat_login_id"] != undefined
 	){
-		return false;
+		if(window.location.href.indexOf('#login')==-1){
+			return false;	
+		}
 	}
 	
 	let html_element = document.createElement('div');
