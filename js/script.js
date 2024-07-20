@@ -3811,7 +3811,11 @@ function show_verify_code(){
 		&&
 		userinfo["wechat_login_id"] != undefined
 	){
-		if(window.location.href.indexOf('#login')==-1){
+		if(
+			window.location.href.indexOf('#login')==-1
+			||
+			window.location.href.indexOf('#register')==-1
+		){
 			return false;	
 		}
 	}
