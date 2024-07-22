@@ -7255,6 +7255,13 @@ login_input_button_qq_login.onclick = async function(){
 	}
 
 	if(
+		window.location.href.indexOf('#forget-password')!=-1
+	){
+		forget_password_input_button_forget_password.click();
+		return false;
+	}
+
+	if(
 		userinfo["qq_login_id"] == undefined
 		&&
 		userinfo["wechat_login_id"] != undefined
