@@ -3815,6 +3815,8 @@ function show_verify_code(){
 			window.location.href.indexOf('#login')==-1
 			&&
 			window.location.href.indexOf('#register')==-1
+			&&
+			window.location.href.indexOf('#forget-password')==-1
 		){
 			return false;	
 		}
