@@ -3463,7 +3463,7 @@ let api_server_url = "https://c34a02aaeb0d6.cname.frontwize.com";
 if(navigator.language.toLowerCase().indexOf('cn')==-1){
 	// api_server_url = "https://apiyunzhongzhuancom.vercel.app";
 	// api_server_url = "https://api.yunzhongzhuan.com";
-	api_server_url = "https://mfm.yunzhongzhuan.com";
+	api_server_url = "https://api.yunzhongzhuan.com";
 }
 // let api_server_url = "https://ddos-guard-net-api.yzzpan.com";
 let not_vip_upload_file_size = 1000 * 1024 * 1024; // 非会员用户上传文件最大允许1GB
