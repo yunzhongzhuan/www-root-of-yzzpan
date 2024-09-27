@@ -5631,7 +5631,7 @@ let links_data = [
 				"new_open": true,
 				"link": "http://www.shdf.gov.cn/shdf/channels/740.html"
 			}, {
-				"name": "沪ICP备20021948号-17",
+				"name": "黑ICP备2024028257号-5",
 				"new_open": true,
 				"link": "https://beian.miit.gov.cn/"
 			}, {
