@@ -4652,10 +4652,7 @@ let sharefile_content_link_items = document.getElementsByClassName('sharefile-co
 let sharefile_content_arvancloud_cdn_download_items = document.getElementById('sharefile-content-arvancloud-cdn-download-items');
 // 获取分享的文件
 function get_sharefile(id,key){
-	key = key.split('&')[0];
-	key = key.split('/')[0];
-	key = key.split('\')[0];
-	key = key.split('?')[0];
+
 	let xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange=function(){
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
