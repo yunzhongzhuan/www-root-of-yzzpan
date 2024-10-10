@@ -4582,7 +4582,7 @@ sharefile_content_link_item_show_terms_button.onclick = function() {
 let login_input_span_user_terms = document.getElementsByClassName('login-input-span-user-terms');
 for(let i=0;i<login_input_span_user_terms.length;i++){
 	login_input_span_user_terms[i].onclick = function() {
-		window.location.href = "#terms";
+		window.location.href = "#terms-of-services";
 	}
 }
 
