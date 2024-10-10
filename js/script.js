@@ -4577,7 +4577,7 @@ function sharefile_copy(id,key){
 
 let sharefile_content_link_item_show_terms_button = document.getElementById('sharefile-content-link-item-show-terms-button');
 sharefile_content_link_item_show_terms_button.onclick = function() {
-	window.location.href = "#terms";
+	window.location.href = "#terms-of-services";
 }
 let login_input_span_user_terms = document.getElementsByClassName('login-input-span-user-terms');
 for(let i=0;i<login_input_span_user_terms.length;i++){
@@ -4588,7 +4588,7 @@ for(let i=0;i<login_input_span_user_terms.length;i++){
 
 let register_input_span_user_terms = document.getElementById('register-input-span-user-terms');
 register_input_span_user_terms.onclick = function() {
-	window.location.href = "#terms";
+	window.location.href = "#terms-of-services";
 }
 let terms_page_show_files_button = document.getElementById('terms-page-show-files-button');
 terms_page_show_files_button.onclick = function() {
