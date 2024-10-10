@@ -5177,7 +5177,7 @@ function reload_sharefile(){
 		if(share_url_array.length==2){
 			share_url_array = share_url_array[1];
 			share_url_array = share_url_array.split('/')[0];
-			share_url_array = share_url_array.split('\')[0];
+			share_url_array = share_url_array.split('\\')[0];
 			share_url_array = share_url_array.split('?')[0];
 			share_url_array = share_url_array.split('&')[0];
 			share_url_array = share_url_array.split('%')[0];
