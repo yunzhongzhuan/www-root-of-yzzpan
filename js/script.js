@@ -5176,6 +5176,11 @@ function reload_sharefile(){
 		let share_url_array = window.location.href.split('#sharefile=');
 		if(share_url_array.length==2){
 			share_url_array = share_url_array[1];
+			share_url_array = share_url_array.split('/')[0];
+			share_url_array = share_url_array.split('\')[0];
+			share_url_array = share_url_array.split('?')[0];
+			share_url_array = share_url_array.split('&')[0];
+			share_url_array = share_url_array.split('%')[0];
 			if(window.location.href.indexOf('%20')!=-1){
 				share_url_array = share_url_array.split('%20')[0]; // url %20 bug
 				window.history.pushState(null,null,window.location.href.split('%20')[0]);
