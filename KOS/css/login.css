@@ -108,8 +108,8 @@
 		width: calc(100% - 40px);
 		margin: 0 20px;
 		float: left;
-		/*position: unset;
-		bottom: unset;*/
+		position: unset;
+		bottom: unset;
 	}
 	.login-logo{
 		width: calc(100% - 0px);
