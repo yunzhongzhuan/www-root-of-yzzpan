@@ -1,8 +1,7 @@
 ﻿body{
 	min-height: 100vh;
-	min-width: 100vw;
 	background: url('../images/login.background.image.jpg') center center no-repeat;
-	background-size: 100vw 100vh;
+	background-size: 100% 100%;
 }
 .login-headers{
 	width: 100%;
@@ -35,32 +34,87 @@
 }
 .login-main{
 	width: 1200px;
-	height: 380px;
 	margin: 0 auto;
 }
 .login-other{
 	width: 600px;
-	height: 380px;
+	height: 280px;
 	float: left;
 	background: url('../images/new.box.png') center calc(50% + 50px) no-repeat;
-	background-size: 530px;
+	background-size: 390px;
 	transition: .25s ease background, .25s ease background-size;
 }
 .login-other:hover{
 	background: url('../images/new.box.png') center calc(50% + 30px) no-repeat;
-	background-size: 560px;
-	transition: .25s ease background, .25s ease background-size;
+	background-size: 460px;
+	transition: .3s ease background, .3s ease background-size;
 }
 .login-information{
 	width: 480px;
-	height: 350px;
+	/*height: 350px;*/
 	padding: 0 40px;
 	margin: 15px 20px;
-	float: left;
+	float: right;
 	background-color: #fff;
 	border-radius: 15px;
 	box-shadow: 0 5px 15px #00000005;
 }
 .login-other .h1-title{
+	width: 100%;
+	text-align: center;
 	color: #333333;
+}
+
+
+@media (max-width: 1200px){
+	.login-main{
+		width: 100%;
+		float: left;
+	}
+	.login-other{
+		width: calc(100% - 50%);
+	}
+	.login-information{
+		width: calc(100% - 50% - 120px);
+	}
+	.login-other .h1-title{
+		width: 100%;
+		text-align: center;
+		font-size: 18px;
+	}
+}
+
+
+@media (max-width: 900px){
+	.login-other .h1-title{
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 750px){
+
+	.login-other{
+		width: 100%;
+		float: left;
+	}
+	.login-information{
+		width: calc(100% - 120px);
+		float: left;
+	}
+	.login-parent{
+		margin: 0 0 10px 0;
+	}
+	.login-bottom{
+		width: calc(100% - 40px);
+		margin: 0 20px;
+		float: left;
+		/*position: unset;
+		bottom: unset;*/
+	}
+	.login-logo{
+		width: calc(100% - 0px);
+		margin: 50px 0 50px 0;
+	}
+
+
 }
