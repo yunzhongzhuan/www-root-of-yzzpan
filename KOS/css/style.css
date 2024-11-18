@@ -1,0 +1,78 @@
+﻿*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+	outline: 0;
+}
+.h1-title{
+	font-size: 24px;
+	color: #020814;
+	user-select: none;
+	float: left;
+}
+.block-height-20px{
+	width: 100%;
+	height: 20px;
+	float: left;
+}
+.input-text{
+	width: calc(100% - 22px);
+	height: 36px;
+	border: 1px solid #dde2e9;
+	float: left;
+	border-radius: 7px;
+	padding: 0 10px;
+	transition: .2s ease border;
+}
+.input-text:hover{
+	border: 1px solid #4281ff;
+	transition: .2s ease border;
+}
+.input-text i{
+	width: 20px;
+	height: 20px;
+	margin: 8px 5px 8px 0;
+	font-size: 18px;
+	text-align: center;
+	line-height: 20px;
+	color: #333333;
+	float: left;
+}
+.input-text input{
+	width: calc(100% - 25px);
+	float: left;
+	height: 20px;
+	line-height: 20px;
+	margin: 8px 0;
+	color: #020814;
+	font-size: 13px;
+}
+.input-button-blue{
+	width: 100%;
+	float: left;
+	border-radius: 7px;
+	box-shadow: 0 1px 1px #00000014;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	background-color: #165dff;
+	color: #fff;
+	font-size: 15px;
+	cursor: pointer;
+	user-select: none;
+
+	transition: .2s ease background-color;
+}
+.input-button-blue:hover{
+	background-color: #457dff;
+
+	transition: .2s ease background-color;
+}
+.input-button-blue:active{
+	background-color: #114cd5;
+
+	transition: .2s ease background-color;
+}
+.h1-title a{
+	color: #0697f5;
+}
