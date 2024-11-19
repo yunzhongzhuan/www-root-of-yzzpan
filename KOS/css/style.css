@@ -10,6 +10,12 @@
 	user-select: none;
 	float: left;
 }
+.h2-title{
+	font-size: 20px;
+	color: #020814;
+	user-select: none;
+	float: left;
+}
 .block-height-20px{
 	width: 100%;
 	height: 20px;
@@ -75,4 +81,67 @@
 }
 .h1-title a{
 	color: #0697f5;
+}
+.top-nav{
+	width: 100%;
+	height: 50px;
+	float: left;
+	background-color: #fff;
+	box-shadow: 0px 0px 7px #33333322;
+	position: fixed;
+	z-index: 10;
+}
+.top-nav-logo{
+	width: 80px;
+	height: 40px;
+	float: left;
+	margin: 5px 0;
+	background: url('../images/logo.svg') center center no-repeat;
+	background-size: 80px;
+}
+.top-nav-more{
+	width: 50px;
+	height: 50px;
+	font-size: 18px;
+	font-weight: 100;
+	text-align: center;
+	line-height: 50px;
+	color: #333;
+	cursor: pointer;
+	float: left;
+	margin: 0 12px 0 0;
+}
+.top-nav-more:hover{
+	background-color: #1664ff;
+	color: #fff;
+}
+.top-nav-dash{
+	height: 26px;
+	line-height: 26px;
+	padding: 0 10px;
+	color: #1664ff;
+	background-color: #ebf1ff;
+	float: left;
+	font-size: 12px;
+	cursor: pointer;
+	margin: 12px 0 12px 20px;
+	border-radius: 5px;
+	user-select: none;
+}
+.top-nav-dash:hover{
+	background-color: #eff4ff;
+	color: #4583ff;
+}
+.user-profile{
+	width: 28px;
+	height: 28px;
+	text-align: center;
+	line-height: 28px;
+	margin: 11px 22px 11px 11px;
+	background-color: #ecf2ff;
+	color: #0055ff;
+	float: right;
+	cursor: pointer;
+	border-radius: 50px;
+	user-select: none;
 }
