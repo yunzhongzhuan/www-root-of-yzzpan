@@ -180,25 +180,7 @@
 .buckets-main-table-header-manager-buttons-delete:hover{
 	color: #387bff;
 }
-.input-button{
-	width: 30px;
-	height: 30px;
-	text-align: center;
-	line-height: 30px;
-	color: #42464e;
-	background-color: #f6f8fa;
-	border: 1px solid #dde2e9;
-	border-radius: 5px;
-	cursor: pointer;
 
-	transition: .25s ease background-color,.25s ease border;
-}
-.input-button:hover{
-	background-color: #f9fafb;
-	border: 1px solid #377afc;
-
-	transition: .25s ease background-color,.25s ease border;
-}
 .buckets-main .input-button-reload{
 	float: right;
 }
@@ -206,15 +188,20 @@
 	margin: 0 10px 0 0;
 	float: right;
 }
+.input-search:focus-within{
+	width: calc(100% - 170px);
+	transition: .25s ease border,.35s ease width;
+}
 .input-search{
-	width: 200px;
+	width: calc(0% + 200px);
 	height: 30px;
 	border: 1px solid #dde2e9;
 	border-radius: 5px;
-	transition: .25s ease border;
+
+	transition: .25s ease border,.35s ease width;
 }
 .input-search:hover{
-	transition: .25s ease border;
+	transition: .25s ease border,.35s ease width;
 	border: 1px solid #387bff;
 }
 .input-search input{

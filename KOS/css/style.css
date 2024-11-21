@@ -79,6 +79,36 @@
 
 	transition: .2s ease background-color;
 }
+.input-button{
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	color: #42464e;
+	background-color: #f6f8fa;
+	border: 1px solid #dde2e9;
+	border-radius: 5px;
+	cursor: pointer;
+
+	transition: .25s ease background-color,.25s ease border,.25s ease color;
+}
+.input-button:hover{
+	background-color: #f9fafb;
+	border: 1px solid #377afc;
+	color: #377afc;
+
+	transition: .25s ease background-color,.25s ease border,.25s ease color;
+}
+.input-button-config i{
+	transform: rotateZ(0deg);
+
+	transition: .3s ease transform;
+}
+.input-button-config:hover i{
+	transform: rotateZ(50deg);
+
+	transition: .3s ease transform;
+}
 .h1-title a{
 	color: #0697f5;
 }
@@ -156,4 +186,7 @@
 .buckets-nav-span{
 	max-height: 30px;
 	/* margin 10px 20px 20px 20px */
+}
+i{
+	transition: .35s ease transform;
 }

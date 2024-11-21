@@ -34,9 +34,6 @@ function miniNav(){
 
 
 
-	
-	
-
 	setTimeout(hideNavSpan,200);
 
 }
@@ -171,3 +168,25 @@ document.getElementsByClassName('buckets-nav-show-and-hide-button')[0].getElemen
 		showNav();
 	}
 }
+
+
+
+
+
+// 刷新桶列表的按钮
+document.getElementsByClassName('buckets-main')[0].getElementsByClassName('input-button-reload')[0].onclick = function(){
+	if(this.clickTimes == undefined){
+		this.clickTimes = 0;
+	}
+	this.clickTimes += 1;
+	this.getElementsByTagName('i')[0].style.transform = "rotateZ(" + this.clickTimes*360 + "deg)";
+}
+
+
+
+
+
+
+
+
+
