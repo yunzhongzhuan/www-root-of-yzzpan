@@ -145,3 +145,15 @@
 	border-radius: 50px;
 	user-select: none;
 }
+.buckets-nav-title span{
+	opacity: 1;
+	transition: .2s ease opacity;
+}
+.buckets-nav-item span{
+	opacity: 1;
+	transition: .2s ease opacity;
+}
+.buckets-nav-span{
+	max-height: 30px;
+	/* margin 10px 20px 20px 20px */
+}
