@@ -16,6 +16,12 @@
 	user-select: none;
 	float: left;
 }
+.h3-title{
+	font-size: 15px;
+	color: #1d2129;
+	user-select: none;
+	float: left;
+}
 .block-height-20px{
 	width: 100%;
 	height: 20px;
@@ -79,6 +85,36 @@
 
 	transition: .2s ease background-color;
 }
+
+
+.input-button-grey{
+	width: 100%;
+	float: left;
+	border-radius: 7px;
+	box-shadow: 0 1px 1px #00000014;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	background-color: #f2f3f8;
+	color: #1d2129;
+	font-size: 15px;
+	cursor: pointer;
+	user-select: none;
+
+	transition: .2s ease background-color;
+}
+.input-button-grey:hover{
+	background-color: #e5e8ef;
+
+	transition: .2s ease background-color;
+}
+.input-button-grey:active{
+	background-color: #c9cdd4;
+
+	transition: .2s ease background-color;
+}
+
+
 .input-button{
 	width: 30px;
 	height: 30px;
@@ -105,7 +141,7 @@
 	transition: .3s ease transform;
 }
 .input-button-config:hover i{
-	transform: rotateZ(50deg);
+	transform: rotateZ(45deg);
 
 	transition: .3s ease transform;
 }
@@ -189,4 +225,70 @@
 }
 i{
 	transition: .35s ease transform;
+}
+.bottom-buttons-parent{
+	width: 100%;
+	height: 60px;
+	background-color: #ffffff;
+	border-top: 1px solid #e5e6eb;
+	position: fixed;
+	bottom: 0px;
+}
+.bottom-buttons-main{
+	width: 1200px;
+	height: 60px;
+	margin: 0 auto;
+}
+.top-page-title-parent{
+	width: 100%;
+	height: 50px;
+	background-color: #fff;
+	float: left;
+	border-bottom: 1px solid #e5e6eb;
+}
+.top-page-title-main{
+	width: 1200px;
+	height: 50px;
+	margin: 0 auto;
+	line-height: 50px;
+}
+.top-page-title-main-icon-button{
+	width: 26px;
+	height: 26px;
+	margin: 12px 0px 12px 0;
+	text-align: center;
+	line-height: 24px;
+	font-size: 24px;
+	float: left;
+	color: #333;
+	cursor: pointer;
+}
+.top-page-title-main-icon-button:hover{
+	color: #3377ff;
+}
+.red-star-span{
+	user-select: none;
+	color: #e63f3f!important;
+	font-size: 20px;
+	position: relative;
+	top: 3px;
+}
+
+.select-option-item{
+	background-color: #f2f3f8;
+	color: #4e5969;
+	padding: 0 20px;
+	height: 30px;
+	line-height: 30px;
+	margin: 0 3px 3px 0;
+	float: left;
+	font-size: 12px;
+	cursor: pointer;
+}
+.select-option-item:hover{
+	color: #1664ff;
+}
+.select-option-item-selected-index{
+	background-color: #e8f4ff;
+	color: #1664ff;
 }

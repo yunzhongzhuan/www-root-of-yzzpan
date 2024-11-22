@@ -3,6 +3,21 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let navLocked = false;
 let navShow = true;
 
@@ -16,6 +31,8 @@ function miniNav(){
 	document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-span')[0].style.maxHeight = "0px";
 	document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-span')[0].style.margin = "0px 20px 0px 20px";
 
+
+	// 导航栏 对象存储 文字标题
 	document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByTagName('span')[0].style.opacity = "0";
 
 
@@ -46,6 +63,8 @@ function hideNavSpan(){
 
 	document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-span')[0].style.display = "none";
 
+
+	// 导航栏 对象存储 文字标题
 	document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByTagName('span')[0].style.display = "none";
 
 
@@ -99,7 +118,7 @@ function showNav(){
 	// 展开或收缩导航栏的按钮
 	document.getElementsByClassName('buckets-nav-show-and-hide-button')[0].getElementsByTagName('i')[0].className = "fa fa-dedent";
 
-	setTimeout(showNavSpan,70);
+	setTimeout(showNavSpan,200);
 
 }
 
@@ -114,9 +133,6 @@ function showNavSpan(){
 
 
 	
-
-	document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByTagName('span')[0].style.opacity = "1";
-
 
 	let buckets_nav_items = document.getElementsByClassName('buckets-nav-items');
 	for(let i=0; i<buckets_nav_items.length ; i++){
@@ -143,6 +159,10 @@ function showNavSpan2(){
 	document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-span')[0].style.margin = "10px 20px 20px 20px";
 
 
+	// 导航栏 对象存储 文字标题
+	document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByTagName('span')[0].style.opacity = "1";
+
+
 	let buckets_nav_items = document.getElementsByClassName('buckets-nav-items');
 	for(let i=0; i<buckets_nav_items.length ; i++){
 		let item = buckets_nav_items[i].getElementsByClassName('buckets-nav-item');
@@ -153,37 +173,103 @@ function showNavSpan2(){
 
 	}
 
-	navShow = true;
-
+	setTimeout(function(){
+		navShow = true;
+	},200);
 
 }
 
 
 
-// 导航栏点击展开或收起按钮
-document.getElementsByClassName('buckets-nav-show-and-hide-button')[0].getElementsByTagName('i')[0].onclick = function(){
+
+
+function navShowAndHide(){
+
+
+	// 让展开或收起左侧导航栏的按钮短暂失效
+	document.getElementsByClassName('buckets-nav-show-and-hide-button')[0].getElementsByTagName('i')[0].onclick = function(){}
+
+	// 恢复点击事件
+	setTimeout(function(){
+		document.getElementsByClassName('buckets-nav-show-and-hide-button')[0].getElementsByTagName('i')[0].onclick = navShowAndHide;
+	},202);
+
+	// 如果正在展开或收起
+	if(navLocked){
+		return false;
+	}
 	if(navShow){
 		miniNav();
 	}else{
 		showNav();
 	}
+
+
+
+
+
 }
 
 
 
 
 
-// 刷新桶列表的按钮
-document.getElementsByClassName('buckets-main')[0].getElementsByClassName('input-button-reload')[0].onclick = function(){
-	if(this.clickTimes == undefined){
-		this.clickTimes = 0;
+
+
+// 消除 创建存储桶 页面 已选中的 item
+function removeSelectedIndex(parent){
+
+	let items = parent.getElementsByClassName('select-option-item');
+
+	for(
+		let i=0;
+		i<items.length;
+		i++
+	){
+		items[i].className = "select-option-item";
 	}
-	this.clickTimes += 1;
-	this.getElementsByTagName('i')[0].style.transform = "rotateZ(" + this.clickTimes*360 + "deg)";
+
+
 }
 
 
 
+// 给所有选项上点击事件
+let select_option_items_all = document.getElementsByClassName('select-option-items');
+
+for(
+	let i=0;
+	i<select_option_items_all.length;
+	i++
+){
+
+	select_option_items = select_option_items_all[i];
+
+	
+	let select_option_item = select_option_items.getElementsByClassName('select-option-item');
+	for(
+		let i2 = 0;
+		i2 < select_option_item.length;
+		i2++
+	){
+
+		let item = select_option_item[i2];
+
+		item.parent = select_option_items;
+
+		item.onclick = function(){
+
+			removeSelectedIndex(this.parent);
+
+			this.className = "select-option-item select-option-item-selected-index";
+
+		}
+
+	}
+
+	
+
+}
 
 
 

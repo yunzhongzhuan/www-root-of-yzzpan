@@ -1,4 +1,4 @@
-﻿.buckets-parent{
+.buckets-parent{
 	width: 100%;
 
 	min-height: calc(100vh - 50px);
@@ -38,7 +38,7 @@
 	margin: 0 0 4px 0;
 	line-height: 32px;
 	font-size: 14px;
-	color: #0c0d0e;
+	color: #333333;
 	cursor: pointer;
 	user-select: none;
 }
@@ -90,37 +90,37 @@
 }
 .buckets-main-table-header-title{
 	width: calc(100% - 780px);
-	padding: 0 15px;
+	padding: 0 0 0 15px;
 	float: left;
 	user-select: none;
 }
 .buckets-main-table-header-region{
-	width: calc(150px - 30px);
-	padding: 0 15px;
+	width: calc(150px - 0px);
+	padding: 0;
 	float: left;
 	user-select: none;
 }
 .buckets-main-table-header-type{
-	width: calc(150px - 30px);
-	padding: 0 15px;
+	width: calc(150px - 0px);
+	padding: 0;
 	float: left;
 	user-select: none;
 }
 .buckets-main-table-header-async{
-	width: calc(150px - 30px);
-	padding: 0 15px;
+	width: calc(150px - 0px);
+	padding: 0;
 	float: left;
 	user-select: none;
 }
 .buckets-main-table-header-datetime{
-	width: calc(150px - 30px);
-	padding: 0 15px;
+	width: calc(150px - 0px);
+	padding: 0;
 	float: left;
 	user-select: none;
 }
 .buckets-main-table-header-manager-buttons{
-	width: calc(150px - 30px);
-	padding: 0 0 0 15px;
+	width: calc(150px - 0px);
+	padding: 0 0 0 0px;
 	float: left;
 	user-select: none;
 }
@@ -204,6 +204,7 @@
 	transition: .25s ease border,.35s ease width;
 	border: 1px solid #387bff;
 }
+
 .input-search input{
 	width: calc(100% - 20px);
 	margin: 2.5px 10px;
@@ -241,27 +242,39 @@
 }
 @media (max-width: 1200px){
 	.buckets-main-table-header-title{
-		width: calc(20% - 40px);
-		text-overflow: ellipsis;white-space: nowrap;overflow: hidden;
+		width: calc(20% - 20px);
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
 	}
 	.buckets-main-table-header-region{
-		width: calc(20% - 70px);
-		text-overflow: ellipsis;white-space: nowrap;overflow: hidden;
+		width: calc(20% - 0px);
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
 	}
 	.buckets-main-table-header-type{
-		width: calc(20% - 70px);
-		text-overflow: ellipsis;white-space: nowrap;overflow: hidden;
+		width: calc(20% - 0px);
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
 	}
 	.buckets-main-table-header-async{
-		width: calc(20% - 60px);
-		text-overflow: ellipsis;white-space: nowrap;overflow: hidden;
+		width: calc(15% - 0px);
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
 	}
 	.buckets-main-table-header-datetime{
-		width: calc(20% - 30px);
-		text-overflow: ellipsis;white-space: nowrap;overflow: hidden;
+		width: calc(15% - 0px);
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
 	}
 	.buckets-main-table-header-manager-buttons{
-		width: calc(20% - 100px);
-		text-overflow: ellipsis;white-space: nowrap;overflow: hidden;
+		width: calc(10% - 0px);
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
 	}
 }
