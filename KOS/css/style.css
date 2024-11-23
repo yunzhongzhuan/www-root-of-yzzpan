@@ -223,6 +223,199 @@
 	max-height: 30px;
 	/* margin 10px 20px 20px 20px */
 }
+.buckets-nav{
+	width: 200px;
+	min-height: calc(100vh - 50px);
+	float: left;
+	background-color: #f6f8fa;
+	border-right: 1px solid #eaedf1;
+
+	transition: .2s ease width;
+}
+.buckets-nav-title{
+	width: calc(100% - 40px);
+	color: #373f53;
+	font-size: 18px;
+	margin: 20px 25px 30px 15px;
+	user-select: none;
+	float: left;
+}
+.buckets-nav-title span{
+	padding: 0 0 0 10px;
+}
+.buckets-nav-items{
+	width: calc(100% - 20px);
+	margin: 0 10px;
+	float: left;
+}
+.buckets-nav-item{
+	border-radius: 5px;
+	margin: 0 0 4px 0;
+	line-height: 32px;
+	font-size: 14px;
+	color: #333333;
+	cursor: pointer;
+	user-select: none;
+}
+.buckets-nav-item i{
+	padding: 0 12px 0 8px;
+}
+.buckets-nav-item-index{
+	background-color: #e5edfa;
+	color: #1664ff;
+}
+.buckets-nav-item:hover{
+	background-color: #e5edfa;
+}
+.buckets-nav-span{
+	width: calc(100% - 40px);
+	color: #000000;
+	font-size: 14px;
+	margin: 10px 20px 20px 20px;
+	user-select: none;
+	float: left;
+
+	transition: .2s ease max-height,.2s ease margin,.2s ease opacity,.2s ease max-height,.2s ease margin;;
+}
+.buckets-nav-show-and-hide-button{
+	background-color: #f6f8fa;
+	width: 200px;
+	height: 50px;
+	border-top: 1px solid #eaedf1;
+	float: left;
+	position: absolute;
+	bottom: 2px;
+
+	transition: .2s ease width;
+}
+.buckets-nav-show-and-hide-button i{
+	width: 26px;
+	height: 26px;
+	margin: 13px 0 13px 13px;
+	border-radius: 5px;
+	font-size: 15px;
+	text-align: center;
+	line-height: 26px;
+	cursor: pointer;
+}
+.buckets-nav-show-and-hide-button i:hover{
+	background-color: #d4e1f9;
+	color: #1663fc;
+}
+.buckets-parent{
+	width: 100%;
+
+	min-height: calc(100vh - 50px);
+
+	float: left;
+
+	margin: 50px 0 0 0;
+
+}
+
+.buckets-main{
+	width: calc(100% - 270px);
+	margin: 0 30px;
+	float: left;
+
+	transition: .2s ease width;
+}
+.buckets-main .create-bucket{
+	float: left;
+	width: unset;
+	padding: 0 15px;
+	height: 32px;
+	line-height: 32px;
+	font-size: 14px;
+}
+
+.input-search{
+	width: calc(0% + 200px);
+	height: 30px;
+	border: 1px solid #dde2e9;
+	border-radius: 5px;
+
+	transition: .25s ease border,.35s ease width;
+}
+.input-search:hover{
+	transition: .25s ease border,.35s ease width;
+	border: 1px solid #387bff;
+}
+
+.input-search input{
+	width: calc(100% - 20px);
+	margin: 2.5px 10px;
+	height: 25px;
+	line-height: 25px;
+}
+.buckets-main .input-search{
+	float: right;
+	margin: 0 10px 0 0 ;
+}
+.buckets-main-items{
+	width: 100%;
+	float: left;
+}
+.buckets-main-item{
+	width: calc(100% - 2px);
+	height: 42px;
+	border: 1px solid #eaedf1;
+	border-top: 0px dashed #ffffff00;
+	float: left;
+	line-height: 42px;
+	overflow: hidden;
+}
+.buckets-main-item:hover{
+	background-color: #fafbfc;
+}
+.buckets-main-item .buckets-main-table-header-title{
+	font-size: 12px;
+	color: #1664ff;
+}
+.buckets-main-item .buckets-main-table-header-region{
+	font-size: 12px;
+	color: #0c0d0e;
+}
+.buckets-main-item .buckets-main-table-header-type{
+	font-size: 12px;
+	color: #0c0d0e;
+}
+.buckets-main-item .buckets-main-table-header-async{
+	font-size: 12px;
+	color: #0c0d0e;
+}
+.buckets-main-item .buckets-main-table-header-datetime{
+	font-size: 12px;
+	color: #0c0d0e;
+}
+.buckets-main-item .buckets-main-table-header-manager-buttons{
+	font-size: 12px;
+	color: #0c0d0e;
+}
+.buckets-main-item .buckets-main-table-header-manager-buttons span{
+	margin: 0 10px 0 0;
+}
+.buckets-main-item .buckets-main-table-header-title span{
+	cursor: pointer;
+}
+.buckets-main-item .buckets-main-table-header-title span:hover{
+	color: #387bff;
+}
+.buckets-main-table-header-manager-buttons-delete{
+	color: #1664ff;
+	cursor: pointer;
+}
+.buckets-main-table-header-manager-buttons-delete:hover{
+	color: #387bff;
+}
+
+.buckets-main .input-button-reload{
+	float: right;
+}
+.buckets-main .input-button-config{
+	margin: 0 10px 0 0;
+	float: right;
+}
 i{
 	transition: .35s ease transform;
 }
@@ -255,13 +448,17 @@ i{
 .top-page-title-main-icon-button{
 	width: 26px;
 	height: 26px;
-	margin: 12px 0px 12px 0;
+	margin: 12px 8px 12px 0;
 	text-align: center;
 	line-height: 24px;
 	font-size: 24px;
 	float: left;
 	color: #333;
 	cursor: pointer;
+	background-color: #e9ebed;
+	border-radius: 5px;
+	text-align: center;
+
 }
 .top-page-title-main-icon-button:hover{
 	color: #3377ff;

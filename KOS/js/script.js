@@ -33,7 +33,27 @@ function miniNav(){
 
 
 	// 导航栏 对象存储 文字标题
-	document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByTagName('span')[0].style.opacity = "0";
+	if(
+		document.getElementsByClassName('buckets-nav')[0]!=undefined
+		&&
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0]!=undefined
+		&&
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByTagName('span')[0]!=undefined
+	){
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByTagName('span')[0].style.opacity = "0";
+	}
+
+	// 导航栏 对象存储 文字标题
+	if(
+		document.getElementsByClassName('buckets-nav')[0]!=undefined
+		&&
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0]!=undefined
+		&&
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByClassName('h3-title')[0]!=undefined
+	){
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByClassName('h3-title')[0].style.opacity = "0";
+	}
+	
 
 
 	let buckets_nav_items = document.getElementsByClassName('buckets-nav-items');
@@ -65,7 +85,27 @@ function hideNavSpan(){
 
 
 	// 导航栏 对象存储 文字标题
-	document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByTagName('span')[0].style.display = "none";
+	if(
+		document.getElementsByClassName('buckets-nav')[0]!=undefined
+		&&
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0]!=undefined
+		&&
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByTagName('span')[0]!=undefined
+	){
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByTagName('span')[0].style.display = "none";
+	}
+
+	// 导航栏 对象存储 文字标题
+	if(
+		document.getElementsByClassName('buckets-nav')[0]!=undefined
+		&&
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0]!=undefined
+		&&
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByClassName('h3-title')[0]!=undefined
+	){
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByClassName('h3-title')[0].style.display = "none";
+	}
+	
 
 
 	let buckets_nav_items = document.getElementsByClassName('buckets-nav-items');
@@ -126,8 +166,29 @@ function showNavSpan(){
 
 
 	// 导航栏 对象存储 文字标题
-	document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByTagName('span')[0].style.display = "unset";
+	if(
+		document.getElementsByClassName('buckets-nav')[0]!=undefined
+		&&
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0]!=undefined
+		&&
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByTagName('span')[0]!=undefined
+	){
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByTagName('span')[0].style.display = "unset";
+	}
 
+	// 导航栏 对象存储 文字标题
+	if(
+		document.getElementsByClassName('buckets-nav')[0]!=undefined
+		&&
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0]!=undefined
+		&&
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByClassName('h3-title')[0]!=undefined
+	){
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByClassName('h3-title')[0].style.display = "unset";
+	}
+
+
+	
 
 	document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-span')[0].style.display = "unset";
 
@@ -160,7 +221,30 @@ function showNavSpan2(){
 
 
 	// 导航栏 对象存储 文字标题
-	document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByTagName('span')[0].style.opacity = "1";
+	if(
+		document.getElementsByClassName('buckets-nav')[0]!=undefined
+		&&
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0]!=undefined
+		&&
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByTagName('span')[0]!=undefined
+	){
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByTagName('span')[0].style.opacity = "1";
+	}
+
+	// 导航栏 对象存储 文字标题
+	if(
+		document.getElementsByClassName('buckets-nav')[0]!=undefined
+		&&
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0]!=undefined
+		&&
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByClassName('h3-title')[0]!=undefined
+	){
+		document.getElementsByClassName('buckets-nav')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByClassName('h3-title')[0].style.opacity = "1";
+	}
+
+
+
+
 
 
 	let buckets_nav_items = document.getElementsByClassName('buckets-nav-items');
@@ -275,4 +359,31 @@ for(
 
 
 
+// 刷新按钮的点击动画
+if(
+	document.getElementsByClassName('buckets-main')[0] != undefined
+	&&
+	document.getElementsByClassName('buckets-main')[0].getElementsByClassName('input-button-reload')[0]!=undefined
+){
+	document.getElementsByClassName('buckets-main')[0].getElementsByClassName('input-button-reload')[0].onclick = function(){
+		if(this.clickTimes == undefined){
+			this.clickTimes = 0;
+		}
+		this.clickTimes += 1;
+		this.getElementsByTagName('i')[0].style.transform = "rotateZ(" + this.clickTimes*360 + "deg)";
+	}
+}
 
+
+
+// 导航栏点击收起或者展开
+// 导航栏点击展开或收起按钮
+if(
+	document.getElementsByClassName('buckets-nav-show-and-hide-button')[0]!=undefined
+	&&
+	document.getElementsByClassName('buckets-nav-show-and-hide-button')[0].getElementsByTagName('i')[0]!=undefined
+){
+
+	document.getElementsByClassName('buckets-nav-show-and-hide-button')[0].getElementsByTagName('i')[0].onclick = navShowAndHide;
+
+}

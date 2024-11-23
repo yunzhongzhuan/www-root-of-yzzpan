@@ -7,8 +7,7 @@
 if(document.getElementsByClassName('buckets')[0]!=undefined){
 
 
-	// 导航栏点击展开或收起按钮
-	document.getElementsByClassName('buckets-nav-show-and-hide-button')[0].getElementsByTagName('i')[0].onclick = navShowAndHide;
+	
 
 
 
@@ -19,18 +18,27 @@ if(document.getElementsByClassName('buckets')[0]!=undefined){
 	}
 
 
-
-	// 刷新桶列表的按钮
-	document.getElementsByClassName('buckets-main')[0].getElementsByClassName('input-button-reload')[0].onclick = function(){
-		if(this.clickTimes == undefined){
-			this.clickTimes = 0;
+	buckets_items = document.getElementsByClassName('buckets-main-table-header-title');
+	for(
+		let i=0;
+		i<buckets_items.length;
+		i++
+	){
+		if(
+			buckets_items[i].getElementsByTagName('span')[0]!=undefined
+		){
+			buckets_items[i].getElementsByTagName('span')[0].onclick = function(){
+				window.location.href = "bucket.html";
+			}
 		}
-		this.clickTimes += 1;
-		this.getElementsByTagName('i')[0].style.transform = "rotateZ(" + this.clickTimes*360 + "deg)";
+
+
 	}
 
 
+
 }
+
 
 
 
