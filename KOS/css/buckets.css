@@ -47,7 +47,7 @@
 	user-select: none;
 }
 .input-search:focus-within{
-	width: calc(100% - 170px);
+	width: calc(100% - 183px);
 	transition: .25s ease border,.35s ease width;
 }
 
