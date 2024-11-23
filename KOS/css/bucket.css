@@ -137,6 +137,7 @@
 	height: 50px;
 	line-height: 50px;
 	color: #737a87;
+	user-select: none;
 }
 .bucket-files-path span{
 	margin: 0 5px;
@@ -153,6 +154,7 @@
 	margin: 0 0 0 10px;
 	font-size: 12px;
 	cursor: pointer;
+	user-select: none;
 }
 .bucket-files-span-items{
 	float: left;
