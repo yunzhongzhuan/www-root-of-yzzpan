@@ -1,0 +1,108 @@
+﻿html{
+	background-color: #f2f3f8;
+}
+.upload-parent{
+	width: 100%;
+	float: left;
+}
+.upload-main{
+	width: 1200px;
+	margin: 15px auto 0;
+
+}
+
+.upload-information{
+	width: 100%;
+	float: left;
+	background-color: #fff;
+	box-shadow: 0 2px 4px rgba(26,34,51,.05);
+}
+.upload-information .upload-options .input-button-blue{
+	border-radius: 0;
+	float: left;
+	margin: 0 10px 10px 0px;
+	width: unset;
+	padding: 0 15px;
+	height: 36px;
+	line-height: 36px;
+}
+.upload-information .upload-options .input-button-grey{
+	border-radius: 0;
+	float: left;
+	margin: 0 10px 10px 0px;
+	width: unset;
+	padding: 0 15px;
+	height: 36px;
+	line-height: 36px;
+}
+.files-to-browser-upload-list{
+	width: calc(100% - 78px);
+	float: right;
+	min-height: 200px;
+	background-color: #f2f3f8;
+	cursor: pointer;
+	text-align: center;
+}
+.files-to-browser-upload-list i{
+	color: #7c7d7e;
+	padding: 30px 0 15px;
+	font-size: 36px;
+}
+.files-to-browser-upload-list .h2-title{
+	color: #1d2129;
+	float: unset;
+}
+.files-to-browser-upload-list .h3-title{
+	float: unset;
+	color: #86909c;
+}
+.files-to-browser-upload-list-files{
+	width: calc(100% - 78px);
+	min-height: 200px;
+	float: right;
+	padding: 15px 0 0 0;
+}
+.files-to-browser-upload-list-files-headers{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background-color: #f2f3f8;
+}
+.files-to-browser-upload-list-files-headers-title{
+	width: calc(100% - 220px);
+	padding: 0 0 0 20px;
+	color: #1d2129;
+	font-size: 12px;
+	float: left;
+}
+.files-to-browser-upload-list-files-headers-size{
+	width: calc(100px);
+	color: #1d2129;
+	font-size: 12px;
+	float: left;
+}
+.files-to-browser-upload-list-files-headers-actions{
+	width: calc(100px);
+	color: #1d2129;
+	font-size: 12px;
+	float: left;
+}
+.files-to-browser-upload-list-files-null{
+	width: 100%;
+	height: 150px;
+	text-align: center;
+}
+.files-to-browser-upload-list-files-null i{
+	font-size: 50px;
+	color: #a9aeb8;
+	padding: 30px 0 0px 0;
+}
+.files-to-browser-upload-list-files-null .h3-title{
+	width: 100%;
+	color: #a9aeb8;
+	float: left;
+}
+.files-to-browser-upload-list-files-items{
+	border-top: 1px solid #e5e8ef;
+	border-bottom: 1px solid #e5e8ef;
+}

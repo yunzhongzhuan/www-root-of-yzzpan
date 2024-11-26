@@ -1,29 +1,8 @@
 ﻿html{
 	background-color: #f2f3f8;
 }
-.create-bucket .bottom-buttons-main .create-bucket{
-	float: right;
-	width: unset;
-	padding: 0 15px;
-	margin: 15px 0;
-	font-size: 12px;
-	height: 30px;
-	line-height: 30px;
-	border-radius: 0px;
-}
-.create-bucket .bottom-buttons-main .cancel-create-bucket{
-	float: right;
-	width: unset;
-	padding: 0 15px;
-	margin: 15px 10px 15px 0;
-	font-size: 12px;
-	height: 30px;
-	line-height: 30px;
-	border-radius: 0px;
-}
-.top-page-title-parent{
-	margin: 50px 0 0 0;
-}
+
+
 .create-bucket-parent{
 	width: 100%;
 	float: left;
@@ -39,47 +18,8 @@
 	box-shadow: 0 2px 4px #1a22330d;
 	margin: 15px 0 0 0;
 }
-.create-bucket-main-input{
-	width: calc(100% - 60px);
-	margin: 0 30px;
-	/*height: 36px;*/
-	float: left;
-	line-height: 36px;
-	user-select: none;
-}
-.create-bucket-main-input span{
-	font-size: 14px;
-	color: #4e5969;
 
-}
-.create-bucket-main-input input{
-	width: calc(100% - 100px);
-	float: right;
-	height: 20px;
-	padding: 5px 10px;
-	background-color: #f2f3f8;
-	border: 1px solid #f2f3f8;
-	font-size: 14px;
-	color: #1d2129;
-	margin: 2px 0;
 
-	transition: .25s ease border,.25s ease background-color;
-}
-.create-bucket-main-input input:hover{
-	background-color: #e5e8ef;
-	border: 1px solid #e5e8ef;
-
-	transition: .25s ease border,.25s ease background-color;
-}
-.create-bucket-main-input input:focus{
-	background-color: #fff;
-	border: 1px solid #1664ff;
-}
-.create-bucket-main-bucket-information .select-option-items{
-	width: calc(100% - 78px);
-	float: right;
-	margin: 3px 0;
-}
 
 
 @media (max-width: 1240px){

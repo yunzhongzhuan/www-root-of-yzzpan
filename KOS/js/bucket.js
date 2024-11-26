@@ -115,6 +115,13 @@ if(
 ){
 
 
+	// 上传文件
+	document.getElementsByClassName('bucket')[0].getElementsByClassName('buckets-main')[0].getElementsByClassName('create-bucket')[0].onclick = function(){
+		window.location.href = "upload.html";
+	}
+	
+
+
 
 	// 文件列表头部的全选按钮
 	document.getElementsByClassName('bucket-files-headers')[0].getElementsByClassName('bucket-files-headers-select')[0].onclick = selectAllFiles;
