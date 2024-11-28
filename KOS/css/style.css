@@ -521,6 +521,21 @@ i{
 	border-radius: 0px;
 }
 
+
+
+.bottom-buttons-main .upload-files-to-bucket{
+	float: right;
+	width: unset;
+	padding: 0 15px;
+	margin: 15px 0;
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 0px;
+}
+
+
+
 .top-page-title-parent{
 	margin: 50px 0 0 0;
 }
@@ -566,3 +581,4 @@ i{
 	float: right;
 	margin: 3px 0;
 }
+

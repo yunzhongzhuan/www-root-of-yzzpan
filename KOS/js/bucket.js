@@ -149,7 +149,7 @@ if(
 		i++
 	){
 
-		bucket_files_items[i].getElementsByClassName('bucket-files-headers-select')[0].parentElement = bucket_files_items[i];
+		bucket_files_items[i].getElementsByClassName('bucket-files-headers-select')[0].theParentElement = bucket_files_items[i];
 		if(
 			bucket_files_items[i].selected == undefined
 		){
@@ -157,15 +157,15 @@ if(
 		}
 		bucket_files_items[i].getElementsByClassName('bucket-files-headers-select')[0].onclick = function(){
 			if(
-				this.parentElement.selected
+				this.theParentElement.selected
 			){
 				// 取消选中/解除选中
-				this.parentElement.getElementsByClassName('bucket-files-headers-select')[0].className = "bucket-files-headers-select";
-				this.parentElement.selected = false;
+				this.theParentElement.getElementsByClassName('bucket-files-headers-select')[0].className = "bucket-files-headers-select";
+				this.theParentElement.selected = false;
 			}else{
 				// 进行选中
-				this.parentElement.getElementsByClassName('bucket-files-headers-select')[0].className = "bucket-files-headers-select bucket-files-headers-selected-index";
-				this.parentElement.selected = true;
+				this.theParentElement.getElementsByClassName('bucket-files-headers-select')[0].className = "bucket-files-headers-select bucket-files-headers-selected-index";
+				this.theParentElement.selected = true;
 			}
 
 			// 最后，检查是否全选中。
