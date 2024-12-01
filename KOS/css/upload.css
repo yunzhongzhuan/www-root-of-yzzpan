@@ -69,12 +69,25 @@
 	background-color: #f2f3f8;
 }
 .files-to-browser-upload-list-files-headers-title{
-	width: calc(100% - 220px);
+	width: calc(100% - 320px);
 	padding: 0 0 0 20px;
 	color: #1d2129;
 	font-size: 12px;
 	float: left;
 }
+.files-to-browser-upload-list-files-headers-upload-status{
+	width: calc(100px);
+	color: #1d2129;
+	font-size: 12px;
+	float: left;
+}
+.files-to-browser-upload-list-files-items span{
+	font-size: 12px;
+}
+/*
+.files-to-browser-upload-list-files-items .files-to-browser-upload-list-files-headers-upload-status{
+	color: #b58d17;
+}*/
 .files-to-browser-upload-list-files-headers-size{
 	width: calc(100px);
 	color: #1d2129;

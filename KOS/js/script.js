@@ -6,8 +6,13 @@
 
 
 
+// 接口信息配置区域
+// 接口信息配置区域
+// 接口信息配置区域
 
-
+// 获取桶文件对应上传地址 用于上传文件页面
+let getBucketFileUploadTokenURL = "https://c34a02aaeb0d6.cname.frontwize.com/other/baishancloud/upload/upload";
+// 本接口服务器PHP文件暂时正在开发中暂未上传GitHub
 
 
 
@@ -310,11 +315,99 @@ function removeSelectedIndex(parent){
 		i<items.length;
 		i++
 	){
-		items[i].className = "select-option-item";
+		items[i].className = items[i].className.replace(/select-option-item-selected-index/g,'');
+		items[i].className = items[i].className.replace(/  /g,' ');
+		// items[i].className = "select-option-item";
 	}
 
 
 }
+
+
+
+
+
+// 假设当前桶文件夹位置是
+let currentFolderPath;
+
+
+// 点击事件修改响应的地方代码
+function onClickOfSelectOptionItemsByItem(THIS){
+	
+	// console.log(THIS);
+
+
+
+	// 处于上传页面
+	if(
+		document.getElementsByClassName('upload')[0]!=undefined
+	){
+
+
+
+
+		// 如果是上传页面点击了以当前目录为位置
+		if(
+			THIS.className.indexOf('upload-folder-path-current')!=-1
+		){
+
+
+			document.getElementsByClassName('upload-folder-path-current-input')[0].getElementsByTagName('input')[0].disabled = true;
+			document.getElementsByClassName('upload-folder-path-current-input')[0].getElementsByTagName('input')[0].value = currentFolderPath;
+
+
+		}
+
+
+
+		// 如果是点击了根目录
+		if(
+			THIS.className.indexOf('upload-folder-path-root')!=-1
+		){
+			document.getElementsByClassName('upload-folder-path-current-input')[0].getElementsByTagName('input')[0].disabled = true;
+			document.getElementsByClassName('upload-folder-path-current-input')[0].getElementsByTagName('input')[0].value = "/";
+
+		}
+
+
+
+
+		// 如果点击了演示目录
+		
+		if(
+			THIS.className.indexOf('upload-folder-path-test')!=-1
+		){
+			document.getElementsByClassName('upload-folder-path-current-input')[0].getElementsByTagName('input')[0].disabled = true;
+			document.getElementsByClassName('upload-folder-path-current-input')[0].getElementsByTagName('input')[0].value = "/demo/downloads/files";
+
+		}
+
+
+		// 如果点击了自定义目录
+		
+		if(
+			THIS.className.indexOf('upload-folder-path-custom')!=-1
+		){
+			document.getElementsByClassName('upload-folder-path-current-input')[0].getElementsByTagName('input')[0].disabled = false;
+			document.getElementsByClassName('upload-folder-path-current-input')[0].getElementsByTagName('input')[0].focus();
+			let length = document.getElementsByClassName('upload-folder-path-current-input')[0].getElementsByTagName('input')[0].value.length;
+			document.getElementsByClassName('upload-folder-path-current-input')[0].getElementsByTagName('input')[0].setSelectionRange(length, length);
+		}
+
+
+
+
+	}
+
+
+
+}
+
+
+
+
+
+
 
 
 
@@ -345,7 +438,10 @@ for(
 
 			removeSelectedIndex(this.parent);
 
-			this.className = "select-option-item select-option-item-selected-index";
+			// 点击了自己 触发对应代码
+			onClickOfSelectOptionItemsByItem(this);
+
+			this.className = this.className + " select-option-item-selected-index";
 
 		}
 
@@ -354,6 +450,17 @@ for(
 	
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -29,12 +29,21 @@ function setUploadFilesListItemRemoveButton(){
 	){
 
 		if(
+			files_to_browser_upload_list_files_items[i]!=undefined
+			&&
+			files_to_browser_upload_list_files_items[i].getElementsByClassName('files-to-browser-upload-list-files-headers-actions')[0]!=undefined
+			&&
+			files_to_browser_upload_list_files_items[i].getElementsByClassName('files-to-browser-upload-list-files-headers-actions')[0].getElementsByClassName('files-to-browser-upload-list-files-headers-actions-remove')[0]!=undefined
+			&&
 			files_to_browser_upload_list_files_items[i].getElementsByClassName('files-to-browser-upload-list-files-headers-actions')[0].getElementsByClassName('files-to-browser-upload-list-files-headers-actions-remove')[0].theParentElement == undefined
 		){
 
 			files_to_browser_upload_list_files_items[i].getElementsByClassName('files-to-browser-upload-list-files-headers-actions')[0].getElementsByClassName('files-to-browser-upload-list-files-headers-actions-remove')[0].theParentElement = files_to_browser_upload_list_files_items[i];
 			files_to_browser_upload_list_files_items[i].getElementsByClassName('files-to-browser-upload-list-files-headers-actions')[0].getElementsByClassName('files-to-browser-upload-list-files-headers-actions-remove')[0].onclick = function(){
 				// delete self
+
+
+				this.theParentElement.stopUpload = true;
 
 				deleteFile(this.theParentElement.theFile.name, this.theParentElement.theFile.size);
 
@@ -57,6 +66,17 @@ function setUploadFilesListItemRemoveButton(){
 if(
 	document.getElementsByClassName('upload')[0]!=undefined
 ){
+
+
+
+
+	// 假设当前桶文件夹位置是  /otherfiles/2023/sharefolder
+	currentFolderPath = "/otherfiles/2023/sharefolder";
+
+
+
+	document.getElementsByClassName('upload-folder-path-current')[0].click();
+
 
 
 
@@ -107,9 +127,37 @@ if(
 
 		for (const file of fileList) {
 
+
+			// 如果文件已经存在于列表中
+			let foundFileCopy = false;
+			for(
+				let fi = 0;
+				fi < filesToUpload.length;
+				fi++
+			){
+				if(
+					filesToUpload[fi]["file"].name == file.name
+					&&
+					filesToUpload[fi]["file"].webkitRelativePath == file.webkitRelativePath
+					//filesToUpload[fi]["file"].size == file.size
+					//&&
+					// 防止文件路径冲突
+				){
+					// 重复文件，无需添加进列表
+					foundFileCopy = true;
+				}
+			}
+			if(foundFileCopy){
+				continue;
+			}
+
+
+
+
+
 			const div = document.createElement('div');
 			div.className = "files-to-browser-upload-list-files-item";
-			div.innerHTML = '<div class="files-to-browser-upload-list-files-item"><div class="files-to-browser-upload-list-files-headers-title">'+file.webkitRelativePath+'</div><div class="files-to-browser-upload-list-files-headers-size">'+file.size+'</div><div class="files-to-browser-upload-list-files-headers-actions"><span class="files-to-browser-upload-list-files-headers-actions-remove">移除</span></div>';
+			div.innerHTML = '<div class="files-to-browser-upload-list-files-item"><div class="files-to-browser-upload-list-files-headers-title">'+file.webkitRelativePath+'</div><div class="files-to-browser-upload-list-files-headers-upload-status"><i class="fa fa-arrow-circle-o-up"></i> <span>等待上传</span></div><div class="files-to-browser-upload-list-files-headers-size">'+file.size+'</div><div class="files-to-browser-upload-list-files-headers-actions"><span class="files-to-browser-upload-list-files-headers-actions-remove">移除</span></div>';
 
 			div.theFile = file;
 
@@ -149,9 +197,34 @@ if(
 
 		for (const file of fileList) {
 
+
+			// 如果文件已经存在于列表中
+			let foundFileCopy = false;
+			for(
+				let fi = 0;
+				fi < filesToUpload.length;
+				fi++
+			){
+				if(
+					filesToUpload[fi]["file"].name == file.name
+					&&
+					filesToUpload[fi]["file"].size == file.size
+					&&
+					filesToUpload[fi]["file"].webkitRelativePath == file.webkitRelativePath
+				){
+					// 重复文件，无需添加进列表
+					foundFileCopy = true;
+				}
+			}
+			if(foundFileCopy){
+				continue;
+			}
+
+
+
 			const div = document.createElement('div');
 			div.className = "files-to-browser-upload-list-files-item";
-			div.innerHTML = '<div class="files-to-browser-upload-list-files-item"><div class="files-to-browser-upload-list-files-headers-title">'+file.name+'</div><div class="files-to-browser-upload-list-files-headers-size">'+file.size+'</div><div class="files-to-browser-upload-list-files-headers-actions"><span class="files-to-browser-upload-list-files-headers-actions-remove">移除</span></div>';
+			div.innerHTML = '<div class="files-to-browser-upload-list-files-item"><div class="files-to-browser-upload-list-files-headers-title">'+file.name+'</div><div class="files-to-browser-upload-list-files-headers-upload-status"><i class="fa fa-arrow-circle-o-up"></i> <span>等待上传</span></div><div class="files-to-browser-upload-list-files-headers-size">'+file.size+'</div><div class="files-to-browser-upload-list-files-headers-actions"><span class="files-to-browser-upload-list-files-headers-actions-remove">移除</span></div>';
 
 			div.theFile = file;
 
@@ -199,7 +272,7 @@ if(
 			return false;
 		}
 		
-		swal('正在上传，请看 console.log 输出信息测试。');
+		// swal('正在上传，请看 console.log 输出信息测试。');
 		console.log(filesToUpload);
 		
 		if(
@@ -212,10 +285,18 @@ if(
 		console.log('正在上传');
 		
 
-		for (const { file, binaryData } of filesToUpload) {
+		for (const { file, binaryData , div } of filesToUpload) {
 			// 上传文件到服务器
-			const response = await uploadFile(binaryData, file.name);
-			console.log(`文件: ${file.name} 上传结果:`, response.ok ? '成功' : `失败 (状态码: ${response.status})`);
+			// const response = await uploadFile(binaryData, file.name);
+			// console.log(`文件: ${file.name} 上传结果:`, response.ok ? '成功' : `失败 (状态码: ${response.status})`);
+
+
+			if(
+				div.uploading == undefined
+			){
+				setTimeout(uploadFile,1,binaryData,file,div);
+			}
+
 		}
 
 		console.log('上传完成');
@@ -249,24 +330,157 @@ if(
 
 
 
+
+	// 更新上传情况
+	function uploadStatusUpdate(){
+
+
+
+	}
+
+
+
+
+
+
+
+
 	/**
 	 * 上传文件到服务器
 	 * @param {ArrayBuffer} binaryData 文件的二进制数据
 	 * @param {string} fileName 文件名
 	 * @returns {Promise<Response>} 上传请求的响应对象
 	 */
-	function uploadFile(binaryData, fileName) {
-		const apiUrl = 'upload.html'; // 替换为你的上传接口地址
+	function uploadFile(binaryData, file , div) {
 
-		// 创建 FormData（如果 API 要求直接传二进制，可以去掉 FormData 部分）
-		const formData = new FormData();
-		formData.append('file', new Blob([binaryData]), fileName);
+		// div 元素对应文件 正式开始上传
+		div.uploading = true;
+		div.uploadSuccess = false;
 
-		// 发送 POST 请求上传文件
-		return fetch(apiUrl, {
-			method: 'POST',
-			body: formData,
-		});
+
+
+
+
+		// console.log(div);
+		div.getElementsByClassName('files-to-browser-upload-list-files-headers-upload-status')[0].getElementsByTagName('i')[0].className = "fa fa-spinner";
+		div.getElementsByClassName('files-to-browser-upload-list-files-headers-upload-status')[0].getElementsByTagName('span')[0].innerText = "正在上传";
+
+
+
+
+		// 文件名称 或 路径及文件名称 key
+		let key = file.webkitRelativePath;
+		if(file.webkitRelativePath.length < 1){key = file.name;}
+
+		// 桶名称 测试
+		let bucketName = "tempfiles";
+
+		// 上传目录位置
+		let folder = document.getElementsByClassName('upload-folder-path-current-input')[0].getElementsByTagName('input')[0].value;
+
+		// 上传文件获取文件的上传入口信息
+		const url = getBucketFileUploadTokenURL;
+	    const params = 'key=' + encodeURIComponent( folder  + "/" + key) + '&bucket=' + bucketName;
+
+	    // 创建 XMLHttpRequest 对象
+	    const xhr = new XMLHttpRequest();
+
+	    // 配置请求
+	    xhr.open('POST', url, true);
+	    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+	    // 如果用户中止了该任务
+	    if(div.stopUpload != undefined&&div.stopUpload == true){return false;}
+
+	    // 定义回调函数
+	    xhr.onreadystatechange = function () {
+	        if (xhr.readyState === 4) { // 请求完成
+	            if (xhr.status === 200) { // 请求成功
+	                try {
+	                    const response = JSON.parse(xhr.responseText);
+	                    // console.log('返回的 JSON 数据:', response);
+
+
+	                    if(
+	                    	response["code"] == 200
+	                    	&&
+	                    	response["status"] == true
+	                    ){
+
+
+	                    	// 如果用户中止了该任务
+	    					if(div.stopUpload != undefined&&div.stopUpload == true){return false;}
+
+
+							// 使用 PUT 上传文件到预签名的 URL
+		                    return fetch(response["uploadURL"], {
+		                        method: 'PUT',
+		                        body: file,
+		                    }).then(response => {
+		                        if (response.ok) {
+		                            
+
+		                        	// div
+		                        	console.log('文件上传成功！');
+
+
+		                        	div.uploadSuccess = true;
+
+		                        	div.getElementsByClassName('files-to-browser-upload-list-files-headers-upload-status')[0].getElementsByTagName('i')[0].style.color = "#215315";
+		                        	div.getElementsByClassName('files-to-browser-upload-list-files-headers-upload-status')[0].getElementsByTagName('i')[0].className = "fa fa-check-circle";
+									div.getElementsByClassName('files-to-browser-upload-list-files-headers-upload-status')[0].getElementsByTagName('span')[0].innerText = "上传成功";
+
+
+
+
+
+
+		                        } else {
+
+		                            // throw new Error('文件上传失败');
+
+		                            // 上传出现错误，请写错误处理代码。
+		                            console.log("上传出现错误，请写错误处理代码。");
+
+		                        }
+		                    });
+
+
+
+
+
+
+
+
+
+
+
+	                    }else{
+
+	                    	// 服务器返回了错误的上传信息，请写处理代码
+	                    	console.log("服务器返回了错误的上传信息，请写处理代码");
+	                    	console.log(response);
+
+	                    }
+
+
+
+	                } catch (error) {
+	                    console.error('解析 JSON 数据出错:', error);
+	                }
+	            } else {
+	                console.error("请求失败，状态码: " + xhr.status);
+	            }
+	        }
+	    };
+
+	    // 发送请求
+	    xhr.send(params);
+
+
+
+
+
 	}
 
 
