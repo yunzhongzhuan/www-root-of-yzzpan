@@ -377,10 +377,15 @@ if(
 
 		// 上传目录位置
 		let folder = document.getElementsByClassName('upload-folder-path-current-input')[0].getElementsByTagName('input')[0].value;
+		if (folder.charAt(folder.length - 1) === '/') {
+			// 最后一个字符是 / 则无需添加末尾
+		}else{
+			folder = folder + "/";
+		}
 
 		// 上传文件获取文件的上传入口信息
 		const url = getBucketFileUploadTokenURL;
-	    const params = 'key=' + encodeURIComponent( folder  + "/" + key) + '&bucket=' + bucketName;
+	    const params = 'key=' + encodeURIComponent( folder + key) + '&bucket=' + bucketName;
 
 	    // 创建 XMLHttpRequest 对象
 	    const xhr = new XMLHttpRequest();
