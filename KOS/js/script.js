@@ -11,7 +11,7 @@
 // 接口信息配置区域
 
 // 获取桶文件对应上传地址 用于上传文件页面
-let getBucketFileUploadTokenURL = "http://39.108.171.174:65535/qq1070892573/other/bsc/upload/upload.php";
+let getBucketFileUploadTokenURL = "https://c34a02aaeb0d6.cname.frontwize.com/other/bsc/upload/upload";
 // 本接口服务器PHP文件暂时正在开发中暂未上传GitHub
 
 
