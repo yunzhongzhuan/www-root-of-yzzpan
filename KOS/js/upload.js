@@ -417,6 +417,82 @@ if(
 	    					if(div.stopUpload != undefined&&div.stopUpload == true){return false;}
 
 
+
+
+
+							// 文件上传方法
+							function uploadFileNow(file, uploadURL) {
+							    return new Promise((resolve, reject) => {
+							        const xhr = new XMLHttpRequest();
+
+							        // 监听上传进度
+							        xhr.upload.addEventListener('progress', (event) => {
+							            if (event.lengthComputable) {
+							                const percentComplete = Math.round((event.loaded / event.total) * 100);
+
+							                console.log(percentComplete);
+							                div.getElementsByClassName('files-to-browser-upload-list-files-headers-upload-status')[0].getElementsByTagName('span')[0].innerText = "正在上传" + percentComplete + "%";
+
+
+							            }
+							        });
+
+
+
+							        // 请求成功回调
+							        xhr.addEventListener('load', () => {
+
+							            if (xhr.status >= 200 && xhr.status < 300) {
+
+							                //resolve(xhr.response);
+
+
+				                        	// div
+				                        	console.log('文件上传成功！');
+
+
+				                        	div.uploadSuccess = true;
+
+				                        	div.getElementsByClassName('files-to-browser-upload-list-files-headers-upload-status')[0].getElementsByTagName('i')[0].style.color = "#215315";
+				                        	div.getElementsByClassName('files-to-browser-upload-list-files-headers-upload-status')[0].getElementsByTagName('i')[0].className = "fa fa-check-circle";
+											div.getElementsByClassName('files-to-browser-upload-list-files-headers-upload-status')[0].getElementsByTagName('span')[0].innerText = "上传成功";
+
+
+
+
+							            } else {
+							                reject(new Error(`HTTP error: ${xhr.status}`));
+							            }
+							        });
+
+							        // 请求失败回调
+							        xhr.addEventListener('error', () => {
+							            reject(new Error('Network error'));
+							        });
+
+							        // 请求取消回调
+							        xhr.addEventListener('abort', () => {
+							            reject(new Error('Upload aborted'));
+							        });
+
+							        // 开始发送请求
+							        xhr.open('PUT', uploadURL);
+							        xhr.send(file);
+							    });
+							}
+
+
+							uploadFileNow(file,response["uploadURL"]);
+
+
+
+							return false;
+							return false;
+							return false;
+
+
+							// 无进度条版本
+
 							// 使用 PUT 上传文件到预签名的 URL
 		                    return fetch(response["uploadURL"], {
 		                        method: 'PUT',
@@ -449,6 +525,9 @@ if(
 
 		                        }
 		                    });
+		                    return false;
+		                    return false;
+		                    return false;
 
 
 
