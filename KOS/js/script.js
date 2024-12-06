@@ -22,6 +22,36 @@ let getBucketFileUploadTokenURL = "https://c34a02aaeb0d6.cname.frontwize.com/oth
 
 
 
+// 计算文件大小显示单位
+function getSizeUnit(size){
+	let unit = 'B';
+	if(size >= 1024){
+		size /= 1024;
+		unit = 'KB';
+	}
+	if(size >= 1024){
+		size /= 1024;
+		unit = 'MB';
+	}
+	if(size >= 1024){
+		size /= 1024;
+		unit = 'GB';
+	}
+	if(size >= 1024){
+		size /= 1024;
+		unit = 'TB';
+	}
+	if(size >= 1024){
+		size /= 1024;
+		unit = 'PB';
+	}
+	try{
+		size = size.toFixed(2);
+	}catch(e){};
+	return size + unit;
+}
+
+
 
 let navLocked = false;
 let navShow = true;
