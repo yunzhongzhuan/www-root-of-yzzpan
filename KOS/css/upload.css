@@ -42,6 +42,24 @@
 	background-color: #f2f3f8;
 	cursor: pointer;
 	text-align: center;
+	transition: .25s ease background-color,.25s ease color;
+	overflow: hidden;
+}
+.files-to-browser-upload-list-hover{
+	background-color: #a5dc86;
+	transition: .25s ease background-color,.25s ease color;
+}
+.files-to-browser-upload-list-hover i{
+	color: #fff!important;
+	transition: .25s ease background-color;
+}
+.files-to-browser-upload-list-hover .h2-title{
+	color: #fff!important;
+	transition: .25s ease background-color,.25s ease color;
+}
+.files-to-browser-upload-list-hover .h3-title{
+	color: #fff!important;
+	transition: .25s ease background-color,.25s ease color;
 }
 .files-to-browser-upload-list i{
 	color: #7c7d7e;
@@ -143,4 +161,12 @@
 }
 .files-to-browser-upload-list-files-headers-actions-remove:hover{
 	color: #4086ff;
+}
+.files-to-browser-upload-list-mask{
+	width: 1062px;
+	height: 200px;
+	background-color: #ffffff10;
+	position: absolute;
+	margin-top: 0px;
+	margin-left: 0px;
 }
