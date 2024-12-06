@@ -61,11 +61,20 @@ function setUploadFilesListItemRemoveButton(){
 
 
 
-
-
 if(
 	document.getElementsByClassName('upload')[0]!=undefined
 ){
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -253,6 +262,117 @@ if(
 
 
 	});
+
+
+
+
+
+
+
+	// 拖入文件到 HTML 元素上传文件
+	document.addEventListener("DOMContentLoaded", () => {
+	    const dropArea = document.getElementsByClassName("files-to-browser-upload-list")[0];
+
+
+	    // 防止浏览器默认行为
+	    ["dragenter", "dragover", "dragleave", "drop"].forEach(event => {
+	        dropArea.addEventListener(event, e => e.preventDefault());
+	    });
+
+	    // 拖入效果
+	    ["dragenter", "dragover"].forEach(event => {
+	        dropArea.addEventListener(event, () => dropArea.classList.add("files-to-browser-upload-list-hover"));
+	    });
+
+	    ["dragleave", "drop"].forEach(event => {
+	        dropArea.addEventListener(event, () => dropArea.classList.remove("files-to-browser-upload-list-hover"));
+	    });
+
+	    // 处理文件
+	    dropArea.addEventListener("drop", e => {
+	        const files = e.dataTransfer.files; // 获取文件列表
+	        if (files.length === 0) return;
+
+	        Array.from(files).forEach(file => {
+	            
+	            console.log(file);
+
+
+
+
+
+
+				// 如果文件已经存在于列表中
+				let foundFileCopy = false;
+				for(
+					let fi = 0;
+					fi < filesToUpload.length;
+					fi++
+				){
+					if(
+						filesToUpload[fi]["file"].name == file.name
+						&&
+						filesToUpload[fi]["file"].size == file.size
+						&&
+						filesToUpload[fi]["file"].webkitRelativePath == file.webkitRelativePath
+					){
+						// 重复文件，无需添加进列表
+						foundFileCopy = true;
+					}
+				}
+				if(foundFileCopy){
+					return false;
+				}
+
+
+
+				const div = document.createElement('div');
+				div.className = "files-to-browser-upload-list-files-item";
+				div.innerHTML = '<div class="files-to-browser-upload-list-files-item"><div class="files-to-browser-upload-list-files-headers-title">'+file.name+'</div><div class="files-to-browser-upload-list-files-headers-upload-status"><i class="fa fa-arrow-circle-o-up"></i> <span>等待上传</span></div><div class="files-to-browser-upload-list-files-headers-size">'+file.size+'</div><div class="files-to-browser-upload-list-files-headers-actions"><span class="files-to-browser-upload-list-files-headers-actions-remove">移除</span></div>';
+
+				div.theFile = file;
+
+				// 读取文件的二进制数据并保存到数组中
+				const binaryData = readFileAsBinary(file);
+				filesToUpload.push({ file, binaryData , div });
+
+
+				//listItem.textContent = file.webkitRelativePath; // 显示文件的相对路径
+				//console.log(listItem);
+				// console.log(file);
+				document.getElementsByClassName('files-to-browser-upload-list-files-items')[0].append(div);
+				uploadFilesListIsNull();// 上传列表是否为空
+				setUploadFilesListItemRemoveButton();// 给文件列表的文件做删除按钮操作
+
+
+
+
+
+
+
+
+
+
+
+
+	        });
+
+	    });
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
