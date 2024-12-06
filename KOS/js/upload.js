@@ -166,7 +166,7 @@ if(
 
 			const div = document.createElement('div');
 			div.className = "files-to-browser-upload-list-files-item";
-			div.innerHTML = '<div class="files-to-browser-upload-list-files-item"><div class="files-to-browser-upload-list-files-headers-title">'+file.webkitRelativePath+'</div><div class="files-to-browser-upload-list-files-headers-upload-status"><i class="fa fa-arrow-circle-o-up"></i> <span>等待上传</span></div><div class="files-to-browser-upload-list-files-headers-size">'+file.size+'</div><div class="files-to-browser-upload-list-files-headers-actions"><span class="files-to-browser-upload-list-files-headers-actions-remove">移除</span></div>';
+			div.innerHTML = '<div class="files-to-browser-upload-list-files-item"><div class="files-to-browser-upload-list-files-headers-title">'+file.webkitRelativePath+'</div><div class="files-to-browser-upload-list-files-headers-upload-status"><i class="fa fa-arrow-circle-o-up"></i> <span>等待上传</span></div><div class="files-to-browser-upload-list-files-headers-size">'+getSizeUnit(file.size)+'</div><div class="files-to-browser-upload-list-files-headers-actions"><span class="files-to-browser-upload-list-files-headers-actions-remove">移除</span></div>';
 
 			div.theFile = file;
 
@@ -233,7 +233,7 @@ if(
 
 			const div = document.createElement('div');
 			div.className = "files-to-browser-upload-list-files-item";
-			div.innerHTML = '<div class="files-to-browser-upload-list-files-item"><div class="files-to-browser-upload-list-files-headers-title">'+file.name+'</div><div class="files-to-browser-upload-list-files-headers-upload-status"><i class="fa fa-arrow-circle-o-up"></i> <span>等待上传</span></div><div class="files-to-browser-upload-list-files-headers-size">'+file.size+'</div><div class="files-to-browser-upload-list-files-headers-actions"><span class="files-to-browser-upload-list-files-headers-actions-remove">移除</span></div>';
+			div.innerHTML = '<div class="files-to-browser-upload-list-files-item"><div class="files-to-browser-upload-list-files-headers-title">'+file.name+'</div><div class="files-to-browser-upload-list-files-headers-upload-status"><i class="fa fa-arrow-circle-o-up"></i> <span>等待上传</span></div><div class="files-to-browser-upload-list-files-headers-size">'+getSizeUnit(file.size)+'</div><div class="files-to-browser-upload-list-files-headers-actions"><span class="files-to-browser-upload-list-files-headers-actions-remove">移除</span></div>';
 
 			div.theFile = file;
 
@@ -328,7 +328,7 @@ if(
 
 				const div = document.createElement('div');
 				div.className = "files-to-browser-upload-list-files-item";
-				div.innerHTML = '<div class="files-to-browser-upload-list-files-item"><div class="files-to-browser-upload-list-files-headers-title">'+file.name+'</div><div class="files-to-browser-upload-list-files-headers-upload-status"><i class="fa fa-arrow-circle-o-up"></i> <span>等待上传</span></div><div class="files-to-browser-upload-list-files-headers-size">'+file.size+'</div><div class="files-to-browser-upload-list-files-headers-actions"><span class="files-to-browser-upload-list-files-headers-actions-remove">移除</span></div>';
+				div.innerHTML = '<div class="files-to-browser-upload-list-files-item"><div class="files-to-browser-upload-list-files-headers-title">'+file.name+'</div><div class="files-to-browser-upload-list-files-headers-upload-status"><i class="fa fa-arrow-circle-o-up"></i> <span>等待上传</span></div><div class="files-to-browser-upload-list-files-headers-size">'+getSizeUnit(file.size)+'</div><div class="files-to-browser-upload-list-files-headers-actions"><span class="files-to-browser-upload-list-files-headers-actions-remove">移除</span></div>';
 
 				div.theFile = file;
 
