@@ -2909,6 +2909,79 @@ function showpay(){
 
 
 
+
+
+
+
+
+
+
+
+
+// 关注微信公众号
+let wechatPublicMessageShow = false;
+function wechatPublicMessage(){
+	wechatPublicMessageShow = true;
+	let content_element = document.createElement('div');
+	content_element.innerHTML = '<img src="//global.yunzhongzhuan.com/img/iQrCode.png" />';
+	swal({
+		text:"手机微信扫码二维码关注云中转公众号",
+		content: content_element,
+		// buttons: true,
+		// dangerMode: true,
+		buttons: ["取消","确定"],
+		closeOnClickOutside: false,
+	}).then((willDelete) => {
+		return false;
+	});
+	
+}
+setTimeout(function(){
+	if(
+		document.getElementsByClassName('swal-overlay--show-modal')[0]==undefined
+		&&
+		wechatPublicMessageShow==false
+	){
+		wechatPublicMessage();
+	}
+},1000);
+setTimeout(function(){
+	if(
+		document.getElementsByClassName('swal-overlay--show-modal')[0]==undefined
+		&&
+		wechatPublicMessageShow==false
+	){
+		wechatPublicMessage();
+	}
+},3000);
+setTimeout(function(){
+	if(
+		document.getElementsByClassName('swal-overlay--show-modal')[0]==undefined
+		&&
+		wechatPublicMessageShow==false
+	){
+		wechatPublicMessage();
+	}
+},8000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 获取容量
 let usedsize;
 let usedsize_unit;
