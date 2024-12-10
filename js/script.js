@@ -3453,6 +3453,9 @@ for(let i=0;i<nav_items_item_items.length;i++){
 		}else if(this.id == "nav-files-reload-button"){ // 如果是刷新按钮
 			files_reload();
 			return false;
+		}else if(this.id == "nav-files-wechat-public-button"){ // 如果是刷新按钮
+			wechatPublicMessage();
+			return false;
 		}else if(this.id == "nav-pay-cny-button"){ // 如果是赞助按钮
 			pay_cny();
 			return false;
