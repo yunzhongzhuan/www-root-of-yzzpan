@@ -2937,38 +2937,6 @@ function wechatPublicMessage(){
 	});
 	
 }
-setTimeout(function(){
-	if(
-		document.getElementsByClassName('swal-overlay--show-modal')[0]==undefined
-		&&
-		wechatPublicMessageShow==false
-	){
-		wechatPublicMessage();
-	}
-},1000);
-setTimeout(function(){
-	if(
-		document.getElementsByClassName('swal-overlay--show-modal')[0]==undefined
-		&&
-		wechatPublicMessageShow==false
-	){
-		wechatPublicMessage();
-	}
-},3000);
-setTimeout(function(){
-	if(
-		document.getElementsByClassName('swal-overlay--show-modal')[0]==undefined
-		&&
-		wechatPublicMessageShow==false
-	){
-		wechatPublicMessage();
-	}
-},8000);
-let nav_files_wechat_public_button = document.getElementById('nav-files-wechat-public-button');
-nav_files_wechat_public_button.onclick = wechatPublicMessage;
-
-
-
 
 
 
@@ -5390,6 +5358,47 @@ window.onload = function(){
 		}
 	},1000);
 	
+
+
+
+
+
+
+
+	setTimeout(function(){
+		if(
+			document.getElementsByClassName('swal-overlay--show-modal')[0]==undefined
+			&&
+			wechatPublicMessageShow==false
+		){
+			wechatPublicMessage();
+		}
+	},1000);
+	setTimeout(function(){
+		if(
+			document.getElementsByClassName('swal-overlay--show-modal')[0]==undefined
+			&&
+			wechatPublicMessageShow==false
+		){
+			wechatPublicMessage();
+		}
+	},3000);
+	setTimeout(function(){
+		if(
+			document.getElementsByClassName('swal-overlay--show-modal')[0]==undefined
+			&&
+			wechatPublicMessageShow==false
+		){
+			wechatPublicMessage();
+		}
+	},8000);
+
+
+
+
+
+
+
 	
 
 }
