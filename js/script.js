@@ -2921,7 +2921,7 @@ function showpay(){
 // 关注微信公众号
 let wechatPublicMessageShow = false;
 function wechatPublicMessage(){
-	wechatPublicMessageShow = true;
+	
 	let content_element = document.createElement('div');
 	content_element.innerHTML = '<img src="//global.yunzhongzhuan.com/img/iQrCode.png" />';
 	swal({
@@ -2932,6 +2932,7 @@ function wechatPublicMessage(){
 		buttons: ["取消","确定"],
 		closeOnClickOutside: false,
 	}).then((willDelete) => {
+		wechatPublicMessageShow = true;
 		return false;
 	});
 	
