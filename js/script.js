@@ -2963,8 +2963,8 @@ setTimeout(function(){
 		wechatPublicMessage();
 	}
 },8000);
-
-
+let nav_files_wechat_public_button = document.getElementById('nav-files-wechat-public-button');
+nav_files_wechat_public_button.onclick = wechatPublicMessage;
 
 
 
