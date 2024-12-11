@@ -575,7 +575,7 @@ if(
 
 	// 更新URL
 	function updatePageURL(){
-		window.history.pushState(null,null,"bucket.html?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(currentFolder) );	
+		window.history.pushState(null,null,"bucket?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(currentFolder) );	
 	}
 	updatePageURL();
 
@@ -590,7 +590,7 @@ if(
 
 	// 上传文件
 	document.getElementsByClassName('bucket')[0].getElementsByClassName('buckets-main')[0].getElementsByClassName('create-bucket')[0].onclick = function(){
-		window.location.href = "upload.html?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(currentFolder);
+		window.location.href = "upload?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(currentFolder);
 	}
 	
 
@@ -604,7 +604,7 @@ if(
 
 	document.getElementsByClassName('bucket')[0].getElementsByClassName('buckets-nav-title')[0].getElementsByClassName('top-page-title-main-icon-button')[0].onclick = function(){
 
-		window.location.href = "buckets.html";
+		window.location.href = "buckets";
 
 
 	}
