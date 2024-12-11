@@ -102,13 +102,13 @@ if(
 
 	// 返回桶列表
 	document.getElementsByClassName('upload')[0].getElementsByClassName('top-page-title-main-icon-button')[0].onclick = function(){
-		window.location.href = "bucket.html?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(folder);
+		window.location.href = "bucket?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(folder);
 	}
 
 
 	// 点击 取消 返回桶列表
 	document.getElementsByClassName('upload')[0].getElementsByClassName('bottom-buttons-parent')[0].getElementsByClassName('cancel-upload-back-bucket')[0].onclick = function(){
-		window.location.href = "bucket.html?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(folder);
+		window.location.href = "bucket?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(folder);
 	}
 
 
