@@ -163,6 +163,7 @@ if(
 			currentFolder = "";
 			reloadFoldersAndFiles();
 			setNewPathNav();
+			updatePageURL();
 		}
 
 		for(
