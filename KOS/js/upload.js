@@ -60,7 +60,6 @@ function setUploadFilesListItemRemoveButton(){
 
 
 
-
 if(
 	document.getElementsByClassName('upload')[0]!=undefined
 ){
@@ -71,16 +70,28 @@ if(
 
 
 
+	// 获取当前页面的 URL 参数
+	const urlParams = new URLSearchParams(window.location.search);
+
+	// 获取具体的参数值
+	let bucket = urlParams.get('bucket');
+	let folder = urlParams.get('folder');
 
 
 
 
 
+	// 假设当前桶文件夹位置
+	currentFolderPath = "/";
+	if(
+		folder != null
+	){
+		currentFolderPath = "/" + folder;
+	}else{
+		currentFolderPath = "/";
+	}
 
 
-
-	// 假设当前桶文件夹位置是  /otherfiles/2023/sharefolder
-	currentFolderPath = "/otherfiles/2023/sharefolder";
 
 
 
@@ -91,13 +102,13 @@ if(
 
 	// 返回桶列表
 	document.getElementsByClassName('upload')[0].getElementsByClassName('top-page-title-main-icon-button')[0].onclick = function(){
-		window.location.href = "bucket.html";
+		window.location.href = "bucket.html?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(folder);
 	}
 
 
 	// 点击 取消 返回桶列表
 	document.getElementsByClassName('upload')[0].getElementsByClassName('bottom-buttons-parent')[0].getElementsByClassName('cancel-upload-back-bucket')[0].onclick = function(){
-		window.location.href = "bucket.html";
+		window.location.href = "bucket.html?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(folder);
 	}
 
 

@@ -10,12 +10,19 @@
 // 接口信息配置区域
 // 接口信息配置区域
 
+
+
+
 // 获取桶文件对应上传地址 用于上传文件页面
 let getBucketFileUploadTokenURL = "https://c34a02aaeb0d6.cname.frontwize.com/other/bsc/upload/upload";
+
+// 获取文件夹列表
+let getBucketFoldersURL = "https://c34a02aaeb0d6.cname.frontwize.com/other/bsc/folders";
+
+// 获取文件列表
+let getBucketFilesURL = "https://c34a02aaeb0d6.cname.frontwize.com/other/bsc/files";
+
 // 本接口服务器PHP文件暂时正在开发中暂未上传GitHub
-
-
-
 
 
 
@@ -50,6 +57,84 @@ function getSizeUnit(size){
 	}catch(e){};
 	return size + unit;
 }
+
+
+// UTC to Beijing Time
+// 将时间字符串转换为北京时间
+function convertToBeijingTime(utcString) {
+    // 将时间字符串解析为 Date 对象
+    const date = new Date(utcString);
+
+    // 获取北京时间偏移量 (UTC+8)
+    const beijingOffset = 8 * 60 * 60 * 1000;
+
+    // 使用原始时间的 UTC 偏移进行计算
+    const utcOffset = date.getTimezoneOffset() * 60 * 1000;
+    const beijingTime = new Date(date.getTime() + beijingOffset + utcOffset);
+
+    // 格式化北京时间为字符串
+    const year = beijingTime.getFullYear();
+    const month = String(beijingTime.getMonth() + 1).padStart(2, '0');
+    const day = String(beijingTime.getDate()).padStart(2, '0');
+    const hours = String(beijingTime.getHours()).padStart(2, '0');
+    const minutes = String(beijingTime.getMinutes()).padStart(2, '0');
+    const seconds = String(beijingTime.getSeconds()).padStart(2, '0');
+
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+// 示例
+if(false){
+	let utcString = "2024-12-09T04:33:33+00:00";
+	let beijingTime = convertToBeijingTime(utcString);
+	console.log(beijingTime); // 输出：2024-12-09 12:33:33
+}
+
+
+// 提取目标字符串中指定子字符串首次出现之后的部分
+function extractAfterSubstring(inputString, targetSubstring) {
+    // 找到目标子字符串首次出现的位置
+    const position = inputString.indexOf(targetSubstring);
+
+    // 如果找到了目标子字符串
+    if (position !== -1) {
+        // 返回从目标子字符串之后的部分
+        return inputString.slice(position + targetSubstring.length);
+    } else {
+        // 如果未找到，返回原字符串
+        return inputString;
+    }
+}
+
+if(false){
+	// 示例
+	const originalString = "aini/2023/ainiyo/66";
+	const target = "aini/";
+	const result = extractAfterSubstring(originalString, target);
+	console.log(result); // 输出：2023/ainiyo/66
+}
+
+
+
+
+// 保留指定/之前的字符
+function getStringBeforeNthSlash(str, n) {
+  const parts = str.split('/'); // 将字符串按照斜杠分割
+  if (n <= 0 || n > parts.length) {
+    return ''; // 如果 n 超出了有效范围，返回空字符串
+  }
+  return parts.slice(0, n).join('/'); // 返回第 n 个斜杠之前的部分
+}
+
+if(false){
+	// 示例用法
+	const str = 'otherfiles/2023/sharefolder/Everything';
+	console.log(getStringBeforeNthSlash(str, 1)); // 输出 'otherfiles'
+	console.log(getStringBeforeNthSlash(str, 2)); // 输出 'otherfiles/2023'
+	console.log(getStringBeforeNthSlash(str, 3)); // 输出 'otherfiles/2023/sharefolder'
+}
+
+
+
 
 
 

@@ -231,6 +231,8 @@
 	border-right: 1px solid #eaedf1;
 
 	transition: .2s ease width;
+
+	position: fixed;
 }
 .buckets-nav-title{
 	width: calc(100% - 40px);
@@ -316,7 +318,7 @@
 .buckets-main{
 	width: calc(100% - 270px);
 	margin: 0 30px;
-	float: left;
+	float: right;
 
 	transition: .2s ease width;
 }

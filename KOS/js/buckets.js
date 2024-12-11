@@ -28,7 +28,7 @@ if(document.getElementsByClassName('buckets')[0]!=undefined){
 			buckets_items[i].getElementsByTagName('span')[0]!=undefined
 		){
 			buckets_items[i].getElementsByTagName('span')[0].onclick = function(){
-				window.location.href = "bucket.html";
+				window.location.href = "bucket.html?bucket=" + encodeURIComponent(buckets_items[i].getElementsByTagName('span')[0].innerText);
 			}
 		}
 
