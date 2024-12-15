@@ -5365,7 +5365,7 @@ window.onload = function(){
 
 
 
-	setTimeout(function(){
+	/*setTimeout(function(){
 		if(
 			document.getElementsByClassName('swal-overlay--show-modal')[0]==undefined
 			&&
@@ -5391,7 +5391,7 @@ window.onload = function(){
 		){
 			wechatPublicMessage();
 		}
-	},8000);
+	},8000);*/
 
 
 
