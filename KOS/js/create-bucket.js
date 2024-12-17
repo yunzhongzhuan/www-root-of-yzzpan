@@ -3,11 +3,11 @@
 
 
 function backBuckets(){
-	window.location.href = "buckets"; // buckets
+	window.location.href = "buckets.html"; // buckets.html
 }
 
 
-// create-bucket
+// create-bucket.html
 if(document.getElementsByClassName('create-bucket')[0]!=undefined){
 
 
@@ -38,7 +38,7 @@ document.getElementsByClassName('create-bucket')[0].getElementsByClassName('bott
 		if(willDelete){
 			// clicked ok button
 		}
-		window.location.href = "buckets"; // buckets
+		window.location.href = "buckets.html"; // buckets.html
 	});
 
 }
