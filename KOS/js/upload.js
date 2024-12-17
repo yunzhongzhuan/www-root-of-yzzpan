@@ -102,13 +102,13 @@ if(
 
 	// 返回桶列表
 	document.getElementsByClassName('upload')[0].getElementsByClassName('top-page-title-main-icon-button')[0].onclick = function(){
-		window.location.href = "bucket?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(folder);
+		window.location.href = "bucket.html?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(folder);
 	}
 
 
 	// 点击 取消 返回桶列表
 	document.getElementsByClassName('upload')[0].getElementsByClassName('bottom-buttons-parent')[0].getElementsByClassName('cancel-upload-back-bucket')[0].onclick = function(){
-		window.location.href = "bucket?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(folder);
+		window.location.href = "bucket.html?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(folder);
 	}
 
 
@@ -514,9 +514,63 @@ if(
 			folder = folder + "/";
 		}
 
+
+
+		// 设定文件权限
+		let ACL = "public-read"; // default public-read
+
+		// 获取页面上选中了哪个
+		let upload_files_acl_options = document.getElementsByClassName('upload-files-acl-options')[0];
+
+
+		if(
+			upload_files_acl_options.getElementsByClassName('select-option-item-selected-index')[0]
+			===
+			upload_files_acl_options.getElementsByClassName('acl-private')[0]
+		){
+
+			ACL = "private";
+
+		}
+
+		
+
+		if(
+			upload_files_acl_options.getElementsByClassName('select-option-item-selected-index')[0]
+			===
+			upload_files_acl_options.getElementsByClassName('acl-public-read')[0]
+		){
+
+			ACL = "public-read";
+
+		}
+
+		if(
+			upload_files_acl_options.getElementsByClassName('select-option-item-selected-index')[0]
+			===
+			upload_files_acl_options.getElementsByClassName('acl-public-read-write')[0]
+		){
+
+			ACL = "public-read-write";
+
+		}
+
+		if(
+			upload_files_acl_options.getElementsByClassName('select-option-item-selected-index')[0]
+			===
+			upload_files_acl_options.getElementsByClassName('acl-authenticated-read')[0]
+		){
+
+			ACL = "authenticated-read";
+
+		}
+
+
+
+
 		// 上传文件获取文件的上传入口信息
 		const url = getBucketFileUploadTokenURL;
-	    const params = 'key=' + encodeURIComponent( folder + key) + '&bucket=' + bucketName;
+	    const params = 'key=' + encodeURIComponent( folder + key) + '&size=' + file.size + '&acl=' + ACL + '&bucket=' + bucketName;
 
 	    // 创建 XMLHttpRequest 对象
 	    const xhr = new XMLHttpRequest();
@@ -552,7 +606,7 @@ if(
 
 
 							// 文件上传方法
-							function uploadFileNow(file, uploadURL) {
+							function uploadFileNow(file, uploadURL, ACL) {
 							    return new Promise((resolve, reject) => {
 							        const xhr = new XMLHttpRequest();
 
@@ -608,12 +662,22 @@ if(
 
 							        // 开始发送请求
 							        xhr.open('PUT', uploadURL);
+
+							        xhr.setRequestHeader("x-amz-acl", ACL);
+							        // 支持的预定义ACL有：'private', 'public-read', 'public-read-write' 或 'authenticated-read'
+							        // https://doc.bscstorage.com/doc/s2/demo/phpv2.html#%E4%BD%BF%E7%94%A8%E9%A2%84%E5%AE%9A%E4%B9%89%E7%9A%84acl
+
+							        xhr.setRequestHeader("content-type", "application/octet-stream");
+
 							        xhr.send(file);
+							        
 							    });
 							}
 
 
-							uploadFileNow(file,response["uploadURL"]);
+
+
+							uploadFileNow(file,response["uploadURL"],ACL);
 
 
 
