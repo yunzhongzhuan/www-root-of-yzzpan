@@ -17,6 +17,6 @@ https://www.yzzpan.com/KOS/create-bucket
 
 git add .
 
-git commit -m "bucket.html文件夹与文件列表，开发中，请看demo"
+git commit -m "upload.html上传文件增加ACL控制分别为private/public-read/public-read-write/authenticated-read"
 
 git push origin main
