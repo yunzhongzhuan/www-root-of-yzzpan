@@ -848,7 +848,7 @@ function getUserinfo(){
                     		if(
                     			document.getElementsByClassName('login-html')[0]!=undefined
                     		){
-                    			window.location.href = "buckets.html";
+                    			window.location.href = "buckets";
                     		}
 
 
@@ -887,28 +887,28 @@ function getUserinfo(){
 		                    		if(
 		                    			document.getElementsByClassName('upload-html')[0]!=undefined
 		                    		){
-		                    			window.location.href = "login.html";
+		                    			window.location.href = "login";
 		                    		}
 
 		                    		// 处于创建桶页面 未登录，要求登录
 		                    		if(
 		                    			document.getElementsByClassName('create-bucket-html')[0]!=undefined
 		                    		){
-		                    			window.location.href = "login.html";
+		                    			window.location.href = "login";
 		                    		}
 
 		                    		// 处于桶列表页面 未登录，要求登录
 		                    		if(
 		                    			document.getElementsByClassName('buckets-html')[0]!=undefined
 		                    		){
-		                    			window.location.href = "login.html";
+		                    			window.location.href = "login";
 		                    		}
 
 		                    		// 处于桶页面 未登录，要求登录
 		                    		if(
 		                    			document.getElementsByClassName('bucket-html')[0]!=undefined
 		                    		){
-		                    			window.location.href = "login.html";
+		                    			window.location.href = "login";
 		                    		}
 
 
