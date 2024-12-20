@@ -29,6 +29,10 @@ let loginURL = "https://c34a02aaeb0d6.cname.frontwize.com/other/bsc/login";
 // 用户信息
 let getUserinfoURL = "https://c34a02aaeb0d6.cname.frontwize.com/other/bsc/userinfo";
 
+
+// 获取桶区域全部大区
+let getRegionsURL = "https://c34a02aaeb0d6.cname.frontwize.com/other/bsc/regions";
+
 // 获取桶列表
 let getBucketsURL = "https://c34a02aaeb0d6.cname.frontwize.com/other/bsc/buckets";
 
@@ -852,7 +856,7 @@ function getUserinfo(){
                     		if(
                     			document.getElementsByClassName('buckets-html')[0]!=undefined
                     		){
-                    			getBuckets();
+                    			getRegions();// getRegions() >> getBuckets()
                     		}
 
 
