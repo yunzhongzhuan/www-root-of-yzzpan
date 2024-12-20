@@ -40,7 +40,7 @@ function login(){
 
 	                    		localStorage.setItem("sessionId", response["session_id"]);
 
-	                    		window.location.href = "buckets";
+	                    		window.location.href = "buckets.html";
 
 	                    	}
 
@@ -83,15 +83,50 @@ function login(){
 
 
 
-// login
+// login.html
 if(document.getElementsByClassName('login-main')[0]!=undefined){
 
 
 	document.getElementsByClassName('login-main')[0].getElementsByClassName('login')[0].onclick = function(){
 
-		// window.location.href = "buckets"; // buckets
+		// window.location.href = "buckets.html"; // buckets.html
 
-		login();
+
+
+		let phone = document.getElementsByClassName('login-phone-input')[0].value;
+
+		// 账号是否为手机号
+		if(
+			isNaN( parseInt( phone ) ) == false
+			&&
+			phone >= 10000000000
+			&&
+			phone < 20000000000
+			&&
+			phone.length == 11
+		){
+			login();
+		}else{
+
+			swal({
+				title: "系统提示",
+				text: "请输入正确手机号",
+				icon: "warning",
+				button: "确定",
+				closeOnClickOutside: false,
+				dangerMode: false,
+			}).then((willDelete) => {
+				/*if (willDelete) {
+					
+				}*/
+			});
+
+		}
+
+
+
+
+
 
 	}
 

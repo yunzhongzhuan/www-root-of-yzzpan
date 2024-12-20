@@ -102,13 +102,13 @@ if(
 
 	// 返回桶列表
 	document.getElementsByClassName('upload')[0].getElementsByClassName('top-page-title-main-icon-button')[0].onclick = function(){
-		window.location.href = "bucket?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(folder);
+		window.location.href = "bucket.html?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(folder);
 	}
 
 
 	// 点击 取消 返回桶列表
 	document.getElementsByClassName('upload')[0].getElementsByClassName('bottom-buttons-parent')[0].getElementsByClassName('cancel-upload-back-bucket')[0].onclick = function(){
-		window.location.href = "bucket?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(folder);
+		window.location.href = "bucket.html?bucket=" + encodeURIComponent(bucket) + "&folder=" + encodeURIComponent(folder);
 	}
 
 
@@ -567,7 +567,6 @@ if(
 
 
 
-
 		// 上传文件获取文件的上传入口信息
 		const url = getBucketFileUploadTokenURL;
 	    const params = 'session_id=' + sessionId + '&key=' + encodeURIComponent( folder + key) + '&size=' + file.size + '&acl=' + ACL + '&bucket=' + bucketName;
@@ -665,7 +664,7 @@ if(
 
 							        xhr.setRequestHeader("x-amz-acl", ACL);
 							        // 支持的预定义ACL有：'private', 'public-read', 'public-read-write' 或 'authenticated-read'
-							        // https://doc.bscstorage.com/doc/s2/demo/phpv2#%E4%BD%BF%E7%94%A8%E9%A2%84%E5%AE%9A%E4%B9%89%E7%9A%84acl
+							        // https://doc.bscstorage.com/doc/s2/demo/phpv2.html#%E4%BD%BF%E7%94%A8%E9%A2%84%E5%AE%9A%E4%B9%89%E7%9A%84acl
 
 							        xhr.setRequestHeader("content-type", "application/octet-stream");
 
