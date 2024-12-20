@@ -220,7 +220,7 @@ function setBucketTitleClickFunction(){
 			buckets_items[i].getElementsByTagName('span')[0]!=undefined
 		){
 			buckets_items[i].getElementsByTagName('span')[0].onclick = function(){
-				window.location.href = "bucket.html?bucket=" + encodeURIComponent(buckets_items[i].getElementsByTagName('span')[0].innerText);
+				window.location.href = "bucket?bucket=" + encodeURIComponent(buckets_items[i].getElementsByTagName('span')[0].innerText);
 			}
 		}
 
@@ -232,7 +232,7 @@ function setBucketTitleClickFunction(){
 
 
 
-// Buckets.html
+// Buckets
 if(document.getElementsByClassName('buckets')[0]!=undefined){
 
 
@@ -243,7 +243,7 @@ if(document.getElementsByClassName('buckets')[0]!=undefined){
 
 	// 点击创建桶按钮
 	document.getElementsByClassName('buckets-main')[0].getElementsByClassName('create-bucket')[0].onclick = function(){
-		window.location.href = 'create-bucket.html'; // create-bucket.html
+		window.location.href = 'create-bucket'; // create-bucket
 	}
 
 
