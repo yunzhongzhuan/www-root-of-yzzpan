@@ -562,11 +562,6 @@ if(
 
 
 
-	// Session ID
-	let sessionId = "ABC666";
-
-
-
 
 	// 首次加载文件夹
 	// 调用函数示例

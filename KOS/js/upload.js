@@ -570,7 +570,7 @@ if(
 
 		// 上传文件获取文件的上传入口信息
 		const url = getBucketFileUploadTokenURL;
-	    const params = 'key=' + encodeURIComponent( folder + key) + '&size=' + file.size + '&acl=' + ACL + '&bucket=' + bucketName;
+	    const params = 'session_id=' + sessionId + '&key=' + encodeURIComponent( folder + key) + '&size=' + file.size + '&acl=' + ACL + '&bucket=' + bucketName;
 
 	    // 创建 XMLHttpRequest 对象
 	    const xhr = new XMLHttpRequest();
