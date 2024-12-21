@@ -504,7 +504,7 @@ if(
 		if(file.webkitRelativePath.length < 1){key = file.name;}
 
 		// 桶名称 测试
-		let bucketName = "tempfiles";
+		let bucketName = bucket;
 
 		// 上传目录位置
 		let folder = document.getElementsByClassName('upload-folder-path-current-input')[0].getElementsByTagName('input')[0].value;
