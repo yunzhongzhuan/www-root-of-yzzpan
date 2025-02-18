@@ -386,7 +386,7 @@ let top_apps = [
 		"icon":"/img/logo.png",
 		// "icon":"//tva1.sinaimg.cn/mw2000/005CbWF8gy1h16lkvt5ubj30go0goq4h.jpg",
 		"new_open":true
-	},
+	}/*,
 	{
 		"name":"括彩云智能CDN",
 		"link":"https://www.kuocaicdn.com/",
@@ -394,7 +394,7 @@ let top_apps = [
 		"icon":"/img/logo-kuocaicdn.png",
 		// "icon":"//tva1.sinaimg.cn/mw2000/005CbWF8gy1h16lkvt5ubj30go0goq4h.jpg",
 		"new_open":true
-	},/*
+	},
 	{
 		"name":"极兔云",
 		"link":"https://www.jitucdn.com/",
