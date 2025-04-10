@@ -5295,7 +5295,7 @@ let yzzpan_51la_ip_iframe = document.getElementById('yzzpan-51la-ip-iframe');
 let download_domain_list_cdn_cgi_trace = [
 	"https://upload.yunzhongzhuan.com/cdn-cgi/trace",
 	"https://download.yunzhongzhuan.com/cdn-cgi/trace",
-	"https://a.download.yunzhongzhuan.com/cdn-cgi/trace",
+	/*"https://a.download.yunzhongzhuan.com/cdn-cgi/trace",
 	"https://b.download.yunzhongzhuan.com/cdn-cgi/trace",
 	"https://c.download.yunzhongzhuan.com/cdn-cgi/trace",
 	"https://d.download.yunzhongzhuan.com/cdn-cgi/trace",
@@ -5304,7 +5304,7 @@ let download_domain_list_cdn_cgi_trace = [
 	"https://g.download.yunzhongzhuan.com/cdn-cgi/trace",
 	"https://h.download.yunzhongzhuan.com/cdn-cgi/trace",
 	"https://i.download.yunzhongzhuan.com/cdn-cgi/trace",
-	"https://j.download.yunzhongzhuan.com/cdn-cgi/trace",
+	"https://j.download.yunzhongzhuan.com/cdn-cgi/trace",*/
 ];
 
 
