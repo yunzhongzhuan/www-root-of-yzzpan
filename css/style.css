@@ -897,7 +897,7 @@ body{
 	float: left;
 }
 #login-input-password{
-	width: calc(100% - 186px);
+	width: calc(100% - 105px);
 	padding-right: 0px;
 }
 .login-content-input-element-link{
