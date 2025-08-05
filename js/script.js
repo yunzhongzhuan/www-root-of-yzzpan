@@ -3502,7 +3502,7 @@ let login_input_username = document.getElementById('login-input-username');
 // let api_server_url = "https://server.yzzpan.com.cdn.cloudflare.net";
 // let api_server_url = "https://www.yunzhongzhuan.com";
 // let api_server_url = "https://applicationprogramminginterface.yzzpan.com";
-let api_server_url = "https://c34a02aaeb0d6.cname.frontwize.com";
+let api_server_url = "https://cae45776685ba.cname.frontwize.com"; // REPLACE ALL CTRL+H CTRL + H // c34a02aaeb0d6.cname.frontwize.com
 // let api_server_url = "https://yunzhongzhuan.com.huaweicloud.com.5a7567ec.cdnhwc8.cn";
 // let api_server_url = "https://hcdnw103.c.cdnhwc2.com";
 if(navigator.language.toLowerCase().indexOf('cn')==-1){
@@ -7381,7 +7381,7 @@ login_input_button_qq_login.onclick = async function(){
 
 	let text = '手机QQ扫描二维码安全登录。\r\n5秒钟后系统自动更新二维码。\r\n登录位置：广东省（服务器位置）';
 	// let qr_code = api_server_url + '/php/temp/imgs/' + userinfo["qq_login_id"] + ".png?t=0&";;
-	let qr_code = 'https://c34a02aaeb0d6.cname.frontwize.com/php/temp/imgs/' + userinfo["qq_login_id"] + ".png?t=0&";;
+	let qr_code = 'https://cae45776685ba.cname.frontwize.com/php/temp/imgs/' + userinfo["qq_login_id"] + ".png?t=0&";;
 	let swal_element = document.getElementsByClassName('swal-overlay--show-modal');
 	let qq_login_id_qr_code_element = document.getElementsByClassName('qq_login_id_qr_code');
 	if(swal_element.length>0 && qq_login_id_qr_code_element.length>0){
