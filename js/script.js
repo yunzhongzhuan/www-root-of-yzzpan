@@ -5756,7 +5756,14 @@ let links_data = [
 				"name":"yunzhongzhuan.com",
 				"new_open":true,
 				"link":"http://yunzhongzhuan.com"
-			},/*
+			},
+			{
+				"name":"Community",
+				"new_open":true,
+				"link":"https://www.yunzhongzhuan.com/community/"
+			}
+			
+			/*
 			{
 				"name":"kuocaitm.net",
 				"new_open":true,
@@ -7813,6 +7820,7 @@ if(navigator.language.toLowerCase().indexOf('cn')!=-1){
 		item.style.display="";
 	}
 }
+
 
 
 
